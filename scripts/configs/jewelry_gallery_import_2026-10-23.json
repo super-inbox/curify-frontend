@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-23",
+  "records": [
+    {
+      "id": "template-ecommerce-product-photography-earrings-product-20261023",
+      "file": "template-ecommerce-product-photography-earrings-product-20261023.png",
+      "title": {
+        "zh": "金色水滴耳环 · 商品与细节",
+        "en": "Gold-tone teardrop earrings: product and detail"
+      },
+      "sha256": "3b3e4dfe98d81cca5d25763e47ec82855ee2104dd342700a94a50ac51a7015f5",
+      "generator": "built-in image_gen",
+      "prompt": "Use case: product-mockup. Create an ORIGINAL premium jewelry ecommerce photography diptych, two equal vertical photographs side by side, no borders or typography, overall landscape 3:2 composition. Both photographs feature the exact same original product design: a pair of small sculptural gold-colored hollow teardrop hoop earrings, softly puffed smooth teardrop loop silhouette, a single clean organic crease on the front outer curve, discreet hinged closure, contemporary understated design, not a brand replica. Left frame: the matching pair standing on pale warm ivory matte stone, entire pair visible and large in frame, elegant diagonal arrangement, very soft window light, restrained true-to-life gold reflections. Right frame: a close-up of ONE of the same earrings laid on folded cream silk, show the coherent closed-loop teardrop form, subtle hinge and reflective curved surface, shallow but usable depth of field. Design and color identical across frames, physical realism, sophisticated cream/taupe/gold palette. No diamonds, no gemstones, no extra ornaments, no hands, no text, no letters, no logos, no watermarks, no certificates, no graphic overlays. Product photography with natural material textures and gentle shadows, no exaggerated sparkle. Fill each frame with useful product imagery while keeping generous but not excessive breathing room. This is an original concept visualization for a portfolio.",
+      "reference_image": null,
+      "template_id": "template-ecommerce-product-photography",
+      "import_type": "gallery-example",
+      "template_executed": false
+    },
+    {
+      "id": "template-ecommerce-product-photography-earrings-wearing-20261023",
+      "file": "template-ecommerce-product-photography-earrings-wearing-20261023.png",
+      "title": {
+        "zh": "金色水滴耳环 · 佩戴效果",
+        "en": "Gold-tone teardrop earrings: on-model"
+      },
+      "sha256": "4e215a84da9a78253a1aa457714baa9f79472041c7a32f0e87c6192564d8bc57",
+      "generator": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Create an original jewelry ecommerce ON-MODEL diptych using the provided image ONLY as the exact jewelry product reference. Landscape 3:2 canvas, two equal vertical photographic panels separated by a very fine ivory line. Same adult East Asian woman age 28-35 in both images, elegant natural skin, dark hair in a relaxed low bun, opaque cream shirt, no other jewelry. LEFT: intimate close-up of ear, jaw and neckline, cropped forehead and most face out, wearing one of the EXACT matching gold-colored puffed open teardrop hoop earrings from reference, organic crease, hollow teardrop center, believable hinge through earlobe; earring about 25mm tall and proportionate to ear, sharply legible. RIGHT: chest-up three-quarter editorial portrait of the same adult woman, subtle calm expression, cream shirt and pale warm-gray studio background, one same small earring visible on near ear, other naturally occluded. Soft directional daylight, authentic skin texture, restrained warm beige palette matching product reference, contemporary ecommerce catalog realism, no exaggerated glamour. Preserve the reference jewelry silhouette, crease, gold tone and proportions; do not replace with round hoops or studs. Both panels beautifully composed with the earring visually readable. No text, numbers, logos, watermark, graphics or frames. Original concept images, not a claim of actual product photography.",
+      "reference_image": "template-ecommerce-product-photography-earrings-product-20261023.png",
+      "template_id": "template-ecommerce-product-photography",
+      "import_type": "gallery-example",
+      "template_executed": false
+    },
+    {
+      "id": "template-ecommerce-product-photography-earrings-mood-20261023",
+      "file": "template-ecommerce-product-photography-earrings-mood-20261023.png",
+      "title": {
+        "zh": "金色水滴耳环 · 静物氛围",
+        "en": "Gold-tone teardrop earrings: editorial still life"
+      },
+      "sha256": "6a9060297212ca45b009de3f463a4e05c622959479c5d6965aec6855f43d2e17",
+      "generator": "built-in image_gen",
+      "prompt": "Use case: product-mockup. Create one original portrait 2:3 premium jewelry campaign photograph. Use the provided product reference for the EXACT same pair of gold-colored hollow puffed teardrop hoop earrings, with a smooth organic crease, open teardrop center and discreet curved hinged pin. Both earrings identical to the reference, physically coherent, not joined together. Art-directed still life on a folded warm ivory linen ribbon resting on a smooth pale limestone plinth, one standing at a slight angle and one naturally resting beside it, both clearly visible in the lower middle third. Quiet beige and cream studio backdrop, generous clean space in the upper third suitable for later typesetting, soft morning window light and an elegant long diffuse shadow, large enough earrings to inspect, refined gold highlights. Minimal restrained fashion editorial, realistic macro optics, natural surface texture, no flowers, no boxes, no diamonds, no gems, no extra objects. No text, logos, watermarks, letters, certificate or infographic. Do not recreate the diptych layout: one single continuous photograph. Original portfolio concept.",
+      "reference_image": "template-ecommerce-product-photography-earrings-product-20261023.png",
+      "template_id": "template-ecommerce-product-photography",
+      "import_type": "gallery-example",
+      "template_executed": false
+    },
+    {
+      "id": "template-ecommerce-product-photography-silver-campaign-20261023",
+      "file": "template-ecommerce-product-photography-silver-campaign-20261023.png",
+      "title": {
+        "zh": "晶石耳钉 · 轻奢视觉",
+        "en": "Crystal studs: light-luxury campaign"
+      },
+      "sha256": "bbc59bcbe525ed1b36f0fe96cd8b93a65f78b2f6ab93c59f11c21e9a0b889f92",
+      "generator": "built-in image_gen",
+      "prompt": "Use case: product-mockup. Create an original luxury jewelry campaign photographic diptych, landscape 3:2, TWO equally sized portrait panels separated by a very thin ivory line. Product throughout: a matching pair of round brilliant-cut transparent crystal stud earrings, silver-colored four-prong basket setting, slim straight posts and butterfly backs. No metal purity, stone grade or gemstone identity claim. LEFT panel: breathtaking sharp large macro of the pair resting on softly folded pearl-white champagne satin, one front-on and one at an angle showing the basket and post, realistic coherent round faceting with defined bright and dark facets, a few tiny natural spectral rainbow reflections and ONE restrained pin-point star glint where light hits a facet, intensely luminous but NOT blown out. RIGHT panel: beautiful editorial portrait of an adult East Asian woman around 30, hair tucked into a soft low updo, opaque ivory silk blouse, wearing one of these small 6mm-proportion crystal stud earrings on her visible near ear, shoulders up, face relaxed and elegant, photographed in three-quarter profile so ear and stud are clearly visible. Natural refined skin, subtle warm cheek light, near earring sharp and optically sparkly, soft pale blush/champagne background. Lighting is polished high-end jewelry advertising: silver-white glints contrasting with warm pale blush shadows. Photorealistic, precise optical detail, elegant original styling. No text, logos, watermarks, certificates, brand marks, decorative graphics, necklaces, rings, excessive sparkle overlays, plastic skin or large dangly earrings. The product and setting must match across both panels. Fill both frames with strong useful images, no large blank areas.",
+      "reference_image": null,
+      "template_id": "template-ecommerce-product-photography",
+      "import_type": "gallery-example",
+      "template_executed": false
+    },
+    {
+      "id": "template-ecommerce-product-photography-silver-detail-20261023",
+      "file": "template-ecommerce-product-photography-silver-detail-20261023.png",
+      "title": {
+        "zh": "晶石耳钉 · 切面与佩戴特写",
+        "en": "Crystal studs: facet and wearing close-ups"
+      },
+      "sha256": "74cf6799e9a2c08d64472f2b57c249fd3c0432c6daa8e38cc350974859ea55cd",
+      "generator": "built-in image_gen",
+      "prompt": "Use case: product-mockup. Use the supplied campaign image as exact product and model identity reference. Create an original high-end jewelry DETAIL diptych, landscape 3:2, two equally sized portrait photographs separated by a thin ivory line. LEFT image: very tight, beautifully sharp macro view of the SAME round transparent brilliant-cut crystal stud in the same silver-colored FOUR-prong basket setting; resting on champagne satin at 30 degrees to the camera, large readable facets with silvery flashes, one fine pin-point glint, coherent metal prongs, back and straight post visible behind it, no changed gemstone shape, no extra ring or stone. RIGHT image: very close crop of the SAME adult East Asian woman's ear, soft dark hair tucked behind ear, jaw and neck, wearing the same small round transparent crystal stud, actual stud proportion about 6mm relative to ear, no full face, no hand. Show comfortable believable earlobe contact, sharp crystal facets and tiny white sparkle, natural detailed skin and warm blush light. Consistent warm pearl-white/champagne and blush color palette from reference. Luxury product photography, subtle depth of field, no hazy overexposure, preserve bright-dark contrast within facets. No text, typography, numbers, brand, logos, watermark, certificate, chart, second piercing, dangling jewelry, necklace, false extra prongs, or graphic stars. Original concept product images.",
+      "reference_image": "template-ecommerce-product-photography-silver-campaign-20261023.png",
+      "template_id": "template-ecommerce-product-photography",
+      "import_type": "gallery-example",
+      "template_executed": false
+    }
+  ],
+  "note": "Original concept images imported from image_gen; associated template is a gallery/remix classification, not the historical generation engine. Gold-tone/silver-tone describe appearance only. External jewelry layout references and fruit examples are excluded."
+}
