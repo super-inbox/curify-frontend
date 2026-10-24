@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-24",
+  "records": [
+    {
+      "id": "template-ecommerce-product-photography-01-floral-cuff-20261024",
+      "file": "template-ecommerce-product-photography-01-floral-cuff-20261024.png",
+      "title": {
+        "zh": "花间金缕 · 手镯主视觉与细节",
+        "en": "Floral gold-wire cuff: hero and detail"
+      },
+      "prompt": "Create a premium photorealistic jewelry ecommerce photographic diptych, landscape 3:2, two equal portrait panels separated by a thin charcoal line. Use attached customer product image as design reference for a SIMILAR wide yellow-gold cuff bracelet, open fine parallel gold wires across broad band, four staggered five-petal clear diamond flower clusters in white metal settings. Preserve distinctive wire construction, broad curved cuff silhouette and floral arrangement as closely as visible; do not invent engraved text, brand, certificates or gemstone grades. LEFT: full bracelet three-quarter hero view on charcoal velvet, jewelry occupies 75% frame, soft studio strip reflections on gold, sharp individual diamond facets and restrained realistic pinpoints, premium dimensional clean gold, not orange plastic. RIGHT: tight macro of two flower clusters and underlying fine parallel gold wires, show physical setting and empty spaces between wires, same product consistent. Black charcoal museum-like backdrop with subtle warm light, controlled high contrast, precise optical jewelry detail, no haze, no large fake star flares. No text or logos. This is a visual concept based on a low-resolution reference, not documentary evidence or an exact product reproduction.",
+      "generator": "built-in image_gen",
+      "template_id": "template-ecommerce-product-photography",
+      "template_executed": false,
+      "sha256": "b8d25b6893f9b6fda947f8718580fcea6f082e136100eac65cc2bf63eb189488",
+      "reference": "user attachment dd2d6456-165b-4869-b078-3449951d4477"
+    },
+    {
+      "id": "template-ecommerce-product-photography-02-gemstone-cuff-20261024",
+      "file": "template-ecommerce-product-photography-02-gemstone-cuff-20261024.png",
+      "title": {
+        "zh": "复古花园 · 彩宝手镯与镂空细节",
+        "en": "Vintage gemstone cuff: hero and filigree"
+      },
+      "prompt": "Create a premium jewelry ecommerce photographic diptych landscape 3:2, two equal portrait panels. The attached image is customer design reference: a broad curved yellow-gold cuff bracelet with intricate openwork filigree leaf/vine structure, delicate milgrain bezels, large oval transparent stones arranged along the band: pale champagne center, deep muted blue oval on each side, moss green oval farther down; interspersed clear faceted smaller stones. Use this exact visible arrangement as guidance for a SIMILAR concept; keep oval cuts and wide gold lace structure, don't turn it into a solid gold bangle or single ring. LEFT hero three-quarter full bracelet view leaning gently on warm ivory limestone with champagne silk behind, elegant balanced rich gold highlights and believable gem transparency. RIGHT tight macro of central champagne oval and adjacent blue oval with intricate gold openwork and clear accent stones, same piece and color arrangement. Art direction: collectible antique fine jewelry, polished magazine photography, luminous warm gold contrasted with blue/green facets, directional softbox with precise highlights, not oversaturated, no blown white stones, physically coherent settings. No text, logos, labels, claims, certification, brand, fake history. Client concept visualization, not exact SKU documentation.",
+      "generator": "built-in image_gen",
+      "template_id": "template-ecommerce-product-photography",
+      "template_executed": false,
+      "sha256": "21ab6a9c1eee704e1ba0a36ec969dd252a440d745358b7adab2be93d1dc6464d",
+      "reference": "user attachment 78ad2771-fc68-4b64-a4a6-85cc2bfd442c"
+    },
+    {
+      "id": "template-ecommerce-product-photography-03-on-wrist-20261024",
+      "file": "template-ecommerce-product-photography-03-on-wrist-20261024.png",
+      "title": {
+        "zh": "腕间风景 · 两款手镯佩戴效果",
+        "en": "Floral and gemstone cuffs: on-wrist styling"
+      },
+      "prompt": "Create a luxury jewelry ON-WRIST photographic diptych landscape 3:2 with two equal portrait panels, no text. Reference image 1 defines floral gold-wire cuff, reference image 2 defines multicolor filigree cuff. LEFT: close crop of an adult woman's relaxed wrist and naturally separated fingers wearing the same wide yellow-gold parallel-wire cuff with four diamond flower clusters as reference 1; opaque black silk sleeve, charcoal background, delicate clear facets, believable wrist fit. RIGHT: close crop of an adult woman's relaxed wrist and fingers wearing the same broad yellow-gold openwork cuff with champagne oval center and blue oval stones and green stone as reference 2; ivory silk sleeve, warm cream background. Each panel shows ONLY ONE cuff. No face, no rings, no necklace, no extra bracelet. Keep the two products distinct, don't hybridize their designs. Hands anatomically correct, comfortable relaxed gestures and natural skin texture; jewelry sharply readable and dominant, real scale around 3cm cuff width, elegant editorial directional lighting. Concept visualization for client style approval, do not add material certificates or brand marks. No lettering, frame or watermark.",
+      "generator": "built-in image_gen",
+      "template_id": "template-ecommerce-product-photography",
+      "template_executed": false,
+      "sha256": "3a1ffec89f47cf8681458f10a38db59e3bf00a9780a8deb95459bb2616227abb",
+      "reference": [
+        "01-floral-cuff.png",
+        "02-gemstone-cuff.png"
+      ]
+    }
+  ],
+  "note": "Reference-guided generated visual concepts, not actual delivered client projects or exact SKU photographs. Customer supplied 18K gold and natural diamond description is not verified by these images. Reference originals are excluded from the public drop."
+}
