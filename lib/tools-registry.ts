@@ -63,6 +63,11 @@ export type ToolDemo =
       alt?: string;
     }
   | {
+      type: "input_output";
+      input: string;
+      output: string;
+    }
+  | {
       // Several before/after images, each with its own explanation beneath —
       // for pages whose examples are different jobs (a hotel interior and a
       // twilight exterior) that one shared caption cannot describe honestly.
@@ -138,7 +143,7 @@ export const TOOL_REGISTRY: ToolDef[] = [
     job_type: "video_transcript", namespace: "aiWeddingPhotoGenerator", locales: ["en"],
     action: { type: "generate", templateId: "template-wedding-portrait-styles" },
     i18n: toolKeys("ai_wedding_photo_generator"), seo: seoKeys("ai_wedding_photo_generator"),
-    demo: { type: "single_image", src: "/generation-examples/ai-wedding-photo-generator.jpg", alt: "Illustrative fictional portrait style board; not a production output" },
+    demo: { type: "input_output", input: "/generation-examples/acceptance-2026-10-25/wedding-input.webp", output: "/generation-examples/acceptance-2026-10-25/wedding-output.jpg" },
   },
 
   {
@@ -146,7 +151,7 @@ export const TOOL_REGISTRY: ToolDef[] = [
     job_type: "video_transcript", namespace: "aiPetPortraitGenerator", locales: ["en"],
     action: { type: "generate", templateId: "template-pet-portrait-styles" },
     i18n: toolKeys("ai_pet_portrait_generator"), seo: seoKeys("ai_pet_portrait_generator"),
-    demo: { type: "single_image", src: "/generation-examples/ai-pet-portrait-generator.jpg", alt: "Illustrative fictional portrait style board; not a production output" },
+    demo: { type: "input_output", input: "/generation-examples/acceptance-2026-10-25/pet-input.webp", output: "/generation-examples/acceptance-2026-10-25/pet-output.jpg" },
   },
 
 

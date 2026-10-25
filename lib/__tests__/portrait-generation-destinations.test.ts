@@ -23,7 +23,9 @@ describe('portrait generation destination contracts', () => {
       const copy = (messages as Record<string, any>)[owners[0].namespace];
       expect(copy.upload.label).not.toMatch(/product/i);
       expect(copy.why.point3).toContain('{credits}');
-      expect(copy.example).toContain('not customer images or verified outputs');
+      expect(copy.example).toContain('synthetic');
+      expect(copy.example).toContain('not a customer delivery');
+      expect(owners[0].demo?.type).toBe('input_output');
     });
   }
 });

@@ -241,6 +241,21 @@ export default function ToolGenericClient({
           />
           <p className="text-sm text-gray-500 mb-8 text-center">{t("example")}</p>
         </>
+      ) : demo?.type === "input_output" ? (
+        <section className="max-w-3xl mx-auto mb-8">
+          <h2 className="text-xl font-semibold mb-4">{t("exampleTitle")}</h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <figure>
+              <CdnImage className="w-full rounded-xl" src={demo.input} alt={t("exampleInput")} />
+              <figcaption className="mt-2 text-sm font-medium">{t("exampleInput")}</figcaption>
+            </figure>
+            <figure>
+              <CdnImage className="w-full rounded-xl" src={demo.output} alt={t("exampleOutput")} />
+              <figcaption className="mt-2 text-sm font-medium">{t("exampleOutput")}</figcaption>
+            </figure>
+          </div>
+          <p className="mt-4 text-sm text-gray-600 leading-relaxed">{t("example")}</p>
+        </section>
       ) : demo?.type === "image_pairs" ? (
         // One before/after per job, each explained in its own words. Wider than
         // single_image (max-w-3xl) because each image is two panels side by side.

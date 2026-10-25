@@ -21571,7 +21571,7 @@
     "id": "template-pet-portrait-styles",
     "locales": {
       "en": {
-        "base_prompt": "Create one portrait of the single cat or dog in the attached reference photo. Preserve its recognizable coat pattern, colouring, eye colour, ear shape, muzzle, proportions and distinctive markings. Style: {style}. Requested details: {details}. Keep natural animal anatomy and a comfortable pose. Royal styling may add a costume but must not replace or humanize the face. Output one image, not a collage, comparison, text or logo. Do not introduce another animal.",
+        "base_prompt": "Create one portrait of the single cat or dog in the attached reference photo. Preserve its recognizable coat pattern, colouring, eye colour, ear shape, muzzle, proportions and distinctive markings. Style: {style}. Requested details: {details}. Keep natural animal anatomy and a comfortable pose. Match only the selected style. For Studio pet portrait, use a simple photographic studio background and no costume, crown, cape or accessories. For Painted pet portrait, use a painted treatment and no costume, crown or cape. Only when the selected style is Royal pet portrait may you add royal clothing; never replace or humanize the face. Output one image, not a collage, comparison, text or logo. Do not introduce another animal.",
         "parameters": [
           {
             "name": "style",
