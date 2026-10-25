@@ -12,9 +12,11 @@ interface ExportDialogProps {
   isOpen: boolean;
   onClose: () => void;
   files: File[];
+  /** Records the user's download request, not completion of the transfer. */
+  onDownload?: (file: File) => void;
 }
 
-export default function ExportDialog({ isOpen, onClose, files }: ExportDialogProps) {
+export default function ExportDialog({ isOpen, onClose, files, onDownload }: ExportDialogProps) {
   const t = useTranslations("export");
 
   return (
@@ -75,6 +77,7 @@ export default function ExportDialog({ isOpen, onClose, files }: ExportDialogPro
 
                       <a
                         href={file.downloadUrl}
+                        onClick={() => onDownload?.(file)}
                         download
                         className="flex items-center space-x-1 hover:text-blue-700"
                       >

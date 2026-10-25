@@ -42,6 +42,14 @@ export default function ProjectDetailsPage() {
   const [cleanUrl, setCleanUrl] = useState<string | null>(null);
   const [unlockNote, setUnlockNote] = useState<string | null>(null);
 
+  // Keep the project id joinable to the job/credit ledger. No signed URLs,
+  // filenames or translated content enter analytics. This records intent,
+  // not proof that the browser finished saving a file.
+  const trackDownload = () => {
+    if (!id) return;
+    track({ contentId: id, contentType: "menu_link", actionType: "download" });
+  };
+
   /** Buy the unwatermarked master of this video.
    *
    *  Same endpoint and same contract as the image workbench — the mark differs
@@ -78,6 +86,7 @@ export default function ProjectDetailsPage() {
       }
       if (res.download_url) {
         setCleanUrl(res.download_url);
+        trackDownload();
         const a = document.createElement("a");
         a.href = res.download_url;
         a.rel = "noopener noreferrer";
@@ -286,6 +295,7 @@ export default function ProjectDetailsPage() {
           {projectDetails.srt_signed_url && (
             <a
               href={projectDetails.srt_signed_url}
+              onClick={trackDownload}
               download
               className="inline-flex items-center gap-3 rounded-xl border border-neutral-200 bg-white px-5 py-4 shadow-sm hover:shadow-md transition"
             >
@@ -299,6 +309,7 @@ export default function ProjectDetailsPage() {
           {projectDetails.txt_signed_url && (
             <a
               href={projectDetails.txt_signed_url}
+              onClick={trackDownload}
               download
               className="inline-flex items-center gap-3 rounded-xl border border-neutral-200 bg-white px-5 py-4 shadow-sm hover:shadow-md transition"
             >
@@ -462,6 +473,7 @@ export default function ProjectDetailsPage() {
                 {cleanUrl ? (
                   <a
                     href={cleanUrl}
+                    onClick={trackDownload}
                     download
                     target="_blank"
                     rel="noopener noreferrer"
@@ -529,6 +541,7 @@ export default function ProjectDetailsPage() {
         <ExportDialog
           isOpen={isExportDialogOpen}
           onClose={() => setIsExportDialogOpen(false)}
+          onDownload={trackDownload}
           files={exportFiles}
         />
       )}
