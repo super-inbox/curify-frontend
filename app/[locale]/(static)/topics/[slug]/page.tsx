@@ -451,6 +451,18 @@ export default async function Page({ params }: Props) {
           redirect from /search). Lets search_cycle5_pull.py attribute
           bare-country redirects as a distinct "had-redirect" bucket. */}
       <SearchRedirectTracker />
+      {slug === "asl" && (
+        <aside className="mx-auto my-4 max-w-3xl rounded-xl border border-purple-200 bg-purple-50 p-5">
+          <h2 className="font-semibold">{tTopicsRoot("aslVideoTranslator.title")}</h2>
+          <p className="mt-2 text-sm">{tTopicsRoot("aslVideoTranslator.metadata.description")}</p>
+          <a
+            className="mt-3 inline-block rounded-lg bg-purple-700 px-4 py-2 font-semibold text-white hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-700"
+            href={`${localeStr === "en" ? "" : `/${localeStr}`}/tools/asl-video-translator`}
+          >
+            {tTopicsRoot("aslVideoTranslator.cta")} →
+          </a>
+        </aside>
+      )}
       {localeStr === "en" && ["animal", "portrait"].includes(slug) && (
         <aside className="mx-auto my-4 max-w-3xl rounded-xl border border-purple-200 bg-purple-50 p-5">
           <h2 className="font-semibold">{slug === "animal" ? "Create a portrait of your pet" : "Create a wedding-inspired portrait"}</h2>
