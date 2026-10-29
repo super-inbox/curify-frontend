@@ -19,6 +19,7 @@
 
 import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { Check, ChevronLeft, ChevronRight, Copy, Share, X } from "lucide-react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
@@ -233,6 +234,7 @@ function capUniqueSlides<T extends { id: string | number; imageUrl: string }>(
 // ── Component ──────────────────────────────────────────────────────────────
 
 export default function CarouselClient(props: Props) {
+  const tActions = useTranslations("actionButtons");
   const router = useRouter();
   const isMobileDevice = useIsMobileLikeDevice();
   const { mode, locale, siteUrl } = props;
@@ -704,14 +706,30 @@ export default function CarouselClient(props: Props) {
 
           {mode === "template-example" ? (
             <Link
-              href={`/${locale}/nano-template/${(props as TemplateExampleProps).slug}`}
+              // Keep the selected example's image and parameter prefills. The
+              // generic template loses that context, especially on mobile where
+              // the inline generation sidebar is hidden.
+              href={(props as TemplateExampleProps).templateAllowGeneration
+                ? detailPageUrl
+                : `/${locale}/nano-template/${(props as TemplateExampleProps).slug}`}
               onClick={(e) => {
                 e.stopPropagation();
-                trackViewDetail();
+                if ((props as TemplateExampleProps).templateAllowGeneration) {
+                  track({
+                    contentId: `carousel-customize:${slide.id}`.slice(0, 255),
+                    contentType: "menu_link",
+                    actionType: "click",
+                    viewMode: "cards",
+                  });
+                } else {
+                  trackViewDetail();
+                }
               }}
               className="rounded-full border-2 border-purple-500 bg-white/90 px-5 py-2 text-sm font-bold text-purple-700 shadow backdrop-blur-sm hover:bg-white hover:border-purple-600"
             >
-              Visit template →
+              {(props as TemplateExampleProps).templateAllowGeneration
+                ? tActions("remixThis")
+                : "Visit template"} →
             </Link>
           ) : (
             // Desktop has the rich PromptRightColumn sidebar with Copy +
