@@ -236,6 +236,13 @@ export default async function NanoTemplatePage({ params }: Props) {
       </div>
 
 
+      {templateId === "template-asl-sign-language-tutorial-infographic" && (
+        <aside className="mt-8 rounded-xl border border-teal-200 bg-teal-50 p-5 text-sm leading-6">
+          <p>{localeStr === "zh" ? "AI 生成的学习辅助图，不是经过专家审核的手语教材。请结合可靠视频课程核对动作、语境和含义。" : "AI-generated study artwork, not expert-reviewed signing instruction. Check movements, context and meaning against trusted video lessons."}</p>
+          <Link href="/blog/asl-visual-study-guide" className="mt-2 inline-block font-medium text-teal-900 underline">{localeStr === "zh" ? "阅读 ASL 图片学习指南（英文）" : "Read the ASL visual study guide (English)"}</Link>
+        </aside>
+      )}
+
       <section className="mt-8">
 <ExampleImagesGrid
           items={section2Images}

@@ -211,6 +211,7 @@ export const KNOWN_BLOG_SLUGS: string[] = [
   "aiPlatform",
   "argentina-france-2022-world-cup-final",
   "asl-video-translator",
+  "asl-visual-study-guide",
   "best-ai-tools",
   "best-claude-code-design-skills",
   "best-programmatic-seo-tools",
