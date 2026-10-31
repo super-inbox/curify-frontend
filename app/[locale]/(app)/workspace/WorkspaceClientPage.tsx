@@ -164,8 +164,9 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
   // both belong in the Images section — previously freeform gens were silently
   // dropped from the workspace.
   const IMAGE_JOB_TYPES = ["nano_template_generation", "nano_freeform_generation"];
+  const psdProjects = projects.filter(p => String(p.job_settings.job_type) === "image_to_psd");
   const videoProjects = projects.filter(
-    (p) => !IMAGE_JOB_TYPES.includes(p.job_settings.job_type)
+    (p) => !IMAGE_JOB_TYPES.includes(p.job_settings.job_type) && String(p.job_settings.job_type) !== "image_to_psd"
   );
   const imageProjects = projects.filter(
     (p) => IMAGE_JOB_TYPES.includes(p.job_settings.job_type)
@@ -206,6 +207,18 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
               Refreshing...
             </div>
           )}
+
+          {psdProjects.length > 0 && <section className="mb-8">
+            <h3 className="mb-3 text-sm font-semibold text-neutral-500">{locale === "zh" ? "分层 PSD 导出" : "Layered PSD exports"}</h3>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {psdProjects.map(project => <button key={project.project_id} type="button"
+                onClick={() => router.push(`/tools/image-to-psd?project=${encodeURIComponent(project.project_id)}`)}
+                className="rounded-xl border border-neutral-200 bg-white p-4 text-left hover:shadow-md">
+                <p className="font-semibold">{project.project_name}</p>
+                <p className="mt-2 text-sm text-neutral-500">{formatStatus(project.status)}</p>
+              </button>)}
+            </div>
+          </section>}
 
           {/* Image projects */}
           {imageProjects.length > 0 && (

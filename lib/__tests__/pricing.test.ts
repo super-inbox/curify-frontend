@@ -3,6 +3,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
 import {
+  IMAGE_TO_PSD_CREDITS,
   IMAGE_GENERATION_CREDITS,
   CLEAN_MASTER_UNLOCK_CREDITS,
   PACKAGING_MOCKUP_CREDITS,
@@ -34,6 +35,7 @@ import { JOB_UI_CONFIG, estimateJobCost } from "@/lib/create-job-ui";
  *  Signup grant cut 2026-09-23 (50 → 25). */
 const BACKEND_CHARGES = {
   image: 5,
+  imageToPsd: 20,
   stickerExport: 40,
   acrylicExport: 50,
   packagingMockup: 10,
@@ -79,6 +81,7 @@ describe("credit pricing", () => {
   });
 
   it("mirrors the backend charge for the design-to-manufacturing tools", () => {
+    expect(IMAGE_TO_PSD_CREDITS).toBe(BACKEND_CHARGES.imageToPsd);
     expect(STICKER_EXPORT_CREDITS).toBe(BACKEND_CHARGES.stickerExport);
     expect(ACRYLIC_EXPORT_CREDITS).toBe(BACKEND_CHARGES.acrylicExport);
     expect(PACKAGING_MOCKUP_CREDITS).toBe(BACKEND_CHARGES.packagingMockup);

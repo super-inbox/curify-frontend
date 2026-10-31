@@ -413,6 +413,14 @@
         "title": "AI pet portrait generator",
         "description": "Turn a photo of your cat or dog into a studio portrait, painted keepsake or royal-style portrait. Choose a style and review your pet’s distinctive markings in the result."
       }
+    },
+    "image_to_psd": {
+      "title": "图片转 PSD 分层文件",
+      "desc": "把扁平插画拆成底色、阴影、高光、线稿和细节补偿五个像素图层。一次下载包含 PSD、独立透明 PNG 图层和预览图的 ZIP 文件。",
+      "meta": {
+        "title": "图片转 PSD 分层文件 — 插画图层导出 | Curify",
+        "description": "将扁平插画拆成五个像素图层，导出分层 PSD 和透明 PNG。适合插画，不恢复照片物体或可编辑文字。"
+      }
     }
   },
   "bilingual": {
@@ -2250,6 +2258,32 @@
       "title": "免费修图质量验收清单（英文）",
       "body": "提前约定必须保留的细节，逐项检查关键问题，并记录批量交付的验收结果。",
       "cta": "查看清单并下载"
+    }
+  },
+  "imageToPsd": {
+    "title": "图片转 PSD 分层文件",
+    "description": "把扁平插画拆成底色、阴影、高光、线稿和细节补偿五个像素图层。一次下载包含 PSD、独立透明 PNG 图层和预览图的 ZIP 文件。",
+    "metadata": {
+      "title": "图片转 PSD 分层文件 — 插画图层导出 | Curify",
+      "description": "将扁平插画拆成五个像素图层，导出分层 PSD 和透明 PNG。适合插画，不恢复照片物体或可编辑文字。"
+    },
+    "why": {
+      "title": "让插画拥有可继续编辑的图层",
+      "point1": "将线稿与底色分开，方便后续修改。",
+      "point2": "保留原始尺寸和透明背景。",
+      "point3": "同时交付图层 PNG 和拆分预览图。",
+      "point4": "纹理过于复杂或还原质量不达标时拒绝导出，不扣积分。"
+    },
+    "faq": {
+      "title": "常见问题",
+      "q1": "能恢复物体、文字或矢量图层吗？",
+      "a1": "不能。输出按视觉作用拆分的五个像素图层，文字仍是像素，底色合并在一个图层中。",
+      "q2": "可以改色吗？",
+      "a2": "可以在 FlatColor 中手动选区改色。建议先隐藏 Residue（细节补偿），它保留原始细节，可能覆盖下层的改色。",
+      "q3": "适合什么图片？",
+      "a3": "扁平插画和清晰线稿。支持 PNG、JPEG、WebP，不超过 400 万像素，单边不超过 4096 像素。照片和复杂纹理可能无法通过检查。",
+      "q4": "什么时候扣费？",
+      "a4": "仅成功导出后扣费。注册赠送积分不适用，可使用购买积分或付费套餐额度。"
     }
   }
 }

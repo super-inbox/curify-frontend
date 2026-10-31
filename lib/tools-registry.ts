@@ -32,6 +32,7 @@ export type ToolAction =
   // directions → generate the chosen visual. Bespoke client, rendered inline
   // on the tool page like the costume_tryon / product_video surfaces.
   | { type: "brand_direction" }
+  | { type: "image_to_psd" }
   | { type: "sticker_export" }
   | { type: "acrylic_export" }
   | { type: "packaging_mockup" }
@@ -138,6 +139,13 @@ const seoKeys = (k: string) => ({
 
 // ---- single source of truth ----
 export const TOOL_REGISTRY: ToolDef[] = [
+  {
+    id: "image-to-psd", slug: "image-to-psd", groupId: "design", status: "demo",
+    // Like the other design exports, submission is handled by its inline form.
+    job_type: "video_transcript", namespace: "imageToPsd", locales: ["en", "zh"],
+    action: { type: "image_to_psd" },
+    i18n: toolKeys("image_to_psd"), seo: seoKeys("image_to_psd"),
+  },
   {
     id: "ai-wedding-photo-generator", slug: "ai-wedding-photo-generator", groupId: "image", status: "demo",
     job_type: "video_transcript", namespace: "aiWeddingPhotoGenerator", locales: ["en"],
@@ -863,6 +871,7 @@ export const INLINE_TOOL_ACTIONS = new Set<ToolAction["type"]>([
   "brand_direction",
   // Design → manufacturing: all three POST to /design-tools/* and return real
   // factory files.
+  "image_to_psd",
   "sticker_export",
   "acrylic_export",
   "packaging_mockup",
@@ -929,7 +938,9 @@ export const TOOL_RELATED_TOOLS: Record<string, string[]> = {
   ],
   "style-transfer": ["character-sticker-sheet", "ecommerce-photo", "mockup"],
   // Design island → link back out, so the triangle is no longer closed.
+  "image-to-psd": ["die-cut-sticker-file", "acrylic-factory-export", "character-sticker-sheet"],
   "die-cut-sticker-file": [
+    "image-to-psd",
     "acrylic-factory-export",
     "character-sticker-sheet",
     "packaging-mockup",

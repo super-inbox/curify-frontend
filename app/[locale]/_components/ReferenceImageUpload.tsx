@@ -47,6 +47,7 @@ type Props = {
   /** Copy for the anonymous sign-in gate (the /images/upload endpoint requires
    *  auth, so anon users get a sign-in CTA instead of a dropzone that 401s). */
   signInLabel?: string;
+  signInHint?: string;
 };
 
 export default function ReferenceImageUpload({
@@ -63,6 +64,7 @@ export default function ReferenceImageUpload({
   required = false,
   className,
   signInLabel = "Sign in to upload an image",
+  signInHint = "Free to start.",
 }: Props) {
   const rawUser = useAtomValue(userAtom);
   const clientMounted = useAtomValue(clientMountedAtom);
@@ -169,8 +171,8 @@ export default function ReferenceImageUpload({
           >
             {signInLabel}
           </span>
-          {!compact && (
-            <span className="text-xs text-neutral-500">Free to start.</span>
+          {!compact && signInHint && (
+            <span className="text-xs text-neutral-500">{signInHint}</span>
           )}
         </button>
       ) : (

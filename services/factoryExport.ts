@@ -15,6 +15,7 @@ import { nanoGenerateService, type NanoProjectStatus } from "./nanoGenerate";
 // only guards lib/pricing.ts, so a second copy drifts silently. lib/pricing.ts
 // is the single source of truth for anything shown to a user.
 export {
+  IMAGE_TO_PSD_CREDITS,
   STICKER_EXPORT_CREDITS,
   ACRYLIC_EXPORT_CREDITS,
   PACKAGING_MOCKUP_CREDITS,
@@ -60,6 +61,11 @@ export interface FactoryExportResponse {
 }
 
 export const factoryExportService = {
+  async imageToPsd(data: { image_url: string; colors?: number }): Promise<FactoryExportResponse> {
+    return apiClient.request<FactoryExportResponse>("/design-tools/image-to-psd", {
+      method: "POST", body: JSON.stringify(data),
+    });
+  },
   async stickerExport(data: StickerExportRequest): Promise<FactoryExportResponse> {
     return apiClient.request<FactoryExportResponse>("/design-tools/sticker-export", {
       method: "POST",
