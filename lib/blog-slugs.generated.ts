@@ -69,6 +69,7 @@ export const BLOG_SLUGS: ReadonlySet<string> = new Set([
   "footballer-mbti-types",
   "france-soccer-poster-prompts",
   "ghost-mannequin-ai-guide",
+  "hotel-photo-editing-case-study",
   "how-to-dub-videos-naturally",
   "image-generation-model-comparison",
   "image-to-narrative-video",

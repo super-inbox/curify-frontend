@@ -239,6 +239,7 @@ export const KNOWN_BLOG_SLUGS: string[] = [
   "footballer-mbti-types",
   "france-soccer-poster-prompts",
   "ghost-mannequin-ai-guide",
+  "hotel-photo-editing-case-study",
   "how-to-dub-videos-naturally",
   "image-generation-model-comparison",
   "image-to-narrative-video",
