@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-10-21",
+  "date": "2026-11-05",
   "description": "Expected navigation, not a claim of tool capability; null means no automatic tool redirect.",
   "cases": [
     {
@@ -632,6 +632,30 @@
       "locale": "en",
       "expected": null,
       "kind": "content-or-topic-not-tool"
+    },
+    {
+      "query": "chinese costume tryon",
+      "locale": "en",
+      "expected": "/en/tools/chinese-costume-tryon",
+      "kind": "task"
+    },
+    {
+      "query": "convert image to layered psd",
+      "locale": "en",
+      "expected": "/en/tools/image-to-psd",
+      "kind": "task"
+    },
+    {
+      "query": "图片转分层PSD",
+      "locale": "zh",
+      "expected": "/zh/tools/image-to-psd",
+      "kind": "task"
+    },
+    {
+      "query": "image to psd examples",
+      "locale": "en",
+      "expected": null,
+      "kind": "content"
     }
   ]
 }
