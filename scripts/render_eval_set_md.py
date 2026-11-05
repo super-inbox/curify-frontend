@@ -8,7 +8,7 @@ companion doc stays in sync with the canonical JSON.
 import json
 from pathlib import Path
 
-REPO = Path('/Users/qqwjq/curify-frontend')
+REPO = Path(__file__).resolve().parents[1]
 SRC = REPO / 'scripts/configs/search_eval_set.json'
 OUT = REPO / 'docs/search-eval-set.md'
 
@@ -19,6 +19,8 @@ def main():
 
     lines = []
     lines.append('# Search Evaluation Query Set')
+    lines.append('')
+    lines.append('Tool navigation has a separate executable set: [`tool_search_eval_set.json`](../scripts/configs/tool_search_eval_set.json). Run `npm run eval:tools` for tool destinations, non-tool controls, locale fallbacks, dropdown discovery, and actual server redirects. The inspiration-richness set below does not evaluate tool routing.')
     lines.append('')
     lines.append(
         f'_Auto-generated from `scripts/configs/search_eval_set.json` '
