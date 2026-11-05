@@ -1054,7 +1054,7 @@ export const TOOL_PINNED_BLOGS: Record<string, string[]> = {
   // and `asl-video-translator` carries lastmod 2026-06-05, so the freshness sort
   // would never surface it in the 3 slots the component renders.
   "asl-video-translator": ["asl-video-translator", "asl-visual-study-guide"],
-  "product-video":              ["url-to-product-video"],
+  "product-video":              ["product-photos-to-feature-video", "url-to-product-video"],
   "ecommerce-photo":            ["url-to-product-video", "ghost-mannequin-ai-guide"],
   "ai-product-photo-generator": ["url-to-product-video", "ghost-mannequin-ai-guide"],
 };

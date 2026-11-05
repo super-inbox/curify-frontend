@@ -87,6 +87,7 @@ export const BLOG_SLUGS: ReadonlySet<string> = new Set([
   "phonics-flashcards-ai-templates",
   "portugal-soccer-poster-prompts",
   "preserve-facial-features-ai-generation",
+  "product-photos-to-feature-video",
   "programmatic-seo-dtc-visual-first",
   "red-carpet-ai-looks",
   "self-improving-multimodal-search",
