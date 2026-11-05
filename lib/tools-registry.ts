@@ -1049,12 +1049,12 @@ export const TOOL_PINNED_BLOGS: Record<string, string[]> = {
   "wedding-photo-editing": ["wedding-photo-retouching-cost"],
   // The closest post on editing-service pricing; a photographer weighing
   // outsourced twilight edits is weighing the same per-image cost.
-  "real-estate-photo-editing": ["wedding-photo-retouching-cost"],
+  "real-estate-photo-editing": ["hotel-photo-editing-case-study", "wedding-photo-retouching-cost"],
   // PINNED for the same reason: `video-translation-dubbing` is a deep category
   // and `asl-video-translator` carries lastmod 2026-06-05, so the freshness sort
   // would never surface it in the 3 slots the component renders.
   "asl-video-translator": ["asl-video-translator", "asl-visual-study-guide"],
-  "product-video":              ["url-to-product-video"],
+  "product-video":              ["product-photos-to-feature-video", "url-to-product-video"],
   "ecommerce-photo":            ["url-to-product-video", "ghost-mannequin-ai-guide"],
   "ai-product-photo-generator": ["url-to-product-video", "ghost-mannequin-ai-guide"],
 };

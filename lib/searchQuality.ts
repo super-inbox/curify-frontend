@@ -17,6 +17,10 @@ export function retrievalQuery(query: string): string {
 export function subjectGroups(query: string): string[][] {
   const q = query.toLowerCase();
   const groups: string[][] = [];
+  // Full-name searches only: “Dali” alone can legitimately mean the city.
+  const exact = q.trim().replace(/\s+/g, ' ');
+  if (/^salvador dal[ií]$/.test(exact)) groups.push(['salvador dalí', 'salvador dali']);
+  if (exact === 'damien hirst' || exact === 'flanderization') groups.push([exact]);
   if (/\bart move?ments\b/.test(q)) groups.push(['art movement', 'art history', '艺术流派', '艺术运动', '美术史']);
   if (/郁金香|\btulips?\b/.test(q)) groups.push(['郁金香', 'tulip']);
   if (/\b(filipino|tagalog)\b/.test(q)) groups.push(['filipino', 'tagalog']);

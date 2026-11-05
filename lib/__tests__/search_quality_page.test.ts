@@ -39,6 +39,18 @@ it('surfaces exact packaging and language-specific content',async()=>{
  const gown=await page('peacock dress');expect(gown.props.inspirations[0].id).toContain('peacock-couture');
 });
 
+it.each(['Salvador Dali', 'Salvador Dalí'])('finds the painting instead of Dali travel: %s', async q => {
+ const r=await page(q);
+ expect(r.props.inspirations[0]?.id).toContain('the-persistence-of-memory');
+ expect(r.props.inspirations.some((x:any)=>x.id.includes('travel'))).toBe(false);
+ expect(r.props.matchedTemplates.map((x:any)=>x.template_id)).toEqual(['template-classical-famous-painting-analysis-cartoon-infographic']);
+});
+it.each(['Damien Hirst', 'flanderization'])('does not substitute unrelated rewrite results for %s', async q => {
+ const r=await page(q);
+ expect(r.props.inspirations).toHaveLength(0);
+ expect(r.props.matchedTemplates).toHaveLength(0);
+});
+
 // Exercise the actual server redirect ordering, not only the shared matcher.
 import toolEval from '@/scripts/configs/tool_search_eval_set.json';
 for (const row of toolEval.cases) {

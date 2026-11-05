@@ -1,6 +1,11 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-10-21 (registry-backed tool navigation and persisted tool-query evaluation). Owner: jay. Update after any push that touches the threads below or changes priority order._
+_Last updated: 2026-11-05 (weekly search review). Owner: jay._
+
+## 2026-11-05 — weekly search review
+
+[Evidence, windows, decisions and release status](./content-drops/search-gap-2026-11-05.md). Full-name artist queries now retain their subject through rewrites; the existing Dalí painting also matches the unaccented spelling. Four content and four tool-navigation evaluation cases were added. No new images this cycle. Next review: recheck tile-click attribution and whether these fixes have deployed before measuring outcomes.
+
 
 ## 2026-10-21 — tool navigation audit
 
