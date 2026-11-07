@@ -1,6 +1,11 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-11-05 (weekly search review). Owner: jay._
+_Last updated: 2026-11-07 (complete zero-click quality audit). Owner: jay._
+
+## 2026-11-07 — full zero-click result-quality audit
+
+[Cycle summary](./content-drops/search-gap-2026-11-07.md) and [all-query ledger with thumbnail evidence](./search-audits/2026-11-07/review.md): 40 public queries reviewed, 6 privacy exceptions. Fixed task/help routing, observed subject drift and two hidden existing gallery matches; added one kite science example. Five remaining content briefs are explicitly not generated. Every future weekly cycle must audit all zero-click queries, not only frequent samples. The personal skill has been updated; its versioned snapshot is alongside the ledger.
+
 
 ## 2026-11-05 — weekly search review
 

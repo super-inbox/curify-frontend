@@ -1,4 +1,6 @@
-import { retrievalQuery, createSubjectMatcher, subjectGroups, sourceVideoUrl, matchesCuratedGallery } from "@/lib/searchQuality";
+import SearchTaskHelp from './SearchTaskHelp';
+import { searchHelpIntent } from '@/lib/searchTaskHelp';
+import { retrievalQuery, needsConcreteSubject, concreteSubjectText, createSubjectMatcher, subjectGroups, sourceVideoUrl, matchesCuratedGallery } from "@/lib/searchQuality";
 import VideoSourceChooser from "./VideoSourceChooser";
 import curatedGallery from "@/lib/generated/search-curated-gallery.json";
 import { withSearchAttribution } from "@/lib/search-attribution";
@@ -350,11 +352,14 @@ export default async function SearchPage({ params, searchParams }: Props) {
   const { locale } = await params;
   const { q = "", within = "", intent = "" } = await searchParams;
   const query = q.trim().toLowerCase();
+  const helpIntent = searchHelpIntent(q);
+  if (helpIntent) return <SearchTaskHelp kind={helpIntent} locale={locale} spanish={/^(hacer|generar) /i.test(q.trim())} />;
   const sourceUrl = sourceVideoUrl(q);
   if (sourceUrl) return <VideoSourceChooser sourceUrl={sourceUrl} locale={locale} />;
   const matchQuery = retrievalQuery(query);
   const hasSubjectConstraint = subjectGroups(query).length > 0;
   const acceptsSubject = createSubjectMatcher(query);
+  const requiresConcreteSubject = needsConcreteSubject(query);
   const toolHref = resolveToolDestination(q, locale);
   if (toolHref) redirect(withSearchAttribution(toolHref, q));
   const normalizedQuery = normalizeSearchQuery(q);
@@ -771,7 +776,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
     // able to satisfy "black friday"'s protected-phrase/subject check
     // just because it has no phrase concept of its own).
     for (const r of nanoInspiration as InspRecord[]) {
-      if (hasSubjectConstraint && !acceptsSubject(JSON.stringify([r.locales, r.search_aliases, r.params, r.tags]))) continue;
+      if (hasSubjectConstraint && !acceptsSubject(requiresConcreteSubject ? concreteSubjectText(r) : JSON.stringify([r.locales, r.search_aliases, r.params, r.tags]))) continue;
       // Per-inspiration blobs, computed unconditionally (both the
       // template-promoted and standard branches below need them --
       // V2-R3 mechanism A requires the template-promoted branch to be
@@ -1286,6 +1291,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
 
   const matchedTemplates = allFeedCards
     .filter((c) => matchedTemplateIdsAll.has(c.template_id))
+    .filter((c) => !requiresConcreteSubject || survivingInspTemplateIds.has(c.template_id))
     // within filter: keep only templates whose topics carry the within slug.
     .filter((c) => !effectiveWithin || (c.topics ?? []).includes(effectiveWithin))
     // intent filter: include when (a) template topics intersect cluster set OR
