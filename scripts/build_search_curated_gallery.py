@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-IDS = {1994022879051014400, 2026102001, 2026102002}
+IDS = {1994022879051014400, 2026102001, 2026102002, 4152, 750}
 
 def build():
     records = json.loads(Path('public/data/nanobanana.json').read_text())

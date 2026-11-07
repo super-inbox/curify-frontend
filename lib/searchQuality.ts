@@ -9,6 +9,11 @@ const aliases: Record<string, string> = {
   'tablero de presentación': 'industrial design presentation board',
   'art movments': 'art movements',
   cubism: 'cubism picasso',
+  kazahkstan: 'kazakhstan',
+  'weaather and seasons': 'weather and seasons',
+  llaveros: 'keychain keyring',
+  'reading about kite': 'kite',
+  '风筝': 'kite 风筝',
 };
 export function retrievalQuery(query: string): string {
   const key = query.toLowerCase().trim().replace(/\s+/g, ' ');
@@ -19,6 +24,24 @@ export function subjectGroups(query: string): string[][] {
   const groups: string[][] = [];
   // Full-name searches only: “Dali” alone can legitimately mean the city.
   const exact = q.trim().replace(/\s+/g, ' ');
+  // Evidence-bounded constraints from the full zero-click audit.
+  // Separate groups require BOTH the requested subject and output form.
+  const audited: Record<string, string[][]> = {
+    'glamour under the spotlight': [['glamour under the spotlight']],
+    'basketball rules': [['basketball', '篮球'], ['rules', '规则']],
+    'pizza box': [['pizza', '披萨'], ['box', 'packaging', '盒', '包装']],
+    'chinese costume': [['chinese', 'china', 'beijing', 'ming dynasty', 'qing dynasty', 'bai', 'buyi', 'tujia', 'hanfu', '中国', '汉服'], ['costume', 'robe', '服饰', '服装']],
+    'reading about kite': [['kite', '风筝']],
+    '风筝': [['kite', '风筝']],
+    'kazahkstan': [['kazakhstan', 'kazakh', '哈萨克']],
+    'kazakhstan': [['kazakhstan', 'kazakh', '哈萨克']],
+    'tajikistan': [['tajikistan', 'tajik', '塔吉克']],
+    'leggings': [['leggings', '瑜伽裤', '紧身裤']],
+    'llaveros': [['keychain', 'keyring', 'llavero', '钥匙扣']],
+    '徽章': [['badge', 'emblem', 'pin badge', '徽章']],
+    'weaather and seasons': [['season', '季节', '四季'], ['weather', '天气']],
+  };
+  if (audited[exact]) groups.push(...audited[exact]);
   if (/^salvador dal[ií]$/.test(exact)) groups.push(['salvador dalí', 'salvador dali']);
   if (exact === 'damien hirst' || exact === 'flanderization') groups.push([exact]);
   if (/\bart move?ments\b/.test(q)) groups.push(['art movement', 'art history', '艺术流派', '艺术运动', '美术史']);
@@ -68,4 +91,15 @@ export function matchesCuratedGallery(query: string, entry: { aliases?: string[]
   return (entry.aliases ?? []).some(alias => q === alias.toLowerCase() ||
     (/[^\x00-\x7F]/.test(alias) && q.includes(alias))) &&
     matchesSubject(query, JSON.stringify(entry));
+}
+
+
+/** For the audited subjects, generic alias/tag words are not proof that the
+ * depicted example matches. Check its identity, title and chosen parameters. */
+export function needsConcreteSubject(query: string): boolean {
+  return new Set(['pizza box', 'chinese costume', 'leggings', '徽章']).has(query.trim().toLowerCase());
+}
+export function concreteSubjectText(record: { id?: string; params?: unknown; locales?: unknown }): string {
+  const locales = record.locales && typeof record.locales === 'object' ? Object.values(record.locales) : [];
+  return JSON.stringify([record.id, record.params, locales.map((v: any) => [v?.title, v?.category])]);
 }
