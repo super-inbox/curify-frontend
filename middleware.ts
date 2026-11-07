@@ -1,3 +1,4 @@
+import { pinterestExampleRedirect } from "./lib/pinterestLanding";
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 import { NextResponse, type NextRequest } from "next/server";
@@ -137,6 +138,11 @@ export default function middleware(req: NextRequest) {
     redirectUrl.host = "www.curify-ai.com";
     return NextResponse.redirect(redirectUrl, { status: 308 });
   }
+
+  // Preserve the pinned image on legacy campaign links. Temporary so a stale
+  // cached mapping cannot permanently strand a future content revision.
+  const pinterestDestination = pinterestExampleRedirect(new URL(req.url), routing.locales);
+  if (pinterestDestination) return NextResponse.redirect(pinterestDestination, { status: 307 });
 
   // 2) Run i18n middleware
   const res = intlMiddleware(req);
