@@ -13,11 +13,17 @@
  */
 import { trackEvent } from "@/services/useTracking";
 import { useState } from "react";
+import { useAtomValue, useSetAtom } from "jotai";
+import { userAtom, drawerAtom, modalAtom, topUpContextAtom } from "@/app/atoms/atoms";
 import ReferenceImageUpload from "@/app/[locale]/_components/ReferenceImageUpload";
 import { useFactoryExport } from "@/services/useFactoryExport";
 import { factoryExportService, PACKAGING_MOCKUP_CREDITS } from "@/services/factoryExport";
 
 export default function PackagingMockupForm() {
+  const user = useAtomValue(userAtom);
+  const setDrawer = useSetAtom(drawerAtom);
+  const setModal = useSetAtom(modalAtom);
+  const setTopUpContext = useSetAtom(topUpContextAtom);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
   const [w, setW] = useState(117);
@@ -45,10 +51,20 @@ export default function PackagingMockupForm() {
       <p className="mt-1 text-xs text-neutral-500">
         Mockups aren&apos;t covered by free signup credits.
       </p>
+      <button type="button" className="mt-2 text-sm font-semibold text-purple-800 underline" onClick={() => {
+        trackEvent({ contentId: "paywall:packaging-mockup", contentType: "menu_link", actionType: "click" });
+        if (!user) { setDrawer("signin"); return; }
+        // No project exists yet. Do not imply that topping up auto-submits or
+        // quote the signup balance as eligible purchased credits.
+        setTopUpContext(null);
+        setModal("topup");
+      }}>Buy credits</button>
 
       <div className="mt-4">
         <ReferenceImageUpload
           variant="full"
+          required
+          signInHint="Sign in to upload. Generation requires eligible paid credits."
           label="Dieline"
           // Honest about the current limit rather than letting a .ai upload fail
           // silently: the image upload path does not accept vector files yet.
@@ -124,11 +140,18 @@ export default function PackagingMockupForm() {
       </p>
 
       {busy && <p className="mt-3 text-sm text-neutral-600">Rendering the folded box…</p>}
-      {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
+      {error && <p role="alert" className="mt-3 text-sm text-red-600">{error}</p>}
       {phase === "done" && resultUrl && (
-        <a href={resultUrl} className="mt-3 inline-block rounded-xl bg-neutral-900 px-5 py-2.5 text-sm font-bold text-white">
-          Download mockup →
-        </a>
+        <figure className="mt-4">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={resultUrl} alt="Generated packaging mockup — check folds, artwork and proportions before production" className="max-h-96 rounded-xl object-contain" />
+          <figcaption className="mt-2 text-sm text-neutral-600">Check folds, artwork and proportions. This is a visual mockup, not a manufacturing dieline.</figcaption>
+          <a href={resultUrl} target="_blank" rel="noopener noreferrer" onClick={() => {
+            trackEvent({ contentId: "download:click:packaging-mockup", contentType: "menu_link", actionType: "click" });
+          }} className="mt-3 inline-block rounded-xl bg-neutral-900 px-5 py-2.5 text-sm font-bold text-white">
+            Open full-size mockup to save →
+          </a>
+        </figure>
       )}
       {phase === "done" && !resultUrl && (
         <p className="mt-3 text-sm text-neutral-600">Done — the image is in your workspace.</p>
