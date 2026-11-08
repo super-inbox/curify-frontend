@@ -29,6 +29,7 @@ import ExampleRightColumn from "@/app/[locale]/(static)/nano-template/[slug]/exa
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import PromptRightColumn from "./PromptRightColumn";
 import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
+import { trackGenerationStage, useGenerationExposure } from "@/services/generationFunnel";
 import { useTracking } from "@/services/useTracking";
 import { useIsMobileLikeDevice } from "@/lib/device";
 import { toSlug } from "@/lib/nano_pure";
@@ -431,6 +432,11 @@ export default function CarouselClient(props: Props) {
   };
 
   // Per-slide URL used by share + footer link (the detail page url).
+  const canCustomize = mode === "template-example" && (
+    (props as TemplateExampleProps).templateAllowGeneration ||
+    (props as TemplateExampleProps).templateRequiresImageUpload
+  );
+  const customizeRef = useGenerationExposure<HTMLAnchorElement>("entry_view", String(slide?.id || ""), canCustomize);
   const detailPageUrl = useMemo(() => {
     if (!slide) return "";
     if (mode === "template-example") {
@@ -709,12 +715,14 @@ export default function CarouselClient(props: Props) {
               // Keep the selected example's image and parameter prefills. The
               // generic template loses that context, especially on mobile where
               // the inline generation sidebar is hidden.
-              href={(props as TemplateExampleProps).templateAllowGeneration
-                ? detailPageUrl
+              ref={customizeRef}
+              href={canCustomize
+                ? `${detailPageUrl}#customize`
                 : `/${locale}/nano-template/${(props as TemplateExampleProps).slug}`}
               onClick={(e) => {
                 e.stopPropagation();
-                if ((props as TemplateExampleProps).templateAllowGeneration) {
+                if (canCustomize) {
+                  trackGenerationStage("entry_click", String(slide.id));
                   track({
                     contentId: `carousel-customize:${slide.id}`.slice(0, 255),
                     contentType: "menu_link",
@@ -727,7 +735,7 @@ export default function CarouselClient(props: Props) {
               }}
               className="rounded-full border-2 border-purple-500 bg-white/90 px-5 py-2 text-sm font-bold text-purple-700 shadow backdrop-blur-sm hover:bg-white hover:border-purple-600"
             >
-              {(props as TemplateExampleProps).templateAllowGeneration
+              {canCustomize
                 ? tActions("remixThis")
                 : "Visit template"} →
             </Link>

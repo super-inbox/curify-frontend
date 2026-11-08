@@ -24,6 +24,7 @@ import { resizeToSocialBundle, resizeToAspect, sliceIntoGrid, makePrintReady, SO
 import { templatePacksService } from "@/services/templatePacks";
 import { projectService } from "@/services/projects";
 import { userAtom, clientMountedAtom, drawerAtom, modalAtom, topUpContextAtom } from "@/app/atoms/atoms";
+import { trackGenerationStage, useGenerationExposure } from "@/services/generationFunnel";
 import { useTracking } from "@/services/useTracking";
 import { IMAGE_GENERATION_CREDITS, CLEAN_MASTER_UNLOCK_CREDITS } from "@/lib/pricing";
 
@@ -142,6 +143,9 @@ export default function ReproduceWorkbench({
   const t = useTranslations("actionButtons");
   const { trackAction, track } = useTracking();
   const [user] = useAtom(userAtom);
+  const entryRef = useGenerationExposure<HTMLAnchorElement>("entry_view", trackingContentId, col1.mode !== "result" && (allowGeneration || requiresImageUpload));
+  const generateRef = useGenerationExposure<HTMLButtonElement>("cta_view", trackingContentId, col1.mode !== "result" && (allowGeneration || requiresImageUpload));
+  const editedTargets = useRef(new Set<string>());
   const [clientMounted] = useAtom(clientMountedAtom);
   const [, setDrawer] = useAtom(drawerAtom);
   const [, setModal] = useAtom(modalAtom);
@@ -449,6 +453,10 @@ export default function ReproduceWorkbench({
   const col3Span = resultMode ? "lg:col-span-8" : "lg:col-span-4";
 
   const onFormChange = (name: string, value: string) => {
+    if (form[name] !== value && !editedTargets.current.has(trackingContentId)) {
+      editedTargets.current.add(trackingContentId);
+      trackGenerationStage("params_edit", trackingContentId);
+    }
     clearWarning();
     setForm((prev) => ({ ...prev, [name]: value }));
   };
@@ -456,7 +464,7 @@ export default function ReproduceWorkbench({
   const handleCopyGenerate = async () => {
     try {
       await navigator.clipboard.writeText(filledPrompt || basePrompt);
-      trackAction(tracking, "generate");
+      trackAction(tracking, "copy");
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {}
@@ -637,6 +645,13 @@ export default function ReproduceWorkbench({
     <section className="rounded-3xl border border-neutral-200 bg-neutral-50/50 p-4 sm:p-6">
       {description ? <p className="sr-only whitespace-pre-line">{description}</p> : null}
 
+      {!resultMode && canGenerateInline && (
+        <a ref={entryRef} href="#customize"
+          onClick={() => trackGenerationStage("entry_click", trackingContentId)}
+          className="mb-4 flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white hover:bg-purple-700 lg:hidden">
+          <Wand2 className="h-4 w-4" /> {t("remixThis")}
+        </a>
+      )}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-stretch">
         {/* ── 1. SOURCE / YOUR IMAGE ────────────────────────────────── */}
         <div className={`flex flex-col ${col1Span}`}>
@@ -695,7 +710,7 @@ export default function ReproduceWorkbench({
               {/* (C) Larger source image; the copy + download-pack buttons were
                   removed and Share moved to the page H1 row. Only a loaded
                   project (result mode) keeps its Download here. */}
-              <div className="relative min-h-[460px] flex-1 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+              <div className="relative h-[280px] min-h-[280px] flex-none lg:h-auto lg:min-h-[460px] lg:flex-1 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
                 {col1.image}
               </div>
               {col1.mode === "result" && (
@@ -744,7 +759,7 @@ export default function ReproduceWorkbench({
 
         {/* ── 2. MAKE IT YOURS / PROMPT & GENERATE (hidden in result mode) ── */}
         {!resultMode && (
-        <div className={`flex flex-col ${col2Span}`}>
+        <div id="customize" tabIndex={-1} className={`scroll-mt-24 flex flex-col ${col2Span}`}>
           <div className={labelCls}>{col1.mode === "upload" ? "2 · Prompt & generate" : "2 · Make it yours"}</div>
           <div className="flex flex-1 flex-col gap-3">
             {parameters.length > 0 && (
@@ -946,6 +961,7 @@ export default function ReproduceWorkbench({
                   <>
                     <button
                       type="button"
+                      ref={generateRef}
                       onClick={handlePrimaryGenerate}
                       disabled={anyGenerating || needsImage || isUploadingImage}
                       className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-sm font-bold text-white hover:bg-purple-700 disabled:opacity-60"
