@@ -70,3 +70,66 @@ for (const row of toolEval.cases) {
    }
  });
 }
+
+it.each(['reading about kite', '风筝'])('finds the new educational kite example: %s', async q => {
+ const r=await page(q);
+ expect(r.props.inspirations[0]?.id).toContain('how-a-kite-flies-20261107');
+ expect(r.props.inspirations.every((x:any)=>x.id.includes('kite'))).toBe(true);
+});
+it('keeps basketball rules on the requested sport and format', async()=>{
+ const r=await page('basketball rules');
+ expect(r.props.inspirations.length).toBeGreaterThan(0);
+ expect(r.props.inspirations.every((x:any)=>x.id.includes('basketball') && x.id.includes('rules'))).toBe(true);
+});
+it.each(['pizza box', 'tajikistan', 'leggings'])('does not fill real gaps with other subjects: %s', async q=>{
+ const r=await page(q);expect(r.props.inspirations).toHaveLength(0);
+});
+it('limits Chinese costume examples to actual costumes',async()=>{
+ const r=await page('chinese costume');
+ expect(r.props.inspirations.length).toBeGreaterThan(0);
+ expect(r.props.inspirations.some((x:any)=>/baiji|panda|angelica|americas/.test(x.id))).toBe(false);
+});
+it('normalizes the observed weather typo without unrelated rewrites',async()=>{
+ const r=await page('weaather and seasons');
+ expect(r.props.inspirations.length).toBeGreaterThan(0);
+ expect(r.props.inspirations.some((x:any)=>/walter-white/.test(x.id))).toBe(false);
+});
+it('routes the legacy World Cup topic slug', async()=>{
+ await expect(page('wc-portugal')).rejects.toThrow('/topics/portugal-world-cup');
+});
+it.each([
+ ['my videos','workspace'], ['my workplace','workspace'],
+ ['hacer un video','video'], ['generar un video a partir de un link de diapositiva','slides'],
+ ['how long does it take to upload a video','upload'], ['translate','translate'], ['combine','combine'],
+ ['/Users/example/Pictures/input.jpg','local-file'],
+])('handles task/help intent without image search: %s',async(q,kind)=>{
+ const r=await page(q);expect(r.props.kind).toBe(kind);expect(r.props.inspirations).toBeUndefined();
+});
+
+it('surfaces an existing leggings gallery reference rather than unrelated retouching',async()=>{
+ const r=await page('leggings');
+ expect(r.props.galleryPrompts.map((x:any)=>x.id)).toContain(4152);
+ expect(r.props.inspirations).toHaveLength(0);
+});
+
+it('retrieves the exact existing gallery title instead of generic spotlight rewrites',async()=>{
+ const r=await page('glamour under the spotlight');
+ expect(r.props.galleryPrompts.map((x:any)=>x.id)).toContain(750);
+ expect(r.props.inspirations).toHaveLength(0);
+});
+
+// The saved review cases are executable, not a report-only list.
+import auditSet from '@/scripts/configs/search_quality_audit_20261107.json';
+type AuditCase = { query: string; required_id?: string; required_gallery_id?: number; exclude_subjects?: string[]; empty_examples?: boolean; help_kind?: string; redirect_path?: string };
+for (const c of auditSet.cases as AuditCase[]) {
+ it(`saved full-audit case: ${c.query}`, async()=>{
+   if (c.redirect_path) { await expect(page(c.query)).rejects.toThrow(c.redirect_path); return; }
+   const r=await page(c.query);
+   if (c.help_kind) { expect(r.props.kind).toBe(c.help_kind); return; }
+   const ids=(r.props.inspirations ?? []).map((x:any)=>x.id);
+   if (c.required_id) expect(ids).toContain(c.required_id);
+   if (c.empty_examples) expect(ids).toHaveLength(0);
+   if (c.required_gallery_id) expect(r.props.galleryPrompts.map((x:any)=>x.id)).toContain(c.required_gallery_id);
+   for (const excluded of c.exclude_subjects ?? []) expect(ids.some((id:string)=>id.includes(excluded))).toBe(false);
+ });
+}
