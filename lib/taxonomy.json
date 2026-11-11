@@ -2577,7 +2577,8 @@
         "template-warmup-routine",
         "template-watercolor-painting-tutorial-guide",
         "template-wine-variety-intro-infographic",
-        "template-yellow-themed-illustrated-journey-infographic"
+        "template-yellow-themed-illustrated-journey-infographic",
+        "template-asl-short-phrase-sequence"
       ]
     },
     "information-card": {
@@ -3517,6 +3518,9 @@
     "template-zhenhuan-mbti-character-analysis": [
       "insight",
       "quiz"
+    ],
+    "template-asl-short-phrase-sequence": [
+      "process"
     ]
   },
   "_content_styles_note": "Style axis (Round 2B, 2026-05-31). 4 sub-axes: mood, aesthetic, lighting, temporal. Each entry carries gallery_count from lib/generated/nanobanana_prompts_metadata.json — the demand signal from prompt-side usage. Sister to information_types (info-type axis) and template_subjects (subject axis). Per-template style tagging deferred — style is query-side vocabulary; templates that carry style do so via their own topics[] arrays.",
@@ -5715,6 +5719,12 @@
       "branding",
       "design",
       "mockups",
+      "posters"
+    ],
+    "template-asl-short-phrase-sequence": [
+      "asl",
+      "guides",
+      "language",
       "posters"
     ]
   },

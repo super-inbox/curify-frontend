@@ -8544,5 +8544,26 @@
         ]
       }
     }
+  },
+  "template-asl-short-phrase-sequence": {
+    "category": "ASL Kısa İfade Dizisi",
+    "description": "Amerikan İşaret Dili ile Seni seviyorum, Teşekkür ederim veya Lütfen ifadelerini görselleştirin.",
+    "title": "ASL Kısa İfade Dizisi | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Üç ifadeden birini seçin. Paneller ayrı işaretleri veya tek işaretin hareket aşamalarını gösterir; İngilizceyi kelime kelime çevirmez.",
+        "who": "Öğrenciler, aileler ve sınıfta görsel çalışma desteği için.",
+        "how": [
+          "Bir ifade seçin.",
+          "Posteri oluşturun; el şeklini, konumunu, yönünü ve hareketini kontrol edin.",
+          "Akıcı ASL kullanan bir kişinin videosuyla karşılaştırın; yapay zekâ görselleri profesyonel olarak onaylanmış eğitim değildir."
+        ],
+        "prompts": [
+          "Seni seviyorum",
+          "Teşekkür ederim",
+          "Lütfen"
+        ]
+      }
+    }
   }
 }

@@ -21613,5 +21613,48 @@
     "rank_score": 90,
     "og_image": "/generation-examples/ai-pet-portrait-generator.jpg",
     "base_rank_score": 90
+  },
+  {
+    "id": "template-asl-short-phrase-sequence",
+    "locales": {
+      "en": {
+        "base_prompt": "Create a landscape ASL illustrated study poster for \"{phrase}\". Use one consistent fictional adult signer in a plain teal shirt, ivory background, large visible hands and face, dark readable headings, numbered panels and coral movement arrows. Anatomically plausible hands, five digits per hand, no mirrored or contradictory poses. Follow ONLY the selected phrase instructions: I love you: three panels I, LOVE, YOU. I: dominant index points to own sternum. LOVE: both closed hands crossed over middle chest. YOU: dominant index points outward toward the addressed person. This is the three-sign phrase, not the single ILY handshape. Thank you: ONE sign in two moments, START and MOVE OUT. Dominant flat hand fingertips near lips, then move forward toward recipient; no puckered lips, no separate YOU sign. Please: ONE sign in three motion frames PLACE, CIRCLE, CONTINUE. Dominant flat palm against center chest, small clockwise circle from viewer perspective, fingers together; show consistent circular arrows without lifting palm. Use the selected English phrase as title. Label whether panels are separate signs or moments of one sign. Concise English captions only. Footer: Illustrated study aid • Compare with a fluent signer's video. Do not invent additional signs, translate arbitrary sentences word-for-word, or imply certification.",
+        "parameters": [
+          {
+            "name": "phrase",
+            "label": "ASL phrase",
+            "type": "select",
+            "options": [
+              "I love you",
+              "Thank you",
+              "Please"
+            ],
+            "placeholder": "I love you",
+            "default": "I love you"
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-asl-short-phrase-sequence-i-love-you-prev.jpg",
+    "topics": [
+      "language",
+      "asl",
+      "guides",
+      "posters",
+      "infographic",
+      "art-prints",
+      "wall-art",
+      "illustration",
+      "soft",
+      "playful",
+      "minimalist",
+      "modern",
+      "step-by-step-tutorial"
+    ],
+    "rank_score": 91,
+    "creation_date": "2026-11-11",
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "image_input": "none"
   }
 ]

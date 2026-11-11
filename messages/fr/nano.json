@@ -8544,5 +8544,26 @@
         ]
       }
     }
+  },
+  "template-asl-short-phrase-sequence": {
+    "category": "Séquence de phrases courtes en ASL",
+    "description": "Illustrez Je t’aime, Merci ou S’il vous plaît en langue des signes américaine.",
+    "title": "Séquence de phrases courtes en ASL | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Choisissez parmi trois expressions. Les cases montrent des signes distincts ou les phases d’un signe, sans traduction mot à mot.",
+        "who": "Pour les apprenants, les familles et les supports visuels en classe.",
+        "how": [
+          "Choisissez une expression.",
+          "Générez l’affiche et vérifiez la forme, la position, l’orientation et le mouvement des mains.",
+          "Comparez avec une vidéo d’une personne maîtrisant l’ASL ; ces illustrations IA ne sont pas certifiées professionnellement."
+        ],
+        "prompts": [
+          "Je t’aime",
+          "Merci",
+          "S’il vous plaît"
+        ]
+      }
+    }
   }
 }

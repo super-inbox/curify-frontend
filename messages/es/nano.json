@@ -8544,5 +8544,26 @@
         ]
       }
     }
+  },
+  "template-asl-short-phrase-sequence": {
+    "category": "Secuencia de frases cortas en ASL",
+    "description": "Ilustra Te quiero, Gracias o Por favor en lengua de señas americana.",
+    "title": "Secuencia de frases cortas en ASL | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Elige una de tres frases. Los paneles muestran señas distintas o fases de una sola seña, no una traducción palabra por palabra.",
+        "who": "Para estudiantes, familias y apoyo visual en clase.",
+        "how": [
+          "Selecciona una frase.",
+          "Genera el póster y revisa forma, ubicación, orientación y movimiento de las manos.",
+          "Compara con un vídeo de una persona que domine ASL; las ilustraciones de IA no tienen certificación profesional."
+        ],
+        "prompts": [
+          "Te quiero",
+          "Gracias",
+          "Por favor"
+        ]
+      }
+    }
   }
 }

@@ -8587,5 +8587,26 @@
         ]
       }
     }
+  },
+  "template-asl-short-phrase-sequence": {
+    "category": "ASL Short Phrase Sequence",
+    "description": "Create a visual sequence for I love you, Thank you or Please in American Sign Language.",
+    "title": "ASL Short Phrase Sequence | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Choose one of three supported phrases. Panels show separate signs or the movement phases of one sign; they do not translate English word by word.",
+        "who": "For learners, families and classroom visual study aids.",
+        "how": [
+          "Select a phrase.",
+          "Generate the poster and inspect handshape, location, orientation and movement.",
+          "Compare with a fluent signer’s video; AI illustrations are not professionally certified instruction."
+        ],
+        "prompts": [
+          "I love you",
+          "Thank you",
+          "Please"
+        ]
+      }
+    }
   }
 }
