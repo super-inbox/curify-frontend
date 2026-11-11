@@ -21656,5 +21656,56 @@
     "base_rank_score": 90,
     "allow_generation": true,
     "image_input": "none"
+  },
+  {
+    "id": "template-middle-eastern-lifestyle-gift-box",
+    "locales": {
+      "en": {
+        "base_prompt": "Create a premium 4:3 product photograph of the Middle Eastern lifestyle gift set {collection_name}. Use {visual_direction} across a large upright rigid gift box, a handled tumbler, a rolled plush textile with a paper band, a lidded fragrance candle and matching carton, boxed soap, a folded greeting card and a small charm. Use realistic materials, balanced studio lighting and a coordinated graphic system. Keep every item fully in frame. Print only {collection_name} on the outer box.",
+        "parameters": [
+          {
+            "name": "collection_name",
+            "label": "Collection name",
+            "type": "text"
+          },
+          {
+            "name": "visual_direction",
+            "label": "Patterns, colors and finish",
+            "type": "text"
+          }
+        ]
+      },
+      "zh": {
+        "base_prompt": "为「{collection_name}」创作一张 4:3 横版中东风格生活礼盒商业效果图。将{visual_direction}统一应用于立式硬质外盒、带把手保温杯、织物腰封、带盖香氛蜡烛及其纸盒、香皂包装、折叠贺卡和小挂件。采用写实材质和柔和棚拍光线，完整展示套装所有单品。外盒只印系列名「{collection_name}」。",
+        "parameters": [
+          {
+            "name": "collection_name",
+            "label": "系列名称",
+            "type": "text"
+          },
+          {
+            "name": "visual_direction",
+            "label": "纹样、配色与表面工艺",
+            "type": "text"
+          }
+        ]
+      }
+    },
+    "og_image": "/content-drops/middle-east-gift-boxes-20261111/emerald-nights-prev.jpg",
+    "topics": [
+      "design",
+      "product",
+      "packaging",
+      "giftbox",
+      "mockups"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "creation_date": "2026-11-11",
+    "allow_generation": true,
+    "image_input": "optional",
+    "use_cases": [
+      "for-designers"
+    ]
   }
 ]
