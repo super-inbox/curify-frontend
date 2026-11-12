@@ -88,7 +88,7 @@ const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
   // deliberately gave this post NO override, so it fell through to the
   // `video-translation-dubbing` default and sent readers to /tools/video-dubbing.
   // That call was made when /tools/asl-video-translator was a paid demo landing
-  // over a placeholder job_type. It is now a live tool, free since 2026-08-29,
+  // over a placeholder job_type. It is now a live, credit-priced tool,
   // and it is the site's largest single click source — 314 of 786 site clicks in
   // the 28d to 09-15, at 14.4% CTR and position 8.5. Sending its own readers to a
   // different tool is no longer defensible.
@@ -102,7 +102,7 @@ const BLOG_POST_OVERRIDES: Record<string, OverrideCTA[]> = {
       id: "asl-translate-video",
       label: "Translate an ASL video",
       description:
-        "Free, no credits, no sign-in gate on the read. Output is AI-generated and labelled unverified — check it before you rely on it.",
+        "Generate an experimental English draft from an ASL video. Check current credit pricing on the tool page, and have a fluent ASL reviewer verify the result.",
       href: "/tools/asl-video-translator",
       Icon: Wrench,
     },
