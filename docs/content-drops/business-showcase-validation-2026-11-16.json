@@ -1,0 +1,180 @@
+{
+  "date": "2026-11-16",
+  "environment": "local preview only",
+  "http": [
+    {
+      "path": "/business",
+      "status": 200,
+      "canonical": [
+        "https://www.curify-ai.com/business"
+      ],
+      "robots": [],
+      "works": 12,
+      "cases": 3,
+      "videos": 5,
+      "no_autoplay": true,
+      "work_inquiries": 15
+    },
+    {
+      "path": "/zh/business",
+      "status": 200,
+      "canonical": [
+        "https://www.curify-ai.com/zh/business"
+      ],
+      "robots": [],
+      "works": 12,
+      "cases": 3,
+      "videos": 5,
+      "no_autoplay": true,
+      "work_inquiries": 15
+    },
+    {
+      "path": "/ja/business",
+      "status": 200,
+      "canonical": [
+        "https://www.curify-ai.com/business"
+      ],
+      "robots": [],
+      "works": 12,
+      "cases": 3,
+      "videos": 5,
+      "no_autoplay": true,
+      "work_inquiries": 15
+    },
+    {
+      "path": "/blog/asl-video-translator",
+      "status": 200,
+      "canonical": [
+        "https://www.curify-ai.com/blog/asl-video-translator"
+      ],
+      "robots": [],
+      "task_comparison": true,
+      "no_false_free_cta": true
+    },
+    {
+      "path": "/zh/blog/asl-video-translator",
+      "status": 200,
+      "canonical": [
+        "https://www.curify-ai.com/zh/blog/asl-video-translator"
+      ],
+      "robots": [],
+      "task_comparison": true,
+      "no_false_free_cta": true
+    }
+  ],
+  "media": [
+    {
+      "url": "http://localhost:3016/business/chair-poster.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "http://localhost:3016/business/chair-watermarked.mp4",
+      "status": 200,
+      "type": "video/mp4"
+    },
+    {
+      "url": "http://localhost:3016/business/fabric-poster.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "http://localhost:3016/business/fabric-watermarked.mp4",
+      "status": 200,
+      "type": "video/mp4"
+    },
+    {
+      "url": "http://localhost:3016/business/kyoto-poster.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "http://localhost:3016/business/kyoto-watermarked.mp4",
+      "status": 200,
+      "type": "video/mp4"
+    },
+    {
+      "url": "http://localhost:3016/business/matcha-poster.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "http://localhost:3016/business/matcha-watermarked.mp4",
+      "status": 200,
+      "type": "video/mp4"
+    },
+    {
+      "url": "http://localhost:3016/service-examples/jewelry-before-after.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "http://localhost:3016/service-examples/sandals-before-after.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "http://localhost:3016/service-examples/womens-shoe-restoration-en.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://cdn.curify-ai.com/case-studies/zeelum-20261107/zeelum-poster.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://cdn.curify-ai.com/case-studies/zeelum-20261107/zeelum-v10-silent.mp4",
+      "status": 200,
+      "type": "video/mp4"
+    },
+    {
+      "url": "https://cdn.curify-ai.com/images/nano_insp/template-hsk-bilingual-reading-text-lesson-poster-hsk2-less-spicy-please-watercolor-v2.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://cdn.curify-ai.com/images/nano_insp/template-hsk-bilingual-reading-text-lesson-poster-hsk2-my-first-weekend-in-beijing-watercolor-v2.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://cdn.curify-ai.com/images/nano_insp/template-hsk-bilingual-reading-text-lesson-poster-hsk3-an-evening-in-shanghai-watercolor-v2.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://cdn.curify-ai.com/images/real_estate/hotel-room-before-after.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://cdn.curify-ai.com/images/real_estate/virtual-twilight-before-after.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://cdn.curify-ai.com/images/search-quality-20261020/magnetic-box.jpg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "https://www.curify-ai.com/nano-template/hsk-bilingual-reading-text-lesson-poster",
+      "status": 200,
+      "type": "text/html; charset=utf-8"
+    }
+  ],
+  "browser": {
+    "desktop_width": 1280,
+    "mobile_width": 390,
+    "horizontal_overflow": false,
+    "education_filter_visible_work": [
+      "hsk-series"
+    ],
+    "zeelum_contact_prefill": true,
+    "zeelum_video_playback": true,
+    "inquiry_sent": false
+  },
+  "typecheck": "passed",
+  "production_deployed": false
+}

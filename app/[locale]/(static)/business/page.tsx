@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import Portfolio from './Portfolio';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
@@ -51,20 +51,13 @@ export default async function BusinessPage({ params }: Props) {
   return (
     <BusinessTracking lang={lang}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }} />
-      <section className="grid items-center gap-10 rounded-3xl border border-purple-100 bg-gradient-to-br from-purple-50 via-white to-amber-50 p-6 sm:p-10 lg:grid-cols-[1.3fr_1fr]">
-        <div>
-          <p className="text-xs font-bold tracking-widest text-purple-700">{c.eyebrow}</p>
-          <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">{c.title}</h1>
-          <p className="mt-5 text-xl font-semibold text-neutral-800">{c.heading}</p>
-          <p className="mt-5 text-lg leading-relaxed text-neutral-600">{c.intro}</p>
-          {capture('hero')}
-          <a data-business-event="examples" href="#examples" className="mt-5 inline-block text-sm font-semibold text-purple-700 underline underline-offset-4">{c.examplesCta} ↓</a>
-        </div>
-        <figure className="overflow-hidden rounded-2xl bg-white shadow-lg">
-          <Image src="/business/fabric-poster.jpg" alt={c.samples[0][1]} width={960} height={540} priority className="aspect-video w-full object-cover" />
-          <figcaption className="p-5 text-sm leading-relaxed text-neutral-600">{c.samples[0][2]}</figcaption>
-        </figure>
-      </section>
+      <header className="max-w-4xl border-b border-neutral-200 pb-10">
+        <p className="text-xs font-bold tracking-[0.2em] text-purple-700">{c.eyebrow}</p>
+        <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">{c.title}</h1>
+        <p className="mt-5 max-w-2xl text-lg leading-8 text-neutral-600">{c.intro}</p>
+        <div className="mt-6 flex flex-wrap gap-4"><a href="#partnership" data-business-event="brief-link" className="rounded-full bg-purple-700 px-6 py-3 font-semibold text-white">{c.cta} →</a><a data-business-event="examples" href="#examples" className="rounded-full border border-neutral-300 px-6 py-3 font-semibold">{c.examplesCta} ↓</a></div>
+      </header>
+      <Portfolio lang={lang} />
 
       <section className="mt-20" aria-labelledby="sectors-title">
         <h2 id="sectors-title" className="text-3xl font-bold tracking-tight">{c.sectorsTitle}</h2>
@@ -77,22 +70,6 @@ export default async function BusinessPage({ params }: Props) {
               <p className="mb-6 mt-3 text-sm leading-7 text-neutral-600">{description}</p>
               <Link data-business-event={`sector:${id}`} locale={lang} href={{ pathname: '/contact', query: { subject: `${c.cta}: ${title}`, source: `business:${lang}:${id}` } }} className="mt-auto text-sm font-semibold text-purple-700 hover:underline">{c.sectorCta} →</Link>
             </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="examples" className="mt-20 scroll-mt-28" aria-labelledby="examples-title">
-        <h2 id="examples-title" className="text-3xl font-bold tracking-tight">{c.samplesTitle}</h2>
-        <p className="mt-3 max-w-3xl leading-relaxed text-neutral-600">{c.samplesIntro}</p>
-        <div className="mt-8 grid items-start gap-6 md:grid-cols-2">
-          {c.samples.map(([id, title, description]) => (
-            <figure key={id} className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
-              <video data-business-video={id} controls playsInline preload="none" poster={`/business/${id}-poster.jpg`} aria-label={title} className="aspect-video w-full bg-neutral-950 object-contain">
-                <source src={`/business/${id}-watermarked.mp4`} type="video/mp4" />
-                <a href={`/business/${id}-watermarked.mp4`}>{title}</a>
-              </video>
-              <figcaption className="p-6"><h3 className="text-xl font-bold">{title}</h3><p className="mt-3 text-sm leading-7 text-neutral-600">{description}</p></figcaption>
-            </figure>
           ))}
         </div>
       </section>

@@ -44,7 +44,7 @@ const base = process.env.BUSINESS_TEST_URL || 'http://localhost:3001';
       await waitEvent(`business:${lang}:enterprise`, 'click');
       await page.locator('footer a[href$="/business"]').click();
       await waitEvent('footer:business', 'click');
-      const video = page.locator('video').first();
+      const video = page.locator('video[data-business-video=fabric]');
       await video.evaluate(v => { v.muted = true; return v.play(); });
       await waitEvent(`business:${lang}:video:fabric`, 'video_play');
       await video.evaluate(v => { v.pause(); return v.play(); });
@@ -62,11 +62,18 @@ const base = process.env.BUSINESS_TEST_URL || 'http://localhost:3001';
       await form.locator('button[type=submit]').click();
       await waitEvent(`business:${lang}:brief`, 'click', 2);
       await waitEvent(`contact:submit:business:${lang}:brief`, 'click');
-      const hero = page.locator('#business-page form').first();
-      await hero.locator('input[type=email]').fill('business-test@example.com');
-      await hero.locator('button[type=submit]').click();
-      await waitEvent(`business:${lang}:hero`, 'click');
-      await waitEvent(`contact:submit:business:${lang}:hero`, 'click');
+      const workLinks = page.locator('#examples a[data-business-event$=":enquiry"]');
+      assert.equal(await workLinks.count(), 12);
+      for (const link of await workLinks.all()) {
+        const url = new URL(await link.getAttribute('href'), base);
+        const id = url.searchParams.get('work_id');
+        const category = url.searchParams.get('category');
+        assert.ok(id && category);
+        assert.equal(url.searchParams.get('source'), `business:${lang}:work_id=${id}:category=${category}`);
+        assert.ok(url.searchParams.get('subject'));
+      }
+      await page.locator('#work-zeelum a[data-business-event$=":enquiry"]').click();
+      await waitEvent(`business:${lang}:work:zeelum:enquiry`, 'click');
       for (const lead of leads) {
         assert.ok(lead.source.startsWith(`business:${lang}:`));
         assert.ok(lead.content.includes('utm_campaign=business-qa'));

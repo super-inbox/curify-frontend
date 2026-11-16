@@ -97,3 +97,7 @@ Inbound tests wait for full page load: the existing homepage ToolsGrid lock icon
 produces a hydration mismatch and React regenerates that tree. This warning was
 observed outside the new business page; the homepage entry event passes after
 recovery. No ToolsGrid changes were made as part of this work.
+
+## 2026-11-16 — Portfolio-first revision
+
+Current design/provenance: [selected works and SEO ownership](content-drops/business-showcase-2026-11-16.md). Hero now links to the brief (`brief-link` click event, distinct from form attempt); the inline hero form was removed. Twelve works and three process walkthroughs precede the retained nine sectors. Work inquiries encode `business:<lang>:work_id=<id>:category=<primary-category>` in existing source, plus localized subject. Filters use `business:<lang>:filter:<id>`; work clicks use `business:<lang>:work:<id>:enquiry`; case clicks use `business:<lang>:case:<id>:enquiry`. All are menu_link/click. Five videos retain first-playing tracking. Historical validation above refers to the former layout. Updated regression script preserves mocked sends; this session validates browser prefill and SSR, not backend delivery.
