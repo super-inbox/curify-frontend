@@ -133,3 +133,14 @@ for (const c of auditSet.cases as AuditCase[]) {
    for (const excluded of c.exclude_subjects ?? []) expect(ids.some((id:string)=>id.includes(excluded))).toBe(false);
  });
 }
+
+it.each([
+ ['i love you in asl','i-love-you'],
+ ['thank you in asl','thank-you'],
+ ['please in asl','please'],
+ ['我爱你手语','i-love-you'],
+ ['asl short sentences',''],
+])('finds ASL phrase study examples: %s',async(q,suffix)=>{
+ const r=await page(q);
+ expect(r.props.inspirations.slice(0,10).some((x:any)=>x.id.startsWith('template-asl-short-phrase-sequence') && x.id.endsWith(suffix))).toBe(true);
+});

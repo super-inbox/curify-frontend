@@ -870,3 +870,7 @@ Ranked by how much each unblocks downstream. Reprioritized 2026-05-19 after runn
 ---
 
 _This doc is the orchestration layer for search + content work. Update it when a thread's priority changes, when a new thread emerges, or after a push that affects multiple threads simultaneously._
+
+### ASL short phrases content drop (2026-11-11)
+
+Added `template-asl-short-phrase-sequence` with I love you, Thank you and Please examples, ten locale descriptions, ASL taxonomy and phrase-level search aliases. The selector distinguishes separate signs from movement phases and restricts generation to these supported phrases. Five persistent search-page regressions check top-ten discovery. Six CDN assets verified; metadata awaits merge/deployment from the existing content branch. This user-requested drop is not a full analytics review. See [drop report](content-drops/asl-short-phrases-2026-11-11.md).
