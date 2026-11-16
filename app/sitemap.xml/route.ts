@@ -111,6 +111,7 @@ const TOOL_LASTMOD_OVERRIDES: Record<string, string> = Object.fromEntries(
     .map((slug) => [`/tools/${slug}`, "2026-10-12T00:00:00.000Z"]),
 );
 
+TOOL_LASTMOD_OVERRIDES["/tools/asl-video-translator"] = "2026-11-16T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/wedding-photo-editing"] = "2026-10-21T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/ai-wedding-photo-generator"] = "2026-10-25T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/ai-pet-portrait-generator"] = "2026-10-25T00:00:00.000Z";

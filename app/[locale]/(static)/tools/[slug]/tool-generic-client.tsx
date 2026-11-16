@@ -199,9 +199,14 @@ export default function ToolGenericClient({
             ))}
           </div>
           {slug === "asl-video-translator" && (locale === "en" || locale === "zh") && (
-            <a className="mt-5 inline-block underline" href="/blog/building-asl-video-translator">
-              {locale === "zh" ? "工程记录（英文）：ASL 翻译实验、失败案例与评估方法" : "Engineering notes: ASL translation experiments, failures and evaluation"}
-            </a>
+            <div className="mt-5 flex flex-col items-start gap-3">
+              <a className="underline" href={locale === "zh" ? "/zh/blog/asl-video-translator" : "/blog/asl-video-translator"}>
+                {locale === "zh" ? "ASL 视频翻译指南：选择适合任务的方法" : "ASL video translation guide: choose the right approach for your task"}
+              </a>
+              <a className="underline" href="/blog/building-asl-video-translator">
+                {locale === "zh" ? "工程记录（英文）：ASL 翻译实验、失败案例与评估方法" : "Engineering notes: ASL translation experiments, failures and evaluation"}
+              </a>
+            </div>
           )}
         </section>
       )}

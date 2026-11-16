@@ -1002,7 +1002,11 @@
       "q1": "Is the ASL video translator available today?",
       "a1": "Yes. It costs {credits} credits per minute, and it is experimental: the translation is produced by a general-purpose vision model, not a model trained on sign language, and it is frequently wrong — sometimes in ways that read as fluent and confident. Treat the output as a draft to check, not a finished translation, and never publish it as an accessibility caption without review.",
       "q2": "Does it work on languages other than ASL?",
-      "a2": "The current demo targets American Sign Language specifically. Sign languages are not mutually intelligible — BSL (British), Auslan (Australian), and LSF (French) have different grammars and vocabularies. We are scoping additional sign languages based on demand from early-access signups."
+      "a2": "The current demo targets American Sign Language specifically. Sign languages are not mutually intelligible — BSL (British), Auslan (Australian), and LSF (French) have different grammars and vocabularies. We are scoping additional sign languages based on demand from early-access signups.",
+      "q3": "What should I check before uploading an ASL video?",
+      "a3": "Preview the full clip before uploading. Keep both hands, the face and upper body in frame throughout the signing; avoid cuts that interrupt a sentence and crops that hide hand movement. If the recording is unclear, use a clearer source rather than guessing missing signs. A clear recording helps a reviewer check the result, but does not guarantee that the AI will translate it correctly.",
+      "q4": "How should I review an AI ASL translator’s English output?",
+      "a4": "Compare the English draft with the original video in short sections. Ask a fluent ASL reviewer to check who is doing what, names and numbers, questions and negation, and sentence timing. Mark uncertain passages for review rather than filling them in from the English context. Natural-sounding English alone is not evidence that the signing was understood."
     },
     "deep": {
       "what": {
@@ -1030,7 +1034,7 @@
       }
     },
     "workflow": {
-      "title": "ASL video translation: from upload to reviewed text",
+      "title": "ASL to English translator: from video upload to reviewed text",
       "inputTitle": "1. Upload an ASL video",
       "input": "Use footage with the signer’s hands and face clearly visible. This reads American Sign Language; it is not audio transcription or English-to-sign generation.",
       "outputTitle": "2. Get an English draft",
