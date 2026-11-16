@@ -1,42 +1,26 @@
 # Curify product workstreams — index
 
-_Last updated: 2026-10-21 (consumer SEO target index added; earlier workstream snapshots retain their original dates). Update when a workstream doc ships a major section, a POD-tagged item lands, or the overall reframe direction shifts._
+_Last updated: 2026-11-16. SEO 与 Growth Monetization 分开；产品分析复用原文档，Growth Analytics 已迁移。_
 
-The canonical pointer for the four **product** workstreams (search, tools, growth, vertical use-cases). Companion outbound/GTM workstreams index lives separately at `~/curify-gtm/gtm_tools/INDEX.md`.
+## 当前工作流入口
 
-
-## SEO research and GTM execution
-
-Canonical strategy, KD, analytics and outreach records moved to [curify-gtm SEO index](https://github.com/super-inbox/curify-gtm/blob/codex/seo-authority-2026-10-21/docs/seo/README.md). Production pages, resources, metadata and technical implementation remain here.
-
-## Scope
-
-Four product workstreams that converge under the **2026-06-26 POD / Merch Design strategic reframe** — recorded in the POD reframe section of `workstream-vertical-use-cases.md`, which now carries a 2026-08-12 gating status:
-
-- **A. Search & Content** — demand surface, intent routing, daily content drop, niche discovery
-- **B. Tools (image + video)** — generic tools the platform ships (merch-grade design + mockup studio under the POD lens)
-- **C. SEO + SMM + Growth Analytics** — programmatic discoverability, social distribution, conversion analytics
-- **D. Vertical Use Cases** — persona-shaped packaging that turns horizontal capability into specific buyer solutions
-
-Funnel under POD: *A finds demand → B produces design → C distributes & ranks → D packages for a named buyer with first-$100-sale path.*
-
-> **2026-08-12 reality check on that funnel.** The D leg was measured for the first time
-> and it does not currently function as described: `/use-cases/*` draws ~2 human visits/day
-> in total, 0 GSC clicks, and no first-$100-sale path was ever shipped (POD-D9). All ten
-> persona pages combined rank 12th of site routes. The D-workstream doc's 2026-08-12
-> section carries the evidence and a five-item P0 reset; POD-D1..D4 are gated on a demand
-> signal rather than queued. Read that before scoping anything in D.
-
----
-
-## The four workstream docs
-
-| # | Workstream | Doc | Repo |
+| # | Workstream | Canonical entry | 职责 |
 |---|---|---|---|
-| A | Search & Content | [`search-and-content.md`](search-and-content.md) | curify-frontend |
-| B | Tools & Engineering | [`workstream-tooling-and-engineering.md`](../../curify-studio/docs/workstream-tooling-and-engineering.md) | curify-studio |
-| C | SEO + SMM + Growth | [GTM SEO index](https://github.com/super-inbox/curify-gtm/blob/codex/seo-authority-2026-10-21/docs/seo/README.md) | curify-gtm |
-| D | Vertical Use Cases | [`workstream-vertical-use-cases.md`](workstream-vertical-use-cases.md) | curify-frontend |
+| A | Search & Content | [Search & Content](search-and-content.md) | 站内检索、内容供给、意图路由及内容缺口修复 |
+| B | Tools & Engineering | [Tools & Engineering](../../curify-studio/docs/workstream-tooling-and-engineering.md) | 工具能力、生成链路与工程实现 |
+| C | SEO | [SEO index](../../curify-gtm/docs/seo/README.md) | 关键词、抓取收录、排名、搜索 CTR、SEO 内容、内链与权威引用 |
+| D | Vertical Use Cases | [Vertical Use Cases](workstream-vertical-use-cases.md) | 场景与客群方案、需求和交付能力映射 |
+| E | Growth Monetization | [Growth Monetization index](../../curify-gtm/docs/growth-monetization/README.md) | 全渠道流量、产品/页面分析、激活留存、询盘与付费、非 SEO 页面/功能优化和上线验收 |
+
+Growth Monetization 复用 [既有变现与转化文档](../../curify-studio/docs/monetization-conversion.md)、[DAU/激活分析](../../curify-studio/docs/dau-activation-analysis-2026-06-12.md)、[用户再参与分析](../../curify-studio/docs/reengagement-2026-06-01.md)，并承接原 Growth Analytics 的渠道、模块、留存、站内搜索和页面策略分析。历史变现 backlog 的暂停状态保留，不因迁移自动恢复。
+
+同一页面按优化目标归属：搜索获客由 SEO 负责，用户到站后的使用、询盘和付费由 Growth Monetization 负责；具体检索/工具实现分别交接 A/B。每个上线任务需记录生产版本、验证结果和观察窗口，埋点或诊断完成不等于用户可见功能上线。
+
+SMM 发布、外联等 GTM 执行继续使用 [GTM index](../../curify-gtm/gtm_tools/INDEX.md)；渠道转化分析归 Growth Monetization。生产页面、翻译和实现留在 frontend，私有分析与证据留在 GTM/studio。
+
+## 历史记录阅读规则
+
+下方保留原四工作流、POD 编号及历史进展，避免丢失决策与交付依据。历史 “C / SEO + SMM + Growth” 是旧归属；当前任务按上表拆分，旧编号不重编。历史状态和优先级不能直接视为今天的待办；当前 Growth P0 以新索引为准。
 
 Other product workstream docs (single-track, not part of the four):
 - [`workstream-agentic-image-rong.md`](workstream-agentic-image-rong.md) — agentic image (rong)
@@ -89,7 +73,7 @@ none of them measurable:
 
 ---
 
-## Current progress (recent ships — most recent first)
+## Historical progress (dated snapshots; current ownership is above)
 
 ### A. Search & Content
 - **2026-09-02** **Scene-enhancement template shipped** — `template-studio-digital-backdrop-scene`
@@ -119,7 +103,7 @@ none of them measurable:
 - **Partnership backlog**: Fourthwall Storefront API spike (held pending Eli reply)
 - **Docked**: ASL captioning (no viable tech path — memory `project_asl_captioning_demand`)
 
-### C. SEO + SMM + Growth
+### C. Historical SEO + SMM + Growth
 - **2026-09-19** **Image readout is a NEGATIVE; fashion cluster CLOSED; two P0 builds falsified by
   curl** — [`seo-cluster-strategy-2026-09-19.md`](seo-cluster-strategy-2026-09-19.md). The 09-01
   image ship moved per-day impressions 680 → 2,678 but **position 41.2 → 40.2 and CTR 0.205% →
@@ -286,7 +270,7 @@ none of them measurable:
 
 ---
 
-## Cross-cutting docs (referenced by multiple workstreams)
+## Cross-cutting docs (current ownership)
 
 | Doc | Workstreams | Purpose |
 |---|---|---|
@@ -296,16 +280,16 @@ none of them measurable:
 | [`blog-quality.md`](blog-quality.md) | C | Blog quality improvement track (P0/P1 telltales) |
 | [`blog-writing-guidelines.md`](blog-writing-guidelines.md) | C | Authoring conventions |
 | [`blogs-hub-and-spoke-architecture.md`](blogs-hub-and-spoke-architecture.md) | C | Hub/spoke blog architecture |
-| [`onboarding-runbook.md`](onboarding-runbook.md) | D, C | Onboarding flow runbook |
-| [`key-actions-strategy.md`](key-actions-strategy.md) | C, D | Conversion key-actions framework |
+| [`onboarding-runbook.md`](onboarding-runbook.md) | E, D | Onboarding flow runbook |
+| [`key-actions-strategy.md`](key-actions-strategy.md) | E, D | Conversion key-actions framework |
 | `~/curify-gtm/docs/pinterest-publishing-2026-08-21.md` *(moved out of this repo 2026-09-18)* | C | **Pinterest channel status page** — publishing ledger, board→landing map, publish runbook, IP-review rules |
 | [`gallery-tag-taxonomy.md`](gallery-tag-taxonomy.md) | A | Gallery tag → topic registry mapping |
 | [`gap-classifier-phase1.md`](gap-classifier-phase1.md) | A | Content-gap classification |
-| [`home-discoverability-ideas-2026-06-14.md`](home-discoverability-ideas-2026-06-14.md) | C | Homepage discoverability options |
+| [`home-discoverability-ideas-2026-06-14.md`](home-discoverability-ideas-2026-06-14.md) | E | Homepage discoverability options |
 | `~/curify-studio/docs/tool-inventory.md` | B | Tool inventory + maturity table |
-| `~/curify-studio/docs/dau-activation-analysis-2026-06-12.md` | C | DAU activation analysis |
-| `~/curify-studio/docs/scaling-audit-2026-06-10.md` | B, C | Infra scaling audit |
-| `~/curify-studio/docs/reengagement-2026-06-01.md` | C | Reengagement analysis |
+| `~/curify-studio/docs/dau-activation-analysis-2026-06-12.md` | E | DAU activation analysis |
+| `~/curify-studio/docs/scaling-audit-2026-06-10.md` | B, E | Infra scaling audit |
+| `~/curify-studio/docs/reengagement-2026-06-01.md` | E | Reengagement analysis |
 
 ---
 
@@ -351,7 +335,7 @@ none of them measurable:
 | `project_cdn_assets` | `public/{video,images,audio}` gitignored; CdnImage/CdnVideo + sync script |
 | `feedback_image2image_prompt_hygiene` · `feedback_image2image_three_modes` | image2image conventions |
 
-### C. SEO + SMM + Growth
+### C. Historical SEO + SMM + Growth
 | Memory | Purpose |
 |---|---|
 | `project_blog_canonical_fold` | 43% of blogs folded to the homepage canonical — dominant suppressor |
@@ -393,6 +377,6 @@ none of them measurable:
 2. If the task touches a specific workstream, **open that workstream's doc** and read the section closest in time to the task (most recent dated section at top).
 3. If the task is POD-tagged or touches merch/POD framing, **read the POD reframe section of `workstream-vertical-use-cases.md` first** (including its 2026-08-12 gating status), then check the POD reframe section in the relevant workstream doc.
 4. **Cross-workstream dependencies** — check the "Critical cross-workstream dependencies" table above before scoping. If your task is gated on a POD-B4 / POD-C5 / POD-A2 / POD-A6 / POD-D5 ship, surface that gating in the response.
-5. **Outbound/GTM *execution*** is NOT in scope of these 4 product workstreams — it lives in `~/curify-gtm/gtm_tools/INDEX.md` (plus `~/curify-studio/docs/workstream-enterprise-ai-b2b.md` for the 2nd B2B line). **But which surface a motion lands on IS in scope** — see the "GTM motions" table above; as of 2026-08-12 none of the four motions is measurable, which is UC-P0-1.
+5. **Outbound/GTM *execution*** uses the separate GTM execution index — it lives in `~/curify-gtm/gtm_tools/INDEX.md` (plus `~/curify-studio/docs/workstream-enterprise-ai-b2b.md` for the 2nd B2B line). **But which surface a motion lands on IS in scope** — see the "GTM motions" table above; as of 2026-08-12 none of the four motions is measurable, which is UC-P0-1.
 6. **Out-of-scope reminders:** the daily-content-drop hongjie-patch workflow is a SEPARATE workstream (scope rule stated in the `workstream-seo-smm-growth.md` header); the customer delivery pipeline + education content supply workstreams are HELD pending triggers.
 7. **Before quoting any number from this index**, check its date. Traffic figures decay fast (the non-WC base fell 79% in two months) and this index has previously carried a persona list that was wrong for weeks. Re-derive from `lib/use-cases.ts`, a fresh GSC pull, or a `user_interactions` query rather than trusting a table.
