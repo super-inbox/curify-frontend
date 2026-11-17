@@ -63,7 +63,7 @@ const base = process.env.BUSINESS_TEST_URL || 'http://localhost:3001';
       await waitEvent(`business:${lang}:brief`, 'click', 2);
       await waitEvent(`contact:submit:business:${lang}:brief`, 'click');
       const workLinks = page.locator('#examples a[data-business-event$=":enquiry"]');
-      assert.equal(await workLinks.count(), 12);
+      assert.equal(await workLinks.count(), 13);
       for (const link of await workLinks.all()) {
         const url = new URL(await link.getAttribute('href'), base);
         const id = url.searchParams.get('work_id');

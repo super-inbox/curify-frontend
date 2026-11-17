@@ -2,6 +2,7 @@
 "use client";
 
 
+import BatchProductCaseLink from "@/app/[locale]/_components/BatchProductCaseLink";
 import { IMAGE_GENERATION_CREDITS, IMAGE_TO_PSD_CREDITS, USD_PER_CREDIT } from "@/lib/pricing";
 import SearchRedirectTracker from "../../topics/[slug]/SearchRedirectTracker";
 import { toTemplateStripCard } from "@/lib/nano_pure";
@@ -392,6 +393,8 @@ export default function ToolGenericClient({
           <BulkDesignCallout source={`tool/${slug}`} />
         </section>
       )}
+
+      {slug === "product-photo-retouching-service" && (locale === "en" || locale === "zh") && <BatchProductCaseLink locale={locale} />}
 
       {t.has("qualityResource.title" as never) && (
         <aside className="mt-10 rounded-xl border border-neutral-200 bg-neutral-50 p-5">

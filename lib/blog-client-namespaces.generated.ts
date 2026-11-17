@@ -212,6 +212,7 @@ export const KNOWN_BLOG_SLUGS: string[] = [
   "argentina-france-2022-world-cup-final",
   "asl-video-translator",
   "asl-visual-study-guide",
+  "batch-product-image-quality-control",
   "best-ai-tools",
   "best-claude-code-design-skills",
   "best-programmatic-seo-tools",

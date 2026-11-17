@@ -32,6 +32,38 @@ export const categories = [
 ] as const;
 export type Work = { id: string; categories: string[]; title: {en:string;zh:string}; description:{en:string;zh:string}; image:string; video?:string|null; href?:string|null; kind:string; steps?:{en:string[];zh:string[]}|null; tool?:string|null; images?:string[]|null };
 export const works: Work[] = [
+{
+  "id": "batch-product-qa",
+  "categories": [
+    "photo",
+    "product"
+  ],
+  "title": {
+    "en": "96 product images → targeted batch QA",
+    "zh": "96张商品图 → 有范围的批量返工"
+  },
+  "description": {
+    "en": "A real production process: retain 84 scene files while revising 12 dimension backgrounds. Process diagram; final customer acceptance unconfirmed.",
+    "zh": "真实制作过程：保留84张场景图，修改12张尺寸图背景。配图为流程示意，未确认客户最终验收。"
+  },
+  "image": "/case-studies/batch-product-qa.svg",
+  "kind": "process",
+  "href": "/blog/batch-product-image-quality-control",
+  "steps": {
+    "en": [
+      "Create 12 coherent image sets across four products.",
+      "Source product photos, scene references and dimension artwork.",
+      "Review product structure; composite revised backgrounds around protected artwork.",
+      "96 final files; 84 scene hashes unchanged. Final customer sign-off unconfirmed."
+    ],
+    "zh": [
+      "四类商品，共12套，保持套内一致性。",
+      "商品原图、场景参考和尺寸标注图。",
+      "逐项检查结构；修改背景时保护源图产品及标注。",
+      "最终96张文件，84张场景图哈希不变；客户最终验收未确认。"
+    ]
+  }
+},
   {
     "id": "zeelum",
     "categories": [
