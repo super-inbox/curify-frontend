@@ -1,0 +1,32 @@
+import CdnImage from './CdnImage';
+import BlogCTACard from './BlogCTACard';
+import RelatedBlogs from './RelatedBlogs';
+import { getCanonicalPath } from '@/lib/canonical';
+
+type Entry = { image: string; target: string; category: string; en: [string,string,string]; zh?: [string,string,string] };
+const entries: Record<string,Entry> = {
+  'batch-product-image-quality-control': {image:'/case-studies/batch-product-qa.svg',target:'/tools/product-photo-retouching-service',category:'creator-tools',en:['A diagram of 96 product images, separating 84 scene files and 12 dimension images','Explore product photo retouching','Process diagram reconstructed from project records, not customer photographs. Discuss sample review and batch scope with our service team.'],zh:['96张商品图的批量结构示意，区分84张场景图与12张尺寸图','查看商品照片修图服务','根据项目记录绘制的流程示意，不是客户照片。可先咨询试片、质检要求与整批范围。']},
+  'hotel-photo-editing-case-study': {image:'https://cdn.curify-ai.com/images/real_estate/hotel-room-before-after.jpg',target:'/tools/real-estate-photo-editing',category:'creator-tools',en:['Original hotel room and version 4 editing trial side by side','Explore hotel and real-estate photo editing','Original left, v4 trial right; a landscape was added to the TV. Published with permission. This trial is not final client sign-off.'],zh:['同一酒店客房原图与第4版修图试片对照','查看酒店与房产照片处理服务','左侧原图，右侧v4试片；电视内添加了风景。已获展示授权，不代表客户最终验收。']},
+  'product-photos-to-feature-video': {image:'https://cdn.curify-ai.com/case-studies/zeelum-20261107/zeelum-poster.jpg',target:'/tools/product-video',category:'merch-pod',en:['ZEELUM backpack feature-video poster','Explore the product video tool','Poster from the AI-assisted feature demo. The project used a custom multi-step workflow; the tool is a starting point, not a one-click recreation. Watch the final clip below.'],zh:['ZEELUM背包功能短片封面','查看商品视频工具','AI辅助功能试片封面。本案例使用定制的多步制作流程，工具提供起点，不承诺一键复现。下方保留最终视频。']},
+  'asl-visual-study-guide': {image:'/images/nano_insp/template-asl-sign-language-tutorial-infographic-five-parameters-visual.jpg',target:'/nano-template/asl-sign-language-tutorial-infographic',category:'video-translation-dubbing',en:['Five ASL features illustrated through handshape, location, movement, orientation and facial cues','Explore the ASL visual-study template','Original AI illustrations, not expert-certified sign instruction. Use them with fluent-signer video lessons to study the full motion.']},
+  'choose-photo-for-ai-wedding-portraits': {image:'/generation-examples/wedding-retouching-concepts.jpg',target:'/tools/ai-wedding-photo-generator',category:'creator-tools',en:['Three synthetic wedding retouching concepts with the original disclosure footer','Try the AI wedding photo generator','Authorized social-series artwork. Both sides are AI-generated concepts made outside this generator, not customer photos or validated generator outputs. The complete disclosure footer is retained.']},
+  'building-asl-video-translator': {image:'/illustrations/asl-evaluation-workflow.svg',target:'/tools/asl-video-translator',category:'ds-ai-engineering',en:['ASL evaluation workflow diagram','Open the ASL video translator','A methods diagram, not an accuracy result. The live tool produces an experimental English draft; check current credit pricing and review the result against the signing.']},
+};
+export function RecentBlogHero({slug,locale}:{slug:string;locale:string}) {
+  const e=entries[slug]; const [alt,label,caption]=locale==='zh'&&e.zh?e.zh:e.en;
+  const href=getCanonicalPath(locale,e.target);
+  return <figure data-blog-hero={slug} className="my-8">
+    <a href={href} className="group block rounded-2xl border border-slate-200 bg-slate-50 p-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-600" aria-label={label}>
+      <CdnImage src={e.image} alt={alt} width={1200} height={800} priority className="mx-auto h-auto max-h-[32rem] w-full rounded-xl object-contain transition group-hover:opacity-90" />
+    </a>
+    <figcaption className="mt-3 text-sm leading-6 text-slate-600">{caption}</figcaption>
+    <a data-blog-cta="hero" href={href} className="mt-4 inline-flex rounded-xl bg-purple-700 px-5 py-3 text-sm font-semibold !text-white !no-underline hover:bg-purple-800">{label} →</a>
+  </figure>;
+}
+export function RecentBlogFooter({slug,locale}:{slug:string;locale:string}) {
+  const e=entries[slug];const [,label,description]=locale==='zh'&&e.zh?e.zh:e.en;
+  return <div data-blog-footer={slug}>
+    <BlogCTACard slug={slug} locale={locale} category={e.category} primary={{label,description,href:getCanonicalPath(locale,e.target)}} />
+    <RelatedBlogs currentSlug={slug} locale={locale} maxRelated={3}/>
+  </div>;
+}

@@ -11,7 +11,11 @@
       "en",
       "zh"
     ],
-    "relatedLinks": [],
+    "relatedLinks": [
+      "hotel-photo-editing-case-study",
+      "product-photos-to-feature-video",
+      "wedding-photo-retouching-cost"
+    ],
     "metaDescription": "A real 96-image ecommerce production project: product fidelity checks, protected dimension artwork and targeted revisions across twelve sets.",
     "image": "/case-studies/batch-product-qa.svg"
   },
@@ -19,7 +23,7 @@
     "slug": "product-photos-to-feature-video",
     "title": "From Product Photos to a Feature Video: The ZEELUM Backpack Demo",
     "date": "November 5, 2026",
-    "lastmod": "2026-11-07",
+    "lastmod": "2026-11-17",
     "readTime": "5 min read",
     "tag": "Project Notes",
     "category": "merch-pod",
@@ -28,6 +32,8 @@
       "zh"
     ],
     "relatedLinks": [
+      "batch-product-image-quality-control",
+      "hotel-photo-editing-case-study",
       "url-to-product-video"
     ],
     "metaDescription": "A photography studio sample review: source views, product-only action, pacing and fidelity checks before a batch of feature videos.",
@@ -37,7 +43,7 @@
     "slug": "hotel-photo-editing-case-study",
     "title": "Hotel Photo Editing: A Brighter Room Is Only the First Step",
     "date": "November 2, 2026",
-    "lastmod": "2026-11-02",
+    "lastmod": "2026-11-17",
     "readTime": "5 min read",
     "tag": "Project Notes",
     "image": "/images/real_estate/hotel-room-before-after.jpg",
@@ -46,14 +52,18 @@
       "en",
       "zh"
     ],
-    "relatedLinks": [],
+    "relatedLinks": [
+      "batch-product-image-quality-control",
+      "wedding-photo-retouching-cost",
+      "product-photos-to-feature-video"
+    ],
     "metaDescription": "A real hotel-room editing trial: window light, bedding, deliberate additions and sample approval before batch editing."
   },
   {
     "slug": "asl-visual-study-guide",
     "title": "ASL Visual Guide: Hands, Movement and Facial Expressions",
     "date": "October 27, 2026",
-    "lastmod": "2026-10-27",
+    "lastmod": "2026-11-17",
     "readTime": "7 min read",
     "tag": "ASL Study Guide",
     "image": "/images/nano_insp/template-asl-sign-language-tutorial-infographic-five-parameters-visual.jpg",
@@ -71,7 +81,7 @@
     "slug": "choose-photo-for-ai-wedding-portraits",
     "title": "How to Choose a Couple Photo for AI Wedding Portraits",
     "date": "October 20, 2026",
-    "lastmod": "2026-10-20",
+    "lastmod": "2026-11-17",
     "readTime": "6 min read",
     "tag": "Wedding Portraits",
     "image": "/generation-examples/wedding-retouching-concepts.jpg",
@@ -80,7 +90,9 @@
       "en"
     ],
     "relatedLinks": [
-      "wedding-photo-retouching-cost"
+      "wedding-photo-retouching-cost",
+      "batch-product-image-quality-control",
+      "hotel-photo-editing-case-study"
     ],
     "metaDescription": "Choose a clear couple photo, write a focused wedding portrait brief, and check faces, hands and clothing before keeping a generated image."
   },
@@ -88,7 +100,7 @@
     "slug": "building-asl-video-translator",
     "title": "Building an ASL Video Translator: Experiments, Failures and Evaluation",
     "date": "October 13, 2026",
-    "lastmod": "2026-10-13",
+    "lastmod": "2026-11-17",
     "readTime": "9 min read",
     "tag": "ASL Engineering",
     "image": "/illustrations/asl-evaluation-workflow.svg",
@@ -97,7 +109,8 @@
       "en"
     ],
     "relatedLinks": [
-      "asl-video-translator"
+      "asl-video-translator",
+      "asl-visual-study-guide"
     ],
     "metaDescription": "Curify engineering lessons from ASL-to-English experiments: caption leakage, frame inspection, controlled evaluation and research-to-production limits."
   },

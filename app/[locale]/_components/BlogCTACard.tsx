@@ -17,6 +17,7 @@ import { useClickTracking } from "@/services/useTracking";
 import BulkDesignCallout from "./BulkDesignCallout";
 
 type Props = {
+  primary?: { label: string; description: string; href: string };
   category: string;
   /** Slug enables per-post creator-tools target overrides. */
   slug?: string;
@@ -740,9 +741,9 @@ function CtaButton({
   );
 }
 
-export default function BlogCTACard({ category, slug, locale }: Props) {
-  const ctas = ctasFor(category, locale, slug);
-  const showBulk = BULK_CALLOUT_CATEGORIES.has(category);
+export default function BlogCTACard({ category, slug, locale, primary }: Props) {
+  const ctas: CTA[] = primary ? [{ ...primary, id: `${slug}:primary`, Icon: Wrench }] : ctasFor(category, locale, slug);
+  const showBulk = !primary && BULK_CALLOUT_CATEGORIES.has(category);
   if (ctas.length === 0 && !showBulk) return null;
   return (
     <>
@@ -755,10 +756,10 @@ export default function BlogCTACard({ category, slug, locale }: Props) {
       {ctas.length > 0 && (
     <section className="mt-12 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
       <h2 className="mb-1 text-xl font-bold text-neutral-900">
-        Take the next step
+        {locale === "zh" ? "开始你的项目" : "Take the next step"}
       </h2>
       <p className="mb-5 text-sm text-neutral-600">
-        Putting what you read into practice.
+        {locale === "zh" ? "把文章中的方法用到你的素材上。" : "Putting what you read into practice."}
       </p>
       <div
         className={

@@ -1,3 +1,5 @@
+import { RecentBlogHero, RecentBlogFooter } from "@/app/[locale]/_components/RecentBlogEngagement";
+import BlogInlineClickTracker from "@/app/[locale]/(public)/blog/[slug]/components/BlogInlineClickTracker";
 import type { Metadata } from 'next';
 import { getCanonicalUrl, getCanonicalPath, getLanguagesMap } from '@/lib/canonical';
 import InlineContactCapture from '@/app/[locale]/_components/InlineContactCapture';
@@ -10,8 +12,9 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 export default async function BatchCase({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params; const lang = locale === 'zh' ? 'zh' : 'en'; const c = copy[lang]; const local=(p:string)=>getCanonicalPath(lang,p);
-  return <article lang={lang} className="mx-auto max-w-5xl px-4 py-12 text-slate-800 sm:px-6 md:py-16">
+  return <><BlogInlineClickTracker blogSlug="batch-product-image-quality-control"><article lang={lang} className="mx-auto max-w-5xl px-4 py-12 text-slate-800 sm:px-6 md:py-16">
     <header className="max-w-4xl"><p className="text-xs font-bold tracking-[0.16em] text-teal-700">{c.eyebrow}</p><h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight md:text-6xl">{c.title}</h1><p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">{c.intro}</p><p className="mt-5 text-sm text-slate-500">Curify · <time dateTime="2026-11-17">2026-11-17</time></p><p className="mt-4 inline-block rounded-full border border-teal-200 bg-teal-50 px-4 py-2 text-xs text-teal-900">{c.status}</p></header>
+    <RecentBlogHero slug="batch-product-image-quality-control" locale={lang} />
     <dl className="my-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-4">{['4','12','96','800 × 800'].map((n,i)=><div key={n} className="bg-white p-5"><dt className="text-xs text-slate-500">{c.stats[i]}</dt><dd className="mt-2 text-2xl font-semibold md:text-3xl">{n}</dd></div>)}</dl>
     <section className="max-w-3xl"><h2 className="text-2xl font-semibold">{c.briefTitle}</h2><p className="mt-4 leading-8">{c.brief}</p><p className="mt-4 leading-8">{c.brief2}</p></section>
     <figure className="my-10 rounded-2xl bg-slate-950 p-5 text-white sm:p-8"><h2 className="text-xl font-semibold">{c.matrixTitle}</h2><div className="mt-6 grid gap-5 sm:grid-cols-2">{[0,1,2,3].map(p=><div key={p} className="rounded-xl border border-slate-700 p-4"><h3 className="mb-3 text-sm text-slate-300">{c.product} {p+1}</h3>{[0,1,2].map(s=><div key={s} className="mt-2 flex items-center gap-2"><span className="w-10 shrink-0 text-xs text-slate-400">{c.set} {s+1}</span><div className="grid flex-1 grid-cols-8 gap-1.5" aria-label={`7 ${c.scene}, 1 ${c.dimension}`}>{Array.from({length:8},(_,i)=><span aria-hidden="true" key={i} className={`aspect-square rounded ${i===7?'bg-amber-400':'bg-teal-400'}`} />)}</div></div>)}</div>)}</div><div className="mt-6 flex flex-wrap gap-5 text-sm"><span><span className="mr-2 inline-block h-3 w-3 rounded-sm bg-teal-400"/>84 {c.scene}</span><span><span className="mr-2 inline-block h-3 w-3 rounded-sm bg-amber-400"/>12 {c.dimension}</span></div><figcaption className="mt-4 max-w-3xl text-sm leading-6 text-slate-300">{c.matrixNote}<span className="mt-2 block text-slate-400">{c.visualNote}</span></figcaption></figure>
@@ -23,5 +26,5 @@ export default async function BatchCase({params}: {params: Promise<{locale: stri
     <section className="my-12 max-w-3xl"><h2 className="text-2xl font-semibold">{c.checklistTitle}</h2><ol className="mt-5 list-decimal space-y-3 pl-6 leading-7">{c.checks.map(t=><li key={t}>{t}</li>)}</ol><a href="/resources/ai-photo-retouching-quality-checklist" className="mt-6 inline-block font-medium text-teal-800 underline">{c.resource} →</a></section>
     <section className="rounded-2xl border border-teal-200 bg-teal-50 p-6 sm:p-9"><h2 className="text-2xl font-semibold">{c.ctaTitle}</h2><p className="mt-4 max-w-3xl leading-7">{c.ctaText}</p><a href={local('/tools/product-photo-retouching-service')} className="mt-5 inline-block font-semibold text-teal-900 underline">{c.service} →</a><div className="mt-6"><InlineContactCapture source={`case-study:${slug}:work_id=batch-product-qa:category=photo`} trackingId={`case-study:${slug}:enquiry`} subject={c.subject} cta={c.cta} note={c.note}/></div></section>
     <a href={local('/business')} className="mt-8 inline-block text-sm font-semibold text-teal-800 underline">{c.back} →</a>
-  </article>;
+  </article></BlogInlineClickTracker><div className="mx-auto max-w-5xl px-4"><RecentBlogFooter slug="batch-product-image-quality-control" locale={lang} /></div></>;
 }

@@ -289,3 +289,9 @@ This doc is for **stable patterns that survived multiple post iterations**. Don'
 - Per-post decisions like "we picked AirOps over Frase" (those go in the post's commit message)
 
 Stable patterns only. If you find yourself adding a pattern after one post, wait. Three posts of the same pattern earns a section here.
+
+### Dedicated-route parity (2026-11-17)
+
+A dedicated `blog/<slug>/page.tsx` bypasses the generic renderer. It must explicitly include a clickable hero linking to its actual tool/template, a top CTA and bottom `BlogCTACard`, and `RelatedBlogs` with relevant registry `relatedLinks`. Wrap the editorial body in `BlogInlineClickTracker`; leave self-tracking footer cards outside that wrapper. Preserve source-image disclosures and full image content. Existing lead forms can remain alongside the bottom tool/service entry.
+
+`RecentBlogEngagement.tsx` demonstrates the shared hero/footer integration used by the six October–November dedicated articles. Verify the rendered page, not just registry keys: image destination, both CTA positions, related articles, canonical and authored-locale routing. A service-only destination must not imply self-service generation.
