@@ -1,3 +1,5 @@
+import { RecentBlogHero, RecentBlogFooter } from "@/app/[locale]/_components/RecentBlogEngagement";
+import BlogInlineClickTracker from "@/app/[locale]/(public)/blog/[slug]/components/BlogInlineClickTracker";
 import type { Metadata } from "next";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
@@ -21,9 +23,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default function WeddingPhotoInputGuide() {
   return (
-    <article lang="en" className="mx-auto max-w-3xl px-4 py-10 text-neutral-800 [&_h2]:mb-4 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-semibold [&_p]:my-4 [&_p]:leading-8 [&_a]:text-indigo-700 [&_a]:underline [&_li]:my-2">
+    <><BlogInlineClickTracker blogSlug="choose-photo-for-ai-wedding-portraits"><article lang="en" className="mx-auto max-w-3xl px-4 py-10 text-neutral-800 [&_h2]:mb-4 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-semibold [&_p]:my-4 [&_p]:leading-8 [&_a]:text-indigo-700 [&_a]:underline [&_li]:my-2">
       <p className="text-sm">Curify · October 20, 2026 · Photo preparation guide</p>
       <h1 className="text-3xl font-bold leading-tight md:text-5xl">{title}</h1>
+      <RecentBlogHero slug="choose-photo-for-ai-wedding-portraits" locale={"en"} />
       <p>A convincing wedding-inspired portrait starts with a photo in which you can recognize both people clearly. Before choosing a garden, studio or traditional wedding look, check what the source actually shows: faces, skin tone, hair and the details you want the result to retain.</p>
       <p>This guide explains how to prepare a reference for the <a href="/tools/ai-wedding-photo-generator#reproduce">AI wedding photo generator</a>. The existing concept artwork below illustrates things to inspect; it is not a benchmark of that tool or a client delivery.</p>
 
@@ -45,12 +48,6 @@ export default function WeddingPhotoInputGuide() {
       <p>For a pre-wedding concept, describe the atmosphere you want to explore. For a particular garment, identify the details you care about, then check them in the result: an instruction to preserve lace or embroidery does not establish that it happened.</p>
 
       <h2>Use these wedding concepts as a review checklist</h2>
-      <figure className="my-8">
-        {/* Reuse the authorized complete card, including its provenance footer. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/generation-examples/wedding-retouching-concepts.jpg" width={1122} height={1402} loading="lazy" className="h-auto w-full rounded-xl" alt="Three synthetic wedding retouching concepts showing cliff lighting, a bridal close-up and a beach scene; not outputs from the wedding generator" />
-        <figcaption className="mt-3 text-sm leading-6 text-neutral-600">Existing Curify social-series artwork, reused with permission. Both sides are AI-generated retouching concepts created outside this generator. The full card and its disclosure footer are retained. These are not customers’ wedding photographs.</figcaption>
-      </figure>
       <p><strong>Cliff-top couple:</strong> the concept changes the light and sky. When reviewing a new generation, compare both faces separately and inspect the veil, dress silhouette and overlapping hands. An attractive sunset does not establish that the couple’s identities were preserved.</p>
       <p><strong>Bridal close-up:</strong> look at eyes, hairline and skin texture rather than brightness alone. This single-person illustration is useful for discussing detail checks; it is not the recommended two-person upload for the couple generator.</p>
       <p><strong>Beach portrait:</strong> examine the dress edges, feet and background. A generated scene can change objects or add details. If your goal is to preserve an actual wedding moment, consider editing the original photograph instead.</p>
@@ -68,6 +65,6 @@ export default function WeddingPhotoInputGuide() {
       <h2>Generation or wedding photo editing?</h2>
       <p>Use generation when you want a newly imagined portrait or pre-wedding concept. Use <a href="/tools/wedding-photo-editing">wedding and portrait editing</a> when the task concerns an existing photograph. Photographers seeking a consistent finish across captured galleries can <a href="/use-cases/for-photographers">discuss batch wedding photo editing</a>; that service starts with a brief and sample review.</p>
       <p>For editing budgets, read the <a href="/blog/wedding-photo-retouching-cost">wedding photo retouching cost guide</a>. For a creative portrait, <a href="/tools/ai-wedding-photo-generator#reproduce">choose your photo and open the wedding generator</a>.</p>
-    </article>
+    </article></BlogInlineClickTracker><div className="mx-auto max-w-5xl px-4"><RecentBlogFooter slug="choose-photo-for-ai-wedding-portraits" locale={"en"} /></div></>
   );
 }

@@ -15,6 +15,7 @@ interface BlogPost {
   image: string;
   category?: string;
   relatedLinks?: string[];
+  locales?: string[];
 }
 
 interface RelatedBlogsProps {
@@ -25,21 +26,21 @@ interface RelatedBlogsProps {
 
 export default function RelatedBlogs({ currentSlug, locale, maxRelated = 3 }: RelatedBlogsProps) {
   const t = useTranslations('blog');
-  
+
   // Find current blog post
   const currentBlog = blogsData.find(blog => blog.slug === currentSlug);
   if (!currentBlog) return null;
 
   // Get category from current blog
   const currentCategory = currentBlog.category;
-  
+
   // Get category display name
   const categoryConfig = currentCategory ? (categoriesData as any).categories[currentCategory] : undefined;
   const categoryName = categoryConfig?.name || currentCategory || 'Uncategorized';
 
   // First, try to use relatedLinks if they exist
   let relatedBlogs: BlogPost[] = [];
-  
+
   if (currentBlog.relatedLinks && currentBlog.relatedLinks.length > 0) {
     // Use explicitly configured related links
     relatedBlogs = currentBlog.relatedLinks
@@ -66,12 +67,12 @@ export default function RelatedBlogs({ currentSlug, locale, maxRelated = 3 }: Re
           {categoryName}
         </span>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className={`grid grid-cols-1 gap-6 ${displayBlogs.length > 1 ? "md:grid-cols-2" : ""} ${displayBlogs.length > 2 ? "lg:grid-cols-3" : ""}`}>
         {displayBlogs.map((blog) => (
-          <RelatedBlogCard 
-            key={blog.slug} 
-            blog={blog} 
-            locale={locale} 
+          <RelatedBlogCard
+            key={blog.slug}
+            blog={blog}
+            locale={blog.locales && !blog.locales.includes(locale) ? "en" : locale}
             category={categoryName}
           />
         ))}

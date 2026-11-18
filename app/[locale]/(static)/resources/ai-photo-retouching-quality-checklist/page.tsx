@@ -1,3 +1,4 @@
+import BatchProductCaseLink from "@/app/[locale]/_components/BatchProductCaseLink";
 import type { Metadata } from "next";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import checklist from "@/public/resources/photo-retouching-quality-checklist-v1.json";
@@ -49,6 +50,7 @@ export default function RetouchingChecklist() {
       <li><strong>Waxy skin or missing lace:</strong> mark the exact area and requested correction. Keep the original, output version and evidence crop together.</li>
       <li><strong>Invented objects or garment details:</strong> hold the file and verify whether the brief explicitly permitted the change. A prettier result is not approval.</li>
     </ul>
+    <BatchProductCaseLink />
     <h2>Record revisions and sign-off</h2>
     <p>For each defect, record file ID, severity, requested correction, owner, output version and recheck result. Keep accepted and held files separate. Record who approved the final files and any explicitly accepted exceptions before delivery.</p>
     <h2>Reuse and attribution</h2>

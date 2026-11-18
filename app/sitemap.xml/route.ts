@@ -115,7 +115,7 @@ TOOL_LASTMOD_OVERRIDES["/tools/asl-video-translator"] = "2026-11-16T00:00:00.000
 TOOL_LASTMOD_OVERRIDES["/tools/wedding-photo-editing"] = "2026-10-21T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/ai-wedding-photo-generator"] = "2026-10-25T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/ai-pet-portrait-generator"] = "2026-10-25T00:00:00.000Z";
-TOOL_LASTMOD_OVERRIDES["/tools/product-photo-retouching-service"] = "2026-10-21T00:00:00.000Z";
+TOOL_LASTMOD_OVERRIDES["/tools/product-photo-retouching-service"] = "2026-11-17T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/real-estate-photo-editing"] = "2026-10-15T00:00:00.000Z";
 
 // Use-case pages: 08-12 added the worked-case block and moved the demo cards
@@ -347,7 +347,7 @@ export async function GET() {
   let urls = "";
 
   urls += generateUrlEntry("en", "/resources/ai-photo-retouching-quality-checklist", {
-    lastmod: "2026-10-21T00:00:00.000Z",
+    lastmod: "2026-11-17T00:00:00.000Z",
     changefreq: "monthly",
     priority: "0.7",
     availableLocales: ["en"],
@@ -357,7 +357,7 @@ export async function GET() {
   // Other locales render English and canonicalize to the English URL.
   ["en", "zh"].forEach((locale) => {
     urls += generateUrlEntry(locale, "/business", {
-      lastmod: "2026-11-16T00:00:00.000Z",
+      lastmod: "2026-11-17T00:00:00.000Z",
       changefreq: "monthly",
       priority: "0.8",
       availableLocales: ["en", "zh"],
