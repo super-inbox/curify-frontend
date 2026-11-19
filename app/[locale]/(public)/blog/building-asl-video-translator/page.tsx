@@ -1,3 +1,5 @@
+import { RecentBlogHero, RecentBlogFooter } from "@/app/[locale]/_components/RecentBlogEngagement";
+import BlogInlineClickTracker from "@/app/[locale]/(public)/blog/[slug]/components/BlogInlineClickTracker";
 import type { Metadata } from "next";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
@@ -17,9 +19,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default function AslEngineeringArticle() {
   return (
-    <article lang="en" className="mx-auto max-w-3xl py-10 text-neutral-800 [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-semibold [&_p]:my-4 [&_p]:leading-8 [&_a]:text-indigo-700 [&_a]:underline [&_li]:my-2">
+    <><BlogInlineClickTracker blogSlug="building-asl-video-translator"><article lang="en" className="mx-auto max-w-3xl py-10 text-neutral-800 [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-semibold [&_p]:my-4 [&_p]:leading-8 [&_a]:text-indigo-700 [&_a]:underline [&_li]:my-2">
       <p className="text-sm font-medium uppercase tracking-wide">Curify engineering · October 13, 2026</p>
       <h1 className="text-3xl font-bold leading-tight md:text-5xl">{title}</h1>
+      <RecentBlogHero slug="building-asl-video-translator" locale={"en"} />
       <p>By the Curify engineering team. Based on our experiment records through October 12, 2026.</p>
       <p>Building an ASL video translator taught us how easily plausible English can look like a successful translation. A fluent sentence, a tidy subtitle file and a repeatable response are all useful engineering properties. None establishes that the system understood the signing.</p>
       <p>This is a record of what we tested and what changed our decisions. The experimental <a href="/tools/asl-video-translator">ASL video-to-English tool</a> and the research models discussed below are separate. Our October results do not establish a production accuracy improvement or a validated replacement model.</p>
@@ -95,6 +98,6 @@ export default function AslEngineeringArticle() {
         <li><a href="https://how2sign.github.io/">How2Sign: dataset and documentation</a> — consult its terms before using or redistributing data.</li>
         <li><a href="https://arxiv.org/abs/2501.15187">Uni-Sign: Toward Unified Sign Language Understanding at Scale</a> — upstream research, separate from our integration results.</li>
       </ul>
-    </article>
+    </article></BlogInlineClickTracker><div className="mx-auto max-w-5xl px-4"><RecentBlogFooter slug="building-asl-video-translator" locale={"en"} /></div></>
   );
 }

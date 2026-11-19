@@ -1,3 +1,5 @@
+import { RecentBlogHero, RecentBlogFooter } from "@/app/[locale]/_components/RecentBlogEngagement";
+import BlogInlineClickTracker from "@/app/[locale]/(public)/blog/[slug]/components/BlogInlineClickTracker";
 import type { Metadata } from "next";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
@@ -17,14 +19,14 @@ function Poster({ id, alt, caption }: { id: string; alt: string; caption: string
   return <figure className="my-8"><CdnImage src={`/images/nano_insp/template-asl-sign-language-tutorial-infographic-${id}.jpg`} alt={alt} width={1024} height={1536} className="mx-auto h-auto w-full max-w-2xl rounded-xl" /><figcaption className="mt-3 text-sm text-neutral-600">{caption}</figcaption></figure>;
 }
 export default function AslVisualStudyGuide() {
-  return <article lang="en" className="mx-auto max-w-3xl py-10 text-neutral-800 [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-semibold [&_p]:my-4 [&_p]:leading-8 [&_a]:text-indigo-700 [&_a]:underline [&_li]:my-2">
+  return <><BlogInlineClickTracker blogSlug="asl-visual-study-guide"><article lang="en" className="mx-auto max-w-3xl py-10 text-neutral-800 [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-semibold [&_p]:my-4 [&_p]:leading-8 [&_a]:text-indigo-700 [&_a]:underline [&_li]:my-2">
     <p className="text-sm">Curify editorial team · October 27, 2026 · 7 min read</p>
     <h1 className="text-3xl font-bold leading-tight md:text-5xl">{title}</h1>
+      <RecentBlogHero slug="asl-visual-study-guide" locale={"en"} />
     <p>In ASL, where a hand is placed can distinguish two signs. Repeating a movement can change a word, and the eyebrows can help mark a question. These seven visual comparisons draw attention to differences that are easy to miss when looking only at an English translation.</p>
     <p>The pictures are original AI-generated illustrations, not recordings of a teacher or independently certified sign demonstrations. Use them beside the linked video lessons to compare the full motion. They illustrate selected common forms; signing varies with context and community.</p>
     <h2>1. Five things to watch together</h2>
     <p><a href="https://www.nidcd.nih.gov/health/american-sign-language">NIDCD describes ASL</a> as a natural language with grammar distinct from English. A useful observation framework is handshape, location, movement, palm orientation and nonmanual cues. The last category includes the face, head and body. These features combine; a handshape on its own is not a dictionary definition.</p>
-    <Poster id="five-parameters-visual" alt="Five ASL features shown with human demonstrations: handshape, location, movement, palm orientation and facial cues." caption="An overview of what to notice. The small demonstrations isolate features rather than form one complete sentence." />
     <h2>2. BIG and VERY BIG: watch the extent of the motion</h2>
     <p>A size description can use the space between the hands to make extent visible. The illustration uses a flat-hand variant, with palms facing each other and an outward movement. Its second row exaggerates the distance and adds a mouth cue. This is one way to express size, not a rule for every adjective or every use of “very.”</p>
     <p><a href="https://www.lifeprint.com/asl101/pages-signs/b/big.htm">Lifeprint’s BIG lesson</a> shows multiple forms and explains the role of movement size and the mouth morpheme CHA. Watch the lesson for the dynamic version; an open mouth in a still image cannot capture its articulation.</p>
@@ -54,5 +56,5 @@ export default function AslVisualStudyGuide() {
     <p>For more visual examples, open the <a href="/nano-template/asl-sign-language-tutorial-infographic">ASL infographic template</a>. For upload and output steps, see the <a href="/blog/asl-video-translator">video translation guide</a>.</p>
     <h2>Sources and image provenance</h2>
     <p>The linked NIDCD and Lifeprint pages support the concepts described here. The pictures are newly generated, not copied teacher photographs. These organizations and teachers have not endorsed or reviewed this article. Image prompts and editorial checks are recorded with our content drop; independent fluent-ASL review is still needed before treating the illustrations as teaching references.</p>
-  </article>;
+  </article></BlogInlineClickTracker><div className="mx-auto max-w-5xl px-4"><RecentBlogFooter slug="asl-visual-study-guide" locale={"en"} /></div></>;
 }

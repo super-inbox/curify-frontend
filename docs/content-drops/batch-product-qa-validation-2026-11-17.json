@@ -1,0 +1,80 @@
+{
+  "http_checks": [
+    {
+      "path": "/blog/batch-product-image-quality-control",
+      "status": 200,
+      "canonical": [
+        "https://www.curify-ai.com/blog/batch-product-image-quality-control"
+      ],
+      "indexable": true,
+      "required_links_present": true
+    },
+    {
+      "path": "/zh/blog/batch-product-image-quality-control",
+      "status": 200,
+      "canonical": [
+        "https://www.curify-ai.com/zh/blog/batch-product-image-quality-control"
+      ],
+      "indexable": true,
+      "required_links_present": true
+    },
+    {
+      "path": "/business",
+      "status": 200,
+      "canonical": [
+        "https://www.curify-ai.com/business"
+      ],
+      "indexable": true,
+      "required_links_present": true
+    },
+    {
+      "path": "/zh/business",
+      "status": 200,
+      "canonical": [
+        "https://www.curify-ai.com/zh/business"
+      ],
+      "indexable": true,
+      "required_links_present": true
+    },
+    {
+      "path": "/tools/product-photo-retouching-service",
+      "status": 200,
+      "canonical": [
+        "https://www.curify-ai.com/tools/product-photo-retouching-service"
+      ],
+      "indexable": true,
+      "required_links_present": true
+    },
+    {
+      "path": "/zh/tools/product-photo-retouching-service",
+      "status": 200,
+      "canonical": [
+        "https://www.curify-ai.com/zh/tools/product-photo-retouching-service"
+      ],
+      "indexable": true,
+      "required_links_present": true
+    },
+    {
+      "path": "/resources/ai-photo-retouching-quality-checklist",
+      "status": 200,
+      "canonical": [
+        "https://www.curify-ai.com/resources/ai-photo-retouching-quality-checklist"
+      ],
+      "indexable": true,
+      "required_links_present": true
+    }
+  ],
+  "sitemap_en_zh_only": true,
+  "unsupported_locale_noindex_en_canonical": true,
+  "cover_asset_200": true,
+  "browser": {
+    "locale": "zh",
+    "desktop_review": "passed",
+    "mobile_width": 390,
+    "document_client_width": 376,
+    "document_scroll_width": 376,
+    "matrix_visual_review": "passed",
+    "inquiry_submitted": false,
+    "preview": "http://localhost:3017/zh/blog/batch-product-image-quality-control"
+  }
+}

@@ -10,7 +10,7 @@ export default function Portfolio({ lang }: { lang: BusinessLang }) {
   const [category, setCategory] = useState('all');
   const { trackAction } = useTracking();
   const zh = lang === 'zh';
-  const labels: Record<string,string> = zh ? { demo:'原创 Demo', trial:'项目试片', reference:'提供的修图示例' } : { demo:'Original demo', trial:'Project trial', reference:'Supplied editing example' };
+  const labels: Record<string,string> = zh ? { process:'真实制作过程', demo:'原创 Demo', trial:'项目试片', reference:'提供的修图示例' } : { process:'Production process', demo:'Original demo', trial:'Project trial', reference:'Supplied editing example' };
   const local = (path: string) => `${zh ? '/zh' : ''}${path}`;
   const inquiry = (work: Work) => ({ pathname: '/contact', query: {
     subject: `${zh ? '想做类似项目' : 'A project like'}: ${work.title[lang]}`,
@@ -44,7 +44,7 @@ export default function Portfolio({ lang }: { lang: BusinessLang }) {
         </article>)}
       </div>
     </section>
-    <section id="case-notes" className="mt-20 scroll-mt-24" aria-labelledby="case-notes-title"><h2 id="case-notes-title" className="text-3xl font-semibold">{zh?'三个制作过程，看看价值在哪里':'Three closer looks at the production process'}</h2><p className="mt-3 text-neutral-600">{zh?'两项项目试片与一组原创教育内容：从输入到结果，各有不同的验收重点。':'Two project trials and one original educational series, each with a different brief and review process.'}</p>
+    <section id="case-notes" className="mt-20 scroll-mt-24" aria-labelledby="case-notes-title"><h2 id="case-notes-title" className="text-3xl font-semibold">{zh?'从输入到结果，看看制作过程':'A closer look at the production process'}</h2><p className="mt-3 text-neutral-600">{zh?'批量商品图、项目试片与原创教育系列：各有不同的验收重点，制作完成与客户签收分别说明。':'Batch product images, project trials and an original educational series, with production results distinguished from customer sign-off.'}</p>
       <div className="mt-8 grid gap-6 lg:grid-cols-3">{works.filter(w=>w.steps).map(work=><article id={`case-${work.id}`} key={work.id} className="scroll-mt-24 rounded-2xl bg-purple-50 p-6"><p className="text-xs font-semibold text-purple-700">{labels[work.kind]}</p><h3 className="mt-2 text-xl font-semibold">{work.title[lang]}</h3><dl className="mt-5 space-y-4">{work.steps![lang].map((text,i)=><div key={i}><dt className="text-xs font-bold tracking-wide text-purple-800">{(zh?['需求','输入素材','制作过程','当前结果']:['BRIEF','INPUT','PROCESS','RESULT'])[i]}</dt><dd className="mt-1 text-sm leading-6 text-neutral-700">{text}</dd></div>)}</dl><a href={local(work.href!)} className="mt-5 inline-block text-sm font-semibold text-purple-800 underline">{zh?'查看案例与素材':'Explore the case and materials'} →</a><Link locale={lang} href={inquiry(work)} data-business-event={`case:${work.id}:enquiry`} className="mt-4 block text-sm font-semibold text-purple-800 underline">{zh?'聊聊类似项目':'Discuss a similar project'} →</Link></article>)}</div>
     </section>
   </>;

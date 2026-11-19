@@ -1,5 +1,6 @@
+import { RecentBlogHero, RecentBlogFooter } from "@/app/[locale]/_components/RecentBlogEngagement";
+import BlogInlineClickTracker from "@/app/[locale]/(public)/blog/[slug]/components/BlogInlineClickTracker";
 import type { Metadata } from "next";
-import CdnImage from "@/app/[locale]/_components/CdnImage";
 import InlineContactCapture from "@/app/[locale]/_components/InlineContactCapture";
 import { getCanonicalUrl, getLanguagesMap, getCanonicalPath } from "@/lib/canonical";
 
@@ -47,13 +48,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 export default async function HotelCase({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params; const lang = locale === "zh" ? "zh" : "en"; const c = copy[lang];
-  return <article lang={lang} className="mx-auto max-w-5xl py-10 text-slate-800 md:py-16">
+  return <><BlogInlineClickTracker blogSlug="hotel-photo-editing-case-study"><article lang={lang} className="mx-auto max-w-5xl py-10 text-slate-800 md:py-16">
     <header className="max-w-3xl"><p className="text-xs font-semibold tracking-[0.18em] text-teal-700">{c.eyebrow}</p><h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight md:text-6xl">{c.title}</h1><p className="mt-6 text-lg leading-8 text-slate-600">{c.intro}</p><p className="mt-5 text-sm text-slate-500">Curify · 2026-11-02</p></header>
+    <RecentBlogHero slug="hotel-photo-editing-case-study" locale={lang} />
     <div className="mt-8 flex flex-wrap gap-2">{c.labels.map(x => <span key={x} className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs text-teal-900">{x}</span>)}</div>
-    <figure className="mt-5"><CdnImage src={image} alt={lang === "zh" ? "同一酒店客房的原图与第4版试片对照" : "Original hotel room and version 4 editing trial side by side"} width={1600} height={600} priority className="h-auto w-full rounded-2xl border border-slate-200" /><figcaption className="mt-3 max-w-3xl text-sm leading-6 text-slate-500">{c.caption}</figcaption></figure>
     <section className="my-12 max-w-3xl"><h2 className="text-2xl font-semibold">{c.brief}</h2><p className="mt-4 leading-8">{c.briefText}</p></section>
     <div className="grid gap-5 md:grid-cols-3">{c.changes.map(([n,h,p]) => <section key={n} className="rounded-2xl bg-slate-50 p-6"><p className="text-sm font-medium text-teal-700">{n}</p><h2 className="mt-3 text-xl font-semibold">{h}</h2><p className="mt-4 text-sm leading-7 text-slate-600">{p}</p></section>)}</div>
     <div className="my-12 max-w-3xl space-y-10"><section><h2 className="text-2xl font-semibold">{c.lesson}</h2><p className="mt-4 leading-8">{c.lessonText}</p></section><section className="border-l-2 border-teal-500 pl-6"><h2 className="text-xl font-semibold">{c.limits}</h2><p className="mt-4 leading-8 text-slate-600">{c.limitText}</p></section><section><h2 className="text-2xl font-semibold">{c.checklist}</h2><ol className="mt-5 list-decimal space-y-3 pl-6 leading-7">{c.checks.map(x => <li key={x}>{x}</li>)}</ol></section></div>
     <section className="rounded-2xl border border-teal-200 bg-teal-50 p-6 md:p-10"><h2 className="text-2xl font-semibold">{c.ctaTitle}</h2><p className="mt-4 max-w-2xl leading-7">{c.ctaText}</p><div className="mt-6"><InlineContactCapture source={`case-study:${slug}`} trackingId={`case-study:${slug}:enquiry`} subject={c.subject} cta={c.cta} note={c.note} /></div><a className="mt-6 inline-block text-sm font-medium text-teal-800 underline" href={getCanonicalPath(lang, "/tools/real-estate-photo-editing")}>{c.service} →</a></section>
-  <p className="mt-10 text-sm"><a href={lang === "zh" ? "/zh/business" : "/business"} className="font-medium text-purple-700 underline">{lang === "zh" ? "更多视觉制作作品与合作方式" : "Explore more visual production work and partnerships"} →</a></p></article>;
+  <p className="mt-10 text-sm"><a href={lang === "zh" ? "/zh/business" : "/business"} className="font-medium text-purple-700 underline">{lang === "zh" ? "更多视觉制作作品与合作方式" : "Explore more visual production work and partnerships"} →</a></p></article></BlogInlineClickTracker><div className="mx-auto max-w-5xl px-4"><RecentBlogFooter slug="hotel-photo-editing-case-study" locale={lang} /></div></>;
 }

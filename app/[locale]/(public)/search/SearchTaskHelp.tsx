@@ -2,6 +2,7 @@ import type { SearchHelpIntent } from '@/lib/searchTaskHelp';
 
 const copy = {
   en: {
+    credits: ['Check your credit balance', 'Sign in with your account and check the credit indicator in your workspace. Search cannot display your private balance.'],
     workspace: ['Looking for your projects?', 'Open your workspace to find your saved work. Sign in with the account you used to create it.'],
     video: ['What kind of video do you want to make?', 'Choose a workflow for product videos, video translation, or your workspace.'],
     slides: ['Turn slides into a video', 'Importing an arbitrary slide link is not a verified supported workflow. Open your workspace to review the available video workflows; do not assume the link can be imported.'],
@@ -12,6 +13,7 @@ const copy = {
     workspaceLink: 'Open workspace', product: 'Product video', subtitles: 'Subtitles', dubbing: 'Video dubbing', manga: 'Manga translation', asl: 'ASL video translator',
   },
   zh: {
+    credits: ['查看积分余额', '登录你的账号，在工作区查看积分余额。搜索页不会显示私人余额。'],
     workspace: ['在找自己的项目？', '打开工作区查看已保存的内容，请登录创建项目时使用的账号。'],
     video: ['你想制作哪种视频？', '选择商品视频、视频翻译，或打开工作区查看可用流程。'],
     slides: ['把幻灯片做成视频', '目前未确认支持直接导入任意幻灯片链接。请在工作区查看可用的视频流程，不要假设链接可以直接导入。'],
@@ -22,6 +24,7 @@ const copy = {
     workspaceLink: '打开工作区', product: '商品视频', subtitles: '字幕翻译', dubbing: '视频配音', manga: '漫画翻译', asl: '美国手语视频翻译',
   },
   es: {
+    credits: ['Consulta tu saldo de créditos', 'Inicia sesión y consulta el indicador de créditos en el espacio de trabajo. La búsqueda no muestra tu saldo privado.'],
     workspace: ['¿Buscas tus proyectos?', 'Abre tu espacio de trabajo e inicia sesión con la cuenta que utilizaste para crearlos.'],
     video: ['¿Qué tipo de video quieres crear?', 'Elige videos de productos, traducción de video o abre tu espacio de trabajo.'],
     slides: ['Convertir diapositivas en video', 'No está confirmado que se puedan importar enlaces arbitrarios de diapositivas. Revisa los flujos disponibles en tu espacio de trabajo.'],
