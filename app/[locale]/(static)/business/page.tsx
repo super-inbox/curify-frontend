@@ -8,6 +8,8 @@ import { SITE_URL } from '@/lib/constants';
 import InlineContactCapture from '@/app/[locale]/_components/InlineContactCapture';
 import BusinessTracking from './BusinessTracking';
 import { businessCopy, businessLang } from './copy';
+import { businessCases, portfolioCopy } from './cases';
+import { taskHref } from '@/lib/creation-tasks';
 
 export const revalidate = false;
 export const generateStaticParams = () => routing.locales.map(locale => ({ locale }));
@@ -33,6 +35,7 @@ export default async function BusinessPage({ params }: Props) {
   const c = businessCopy[lang];
   // Keep the shared form in the same language as this bilingual page, including
   // validation, role choices and success/error states in fallback locales.
+  const work = portfolioCopy[lang];
   const messages = await getMessages({ locale: lang });
   const schema = {
     '@context': 'https://schema.org', '@type': 'Service',
@@ -57,14 +60,51 @@ export default async function BusinessPage({ params }: Props) {
           <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">{c.title}</h1>
           <p className="mt-5 text-xl font-semibold text-neutral-800">{c.heading}</p>
           <p className="mt-5 text-lg leading-relaxed text-neutral-600">{c.intro}</p>
-          {capture('hero')}
+          <a href="#partnership" data-business-event="brief" className="mt-7 inline-flex rounded-full bg-purple-700 px-6 py-3 font-semibold text-white hover:bg-purple-800">{c.cta} →</a><br />
           <a data-business-event="examples" href="#examples" className="mt-5 inline-block text-sm font-semibold text-purple-700 underline underline-offset-4">{c.examplesCta} ↓</a>
         </div>
         <figure className="overflow-hidden rounded-2xl bg-white shadow-lg">
-          <Image src="/business/fabric-poster.jpg" alt={c.samples[0][1]} width={960} height={540} priority className="aspect-video w-full object-cover" />
-          <figcaption className="p-5 text-sm leading-relaxed text-neutral-600">{c.samples[0][2]}</figcaption>
+          <Image src={businessCases[0].image} alt={businessCases[0].copy[lang].output} width={960} height={540} priority className="aspect-video w-full object-cover" />
+          <figcaption className="p-5 text-sm leading-relaxed text-neutral-600">{businessCases[0].copy[lang].note}</figcaption>
         </figure>
       </section>
+
+      <section id="examples" className="mt-16 scroll-mt-28" aria-labelledby="examples-title">
+        <h2 id="examples-title" className="text-3xl font-bold tracking-tight sm:text-4xl">{work.title}</h2>
+        <p className="mt-4 max-w-3xl leading-relaxed text-neutral-600">{work.intro}</p>
+        <div className="mt-8 grid items-start gap-8 md:grid-cols-2">
+          {businessCases.map(item => {
+            const detail = item.copy[lang];
+            return <article key={item.id} data-business-case={item.id} className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+              {item.video ? <video data-business-video={item.id} controls playsInline preload="none" poster={item.image} aria-label={detail.title} className="aspect-[4/3] w-full bg-neutral-950 object-contain">
+                <source src={item.video} type="video/mp4" /><a href={item.video}>{detail.title}</a>
+              </video> : <Image src={item.image} alt={detail.output} width={1200} height={900} className="aspect-[4/3] w-full bg-neutral-100 object-contain" />}
+              <div className="p-6 sm:p-7">
+                <p className="text-xs font-bold tracking-wide text-purple-700">{detail.badge}</p>
+                <h3 className="mt-3 text-2xl font-bold tracking-tight">{detail.title}</h3>
+                <dl className="mt-5 space-y-3 text-sm leading-6">
+                  <div><dt className="font-semibold">{work.input}</dt><dd className="text-neutral-600">{detail.input}</dd></div>
+                  <div><dt className="font-semibold">{work.output}</dt><dd className="text-neutral-600">{detail.output}</dd></div>
+                </dl>
+                <p className="mt-4 text-xs leading-5 text-neutral-500">{detail.note}</p>
+                {item.id === 'kyoto' && <Link locale={lang} href={taskHref('souvenir')} data-business-event="case:kyoto:self-serve" className="mt-4 block font-semibold text-purple-700">{lang === 'zh' ? '用我的照片制作 · 新功能预览 →' : 'Use my portrait · new tool preview →'}</Link>}
+                {item.article && <Link locale={lang} href={item.article} data-business-event={`case:${item.id}:read`} className="mt-4 inline-block text-sm font-semibold text-purple-700 underline underline-offset-4">{work.article} →</Link>}
+                <details className="group mt-6 border-t border-neutral-200 pt-5">
+                  <summary data-business-event={`case:${item.id}:inquiry`} className="cursor-pointer rounded-xl bg-purple-50 px-4 py-3 font-semibold text-purple-800 hover:bg-purple-100">{work.similar}</summary>
+                  <p className="mt-4 text-sm leading-6 text-neutral-600">{work.hint}</p>
+                  <NextIntlClientProvider locale={lang} messages={{ contact: messages.contact }}>
+                    <InlineContactCapture source={`business:${lang}:case:${item.id}`} caseId={item.id} subject={`${work.inquiry}: ${detail.title}`} cta={work.submit} note={work.brief} trackingId={`business:${lang}:case:${item.id}:submit`} className="mt-4" />
+                  </NextIntlClientProvider>
+                </details>
+              </div>
+            </article>;
+          })}
+        </div>
+      </section>
+      <aside className="mt-10 flex flex-col gap-4 rounded-2xl bg-neutral-100 p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div><h2 className="font-bold">{work.selfServe}</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-neutral-600">{work.selfServeIntro}</p></div>
+        <Link href="/tools" locale={lang} data-business-event="self-serve" className="shrink-0 font-semibold text-purple-700">{work.tool} →</Link>
+      </aside>
 
       <section className="mt-20" aria-labelledby="sectors-title">
         <h2 id="sectors-title" className="text-3xl font-bold tracking-tight">{c.sectorsTitle}</h2>
@@ -77,22 +117,6 @@ export default async function BusinessPage({ params }: Props) {
               <p className="mb-6 mt-3 text-sm leading-7 text-neutral-600">{description}</p>
               <Link data-business-event={`sector:${id}`} locale={lang} href={{ pathname: '/contact', query: { subject: `${c.cta}: ${title}`, source: `business:${lang}:${id}` } }} className="mt-auto text-sm font-semibold text-purple-700 hover:underline">{c.sectorCta} →</Link>
             </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="examples" className="mt-20 scroll-mt-28" aria-labelledby="examples-title">
-        <h2 id="examples-title" className="text-3xl font-bold tracking-tight">{c.samplesTitle}</h2>
-        <p className="mt-3 max-w-3xl leading-relaxed text-neutral-600">{c.samplesIntro}</p>
-        <div className="mt-8 grid items-start gap-6 md:grid-cols-2">
-          {c.samples.map(([id, title, description]) => (
-            <figure key={id} className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
-              <video data-business-video={id} controls playsInline preload="none" poster={`/business/${id}-poster.jpg`} aria-label={title} className="aspect-video w-full bg-neutral-950 object-contain">
-                <source src={`/business/${id}-watermarked.mp4`} type="video/mp4" />
-                <a href={`/business/${id}-watermarked.mp4`}>{title}</a>
-              </video>
-              <figcaption className="p-6"><h3 className="text-xl font-bold">{title}</h3><p className="mt-3 text-sm leading-7 text-neutral-600">{description}</p></figcaption>
-            </figure>
           ))}
         </div>
       </section>

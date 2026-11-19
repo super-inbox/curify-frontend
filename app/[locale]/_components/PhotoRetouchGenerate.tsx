@@ -1,5 +1,6 @@
 "use client";
 
+import { trackTaskStage } from "@/services/taskTracking";
 import { navigateToAwaitingCredits } from "@/lib/awaitingCredits";
 
 
@@ -69,6 +70,7 @@ export default function PhotoRetouchGenerate() {
     if (previewUrl) URL.revokeObjectURL(previewUrl);
     setActiveProject(null); setReviewMessage(null); setPending(false);
     setFile(f);
+    trackTaskStage("upload");
     setPreviewUrl(URL.createObjectURL(f));
     setResultUrl(null);
     setGates(null);
@@ -100,6 +102,7 @@ export default function PhotoRetouchGenerate() {
         contentType: "tool_card",
         actionType: "generate",
       });
+      trackTaskStage("attempt");
       const { project_id } = await photoRetouchService.generate({
         file,
         email: email.trim(),
@@ -107,18 +110,21 @@ export default function PhotoRetouchGenerate() {
       });
       if (!project_id) throw new Error("Could not start the edit. Please try again.");
       setActiveProject(project_id);
+      trackTaskStage("accepted");
       const done = await photoRetouchService.pollResult(project_id);
       if (done.status === "REVIEW_REQUIRED" || done.status === "QA_FAILED") {
         setReviewMessage(done.status === "QA_FAILED" ? "This edit needs correction before it can be released." : "Your edit is ready for quality review. Download will be available after approval.");
         return;
       }
       if (done.result_url) trackFirstGeneration("photo-retouch");
+      if (done.result_url) trackTaskStage("success");
       setResultUrl(done.result_url ?? null);
       setGates(done.gates ?? null);
       if (done.regions_applied != null && done.regions_planned != null) {
         setApplied([done.regions_applied, done.regions_planned]);
       }
     } catch (e) {
+      trackTaskStage(e instanceof Error && e.message === PENDING ? "pending" : "error");
       if (navigateToAwaitingCredits(e)) return;
       const msg = e instanceof Error ? e.message : "Something went wrong.";
       if (msg === PENDING) setPending(true);
@@ -253,6 +259,7 @@ export default function PhotoRetouchGenerate() {
             </p>
             <a
               href={resultUrl}
+              onClick={() => trackTaskStage("download")}
               download
               className="inline-flex items-center gap-2 rounded-lg border border-[#5a50e5] text-[#5a50e5] px-4 py-2 text-sm font-semibold hover:bg-[#5a50e5]/5"
             >

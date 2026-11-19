@@ -3,6 +3,7 @@
 
 
 import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
+import TaskEntryContext from "@/app/[locale]/_components/TaskEntryContext";
 import SearchRedirectTracker from "../../topics/[slug]/SearchRedirectTracker";
 import { toTemplateStripCard } from "@/lib/nano_pure";
 import { Link } from "@/i18n/navigation";
@@ -272,6 +273,7 @@ export default function ToolGenericClient({
       ) : null}
 
       <div id="reproduce" className="mt-8 scroll-mt-24 text-center">
+        <TaskEntryContext slug={slug} locale={locale} />
         {tool.action?.type === "generate" && generateData ? (
           // Real inline image2image tool: 3-column workbench (upload → generate
           // → designer pack), same as the image2image template-detail pages.

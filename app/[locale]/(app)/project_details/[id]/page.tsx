@@ -1,4 +1,5 @@
 "use client";
+import { trackTaskProject } from "@/services/taskTracking";
 
 import React, { useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
@@ -46,6 +47,7 @@ export default function ProjectDetailsPage() {
   // filenames or translated content enter analytics. This records intent,
   // not proof that the browser finished saving a file.
   const trackDownload = () => {
+    if (id) trackTaskProject(id, "download");
     if (!id) return;
     track({ contentId: id, contentType: "menu_link", actionType: "download" });
   };

@@ -10,6 +10,75 @@ sitemap includes only English and Chinese. Content and Service/OfferCatalog
 structured data are server rendered. Homepage and footer provide crawlable entry
 links. Videos are user initiated with `preload="none"` and poster images.
 
+## 2026-11-18 — Work-first portfolio and contextual inquiries
+
+Current production was checked read-only on 2026-11-18: it still serves the old
+industry-first business page. The following redesign is implemented locally;
+no production deployment is claimed by this entry. Earlier validation/status
+sections below retain their original dates.
+
+- Four server-rendered work cards now precede the nine industry cards: hotel V4
+  editing trial, ZEELUM V10 product-video demonstration, Fabric and Kyoto.
+  Each identifies input, output and trial/demo status. Hero uses the published
+  hotel comparison. No client approval or conversion uplift is implied.
+- Hotel image and ZEELUM media reuse the CDN URLs already published in
+  `/blog/hotel-photo-editing-case-study` and `/blog/product-photos-to-feature-video`.
+  Hotel publication permission and non-final status were verified from that article;
+  ZEELUM is the already-public silent demo. Fabric/Kyoto retain their watermarks.
+- Every work card expands an inline inquiry without login or leaving the page.
+  Email is required; brief and role are optional. Scope/pricing are agreed before
+  production. The generic brief form and sector/enterprise links remain available.
+- `lib/business-cases.ts` defines stable case IDs and services. `services/contact.ts`
+  serializes Case ID and Service into the existing content field, alongside
+  first-touch attribution/session. The backend contact route persists that content
+  in `email_contacts.body` and adds source. No schema or backend deployment required.
+- The optional full-contact link carries `case_id`; the contact page resolves it
+  against the known registry, ignoring unknown/inherited IDs. Arbitrary URL service
+  names cannot override the canonical service. Both forms guard in-flight duplicates.
+
+### Events added
+
+| ID | Meaning |
+|---|---|
+| `business:<lang>:case:<id>:inquiry` | Open a case brief (closing does not emit intent) |
+| `business:<lang>:case:<id>:read` | Read the published case article |
+| `business:<lang>:case:<id>:submit:start` | First focus within this case form |
+| `business:<lang>:case:<id>:submit` | Submit attempt |
+| `business:<lang>:case:<id>:submit:error` | Failed API submission |
+| `contact:submit:business:<lang>:case:<id>` | Successful API response |
+| `contact:<start|attempt|error>:business:<lang>:case:<id>:call` | Secondary full-contact path |
+| `contact:submit:business:<lang>:case:<id>:call` | Secondary full-contact success |
+| `business:<lang>:self-serve` | Browse tools |
+
+These use `click/menu_link`; classify by exact ID, not raw action counts.
+Existing `business:<lang>` view, video_play and brief/sector events remain.
+Hero email capture was replaced with a brief anchor; do not compare its old
+attempt count to the new hero link click. No email or free-text brief is sent in
+analytics. Form success means API acceptance, not a qualified lead or payment.
+
+### Verification
+
+- Full repository TypeScript check and contact contract unit tests.
+- Browser regression covers en/zh/ja fallback, all four case forms, invalid email,
+  retained fields after failure, retry success, source/case/service/UTM/session,
+  secondary contact route, playback deduplication, metadata and 390px overflow.
+- Desktop/mobile screenshots inspected. Existing homepage ToolsGrid hydration
+  mismatch remains outside this change; inbound link tracking passes after recovery.
+- All lead and analytics requests intercepted in browser tests. This proves frontend
+  request/response behavior, not live DB persistence or mail delivery. No live test
+  lead was sent. Production release and event-ingestion checks remain outstanding.
+
+Reproduce with local Next on localhost:3001:
+
+```sh
+npx tsc --noEmit --incremental false
+npx vitest run --config vitest.unit.config.ts lib/__tests__/business-contact.test.ts
+BUSINESS_TEST_CHROME=1 node scripts/test-business-tracking.cjs
+```
+
+`BUSINESS_TEST_CHROME=1` uses a fresh headless installed Chrome instance; omit it
+when Playwright Chromium is installed. No personal browser profile is used.
+
 ## Media provenance
 
 The checked-in assets in `public/business/` are compressed derivatives of:

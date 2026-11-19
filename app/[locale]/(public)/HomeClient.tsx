@@ -12,6 +12,7 @@ import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 import type { NanoInspirationCardType } from "@/lib/nano_pure";
 import HomeToolsStrip from "./HomeToolsStrip";
 import HomeHero from "./HomeHero";
+import HomeCreationTasks from "./HomeCreationTasks";
 import HomeSolutionsGrid from "./HomeSolutionsGrid";
 import HomeFusedRow, { type TopRemixPrompt, type HomeExampleTile } from "./HomeFusedRow";
 
@@ -101,7 +102,7 @@ export default function HomeClient({
             is read before the tiles rather than after thirty of them. It was
             already the best-converting non-nav surface on the page (146 clicks
             from 77 people over 90 days) from BELOW the fold. */}
-        <HomeSolutionsGrid />
+        <HomeCreationTasks />
 
         <section className="mt-8 w-full max-w-[1600px]">
           <div className="mb-4 pl-1">
@@ -179,6 +180,8 @@ export default function HomeClient({
             the template grid, so its click counts here were all measured from
             the old position below the tiles. Treat them as a floor. */}
         <HomeToolsStrip />
+
+        <HomeSolutionsGrid />
 
         {nicheTopics}
 

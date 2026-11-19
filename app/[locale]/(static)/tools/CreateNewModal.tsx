@@ -1,5 +1,6 @@
 // CreateNewModal.tsx
 "use client";
+import { trackTaskStage, rememberTaskProject } from "@/services/taskTracking";
 
 import { youtubeSource } from "@/lib/searchQuality";
 import { useAtom } from "jotai";
@@ -239,7 +240,10 @@ export default function CreateNewModal() {
       console.log("createProject payload:", payload);
       console.log("createProject payload JSON:", JSON.stringify(payload, null, 2));
       
+      trackTaskStage("attempt");
       const newProject = await projectService.createProject(payload);
+      trackTaskStage("accepted");
+      rememberTaskProject(newProject.project_id);
 
       // Thin auth probe before navigating to /magic/<id>. The page is
       // server-gated by the middleware (middleware.ts:45-65) reading
@@ -266,6 +270,7 @@ export default function CreateNewModal() {
       setModalState(null);
       router.replace(`/magic/${newProject.project_id}`);
     } catch (error) {
+      trackTaskStage("error");
       alert("Failed to create project.");
       console.error(error);
     } finally {
@@ -292,6 +297,7 @@ export default function CreateNewModal() {
                   setIsYoutubeUpload(false);
                 }}
                 onUploaded={(id, blobUrl) => {
+                  trackTaskStage("upload");
                   setVideoId(id);
                   setVideoBlobUrl(blobUrl);
                   setIsUploading(false);

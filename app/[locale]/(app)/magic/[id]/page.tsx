@@ -1,4 +1,5 @@
 "use client";
+import { trackTaskProject } from "@/services/taskTracking";
 
 import { useParams } from "next/navigation";
 import { JOB_UI_CONFIG } from "@/lib/create-job-ui";
@@ -88,6 +89,7 @@ export default function Magic() {
         setWaiting(null);
 
         if (projectStatus === "COMPLETED") {
+          trackTaskProject(projectId, "success");
           console.log("Project completed → redirecting");
 
           isRedirectingRef.current = true;
@@ -119,6 +121,7 @@ export default function Magic() {
         if (projectStatus === "FAILED") {
           // Message selection and which buttons apply live in lib/failureActions
           // so they can be tested without mounting this page.
+          trackTaskProject(projectId, "error");
           setFailure(buildFailureView(statusRes, (k) => t.has(k)));
           return;
         }

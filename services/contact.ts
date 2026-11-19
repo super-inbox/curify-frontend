@@ -1,3 +1,4 @@
+import type { businessCaseContext } from "@/lib/business-cases";
 import { apiClient } from "./api";
 import { getFirstTouch, getSessionId } from "./useTracking";
 
@@ -16,6 +17,7 @@ export const CONTACT_ROLES = [
 export type ContactRole = (typeof CONTACT_ROLES)[number];
 
 export interface SendMailRequest {
+  caseContext?: ReturnType<typeof businessCaseContext>;
   email: string;
   subject: string;
   content: string;
@@ -37,13 +39,15 @@ export interface SendMailRequest {
  * appends its own "Submitted from:" line after this.
  */
 function withLeadContext(data: SendMailRequest) {
-  const { role, ...rest } = data;
+  const { role, caseContext, ...rest } = data;
   let sessionId: string | undefined;
   try {
     sessionId = getSessionId() || undefined;
   } catch {}
   const touch = getFirstTouch();
   const lines = [
+    caseContext ? `Case ID: ${caseContext.caseId}` : null,
+    caseContext ? `Service: ${caseContext.service}` : null,
     role ? `Role: ${role}` : null,
     touch.landing_page ? `Landing page: ${touch.landing_page}` : null,
     touch.utm ? `UTM: ${new URLSearchParams(touch.utm).toString()}` : null,

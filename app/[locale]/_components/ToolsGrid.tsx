@@ -57,6 +57,8 @@ import { useTracking } from "@/services/useTracking";
 
 type Props = {
   tools: ToolDef[];
+  /** Localized copy for dedicated pages outside the generic tool namespace. */
+  copyOverrides?: Record<string, { title: string; description: string }>;
   /** Override the responsive grid template — defaults to the 4-up grid
    *  used on /tools. /use-cases/[slug] passes a 2-up grid since it
    *  typically shows ≤4 tools and a wider card reads better. */
@@ -66,7 +68,7 @@ type Props = {
 const DEFAULT_GRID =
   "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4";
 
-export default function ToolsGrid({ tools, gridClassName }: Props) {
+export default function ToolsGrid({ tools, gridClassName, copyOverrides }: Props) {
   const [, setModalState] = useAtom(modalAtom);
   const [, setCreateJobCtx] = useAtom(createJobContextAtom);
   const [user] = useAtom(userAtom);
@@ -128,16 +130,16 @@ export default function ToolsGrid({ tools, gridClassName }: Props) {
       {tools.map((tool) => {
         const showFreeBadge = !!tool.i18n.showFreeBadge;
         // `title` can be JSX (free badge), so keep a plain string for aria.
-        const plainTitle = t(tool.i18n.titleKey);
+        const plainTitle = copyOverrides?.[tool.id]?.title ?? t(tool.i18n.titleKey);
         const title = showFreeBadge ? (
           <span>
-            {t(tool.i18n.titleKey)}{" "}
+            {plainTitle}{" "}
             <span className="font-bold text-red-600">{t("tools.free_badge")}</span>
           </span>
         ) : (
-          t(tool.i18n.titleKey)
+          plainTitle
         );
-        const desc = t(tool.i18n.descKey);
+        const desc = copyOverrides?.[tool.id]?.description ?? t(tool.i18n.descKey);
 
         const canCreate = tool.status === "create";
         const isComingSoon = tool.status === "coming_soon";

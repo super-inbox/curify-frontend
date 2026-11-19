@@ -4,11 +4,12 @@ const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 const base = process.env.BUSINESS_TEST_URL || 'http://localhost:3001';
 (async () => {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: true, ...(process.env.BUSINESS_TEST_CHROME ? { channel: 'chrome' } : {}) });
   try {
     for (const [path, lang] of (process.argv.includes('--inbound-only') ? [] : [['/business', 'en'], ['/zh/business', 'zh'], ['/ja/business', 'en']])) {
       const context = await browser.newContext();
       const page = await context.newPage();
+      page.setDefaultNavigationTimeout(120000);
       const events = [], leads = [];
       let failLead = true;
       await page.route('**/interactions/track', async route => {
@@ -44,7 +45,7 @@ const base = process.env.BUSINESS_TEST_URL || 'http://localhost:3001';
       await waitEvent(`business:${lang}:enterprise`, 'click');
       await page.locator('footer a[href$="/business"]').click();
       await waitEvent('footer:business', 'click');
-      const video = page.locator('video').first();
+      const video = page.locator('video[data-business-video=fabric]');
       await video.evaluate(v => { v.muted = true; return v.play(); });
       await waitEvent(`business:${lang}:video:fabric`, 'video_play');
       await video.evaluate(v => { v.pause(); return v.play(); });
@@ -62,11 +63,50 @@ const base = process.env.BUSINESS_TEST_URL || 'http://localhost:3001';
       await form.locator('button[type=submit]').click();
       await waitEvent(`business:${lang}:brief`, 'click', 2);
       await waitEvent(`contact:submit:business:${lang}:brief`, 'click');
-      const hero = page.locator('#business-page form').first();
-      await hero.locator('input[type=email]').fill('business-test@example.com');
-      await hero.locator('button[type=submit]').click();
-      await waitEvent(`business:${lang}:hero`, 'click');
-      await waitEvent(`contact:submit:business:${lang}:hero`, 'click');
+      // Each portfolio inquiry stays on the page and retains its own case/service.
+      const caseServices = { 'hotel-room': 'photo-retouching', 'zeelum-backpack': 'product-video', fabric: 'product-story-video', kyoto: 'souvenir-video' };
+      assert.equal(await page.locator('[data-business-case]').count(), 4);
+      assert.ok(await page.evaluate(() => document.querySelector('#examples').compareDocumentPosition(document.querySelector('#sectors-title')) & Node.DOCUMENT_POSITION_FOLLOWING));
+      for (const [id, service] of Object.entries(caseServices)) {
+        const card = page.locator(`[data-business-case="${id}"]`);
+        await card.locator('summary').click();
+        await waitEvent(`business:${lang}:case:${id}:inquiry`, 'click');
+        const form = card.locator('form');
+        const callUrl = new URL(await form.locator('a').getAttribute('href'), base);
+        assert.equal(callUrl.searchParams.get('case_id'), id);
+        assert.equal(callUrl.searchParams.get('source'), `business:${lang}:case:${id}:call`);
+        const before = leads.length;
+        await form.locator('button[type=submit]').click();
+        assert.equal(leads.length, before, 'empty email cannot submit');
+        await form.locator('input[type=email]').fill('business-test@example.com');
+        await form.locator('textarea').fill('QA only — 20 assets, square format');
+        await waitEvent(`business:${lang}:case:${id}:submit:start`, 'click');
+        failLead = true;
+        await form.locator('button[type=submit]').click();
+        await waitEvent(`business:${lang}:case:${id}:submit:error`, 'click');
+        assert.equal(count(`contact:submit:business:${lang}:case:${id}`, 'click'), 0);
+        assert.equal(await form.locator('input[type=email]').inputValue(), 'business-test@example.com');
+        assert.equal(await form.locator('textarea').inputValue(), 'QA only — 20 assets, square format');
+        failLead = false;
+        await form.locator('button[type=submit]').click();
+        await waitEvent(`contact:submit:business:${lang}:case:${id}`, 'click');
+        assert.equal(count(`business:${lang}:case:${id}:submit`, 'click'), 2);
+        const lead = leads.at(-1);
+        assert.equal(lead.source, `business:${lang}:case:${id}`);
+        assert.ok(lead.content.includes(`Case ID: ${id}`));
+        assert.ok(lead.content.includes(`Service: ${service}`));
+        assert.ok(!('caseContext' in lead), 'frontend context serialized into stored message');
+      }
+      // SSR metadata and responsive layout remain correct for fallback languages.
+      assert.equal(await page.locator('#business-page').getAttribute('lang'), lang);
+      assert.equal(await page.locator('link[rel=canonical]').getAttribute('href'), `https://www.curify-ai.com${lang === 'zh' ? '/zh' : ''}/business`);
+      await page.setViewportSize({ width: 390, height: 844 });
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      await page.locator('#examples').scrollIntoViewIfNeeded();
+      await page.screenshot({ path: `/tmp/business-work-first-${lang}-mobile.png`, fullPage: true });
+      await page.setViewportSize({ width: 1440, height: 1000 });
+      await page.evaluate(() => scrollTo(0, 0));
+      await page.screenshot({ path: `/tmp/business-work-first-${lang}-desktop.png`, fullPage: true });
       for (const lead of leads) {
         assert.ok(lead.source.startsWith(`business:${lang}:`));
         assert.ok(lead.content.includes('utm_campaign=business-qa'));
@@ -77,7 +117,26 @@ const base = process.env.BUSINESS_TEST_URL || 'http://localhost:3001';
       assert.ok(own.every(e => e.current_page_url.includes('utm_campaign=business-qa') && !e.current_page_url.includes('email=')));
       assert.ok(own.every(e => ['page', 'menu_link'].includes(e.content_type)));
       assert.equal(count(`business:${lang}`, 'view'), 1, 'one page view despite interactions and strict effects');
-      console.log(`PASS ${path}: view, 9 sectors, examples, cross-links, playback dedupe, attempts/conversions, retry, session/UTM attribution`);
+      console.log(`PASS ${path}: four case funnels, validation, failures/retry, source/service, responsive layout, view/playback dedupe and cross-links`);
+      // The secondary full-contact route preserves the same canonical context.
+      await page.goto(`${base}${lang === 'zh' ? '/zh' : ''}/contact?case_id=hotel-room&source=business:${lang}:case:hotel-room:call&subject=Hotel%20sample`, { waitUntil: 'domcontentloaded' });
+      await page.waitForFunction(() => {
+        const form = document.querySelector('form:has(textarea)');
+        return form && Object.keys(form).some(k => k.startsWith('__reactProps') && typeof form[k]?.onSubmit === 'function');
+      });
+      const full = page.locator('form').filter({ has: page.locator('textarea') });
+      await full.locator('input[type=email]').fill('business-test@example.com');
+      await full.locator('textarea').fill('QA full-contact path');
+      failLead = true;
+      await full.locator('button[type=submit]').click();
+      await waitEvent(`contact:error:business:${lang}:case:hotel-room:call`, 'click');
+      assert.equal(count(`contact:submit:business:${lang}:case:hotel-room:call`, 'click'), 0);
+      failLead = false;
+      await full.locator('button[type=submit]').click();
+      await waitEvent(`contact:attempt:business:${lang}:case:hotel-room:call`, 'click', 2);
+      await waitEvent(`contact:submit:business:${lang}:case:hotel-room:call`, 'click');
+      assert.ok(leads.at(-1).content.includes('Case ID: hotel-room'));
+      assert.ok(leads.at(-1).content.includes('Service: photo-retouching'));
       await context.close();
     }
     const page = await browser.newPage();

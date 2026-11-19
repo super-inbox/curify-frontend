@@ -1,4 +1,5 @@
 "use client";
+import { trackTaskStage } from "./taskTracking";
 
 import { navigateToAwaitingCredits } from "@/lib/awaitingCredits";
 
@@ -187,6 +188,7 @@ export function useDirectGenerate({
       setIsGenerating(true);
       isGeneratingRef.current = true;
       trackAction(tracking, "generate");
+      trackTaskStage("attempt");
       const res = await nanoGenerateService.generate({
         template_id: templateId,
         params,
@@ -195,6 +197,7 @@ export function useDirectGenerate({
       });
       if (!res?.success) throw userError(res?.message || "Generation failed");
 
+      trackTaskStage("accepted");
       // Legacy synchronous backend returned signed_url directly; the async
       // backend returns a project_id we poll until the render completes.
       let imageUrl = res.signed_url;
@@ -209,8 +212,10 @@ export function useDirectGenerate({
       }
       lastGeneratedExIdRef.current = exId;
       trackFirstGeneration("nano-template");
+      trackTaskStage("success");
       onSuccess(imageUrl, exId, { projectId: res.project_id, watermarked });
     } catch (err) {
+      trackTaskStage("error");
       if (navigateToAwaitingCredits(err)) return;
       // Surface clean user-facing messages (content-blocked, timeout, etc.);
       // fall back to the generic alert for network/unknown errors.

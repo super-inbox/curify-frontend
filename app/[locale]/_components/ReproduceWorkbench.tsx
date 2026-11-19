@@ -1,4 +1,5 @@
 "use client";
+import { trackTaskStage } from "@/services/taskTracking";
 
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
@@ -702,6 +703,7 @@ export default function ReproduceWorkbench({
                 <div className="mt-2 space-y-2">
                   <a
                     href={col1.downloadHref ?? col1.resultUrl}
+                    onClick={() => trackTaskStage("download")}
                     download
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1060,6 +1062,7 @@ export default function ReproduceWorkbench({
               {latestUrl && (
                 <a
                   href={latestUrl}
+                  onClick={() => trackTaskStage("download")}
                   download
                   target="_blank"
                   rel="noopener noreferrer"

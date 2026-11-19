@@ -19,12 +19,13 @@
 // The success id is deliberately identical to the one ContactClient fires, so
 // a lead counts the same whether it came from this form or from the full page.
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link as IntlLink } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useTracking } from "@/services/useTracking";
 import { contactService, type ContactRole } from "@/services/contact";
+import { businessCaseContext, type BusinessCaseId } from "@/lib/business-cases";
 import ContactRoleSelect from "./ContactRoleSelect";
 
 // Backend caps `source` at 200 chars and 422s the whole submission otherwise;
@@ -34,6 +35,7 @@ const MAX_SOURCE = 200;
 type Props = {
   /** Lead attribution, e.g. "bulk-cta:tool/ai-fashion-model-generator". */
   source: string;
+  caseId?: BusinessCaseId;
   /** Prefilled subject on the lead — already localized by the caller. */
   subject: string;
   /** Submit button label — already localized by the caller. */
@@ -52,6 +54,7 @@ type Props = {
 
 export default function InlineContactCapture({
   source,
+  caseId,
   subject,
   cta,
   note,
@@ -73,22 +76,27 @@ export default function InlineContactCapture({
   const [status, setStatus] = useState<"idle" | "ok" | "error">("idle");
   const [loading, setLoading] = useState(false);
 
+  const submitting = useRef(false);
+  const started = useRef(false);
   const clampedSource = source.slice(0, MAX_SOURCE);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (submitting.current) return;
     if (hp) {
       // Report success rather than an error: telling a bot which check it
       // failed is how it learns to pass. No request, no event.
       setStatus("ok");
       return;
     }
+    submitting.current = true;
     setLoading(true);
     setStatus("idle");
     trackAction({ contentId: trackingId.slice(0, 255), contentType: "menu_link" }, "click");
 
     try {
       await contactService.sendMail({
+        caseContext: businessCaseContext(caseId),
         email,
         subject,
         // The note is optional; the subject alone is still a usable lead, and
@@ -109,8 +117,10 @@ export default function InlineContactCapture({
       setBody("");
       setRole("");
     } catch {
+      if (source.startsWith("business:")) trackAction({ contentId: `${trackingId}:error`.slice(0, 255), contentType: "menu_link" }, "click");
       setStatus("error");
     } finally {
+      submitting.current = false;
       setLoading(false);
     }
   };
@@ -127,7 +137,11 @@ export default function InlineContactCapture({
   }
 
   return (
-    <form onSubmit={handleSubmit} className={className}>
+    <form onSubmit={handleSubmit} className={className} onFocusCapture={() => {
+      if (started.current || !source.startsWith("business:")) return;
+      started.current = true;
+      trackAction({ contentId: `${trackingId}:start`.slice(0, 255), contentType: "menu_link" }, "click");
+    }}>
       <input
         type="text"
         name="company_website"
@@ -144,6 +158,7 @@ export default function InlineContactCapture({
           value={body}
           onChange={(e) => setBody(e.target.value)}
           rows={2}
+          aria-label={note}
           placeholder={note}
           className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm text-neutral-800 placeholder:text-neutral-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-200"
         />
@@ -153,6 +168,8 @@ export default function InlineContactCapture({
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          aria-label={tContact("form.emailPlaceholder")}
+          autoComplete="email"
           type="email"
           required
           placeholder={tContact("form.emailPlaceholder")}
@@ -185,7 +202,7 @@ export default function InlineContactCapture({
           <IntlLink
             href={{
               pathname: "/contact",
-              query: { subject, source: `${clampedSource}:call` },
+              query: { subject, source: `${clampedSource}:call`, ...(caseId ? { case_id: caseId } : {}) },
             }}
             onClick={() =>
               trackAction(

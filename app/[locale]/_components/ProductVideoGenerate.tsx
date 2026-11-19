@@ -1,4 +1,5 @@
 "use client";
+import { trackTaskStage } from "@/services/taskTracking";
 
 import { navigateToAwaitingCredits } from "@/lib/awaitingCredits";
 
@@ -104,6 +105,7 @@ export default function ProductVideoGenerate() {
     setProgress("Planning your video…");
     try {
       track({ contentId: "product-video:generate", contentType: "tool_card", actionType: "generate" });
+      trackTaskStage("attempt");
       const res = await productVideoService.generate({
         image_urls: imageUrls,
         product_name: productName.trim(),
@@ -115,10 +117,13 @@ export default function ProductVideoGenerate() {
         throw new Error(res.message || "Couldn't start generation.");
       }
       setProgress("Rendering your video — this usually takes 30–60 seconds…");
+      trackTaskStage("accepted");
       const url = await poll(res.project_id);
+      trackTaskStage("success");
       trackFirstGeneration("product-video");
       setResultUrl(url);
     } catch (e) {
+      trackTaskStage("error");
       if (navigateToAwaitingCredits(e)) return;
       setError(e instanceof Error ? e.message : "Video generation failed. Please try again.");
     } finally {
@@ -246,6 +251,7 @@ export default function ProductVideoGenerate() {
             target="_blank"
             rel="noopener noreferrer"
             download
+            onClick={() => trackTaskStage("download")}
             className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg border border-purple-200 bg-purple-50 px-4 py-2 text-center font-semibold text-purple-700 transition-colors hover:bg-purple-100"
           >
             <Download className="h-4 w-4" /> Download
