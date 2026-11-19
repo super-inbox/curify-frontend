@@ -1,5 +1,6 @@
 /** Reviewed task phrases for registry tools. Generic subjects stay in content search. */
 export const TOOL_SEARCH_ALIASES: Record<string, string[]> = {
+  'image-to-psd': ['image to psd', 'convert image to layered psd', '图片转分层PSD'],
   'packaging-mockup': ['dieline to 3d box', 'dieline to 3d', 'dieline into a 3d box', 'fold a dieline', 'fold my dieline', '3d packaging mockup', '刀版转3d', '刀模转立体包装盒', '包装刀版转立体'],
   'die-cut-sticker-file': ['die cut sticker file', 'die-cut sticker file', 'export sticker cutline', 'sticker print file', '贴纸刀线文件', '导出贴纸刀线'],
   'acrylic-factory-export': ['acrylic factory file', 'acrylic standee print file', 'export acrylic cutline', '亚克力生产文件', '亚克力立牌刀线'],
@@ -12,7 +13,7 @@ export const TOOL_SEARCH_ALIASES: Record<string, string[]> = {
   'wedding-photo-editing': ['wedding photo editing', 'retouch wedding photos', '婚纱照精修'],
   'product-photo-retouching-service': ['product photo retouching service', 'bulk product retouching', '产品照片精修服务'],
   'real-estate-photo-editing': ['real estate photo editing', 'edit real estate photos', '房产照片精修'],
-  'chinese-costume-tryon': ['chinese costume try on', 'hanfu virtual try on', '汉服虚拟试穿'],
+  'chinese-costume-tryon': ['chinese costume try on', 'chinese costume tryon', 'hanfu virtual try on', '汉服虚拟试穿'],
   'brand-direction-explorer': ['brand direction explorer', 'explore brand directions', '品牌视觉方向探索'],
   'ai-wedding-photo-generator': ['ai wedding photo generator', 'generate wedding portraits'],
   'ai-pet-portrait-generator': ['ai pet portrait generator', 'generate pet portraits'],

@@ -976,6 +976,34 @@
       "expected": "rich",
       "expected_templates": "",
       "notes": "Fix 2 no-op guard — deliberately NOT given a phrase rule. BEFORE and AFTER both bucket=rich (84 strict hits), unchanged. Verified via direct inspection that the match is genuine: template-food-product-packaging-design and template-eco-farm-food-uniform-product-label both strict-match via 包装/装设/设计 bigrams against their own '食品包装设计' (food packaging design) text — a real, on-topic match, just broader than tea/guofeng-specific (no 国风-tea-packaging-specific content exists, confirmed by grep). Kept in the eval set as a regression guard proving Fix 2's new rules don't touch queries that were never broken — 低饱和/国风/茶 do not appear in any Fix 2 phrase rule."
+    },
+    {
+      "query": "Salvador Dalí",
+      "source": "weekly-search-2026-11-05",
+      "expected": "thin",
+      "expected_templates": "",
+      "notes": "Use the companion server-page regression to check subject relevance after rewrite."
+    },
+    {
+      "query": "Salvador Dali",
+      "source": "weekly-search-2026-11-05",
+      "expected": "thin",
+      "expected_templates": "",
+      "notes": "Use the companion server-page regression to check subject relevance after rewrite."
+    },
+    {
+      "query": "Damien Hirst",
+      "source": "weekly-search-2026-11-05",
+      "expected": "empty",
+      "expected_templates": "",
+      "notes": "Use the companion server-page regression to check subject relevance after rewrite."
+    },
+    {
+      "query": "flanderization",
+      "source": "weekly-search-2026-11-05",
+      "expected": "empty",
+      "expected_templates": "",
+      "notes": "Use the companion server-page regression to check subject relevance after rewrite."
     }
   ]
 }

@@ -20,6 +20,7 @@ import {
   topUpContextAtom,
 } from "@/app/atoms/atoms";
 import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
+import { trackGenerationStage } from "@/services/generationFunnel";
 import { trackFirstGeneration } from "@/services/funnelEvents";
 
 /** The client-side affordability check. Must equal what the backend actually
@@ -123,13 +124,16 @@ export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled, o
 
   // Returns the signed URL on success; null when blocked (auth / credits /
   // blank prompt) or on failure (the error is surfaced via alert inside).
-  const generate = async (args: FreeformGenerateArgs): Promise<string | null> => {
+  const generate = async (args: FreeformGenerateArgs, resuming = false): Promise<string | null> => {
     if (isGeneratingRef.current) return null;
     isGeneratingRef.current = true;
+    const contentId = (args.tracking ?? tracking).contentId;
+    trackGenerationStage(resuming ? "auth_resumed" : "attempt", contentId);
 
     if (!user) {
       // Queue the action, open signin; the post-signin effect resumes it.
       pendingArgsRef.current = args;
+      trackGenerationStage("auth_required", contentId);
       isGeneratingRef.current = false;
       track({
         contentId: "auth-modal:gallery-remix",
@@ -150,6 +154,7 @@ export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled, o
     // hit countable: until 2026-08-30 "50 users reached the paywall" was
     // inferred from balances, never observed.
     if (credits < CREDITS_COST) {
+      trackGenerationStage("credits_required", contentId);
       track({
         contentId: `paywall:gallery-remix-generate`,
         contentType: "topic_capsule",
@@ -167,6 +172,7 @@ export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled, o
     }
 
     if (!args.prompt || !args.prompt.trim()) {
+      trackGenerationStage("failure", contentId);
       isGeneratingRef.current = false;
       return null;
     }
@@ -175,6 +181,7 @@ export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled, o
       setIsGenerating(true);
       onStart?.(args);
       trackAction(args.tracking ?? tracking, "generate");
+      trackGenerationStage("request", contentId);
       const res = await freeformGenerateService.generate({
         prompt: args.prompt.trim(),
         ...(args.referenceImageUrl ? { reference_image_url: args.referenceImageUrl } : {}),
@@ -187,17 +194,23 @@ export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled, o
         // failed" report look like a hard failure (2026-08-19 diagnosis: the
         // backend merch gen itself works; the request was credit-gated).
         if (onInsufficientCredits && /insufficient credits/i.test(res?.message || "")) {
+          trackGenerationStage("credits_required", contentId);
           onInsufficientCredits();
           return null;
         }
         throw userError(res?.message || "Generation failed");
       }
       const imageUrl = await pollFreeformResult(res.project_id);
+      trackGenerationStage("success", contentId);
       trackFirstGeneration("freeform");
       onSuccess?.(imageUrl, args);
       return imageUrl;
     } catch (err) {
-      if (navigateToAwaitingCredits(err)) return null;
+      if (navigateToAwaitingCredits(err)) {
+        trackGenerationStage("credits_required", contentId);
+        return null;
+      }
+      trackGenerationStage("failure", contentId);
       const e = err as (Error & { userFacing?: boolean }) | undefined;
       alert(e?.userFacing && e.message ? e.message : t("generateFailed"));
       return null;
@@ -215,10 +228,10 @@ export function useFreeformGenerate({ tracking, onStart, onSuccess, onSettled, o
     if (user && pendingArgsRef.current) {
       const args = pendingArgsRef.current;
       pendingArgsRef.current = null;
-      generate(args);
+      generate(args, true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
-  return { generate, isGenerating };
+  return { generate: (args: FreeformGenerateArgs) => generate(args), isGenerating };
 }

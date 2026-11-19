@@ -27,6 +27,7 @@ import {
   topUpContextAtom,
 } from "@/app/atoms/atoms";
 import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
+import { trackGenerationStage } from "@/services/generationFunnel";
 import { trackFirstGeneration } from "@/services/funnelEvents";
 
 /** The client-side affordability check. Must equal what the backend actually
@@ -113,15 +114,17 @@ export function useDirectGenerate({
   // (most did not). This closes the cliff.
   const pendingGenerateRef = useRef(false);
 
-  const generate = async () => {
+  const generate = async (resuming = false) => {
     if (isGeneratingRef.current) return;
     isGeneratingRef.current = true;
+    trackGenerationStage(resuming ? "auth_resumed" : "attempt", tracking.contentId);
     if (!user) {
       // Anonymous → queue the action, open signin drawer, release the
       // re-entry guard so the post-signin auto-resume can call generate
       // again cleanly. Without releasing the ref, the post-signin call
       // would silently no-op at the top of this function.
       pendingGenerateRef.current = true;
+      trackGenerationStage("auth_required", tracking.contentId);
       isGeneratingRef.current = false;
       // auth-modal tracking — mirrors services/useRequireAuth.ts. Funnel
       // pull 2026-06-17 surfaced 0 auth-modal events because this hot
@@ -142,6 +145,7 @@ export function useDirectGenerate({
       // hit countable: until 2026-08-30 "50 users reached the paywall" was
       // inferred from balances, never observed.
     if (credits < CREDITS_COST) {
+      trackGenerationStage("credits_required", tracking.contentId);
       track({
         contentId: `paywall:nano-template-generate`,
         contentType: "topic_capsule",
@@ -164,10 +168,14 @@ export function useDirectGenerate({
       const dup = findDuplicate(templateId, params, existingExamples);
       if (dup) {
         setDuplicateWarning(dup);
+        trackGenerationStage("duplicate", tracking.contentId);
         // Hand the existing image straight to the surface so it lands in the
         // result panel. No generate request is made either way; this only
         // decides whether the user can SEE what they already have.
-        if (dup.imageUrl) onReusedExisting?.(dup.imageUrl, dup);
+        if (dup.imageUrl && onReusedExisting) {
+          onReusedExisting(dup.imageUrl, dup);
+          trackGenerationStage("reused", tracking.contentId);
+        }
         isGeneratingRef.current = false;
         return;
       }
@@ -177,6 +185,7 @@ export function useDirectGenerate({
       // behind "users click twice and get the same image generated twice."
       if (lastGeneratedExIdRef.current === exId) {
         setDuplicateWarning({ exampleId: exId, score: 1 });
+        trackGenerationStage("duplicate", tracking.contentId);
         isGeneratingRef.current = false;
         return;
       }
@@ -189,6 +198,7 @@ export function useDirectGenerate({
       isGeneratingRef.current = true;
       trackAction(tracking, "generate");
       trackTaskStage("attempt");
+      trackGenerationStage("request", tracking.contentId);
       const res = await nanoGenerateService.generate({
         template_id: templateId,
         params,
@@ -211,12 +221,17 @@ export function useDirectGenerate({
         });
       }
       lastGeneratedExIdRef.current = exId;
+      trackGenerationStage("success", tracking.contentId);
       trackFirstGeneration("nano-template");
       trackTaskStage("success");
       onSuccess(imageUrl, exId, { projectId: res.project_id, watermarked });
     } catch (err) {
       trackTaskStage("error");
-      if (navigateToAwaitingCredits(err)) return;
+      if (navigateToAwaitingCredits(err)) {
+        trackGenerationStage("credits_required", tracking.contentId);
+        return;
+      }
+      trackGenerationStage("failure", tracking.contentId);
       // Surface clean user-facing messages (content-blocked, timeout, etc.);
       // fall back to the generic alert for network/unknown errors.
       const e = err as (Error & { userFacing?: boolean }) | undefined;
@@ -242,7 +257,7 @@ export function useDirectGenerate({
   useEffect(() => {
     if (user && pendingGenerateRef.current) {
       pendingGenerateRef.current = false;
-      generate();
+      generate(true);
     }
     // generate is intentionally omitted from deps — it changes on every
     // render via closure capture, and we only want to fire when `user`
@@ -251,5 +266,5 @@ export function useDirectGenerate({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
-  return { generate, dismissAndGenerate, isGenerating, duplicateWarning, clearWarning };
+  return { generate: () => generate(), dismissAndGenerate, isGenerating, duplicateWarning, clearWarning };
 }

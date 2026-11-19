@@ -2,12 +2,13 @@
 "use client";
 
 
-import { IMAGE_GENERATION_CREDITS } from "@/lib/pricing";
+import { IMAGE_GENERATION_CREDITS, IMAGE_TO_PSD_CREDITS, USD_PER_CREDIT } from "@/lib/pricing";
 import TaskEntryContext from "@/app/[locale]/_components/TaskEntryContext";
 import SearchRedirectTracker from "../../topics/[slug]/SearchRedirectTracker";
 import { toTemplateStripCard } from "@/lib/nano_pure";
 import { Link } from "@/i18n/navigation";
 import { useClientSearchParams } from "@/lib/useClientSearchParams";
+import ImageToPsdForm from "@/app/[locale]/_components/ImageToPsdForm";
 import StickerExportForm from "@/app/[locale]/_components/StickerExportForm";
 import AcrylicExportForm from "@/app/[locale]/_components/AcrylicExportForm";
 
@@ -199,9 +200,14 @@ export default function ToolGenericClient({
             ))}
           </div>
           {slug === "asl-video-translator" && (locale === "en" || locale === "zh") && (
-            <a className="mt-5 inline-block underline" href="/blog/building-asl-video-translator">
-              {locale === "zh" ? "工程记录（英文）：ASL 翻译实验、失败案例与评估方法" : "Engineering notes: ASL translation experiments, failures and evaluation"}
-            </a>
+            <div className="mt-5 flex flex-col items-start gap-3">
+              <a className="underline" href={locale === "zh" ? "/zh/blog/asl-video-translator" : "/blog/asl-video-translator"}>
+                {locale === "zh" ? "ASL 视频翻译指南：选择适合任务的方法" : "ASL video translation guide: choose the right approach for your task"}
+              </a>
+              <a className="underline" href="/blog/building-asl-video-translator">
+                {locale === "zh" ? "工程记录（英文）：ASL 翻译实验、失败案例与评估方法" : "Engineering notes: ASL translation experiments, failures and evaluation"}
+              </a>
+            </div>
           )}
         </section>
       )}
@@ -289,6 +295,8 @@ export default function ToolGenericClient({
           // chosen visual. Moved here from the standalone
           // /brand-direction-explorer route on 2026-08-12 (301 in next.config).
           <BrandDirectionExplorerClient locale={locale} />
+        ) : tool.action?.type === "image_to_psd" ? (
+          <ImageToPsdForm />
         ) : tool.action?.type === "sticker_export" ? (
           // Self-serve factory export — the first surface that actually calls
           // POST /design-tools/*. Charges 20 credits, stated before the click.
@@ -480,14 +488,14 @@ export default function ToolGenericClient({
                 serviceType: t("title"), provider: { "@type": "Organization", name: "Curify" },
               } : {
                 applicationCategory: "MultimediaApplication", operatingSystem: "Any",
-                ...(tool.action?.type === "generate" ? {} : { offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }),
+                ...(tool.action?.type === "generate" ? {} : { offers: { "@type": "Offer", price: tool.action?.type === "image_to_psd" ? String(IMAGE_TO_PSD_CREDITS * USD_PER_CREDIT) : "0", priceCurrency: "USD" } }),
               }),
             }),
           }}
         />
       </section>
 
-      <section className="mt-20 space-y-10">
+      {t.has("deep.what.title") && <section className="mt-20 space-y-10">
         <div className="space-y-3">
           <h2 className="text-2xl font-semibold text-[var(--c1)]">{t("deep.what.title")}</h2>
           <p className="text-base">{t("deep.what.p1")}</p>
@@ -558,6 +566,8 @@ export default function ToolGenericClient({
           )}
         </div>
       </section>
+
+      }
 
       {/* P0 #1c — sibling tools in the same group. Reuses ToolsGrid in a
           2-up layout to match the rest of the page width. */}

@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-24",
+  "records": [
+    {
+      "id": "template-ecommerce-product-photography-01-floral-ring-20261024",
+      "file": "template-ecommerce-product-photography-01-floral-ring-20261024.png",
+      "title": {
+        "zh": "花间金缕 · 戒指主视觉与细节",
+        "en": "Floral gold-wire ring: hero and detail"
+      },
+      "prompt": "Use the attached CUSTOMER REFERENCE as product reference. It depicts a FINGER RING, not a bracelet. Create premium photorealistic jewelry ecommerce diptych landscape 3:2. Subject: ONE wide 18K yellow gold finger ring with fine parallel gold wires spanning the broad face and four staggered clear diamond flower clusters in pale metal settings, closely follow reference silhouette and flower arrangement. Realistic finger-ring dimensions: internal opening about 17mm diameter, front face about 14mm tall, closed circular wearable shank. LEFT full ring three-quarter on charcoal velvet with the small circular finger opening clearly visible, elegantly lit, entirely within frame; RIGHT macro of flowers and fine wire detail of same ring. Gold reflection controlled, diamonds sharp with dark-light facets and subtle natural sparkle. Ring must look like a miniature jewel for one finger, not a cuff, not wrist jewelry. No hand in this image, no text, logo, certificate, measurement graphics or invented brand. Concept proposal based on customer reference.",
+      "generator": "built-in image_gen",
+      "template_id": "template-ecommerce-product-photography",
+      "template_executed": false,
+      "sha256": "d3787020af3edf7509f29b1c224afb603d91b27cc7d4c50f6c26df56ba835b5b",
+      "reference": "customer floral ring image"
+    },
+    {
+      "id": "template-ecommerce-product-photography-02-gemstone-ring-20261024",
+      "file": "template-ecommerce-product-photography-02-gemstone-ring-20261024.png",
+      "title": {
+        "zh": "复古花园 · 彩宝戒指与镂空细节",
+        "en": "Vintage gemstone ring: hero and filigree"
+      },
+      "prompt": "The attached product is a FINGER RING. Create a photorealistic luxury ecommerce diptych landscape 3:2 of this wide yellow-gold antique-style filigree FINGER RING. Closely follow original customer photo: broad openwork gold face with beaded rims and leaf scrollwork, small pale champagne oval central gem, muted blue oval to either side and small green stone farther around, clear accent stones. All stones proportionate to ring size: center around 5mm, finger hole around 17mm, ring face height around 12mm, continuous closed circular shank fitting ONE finger, not a bracelet, not a wrist cuff. LEFT entire ring three-quarter on warm ivory limestone and champagne silk, small circular finger opening clearly visible, golden dimensional reflections, elegant collectible jewelry aesthetic. RIGHT macro of same central oval stone, adjacent blue oval and gold openwork. No text, measurements, certificates, logos, fake brand history, hands. Realistic faceting, controlled highlights, no orange plastic or blown white gems. Similar-style visual concept from low-resolution customer image, not exact SKU proof.",
+      "generator": "built-in image_gen",
+      "template_id": "template-ecommerce-product-photography",
+      "template_executed": false,
+      "sha256": "2808b84f2852ee140b31062488a4ee86f39fb38fc28044a0c168fbc40f4f58f3",
+      "reference": "customer gemstone ring image"
+    },
+    {
+      "id": "template-ecommerce-product-photography-03-on-finger-20261024",
+      "file": "template-ecommerce-product-photography-03-on-finger-20261024.png",
+      "title": {
+        "zh": "指间风景 · 两款戒指佩戴效果",
+        "en": "Floral and gemstone rings: on-finger styling"
+      },
+      "prompt": "Luxury jewelry on-FINGER ecommerce photographic diptych, landscape 3:2. Each reference shows a FINGER RING. LEFT panel adult woman's elegant hand wearing reference 1 floral gold wire ring ONLY on her RING FINGER at its base between knuckle and palm; four diamond flowers over fine gold wires, ring front height 12-14mm, proportionate to single finger. Black silk background and sleeve. RIGHT panel another view of adult woman's hand wearing reference 2 gold filigree multicolor ring ONLY on RING FINGER at base, small champagne center oval, blue ovals and green accent, front about 12mm tall, miniature gem settings. Champagne silk background. Show all five anatomically correct fingers naturally relaxed and wrist completely BARE in each panel, no bracelets, no cuffs, no extra rings, no jewelry spanning multiple fingers. Camera close enough for ring detail but full hand from wrist to fingertips visible so scale unambiguous. Ring snug around exactly one finger, consistent design with corresponding reference, refined skin, natural pores, realistic proportions, jewelry optical brilliance and soft lighting. No text, logos, labels, fake certificates. Editorial concept proposal.",
+      "generator": "built-in image_gen",
+      "template_id": "template-ecommerce-product-photography",
+      "template_executed": false,
+      "sha256": "83378d4a7010111d874273f12e6e27c1b7cbcb924c69bdf4dd77ccc2fba1854c",
+      "reference": [
+        "01-floral-ring.png",
+        "02-gemstone-ring.png"
+      ]
+    }
+  ],
+  "note": "Corrected finger-ring concepts, superseding incorrectly interpreted cuff images. Visual scale guidance in prompts is not verified product sizing. Generated proposals, not exact SKU photographs."
+}

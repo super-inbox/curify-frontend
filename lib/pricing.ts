@@ -165,3 +165,6 @@ export const CLEAN_MASTER_UNLOCK_CREDITS = 5;
 export function creditsToDollars(credits: number): number {
   return credits * USD_PER_CREDIT;
 }
+
+/** Mirrors design_tool_pipelines.IMAGE_TO_PSD_CREDITS. */
+export const IMAGE_TO_PSD_CREDITS = 20;

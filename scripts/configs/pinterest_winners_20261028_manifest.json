@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-28",
+  "branch": "codex/pinterest-template-winners-20261028",
+  "merge_to_main": false,
+  "new_examples": 7,
+  "existing_examples_reused": 1,
+  "new_web_assets": 14,
+  "visual_review": "PASS full images, 236px feed width and bottom strips",
+  "rejected_existing_sources": [
+    {
+      "id": "template-hairstyle-guide-infographic-men-s-wavy-hair-guide",
+      "reason": "Baked copyright credit and dense copy; generated new sibling instead"
+    },
+    {
+      "id": "template-hairstyle-guide-infographic-asian-men-s-textured-crop-guide",
+      "reason": "Several malformed text labels; generated new sibling instead"
+    }
+  ],
+  "deployment_dependency": "Seven new exact example pages require frontend deployment before Pinterest publishing; default Vercel config deploys only main. No deployment or main merge performed.",
+  "locales": [
+    "en",
+    "zh",
+    "ja",
+    "ko",
+    "de",
+    "es",
+    "fr",
+    "hi",
+    "ru",
+    "tr"
+  ],
+  "published_count": 1,
+  "published_pin_id": "570831321550018993",
+  "pending_count": 7,
+  "pending_reason": "Exact example pages are not deployed; no main merge authorized"
+}

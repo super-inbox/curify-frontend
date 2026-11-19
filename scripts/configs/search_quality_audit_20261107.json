@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-07",
+  "coverage_ledger": "docs/search-audits/2026-11-07/query-audit.json",
+  "cases": [
+    {
+      "query": "basketball rules",
+      "required_id": "template-sport-rules-handdrawn-infographic-basketball",
+      "exclude_subjects": [
+        "soccer",
+        "badminton",
+        "futsal"
+      ]
+    },
+    {
+      "query": "chinese costume",
+      "exclude_subjects": [
+        "baiji",
+        "panda",
+        "americas"
+      ]
+    },
+    {
+      "query": "reading about kite",
+      "required_id": "template-science-education-infographic-how-a-kite-flies-20261107"
+    },
+    {
+      "query": "风筝",
+      "required_id": "template-science-education-infographic-how-a-kite-flies-20261107"
+    },
+    {
+      "query": "leggings",
+      "required_gallery_id": 4152
+    },
+    {
+      "query": "glamour under the spotlight",
+      "required_gallery_id": 750
+    },
+    {
+      "query": "pizza box",
+      "empty_examples": true
+    },
+    {
+      "query": "tajikistan",
+      "empty_examples": true
+    },
+    {
+      "query": "my videos",
+      "help_kind": "workspace"
+    },
+    {
+      "query": "my workplace",
+      "help_kind": "workspace"
+    },
+    {
+      "query": "hacer un video",
+      "help_kind": "video"
+    },
+    {
+      "query": "generar un video a partir de un link de diapositiva",
+      "help_kind": "slides"
+    },
+    {
+      "query": "how long does it take to upload a video",
+      "help_kind": "upload"
+    },
+    {
+      "query": "wc-portugal",
+      "redirect_path": "/en/topics/portugal-world-cup"
+    }
+  ]
+}

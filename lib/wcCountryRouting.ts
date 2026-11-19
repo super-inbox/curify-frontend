@@ -80,7 +80,8 @@ export function routeWcCountry(country: string, locale: string): string {
  * /topics/france-world-cup, matching the chip routing.
  */
 export function matchWcCountryQuery(query: string): string | null {
-  const m = query.trim().toLowerCase().match(/^(.+?)\s+world\s+cup$/);
+  const normalized = query.trim().toLowerCase();
+  const m = normalized.match(/^(.+?)\s+world\s+cup$/) ?? normalized.match(/^wc-(.+)$/);
   if (!m) return null;
   const slug = normalizeCountrySlug(m[1]);
   return LOCALIZED_WC_COUNTRY_SLUGS.has(slug) ? slug : null;

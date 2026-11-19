@@ -1,0 +1,3027 @@
+{
+  "window": "2026-10-31T00:00:00+08:00/2026-11-07T00:00:00+08:00",
+  "baseline": "71255692",
+  "locale": "en (default-site replay; source SEARCH locale not retained in aggregate)",
+  "scope": "Zero example/template/gallery-card clicks attributed on search routes; tool/topic arrivals retained separately. Privacy inputs are not replayed.",
+  "total_candidates": 46,
+  "public_reviewed": 40,
+  "privacy_exceptions": 6,
+  "ledger": [
+    {
+      "id": "Q01",
+      "query": "asl video translator",
+      "searches": 5,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 5,
+      "classification": "tool-navigation",
+      "priority": "P3",
+      "action": "工具页正常；零卡点击不等于失败。",
+      "status": "verified-existing",
+      "live_url": "https://www.curify-ai.com/tools/asl-video-translator?from_search=asl%20video%20translator",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    },
+    {
+      "id": "P1",
+      "query": "[local-image-path-b1342bb9]",
+      "searches": 2,
+      "noresult": 1,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "private-input",
+      "priority": "P2",
+      "action": "已用虚构路径验证上传文件提示；不会读取、回显或重写用户路径。",
+      "status": "privacy-exception",
+      "results": [],
+      "reviewed_count": 0
+    },
+    {
+      "id": "Q03",
+      "query": "flanderization",
+      "searches": 1,
+      "noresult": 2,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "content-gap",
+      "priority": "P2",
+      "action": "缺少人物性格扁平化的可视化解释；准备三阶段原创人物对照图，非已完成内容。",
+      "status": "briefed",
+      "live_url": "https://www.curify-ai.com/search?q=flanderization",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    },
+    {
+      "id": "Q04",
+      "query": "fitness",
+      "searches": 2,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 2,
+      "classification": "broad-topic",
+      "priority": "P3",
+      "action": "健康与健身内容为主，Career 项偏题；不据宽泛查询认定缺内容。",
+      "status": "monitor",
+      "live_url": "https://www.curify-ai.com/topics/fitness?from_search=fitness",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Gym — Fitness",
+          "url": "/en/nano-template/warmup-routine/example/template-warmup-routine-gym",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Brain — Fitness",
+          "url": "/en/nano-template/organ-health-food-guide-infographic/example/template-organ-health-food-guide-infographic-brain",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Basketball — Fitness",
+          "url": "/en/nano-template/sports-technique-guide/example/template-sports-technique-guide-basketball",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Female Standard 1.5kg — Fitness",
+          "url": "/en/nano-template/fat-loss-plan/example/template-fat-loss-plan-female-standard-1.5kg",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "hack squat tbar row incline bench press hip abductor — Fitness",
+          "url": "/en/nano-template/equipment-muscle-guide/example/template-equipment-muscle-guide-hack-squat-tbar-row-incline-bench-press-hip-abductor",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Career — Fitness",
+          "url": "/en/nano-template/personal-journey-wolf-path-illustration/example/template-personal-journey-wolf-path-illustration-career",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Antioxidant Rich Foods — Fitness",
+          "url": "/en/nano-template/nutrition-food-guide-poster/example/template-nutrition-food-guide-poster-antioxidant-rich-foods",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Daily Nutrition Plan — Fitness",
+          "url": "/en/nano-template/men-lifestyle-step-guide-infographic-poster/example/template-men-lifestyle-step-guide-infographic-poster-daily-nutrition-plan",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Back Pain Yoga — Fitness",
+          "url": "/en/nano-template/pain-relief-infographic/example/template-pain-relief-infographic-back-pain-yoga",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Arm Day — Fitness",
+          "url": "/en/nano-template/training-muscle-equipment/example/template-training-muscle-equipment-arm-day",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 9,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q05",
+      "query": "basketball rules",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "retrieval",
+      "priority": "P1",
+      "action": "已有篮球规则图；过滤其他运动及非规则内容。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=basketball%20rules",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Basketball",
+          "url": "/en/nano-template/sport-rules-handdrawn-infographic/example/template-sport-rules-handdrawn-infographic-basketball",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Basketball Legends 1",
+          "url": "/en/nano-template/celebrity-movie-group-poster/example/template-celebrity-movie-group-poster-basketball-legends-1",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "stephen curry basketball es",
+          "url": "/en/nano-template/pro-athlete-stat-infographic-poster/example/template-pro-athlete-stat-infographic-poster-stephen-curry-basketball-es",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Basketball",
+          "url": "/en/nano-template/sports-ball-evolution-infographic/example/template-sports-ball-evolution-infographic-basketball",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Soccer Rules",
+          "url": "/en/nano-template/football-themed-ball-infographic/example/template-football-themed-ball-infographic-soccer-rules",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Badminton",
+          "url": "/en/nano-template/sport-rules-handdrawn-infographic/example/template-sport-rules-handdrawn-infographic-badminton",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Futsal",
+          "url": "/en/nano-template/sport-rules-handdrawn-infographic/example/template-sport-rules-handdrawn-infographic-futsal",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "stephen curry basketball en",
+          "url": "/en/nano-template/pro-athlete-stat-infographic-poster/example/template-pro-athlete-stat-infographic-poster-stephen-curry-basketball-en",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Larry O'Brien NBA Championship Trophy",
+          "url": "/en/nano-template/sports-trophy-infographic/example/template-sports-trophy-infographic-larry-obrien-nba-trophy",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "hand of god football rules evolution",
+          "url": "/en/nano-template/sports-iconic-event-analysis-poster/example/template-sports-iconic-event-analysis-poster-hand-of-god-football-rules-evolution",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 7,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q06",
+      "query": "bilingual subtitles",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 1,
+      "classification": "tool-navigation",
+      "priority": "P3",
+      "action": "字幕工具页正常。",
+      "status": "verified-existing",
+      "live_url": "https://www.curify-ai.com/tools/bilingual-subtitles?from_search=bilingual%20subtitles",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    },
+    {
+      "id": "Q07",
+      "query": "box",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "ambiguous",
+      "priority": "P2",
+      "action": "包装、礼盒、舞步混合；box 未明确盒型，建议提供包装/其他含义选择。",
+      "status": "deferred-disambiguation",
+      "live_url": "https://www.curify-ai.com/search?q=box",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Moyu zhong",
+          "url": "/en/nano-template/ip-creative-cultural-goods-mockup-set/example/template-ip-creative-cultural-goods-mockup-set-moyu-zhong",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "curi ai robot keyring mug notebook pen set",
+          "url": "/en/nano-template/ip-gift-box-stationery-set-mockup/example/template-ip-gift-box-stationery-set-mockup-curi-ai-robot-keyring-mug-notebook-pen-set",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Waltz Box Step",
+          "url": "/en/nano-template/ballroom-dance-step-vintage-tutorial-infographic/example/template-ballroom-dance-step-vintage-tutorial-infographic-waltz-box-step",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Mid Autumn Festival (mooncake adjacent), four individually wrapped mooncakes with a small lotus motif card, Golden Lotus Bak…",
+          "url": "/en/nano-template/chocolate-giftbox-packaging/example/template-chocolate-giftbox-packaging-mid-autumn-festival-mooncake-adjacent",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Valentine's Day, heart shaped chocolate pralines in pink and red wrappers, Rosette Chocolaterie",
+          "url": "/en/nano-template/chocolate-giftbox-packaging/example/template-chocolate-giftbox-packaging-valentine-s-day",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Winter Holiday, an assortment of foil wrapped chocolate truffles in gold and red wrappers, Maple & Cocoa Chocolatiers",
+          "url": "/en/nano-template/chocolate-giftbox-packaging/example/template-chocolate-giftbox-packaging-winter-holiday",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Coastal City Map, a stylized illustrated map of a coastal city's landmarks, 300 pieces (travel size)",
+          "url": "/en/nano-template/jigsaw-puzzle-box/example/template-jigsaw-puzzle-box-coastal-city-map",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Forest Friends, a group illustration of five friendly cartoon animal characters in a forest clearing, 500 pieces",
+          "url": "/en/nano-template/jigsaw-puzzle-box/example/template-jigsaw-puzzle-box-forest-friends",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Mountain Lake, a vivid painted illustration of a mountain lake at sunset with pine trees, 1000 pieces",
+          "url": "/en/nano-template/jigsaw-puzzle-box/example/template-jigsaw-puzzle-box-mountain-lake",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Blessing dragon",
+          "url": "/en/nano-template/ip-creative-cultural-goods-mockup-set/example/template-ip-creative-cultural-goods-mockup-set-blessing-dragon",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 9,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q08",
+      "query": "ca",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "ambiguous",
+      "priority": "P3",
+      "action": "ca 意义不明，空结果不能证明内容缺口。",
+      "status": "needs-intent",
+      "live_url": "https://www.curify-ai.com/search?q=ca",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    },
+    {
+      "id": "Q09",
+      "query": "chinese costume",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "retrieval",
+      "priority": "P1",
+      "action": "已有中国服饰；移除动物、草药及非中国服饰尾部。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=chinese%20costume",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "beijing opera colorful female armor",
+          "url": "/en/nano-template/costume/example/template-costume-beijing-opera-colorful-female-armor",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "ming dynasty dragon robe",
+          "url": "/en/nano-template/costume/example/template-costume-ming-dynasty-dragon-robe",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Qing Dynasty Buzi",
+          "url": "/en/nano-template/costume/example/template-costume-qing-dynasty-buzi",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Bai",
+          "url": "/en/nano-template/ethnic-costume-deconstruction-board/example/template-ethnic-costume-deconstruction-board-bai",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Buyi",
+          "url": "/en/nano-template/ethnic-costume-deconstruction-board/example/template-ethnic-costume-deconstruction-board-buyi",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Tujia",
+          "url": "/en/nano-template/ethnic-costume-deconstruction-board/example/template-ethnic-costume-deconstruction-board-tujia",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Traditional Costumes Americas",
+          "url": "/en/nano-template/theme-overview-poster/example/template-theme-overview-poster-traditional-costumes-americas",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Baiji",
+          "url": "/en/nano-template/species/example/template-species-baiji",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Giant Panda",
+          "url": "/en/nano-template/species/example/template-species-giant-panda",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Angelica",
+          "url": "/en/nano-template/herbal/example/template-herbal-angelica",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 6,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q10",
+      "query": "chinese costume tryon",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "tool-navigation",
+      "priority": "P3",
+      "action": "试穿入口已由上次修复恢复。",
+      "status": "verified-existing",
+      "live_url": "https://www.curify-ai.com/tools/chinese-costume-tryon?from_search=chinese%20costume%20tryon",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    },
+    {
+      "id": "Q11",
+      "query": "combine",
+      "searches": 1,
+      "noresult": 1,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "task-navigation",
+      "priority": "P1",
+      "action": "combine 不足以确定对象；改为澄清提示及工作区入口。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=combine",
+      "http_status": 200,
+      "reviewed_count": 7,
+      "results": [
+        {
+          "rank": 1,
+          "title": "La Land, La La Land",
+          "url": "/en/nano-template/movie-poster/example/template-movie-poster-la-la-land",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Titanic",
+          "url": "/en/nano-template/movie-poster/example/template-movie-poster-titanic",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Inception",
+          "url": "/en/nano-template/movie-poster/example/template-movie-poster-inception",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Cedar Lane Home Goods, 25% OFF, Any single item",
+          "url": "/en/nano-template/discount-coupon-voucher/example/template-discount-coupon-voucher-cedar-lane-home-goods",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Magicjohnson, Magic Johnson",
+          "url": "/en/nano-template/mbti-nba/example/template-mbti-nba-magicjohnson",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Kevendurant, Kevin Durant",
+          "url": "/en/nano-template/mbti-nba/example/template-mbti-nba-kevendurant",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Kobebryant, Kobe Bryant",
+          "url": "/en/nano-template/mbti-nba/example/template-mbti-nba-kobebryant",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 0,
+        "denominator": 7
+      }
+    },
+    {
+      "id": "Q13",
+      "query": "entp",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 1,
+      "classification": "topic-navigation",
+      "priority": "P3",
+      "action": "ENTP 十项均与该主题匹配。",
+      "status": "verified-existing",
+      "live_url": "https://www.curify-ai.com/topics/mbti-entp?from_search=entp",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Calcifer — ENTP",
+          "url": "/en/nano-template/mbti-ghibli/example/template-mbti-ghibli-calcifer",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Luka Doncic — ENTP",
+          "url": "/en/nano-template/mbti-nba/example/template-mbti-nba-luka-doncic",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Entp — ENTP",
+          "url": "/en/nano-template/mbti-in-love-infographic/example/template-mbti-in-love-infographic-entp",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Entp — ENTP",
+          "url": "/en/nano-template/mbti-stereotype-vs-reality-infographic/example/template-mbti-stereotype-vs-reality-infographic-entp",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Chandler Bing — ENTP",
+          "url": "/en/nano-template/friends-character-mbti/example/template-friends-character-mbti-chandler-bing",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Marvel Ironman, Iron Man — ENTP",
+          "url": "/en/nano-template/mbti-marvel/example/template-mbti-marvel-marvel-ironman",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Saul Goodman — ENTP",
+          "url": "/en/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Megan Rapinoe — ENTP",
+          "url": "/en/nano-template/mbti-nba/example/template-mbti-nba-megan-rapinoe",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Star Lord — ENTP",
+          "url": "/en/nano-template/mbti-marvel/example/template-mbti-marvel-Star-Lord",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Joker — ENTP",
+          "url": "/en/nano-template/mbti-marvel/example/template-mbti-marvel-joker",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q14",
+      "query": "generar un video a partir de un link de diapositiva",
+      "searches": 1,
+      "noresult": 1,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "capability-help",
+      "priority": "P1",
+      "action": "幻灯片链接转视频能力未确认；说明限制并引导查看工作区，不生成无关图片。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=generar%20un%20video%20a%20partir%20de%20un%20link%20de%20diapositiva",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    },
+    {
+      "id": "Q15",
+      "query": "girl",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "ambiguous",
+      "priority": "P3",
+      "action": "girl 覆盖人物、作品名、风格；不擅自推断年龄或具体任务。",
+      "status": "needs-intent",
+      "live_url": "https://www.curify-ai.com/search?q=girl",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Kitsune Girl Merch Set",
+          "url": "/en/nano-template/ip-creative-cultural-goods-mockup-set/example/template-ip-creative-cultural-goods-mockup-set",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "hsk2 little match girl",
+          "url": "/en/nano-template/hsk-bilingual-reading-text-lesson-poster/example/template-hsk-bilingual-reading-text-lesson-poster-hsk2-little-match-girl",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Nicoco Healing Girl",
+          "url": "/en/nano-template/custom-ip-character-profile-poster-card/example/template-custom-ip-character-profile-poster-card-nicoco-healing-girl",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Squirrel Girl",
+          "url": "/en/nano-template/mbti-marvel/example/template-mbti-marvel-squirrel-girl",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Gone Girl",
+          "url": "/en/nano-template/movie-poster/example/template-movie-poster-gone-girl",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Lavender nails, lilac gel with silver glitter tips",
+          "url": "/en/nano-template/fashion-nail-art-design/example/template-fashion-nail-art-design-lavender",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Johannes Vermeer",
+          "url": "/en/nano-template/artist-biography-infographic/example/template-artist-biography-infographic-johannes-vermeer",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Serene Blue",
+          "url": "/en/nano-template/dessert-color-lab-infographic/example/template-dessert-color-lab-infographic-serene-blue",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "15yo Girl",
+          "url": "/en/nano-template/child-hobby-skill/example/template-child-hobby-skill-15yo-girl",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "6yo Girl",
+          "url": "/en/nano-template/child-hobby-skill/example/template-child-hobby-skill-6yo-girl",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 8,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q16",
+      "query": "glamour under the spotlight",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "retrieval",
+      "priority": "P1",
+      "action": "画廊已有完全同名记录 750；补入精确检索索引，非内容缺口。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=glamour%20under%20the%20spotlight",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Eyemask",
+          "url": "/en/nano-template/fashion-ecommerce/example/template-fashion-ecommerce-eyemask",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Musical Instrument",
+          "url": "/en/nano-template/fashion-ecommerce/example/template-fashion-ecommerce-musical-instrument",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Ring",
+          "url": "/en/nano-template/fashion-ecommerce/example/template-fashion-ecommerce-ring",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "",
+          "url": "/nano-template/fruit-commercial-lifestyle-infographic-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "",
+          "url": "/nano-template/vintage-collage-fashion-collection-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "",
+          "url": "/nano-template/varieties-food-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "",
+          "url": "/nano-template/cuisine-food-vocab-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "",
+          "url": "/nano-template/ethnic-costume-deconstruction-board",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "",
+          "url": "/nano-template/media-theme-wallpaper-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "",
+          "url": "/nano-template/food-photo-doodle-sticker-overlay",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 0,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q17",
+      "query": "hacer un video",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 1,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "task-navigation",
+      "priority": "P1",
+      "action": "西语“做视频”应选择视频流程，不应返回空图搜。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=hacer%20un%20video",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    },
+    {
+      "id": "Q18",
+      "query": "history",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 1,
+      "classification": "broad-topic",
+      "priority": "P3",
+      "action": "历史人物与发展史为主，少量生命周期内容偏宽。",
+      "status": "monitor",
+      "live_url": "https://www.curify-ai.com/topics/history?from_search=history",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Andy Warhol — History",
+          "url": "/en/nano-template/artist-biography-infographic/example/template-artist-biography-infographic-andy-warhol",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Zidane 2006 world cup — History",
+          "url": "/en/nano-template/soccer-star-comic-retro-poster-card/example/template-soccer-star-comic-retro-poster-card-zidane-2006-world-cup",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Bruce Lee — History",
+          "url": "/en/nano-template/historical-figure-biography-vintage-infographic/example/template-historical-figure-biography-vintage-infographic-bruce-lee",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Albert Einstein — History",
+          "url": "/en/nano-template/figure-principles-infographic/example/template-figure-principles-infographic-albert-einstein",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Artists — History",
+          "url": "/en/nano-template/historical-figure-educational/example/template-historical-figure-educational-artists",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Bicycles — History",
+          "url": "/en/nano-template/evolution-timeline-infographic/example/template-evolution-timeline-infographic-bicycles",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Career Journey — History",
+          "url": "/en/nano-template/flowing-journey-infographic/example/template-flowing-journey-infographic-career-journey",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Cat — History",
+          "url": "/en/nano-template/pet-life-journey-infographic/example/template-pet-life-journey-infographic-cat",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Colosseum — History",
+          "url": "/en/nano-template/world-landmark-vintage-info-poster/example/template-world-landmark-vintage-info-poster-colosseum",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Akira Toriyama — History",
+          "url": "/en/nano-template/manga-artist-infographic-poster/example/template-manga-artist-infographic-poster-akira-toriyama",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q19",
+      "query": "hot women",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "ambiguous",
+      "priority": "P2",
+      "action": "前两项商品明显偏题，但用户期望风格不明确；暂不据此生成内容。",
+      "status": "deferred-disambiguation",
+      "live_url": "https://www.curify-ai.com/search?q=hot%20women",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Socks",
+          "url": "/en/nano-template/fashion-ecommerce/example/template-fashion-ecommerce-socks",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Watch",
+          "url": "/en/nano-template/fashion-ecommerce/example/template-fashion-ecommerce-watch",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "FIFA Women's World Cup 2027 — Brazil — 32 team expanded group stage and knockout bracket",
+          "url": "/en/nano-template/football-tournament-group-stage-bracket-infographic/example/template-football-tournament-group-stage-bracket-infographic-fifa-womens-world-cup-2027",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Wealthy Women",
+          "url": "/en/nano-template/9-traits-info-grid/example/template-9-traits-info-grid-wealthy-women",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Long Hair Women",
+          "url": "/en/nano-template/hairstyle-color-recommendation/example/template-hairstyle-color-recommendation-long-hair-women",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Oval Face Women",
+          "url": "/en/nano-template/hairstyle-color-recommendation/example/template-hairstyle-color-recommendation-oval-face-women",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Women 1",
+          "url": "/en/nano-template/personal-fashion-outfit-style-variations/example/template-personal-fashion-outfit-style-variations-women-1",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Women 2",
+          "url": "/en/nano-template/personal-fashion-outfit-style-variations/example/template-personal-fashion-outfit-style-variations-women-2",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Women 3",
+          "url": "/en/nano-template/personal-fashion-outfit-style-variations/example/template-personal-fashion-outfit-style-variations-women-3",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Sun Wen — China national team — FIFA Player of the 20th Century, Women's World Cup 1999 finalist",
+          "url": "/en/nano-template/player-vintage-stats-card-poster/example/template-player-vintage-stats-card-poster-sun-wen-china",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 0,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q21",
+      "query": "how long does it take to upload a video",
+      "searches": 1,
+      "noresult": 1,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "help",
+      "priority": "P1",
+      "action": "上传耗时问题应得到说明，而非图像生成器。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=how%20long%20does%20it%20take%20to%20upload%20a%20video",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    },
+    {
+      "id": "P19",
+      "query": "[source-url-70ba13c1]",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "private-input",
+      "priority": "P2",
+      "action": "私人来源网址不重放；已有视频网址选择器，具体来源是否受支持无法用脱敏记录断定。",
+      "status": "privacy-exception",
+      "results": [],
+      "reviewed_count": 0
+    },
+    {
+      "id": "P20",
+      "query": "[source-url-7e6c6122]",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "private-input",
+      "priority": "P2",
+      "action": "私人来源网址不重放；已有视频网址选择器，具体来源是否受支持无法用脱敏记录断定。",
+      "status": "privacy-exception",
+      "results": [],
+      "reviewed_count": 0
+    },
+    {
+      "id": "Q24",
+      "query": "isfj",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "topic-navigation",
+      "priority": "P3",
+      "action": "ISFJ 十项均相关。",
+      "status": "verified-existing",
+      "live_url": "https://www.curify-ai.com/topics/mbti-isfj?from_search=isfj",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Sophie — ISFJ",
+          "url": "/en/nano-template/mbti-ghibli/example/template-mbti-ghibli-sophie",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Isfj — ISFJ",
+          "url": "/en/nano-template/mbti-stereotype-vs-reality-infographic/example/template-mbti-stereotype-vs-reality-infographic-isfj",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Gunther — ISFJ",
+          "url": "/en/nano-template/friends-character-mbti/example/template-friends-character-mbti-gunther",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Captainamerica, Captain America — ISFJ",
+          "url": "/en/nano-template/mbti-marvel/example/template-mbti-marvel-captainamerica",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Todd Alquist — ISFJ",
+          "url": "/en/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Sheeta — ISFJ",
+          "url": "/en/nano-template/mbti-ghibli/example/template-mbti-ghibli-sheeta",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Agent Coulson — ISFJ",
+          "url": "/en/nano-template/mbti-marvel/example/template-mbti-marvel-agent-coulson",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Beta Ray Bill — ISFJ",
+          "url": "/en/nano-template/mbti-marvel/example/template-mbti-marvel-Beta-Ray-Bill",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Colossus — ISFJ",
+          "url": "/en/nano-template/mbti-marvel/example/template-mbti-marvel-colossus",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Gilgamesh — ISFJ",
+          "url": "/en/nano-template/mbti-marvel/example/template-mbti-marvel-gilgamesh",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "P22",
+      "query": "[ASL-gloss-input-f5e496ee]",
+      "searches": 1,
+      "noresult": 1,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "private-input",
+      "priority": "P2",
+      "action": "粘贴手语 gloss 文本，不等同于 ASL 视频；文本转译能力尚未确认，不生成装饰图片冒充解决。",
+      "status": "privacy-exception",
+      "results": [],
+      "reviewed_count": 0
+    },
+    {
+      "id": "Q26",
+      "query": "kazahkstan",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "retrieval+content-gap",
+      "priority": "P1",
+      "action": "纠正国家拼写并过滤无关城市；现仅有 Kazakh 服饰近邻，仍缺国家介绍/地图。",
+      "status": "fixed-retrieval; briefed-content",
+      "live_url": "https://www.curify-ai.com/search?q=kazahkstan",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Nanjing",
+          "url": "/en/nano-template/weather/example/template-weather-nanjing",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Eyemask",
+          "url": "/en/nano-template/fashion-ecommerce/example/template-fashion-ecommerce-eyemask",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Foster City",
+          "url": "/en/nano-template/weather/example/template-weather-foster-city",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Barcelona",
+          "url": "/en/nano-template/city-miniature/example/template-city-miniature-spain-barcelona",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Oaxaca",
+          "url": "/en/nano-template/city-miniature/example/template-city-miniature-mexico-oaxaca",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "",
+          "url": "/nano-template/travel",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "",
+          "url": "/nano-template/theme-overview-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "",
+          "url": "/nano-template/varieties-food-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "",
+          "url": "/nano-template/cuisine-food-vocab-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "",
+          "url": "/nano-template/figure-principles-infographic",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 0,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q27",
+      "query": "leggings",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 1,
+      "classification": "retrieval",
+      "priority": "P1",
+      "action": "画廊已有 leggings；恢复已目视确认的记录 4152，移除脸部修图结果。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=leggings",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "En 1",
+          "url": "/en/nano-template/portrait-retouching-blueprint/example/template-portrait-retouching-blueprint-en%201",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "En 2",
+          "url": "/en/nano-template/portrait-retouching-blueprint/example/template-portrait-retouching-blueprint-en%202",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "En 3",
+          "url": "/en/nano-template/portrait-retouching-blueprint/example/template-portrait-retouching-blueprint-en%203",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Eyemask",
+          "url": "/en/nano-template/fashion-ecommerce/example/template-fashion-ecommerce-eyemask",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "",
+          "url": "/nano-template/vintage-collage-fashion-collection-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "",
+          "url": "/nano-template/fashion-inspired-gown-design-sheet",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "",
+          "url": "/nano-template/ethnic-costume-deconstruction-board",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "",
+          "url": "/nano-template/fashion-shape-guide-infographic",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "",
+          "url": "/nano-template/hairstyle-guide-infographic",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "",
+          "url": "/nano-template/fashion-nail-art-design",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 0,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q28",
+      "query": "llaveros",
+      "searches": 1,
+      "noresult": 1,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "retrieval",
+      "priority": "P2",
+      "action": "西语钥匙扣已有相关图；确定性同义词映射并过滤无关尾部。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=llaveros",
+      "http_status": 200,
+      "reviewed_count": 5,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Acrylic Charm Keychain",
+          "url": "/en/nano-template/ip-creative-cultural-goods-mockup-set/example/template-ip-creative-cultural-goods-mockup-set-charm",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "curi ai robot keyring mug notebook pen set",
+          "url": "/en/nano-template/ip-gift-box-stationery-set-mockup/example/template-ip-gift-box-stationery-set-mockup-curi-ai-robot-keyring-mug-notebook-pen-set",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Curi AI robot full merch collection",
+          "url": "/en/nano-template/ip-creative-cultural-goods-mockup-set/example/template-ip-creative-cultural-goods-mockup-set-curi-ai-robot-full-merch-collection",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Moyu zhong",
+          "url": "/en/nano-template/ip-creative-cultural-goods-mockup-set/example/template-ip-creative-cultural-goods-mockup-set-moyu-zhong",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "",
+          "url": "/nano-template/custom-ip-character-profile-poster-card",
+          "surface": "template",
+          "grade": "unclear",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 4,
+        "denominator": 5
+      }
+    },
+    {
+      "id": "Q29",
+      "query": "manga translation",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 1,
+      "classification": "tool-navigation",
+      "priority": "P3",
+      "action": "漫画翻译工具入口正常。",
+      "status": "verified-existing",
+      "live_url": "https://www.curify-ai.com/tools/manga-translation?from_search=manga%20translation",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    },
+    {
+      "id": "Q30",
+      "query": "mockup",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 1,
+      "classification": "broad-topic",
+      "priority": "P3",
+      "action": "mockup 主题内容宽泛且大多相关，不证明缺口。",
+      "status": "monitor",
+      "live_url": "https://www.curify-ai.com/topics/mockups?from_search=mockup",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "denim chic stella mccartney — Mockups & UI",
+          "url": "/en/nano-template/vintage-collage-fashion-collection-poster/example/template-vintage-collage-fashion-collection-poster-denim-chic-stella-mccartney",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Bedroom — Mockups & UI",
+          "url": "/en/nano-template/interior-design-mood-board-generator/example/template-interior-design-mood-board-generator-bedroom",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Butterfly wing gown sketch with technical flat — Mockups & UI",
+          "url": "/en/nano-template/fashion-inspired-gown-design-sheet/example/template-fashion-inspired-gown-design-sheet-butterfly",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Bear — Mockups & UI",
+          "url": "/en/nano-template/ip-character-design-specification-sheet/example/template-ip-character-design-specification-sheet-bear",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Coca Cola Fizz — Mockups & UI",
+          "url": "/en/nano-template/brand-ip-mascot-design-board/example/template-brand-ip-mascot-design-board-coca-cola-fizz",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Andrew Tate (Top G) viral meme sticker pack & merch collection, Andrew Tate Top G viral meme sticker pack & merch collection…",
+          "url": "/en/nano-template/celebrity-meme-sticker-merchandise-collection-poster/example/template-celebrity-meme-sticker-merchandise-collection-poster-andrew-tate-topg",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Blessing dragon — Mockups & UI",
+          "url": "/en/nano-template/ip-creative-cultural-goods-mockup-set/example/template-ip-creative-cultural-goods-mockup-set-blessing-dragon",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Beach Starfish Anime — Mockups & UI",
+          "url": "/en/nano-template/theme-color-palette-card/example/template-theme-color-palette-card-beach-starfish-anime",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Australia — Mockups & UI",
+          "url": "/en/nano-template/whimsical-travel-map/example/template-whimsical-travel-map-australia",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Men 1 — Mockups & UI",
+          "url": "/en/nano-template/personal-fashion-outfit-style-variations/example/template-personal-fashion-outfit-style-variations-men-1",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q31",
+      "query": "my videos",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 1,
+      "classification": "task-navigation",
+      "priority": "P1",
+      "action": "个人视频应进入工作区，不是影视海报。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=my%20videos",
+      "http_status": 200,
+      "reviewed_count": 6,
+      "results": [
+        {
+          "rank": 1,
+          "title": "hsk2 my best friend",
+          "url": "/en/nano-template/hsk-bilingual-reading-text-lesson-poster/example/template-hsk-bilingual-reading-text-lesson-poster-hsk2-my-best-friend",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Hsk2 My Day",
+          "url": "/en/nano-template/hsk-bilingual-reading-text-lesson-poster/example/template-hsk-bilingual-reading-text-lesson-poster-hsk2-my-day",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Hsk2 My Family",
+          "url": "/en/nano-template/hsk-bilingual-reading-text-lesson-poster/example/template-hsk-bilingual-reading-text-lesson-poster-hsk2-my-family",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Farewell My Concubine",
+          "url": "/en/nano-template/quote-poster-generator/example/template-quote-poster-generator-farewell-my-concubine",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Neighbor Totoro",
+          "url": "/en/nano-template/media-theme-wallpaper-poster/example/template-media-theme-wallpaper-poster-my-neighbor-totoro",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "hero academia ua high",
+          "url": "/en/nano-template/anime-crew-vintage-newspaper-character-infographic-poster/example/template-anime-crew-vintage-newspaper-character-infographic-poster-my-hero-academia-ua-high",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 0,
+        "denominator": 6
+      }
+    },
+    {
+      "id": "Q32",
+      "query": "my workplace",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "task-navigation",
+      "priority": "P1",
+      "action": "提供工作区提示，避免只返回职场海报；如果本意是职场内容可重新明确查询。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=my%20workplace",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Festival Celebrations",
+          "url": "/en/nano-template/east-asian-culture-comparison-infographic/example/template-east-asian-culture-comparison-infographic-festival-celebrations",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Workplace Culture",
+          "url": "/en/nano-template/east-asian-culture-comparison-infographic/example/template-east-asian-culture-comparison-infographic-workplace-culture",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Housing Culture",
+          "url": "/en/nano-template/east-asian-culture-comparison-infographic/example/template-east-asian-culture-comparison-infographic-housing-culture",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Employee Onboarding Journey",
+          "url": "/en/nano-template/isometric-business-process-roadmap-infographic/example/template-isometric-business-process-roadmap-infographic-employee-onboarding-journey",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "The Office Legends",
+          "url": "/en/nano-template/celebrity-movie-group-poster/example/template-celebrity-movie-group-poster-the-office-legends",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Employee Zh Estp, Workplace Employees, ESTP employee",
+          "url": "/en/nano-template/mbti-generic/example/template-mbti-generic-employee-zh-estp",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Linkedin 04, Flat Illustration Style",
+          "url": "/en/nano-template/series-infographic/example/template-series-infographic-linkedin-04",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Linkedin 06, Flat Illustration Style",
+          "url": "/en/nano-template/series-infographic/example/template-series-infographic-linkedin-06",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Productivity",
+          "url": "/en/nano-template/tool-ai-category/example/template-tool-ai-category-productivity",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Autumn Harvest",
+          "url": "/en/nano-template/watercolor-theme-collage-illustration/example/template-watercolor-theme-collage-illustration-autumn-harvest",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 6,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q33",
+      "query": "pizza box",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "content-gap+retrieval",
+      "priority": "P2",
+      "action": "缺披萨盒设计；画廊提到 pizza boxes 的派对场景不满足包装需求。过滤食谱，准备包装概念 brief。",
+      "status": "fixed-retrieval; briefed-content",
+      "live_url": "https://www.curify-ai.com/search?q=pizza%20box",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Neapolitan Pizza",
+          "url": "/en/nano-template/food/example/template-food-neapolitan-pizza",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Pizza",
+          "url": "/en/nano-template/varieties-food-poster/example/template-varieties-food-poster-pizza",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Classic Margherita Pizza",
+          "url": "/en/nano-template/premium-recipe-card-infographic/example/template-premium-recipe-card-infographic-classic-margherita-pizza",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Moyu zhong",
+          "url": "/en/nano-template/ip-creative-cultural-goods-mockup-set/example/template-ip-creative-cultural-goods-mockup-set-moyu-zhong",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "curi ai robot keyring mug notebook pen set",
+          "url": "/en/nano-template/ip-gift-box-stationery-set-mockup/example/template-ip-gift-box-stationery-set-mockup-curi-ai-robot-keyring-mug-notebook-pen-set",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Chocolate Packaging — Vintage Elegant",
+          "url": "/en/nano-template/food-product-packaging-design/example/template-food-product-packaging-design-chocolate-vintage-elegant",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Chocolate Packaging — Artisan Craft",
+          "url": "/en/nano-template/food-product-packaging-design/example/template-food-product-packaging-design-chocolate-artisan-craft",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Chocolate Packaging — Luxe Minimal",
+          "url": "/en/nano-template/food-product-packaging-design/example/template-food-product-packaging-design-chocolate-luxe-minimal",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "corporate year end gifting, an assorted set of dark chocolate bars and a small branded notecard, Sterling & Oak Corporate Gi…",
+          "url": "/en/nano-template/chocolate-giftbox-packaging/example/template-chocolate-giftbox-packaging-corporate-year-end-gifting",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Mid Autumn Festival (mooncake adjacent), four individually wrapped mooncakes with a small lotus motif card, Golden Lotus Bak…",
+          "url": "/en/nano-template/chocolate-giftbox-packaging/example/template-chocolate-giftbox-packaging-mid-autumn-festival-mooncake-adjacent",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 0,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "P31",
+      "query": "[ASL-gloss-input-e8061854]",
+      "searches": 1,
+      "noresult": 1,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "private-input",
+      "priority": "P2",
+      "action": "粘贴手语 gloss 文本，不等同于 ASL 视频；文本转译能力尚未确认，不生成装饰图片冒充解决。",
+      "status": "privacy-exception",
+      "results": [],
+      "reviewed_count": 0
+    },
+    {
+      "id": "Q35",
+      "query": "reading about kite",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "content-gap+retrieval",
+      "priority": "P1",
+      "action": "缺风筝阅读图；已新增中英标签科普并过滤动物/城市结果。",
+      "status": "filled",
+      "live_url": "https://www.curify-ai.com/search?q=reading%20about%20kite",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Baiji",
+          "url": "/en/nano-template/species/example/template-species-baiji",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Giant Panda",
+          "url": "/en/nano-template/species/example/template-species-giant-panda",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Nanjing",
+          "url": "/en/nano-template/weather/example/template-weather-nanjing",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Wuhan",
+          "url": "/en/nano-template/weather/example/template-weather-wuhan",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Pteranodon — Late Cretaceous flying reptile (technically a pterosaur, not a dinosaur), 7m wingspan, fished from the sky",
+          "url": "/en/nano-template/species/example/template-species-pteranodon",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "",
+          "url": "/nano-template/travel",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "",
+          "url": "/nano-template/mbti-ghibli",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "",
+          "url": "/nano-template/theme-overview-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "",
+          "url": "/nano-template/varieties-food-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "",
+          "url": "/nano-template/mbti-nba",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 0,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q36",
+      "query": "sport",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "retrieval",
+      "priority": "P2",
+      "action": "大部分体育结果相关，音乐节及艺术季混入。需另做广义体育主体约束，避免损伤多运动召回。",
+      "status": "deferred-regression-design",
+      "live_url": "https://www.curify-ai.com/search?q=sport",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Nagoya 2026 Asian Games — Japan multi sport showcase",
+          "url": "/en/nano-template/international-event-promotional-poster/example/template-international-event-promotional-poster-nagoya-2026-asian-games",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Badminton",
+          "url": "/en/nano-template/sport-rules-handdrawn-infographic/example/template-sport-rules-handdrawn-infographic-badminton",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Futsal",
+          "url": "/en/nano-template/sport-rules-handdrawn-infographic/example/template-sport-rules-handdrawn-infographic-futsal",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Table Tennis",
+          "url": "/en/nano-template/sport-rules-handdrawn-infographic/example/template-sport-rules-handdrawn-infographic-table-tennis",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Coachella Valley Music and Arts Festival 2026",
+          "url": "/en/nano-template/international-event-promotional-poster/example/template-international-event-promotional-poster-coachella-2026",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "beijing 798 art season 2026",
+          "url": "/en/nano-template/international-event-promotional-poster/example/template-international-event-promotional-poster-beijing-798-art-season-2026",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Tennis",
+          "url": "/en/nano-template/sports-ball-evolution-infographic/example/template-sports-ball-evolution-infographic-tennis",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Baseball",
+          "url": "/en/nano-template/sports-ball-evolution-infographic/example/template-sports-ball-evolution-infographic-baseball",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Basketball",
+          "url": "/en/nano-template/sports-ball-evolution-infographic/example/template-sports-ball-evolution-infographic-basketball",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Gym",
+          "url": "/en/nano-template/warmup-routine/example/template-warmup-routine-gym",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 8,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q37",
+      "query": "tajikistan",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "content-gap+retrieval",
+      "priority": "P2",
+      "action": "没有 Tajikistan 国家内容；先去掉其他城市，再准备国家介绍/地图 brief。",
+      "status": "fixed-retrieval; briefed-content",
+      "live_url": "https://www.curify-ai.com/search?q=tajikistan",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Nanjing",
+          "url": "/en/nano-template/weather/example/template-weather-nanjing",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Eyemask",
+          "url": "/en/nano-template/fashion-ecommerce/example/template-fashion-ecommerce-eyemask",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Foster City",
+          "url": "/en/nano-template/weather/example/template-weather-foster-city",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Barcelona",
+          "url": "/en/nano-template/city-miniature/example/template-city-miniature-spain-barcelona",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Oaxaca",
+          "url": "/en/nano-template/city-miniature/example/template-city-miniature-mexico-oaxaca",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "",
+          "url": "/nano-template/travel",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "",
+          "url": "/nano-template/theme-overview-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "",
+          "url": "/nano-template/varieties-food-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "",
+          "url": "/nano-template/cuisine-food-vocab-poster",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "",
+          "url": "/nano-template/figure-principles-infographic",
+          "surface": "template",
+          "grade": "off-intent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 0,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q38",
+      "query": "transformation",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 1,
+      "classification": "ambiguous",
+      "priority": "P3",
+      "action": "transformation 可指家居、数字化、人物转变；前五项都有合理解释。",
+      "status": "needs-intent",
+      "live_url": "https://www.curify-ai.com/search?q=transformation",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Kitchen, Kitchen Counter",
+          "url": "/en/nano-template/home-organization-before-after/example/template-home-organization-before-after-kitchen",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Digital Transformation Roadmap",
+          "url": "/en/nano-template/isometric-business-process-roadmap-infographic/example/template-isometric-business-process-roadmap-infographic-digital-transformation-roadmap",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Walter White transformation from Mr. Chips chemistry teacher to Heisenberg drug kingpin across Breaking Bad seasons",
+          "url": "/en/nano-template/then-vs-now-comparison-infographic/example/template-then-vs-now-comparison-infographic-walter-white-arc",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Closet",
+          "url": "/en/nano-template/home-organization-before-after/example/template-home-organization-before-after-closet",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Desk",
+          "url": "/en/nano-template/home-organization-before-after/example/template-home-organization-before-after-desk",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Cheese Tasting",
+          "url": "/en/nano-template/vintage-ultimate-guide-infographic/example/template-vintage-ultimate-guide-infographic-cheese-tasting",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Coffee Brewing",
+          "url": "/en/nano-template/vintage-ultimate-guide-infographic/example/template-vintage-ultimate-guide-infographic-coffee-brewing",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Indoor Plant Care",
+          "url": "/en/nano-template/vintage-ultimate-guide-infographic/example/template-vintage-ultimate-guide-infographic-indoor-plant-care",
+          "surface": "example",
+          "grade": "unclear",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Wellness Routine",
+          "url": "/en/nano-template/flowing-journey-infographic/example/template-flowing-journey-infographic-wellness-routine",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Career Journey",
+          "url": "/en/nano-template/flowing-journey-infographic/example/template-flowing-journey-infographic-career-journey",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 7,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q39",
+      "query": "translate",
+      "searches": 1,
+      "noresult": 1,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 2,
+      "classification": "task-navigation",
+      "priority": "P1",
+      "action": "泛翻译请求应选择字幕/配音/漫画/手语工具。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=translate",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    },
+    {
+      "id": "Q40",
+      "query": "video dubbing",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 1,
+      "classification": "tool-navigation",
+      "priority": "P3",
+      "action": "视频配音入口正常。",
+      "status": "verified-existing",
+      "live_url": "https://www.curify-ai.com/tools/video-dubbing?from_search=video%20dubbing",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    },
+    {
+      "id": "Q41",
+      "query": "wc-portugal",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "retrieval-navigation",
+      "priority": "P1",
+      "action": "识别历史 wc-portugal 标识并转到葡萄牙世界杯主题。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=wc-portugal",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Argentina National Team",
+          "url": "/en/nano-template/world-cup-team-sticker-poster/example/template-world-cup-team-sticker-poster-argentina",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "2026 World Cup Group A: Mexico, Poland, Saudi Arabia, Argentina — North American host opener group",
+          "url": "/en/nano-template/group-team-vertical-banner-country-poster/example/template-group-team-vertical-banner-country-poster-wc-2026-group-a",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "2026 World Cup Group C: Brazil, Senegal, Iran, Australia — Brazil's Selecao chase the sixth star",
+          "url": "/en/nano-template/group-team-vertical-banner-country-poster/example/template-group-team-vertical-banner-country-poster-wc-2026-group-c",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "group a portugal jamaica uzbekistan colombia",
+          "url": "/en/nano-template/group-team-vertical-banner-country-poster/example/template-group-team-vertical-banner-country-poster-group-a-portugal-jamaica-uzbekistan-colombia",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Argentina 2026 World Cup squad — Messi, Di María, Álvarez, Mac Allister, Lautaro Martínez, Emiliano Martínez",
+          "url": "/en/nano-template/celebrity-movie-group-poster/example/template-celebrity-movie-group-poster-argentina-2026-world-cup-squad",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Brazil 2026 World Cup squad — Vinicius Jr, Rodrygo, Raphinha, Casemiro, Marquinhos, Alisson",
+          "url": "/en/nano-template/celebrity-movie-group-poster/example/template-celebrity-movie-group-poster-brazil-2026-world-cup-squad",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "France 2026 World Cup squad — Mbappé, Griezmann, Tchouaméni, Theo Hernandez, Kanté, Maignan",
+          "url": "/en/nano-template/celebrity-movie-group-poster/example/template-celebrity-movie-group-poster-france-2026-world-cup-squad",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "France National Team",
+          "url": "/en/nano-template/world-cup-team-sticker-poster/example/template-world-cup-team-sticker-poster-france",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Germany National Team",
+          "url": "/en/nano-template/world-cup-team-sticker-poster/example/template-world-cup-team-sticker-poster-germany",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Lisbon",
+          "url": "/en/nano-template/city-miniature/example/template-city-miniature-portugal-lisbon",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 1,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 2,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q42",
+      "query": "weaather and seasons",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "retrieval",
+      "priority": "P1",
+      "action": "已有 Seasons & Weather 内容；修正拼写并同时保留天气、季节主题。",
+      "status": "fixed",
+      "live_url": "https://www.curify-ai.com/search?q=weaather%20and%20seasons",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "four seasons winter outdoor scene",
+          "url": "/en/nano-template/musical-score-illustrated-art-poster/example/template-musical-score-illustrated-art-poster-four-seasons-winter-outdoor-scene",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "ghibli birth month seasons",
+          "url": "/en/nano-template/pop-culture-matching-chart/example/template-pop-culture-matching-chart-ghibli-birth-month-seasons",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Big Ben",
+          "url": "/en/nano-template/landmark-four-seasons-poster/example/template-landmark-four-seasons-poster-big-ben",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Eiffel Tower",
+          "url": "/en/nano-template/landmark-four-seasons-poster/example/template-landmark-four-seasons-poster-eiffel-tower",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Mount Fuji",
+          "url": "/en/nano-template/landmark-four-seasons-poster/example/template-landmark-four-seasons-poster-mount-fuji",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Hsk2 Four Seasons",
+          "url": "/en/nano-template/hsk-bilingual-reading-text-lesson-poster/example/template-hsk-bilingual-reading-text-lesson-poster-hsk2-four-seasons",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "HSK2 春天去野餐 A Spring Picnic",
+          "url": "/en/nano-template/hsk-bilingual-reading-text-lesson-poster/example/template-hsk-bilingual-reading-text-lesson-poster-hsk2-spring-picnic-after-class",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "HSK2 夏天的一场雨 Caught in Summer Rain",
+          "url": "/en/nano-template/hsk-bilingual-reading-text-lesson-poster/example/template-hsk-bilingual-reading-text-lesson-poster-hsk2-summer-rain-on-the-way-home",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Seasons Weather",
+          "url": "/en/nano-template/education-card/example/template-education-card-seasons-weather",
+          "surface": "example",
+          "grade": "exact",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "Walter White transformation from Mr. Chips chemistry teacher to Heisenberg drug kingpin across Breaking Bad seasons",
+          "url": "/en/nano-template/then-vs-now-comparison-infographic/example/template-then-vs-now-comparison-infographic-walter-white-arc",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 9,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q43",
+      "query": "双语字幕",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 1,
+      "classification": "tool-navigation",
+      "priority": "P3",
+      "action": "双语字幕工具入口正常。",
+      "status": "verified-existing",
+      "live_url": "https://www.curify-ai.com/tools/bilingual-subtitles?from_search=%E5%8F%8C%E8%AF%AD%E5%AD%97%E5%B9%95",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    },
+    {
+      "id": "Q44",
+      "query": "徽章",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "retrieval+content-gap",
+      "priority": "P2",
+      "action": "球员阵容及电商卖点徽章不是徽章主体设计；过滤泛标签匹配，准备实体徽章/珐琅胸针 brief。",
+      "status": "fixed-retrieval; briefed-content",
+      "live_url": "https://www.curify-ai.com/search?q=%E5%BE%BD%E7%AB%A0",
+      "http_status": 200,
+      "reviewed_count": 10,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Argentina",
+          "url": "/en/nano-template/football-team-all-time-lineup-poster/example/template-football-team-all-time-lineup-poster-argentina",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Barcelona",
+          "url": "/en/nano-template/football-team-all-time-lineup-poster/example/template-football-team-all-time-lineup-poster-barcelona",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Acmilan",
+          "url": "/en/nano-template/football-team-all-time-lineup-poster/example/template-football-team-all-time-lineup-poster-acmilan",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Aroma Diffuser",
+          "url": "/en/nano-template/product-poster/example/template-product-poster-aroma-diffuser",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Bluetooth Speaker",
+          "url": "/en/nano-template/product-poster/example/template-product-poster-bluetooth-speaker",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 6,
+          "title": "Coffee Maker",
+          "url": "/en/nano-template/product-poster/example/template-product-poster-coffee-maker",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 7,
+          "title": "Amoled Gps Smartwatch",
+          "url": "/en/nano-template/amazon-long-scroll-product-infographic-template/example/template-amazon-long-scroll-product-infographic-template-amoled-gps-smartwatch",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 8,
+          "title": "Anc Wireless Earbuds",
+          "url": "/en/nano-template/amazon-long-scroll-product-infographic-template/example/template-amazon-long-scroll-product-infographic-template-anc-wireless-earbuds",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 9,
+          "title": "Ems Neck Massager",
+          "url": "/en/nano-template/amazon-long-scroll-product-infographic-template/example/template-amazon-long-scroll-product-infographic-template-ems-neck-massager",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 10,
+          "title": "CATTÉ COFFEE 喵咖, 扁平简笔画风的猫咪 + 咖啡杯，圆润友好, cozy blue",
+          "url": "/en/nano-template/brand-logo-variant-set/example/template-brand-logo-variant-set-catte-coffee",
+          "surface": "example",
+          "grade": "useful-adjacent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 1,
+        "denominator": 10
+      }
+    },
+    {
+      "id": "Q45",
+      "query": "风筝",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "content-gap+retrieval",
+      "priority": "P1",
+      "action": "与 reading about kite 同一缺口，共用新科普示例。",
+      "status": "filled",
+      "live_url": "https://www.curify-ai.com/search?q=%E9%A3%8E%E7%AD%9D",
+      "http_status": 200,
+      "reviewed_count": 5,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Pteranodon — Late Cretaceous flying reptile (technically a pterosaur, not a dinosaur), 7m wingspan, fished from the sky",
+          "url": "/en/nano-template/species/example/template-species-pteranodon",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 2,
+          "title": "Nanjing",
+          "url": "/en/nano-template/weather/example/template-weather-nanjing",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 3,
+          "title": "Wuhan",
+          "url": "/en/nano-template/weather/example/template-weather-wuhan",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 4,
+          "title": "Transportation",
+          "url": "/en/nano-template/evolution/example/template-evolution-transportation",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        },
+        {
+          "rank": 5,
+          "title": "Dongzhi",
+          "url": "/en/nano-template/solar-term/example/template-solar-term-dongzhi",
+          "surface": "example",
+          "grade": "off-intent",
+          "image_verified": true
+        }
+      ],
+      "review_mode": "live-rendered-title-link-thumbnail",
+      "useful_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "useful_at_10": {
+        "numerator": 0,
+        "denominator": 5
+      }
+    },
+    {
+      "id": "P43",
+      "query": "[private-input-c5afd6ce]",
+      "searches": 0,
+      "noresult": 1,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 0,
+      "classification": "private-input",
+      "priority": "P2",
+      "action": "未重放原文；保留隐私例外。",
+      "status": "privacy-exception",
+      "results": [],
+      "reviewed_count": 0
+    },
+    {
+      "id": "Q47",
+      "query": "ai fashion model generator",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 1,
+      "classification": "tool-navigation",
+      "priority": "P3",
+      "action": "AI 模特工具入口正常。",
+      "status": "verified-existing",
+      "live_url": "https://www.curify-ai.com/tools/ai-fashion-model-generator?from_search=ai%20fashion%20model%20generator",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    },
+    {
+      "id": "Q48",
+      "query": "asl · american sign language",
+      "searches": 1,
+      "noresult": 0,
+      "lowresult": 0,
+      "clicks": 0,
+      "redirects": 1,
+      "classification": "tool-navigation",
+      "priority": "P3",
+      "action": "线上本次直接进入 ASL 工具页；不把它当成图片缺口。",
+      "status": "verified-existing",
+      "live_url": "https://www.curify-ai.com/tools/asl-video-translator?from_search=asl%20%C2%B7%20american%20sign%20language",
+      "http_status": 200,
+      "reviewed_count": 0,
+      "results": [],
+      "review_mode": "live-destination-or-empty-page",
+      "useful_at_5": null,
+      "useful_at_10": null
+    }
+  ]
+}

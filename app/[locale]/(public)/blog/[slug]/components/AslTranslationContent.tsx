@@ -1,3 +1,4 @@
+import AslTaskComparison from './AslTaskComparison';
 import { getVideoDubbingUrl, getSubtitleGeneratorUrl } from "../utils/blog-helpers";
 import { formatAslContent } from "../utils/content-formatters";
 
@@ -139,15 +140,7 @@ export default function AslTranslationContent({ slug, t, tEn, locale }: AslTrans
         )}
       </section>
 
-      <section>
-        <h2 className="text-2xl font-bold mb-4">{safeT("toolsTitle")}</h2>
-        <div 
-          className="prose prose-lg max-w-none mb-4"
-          dangerouslySetInnerHTML={{ 
-            __html: formatAslContent(safeT("toolsContent"))
-          }} 
-        />
-      </section>
+      <AslTaskComparison locale={locale} />
 
       <section>
         <h2 className="text-2xl font-bold mb-4">{safeT("curifyTitle")}</h2>

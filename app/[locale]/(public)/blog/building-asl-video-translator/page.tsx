@@ -87,6 +87,8 @@ export default function AslEngineeringArticle() {
       <p>If you need to <a href="/tools/asl-video-translator">translate an ASL video into an English draft</a>, check the current tool’s price and limitations before uploading. Review the result against the signing with a fluent ASL reviewer. Successful export of text or subtitles is not proof that the translation is correct.</p>
       <p>For the practical steps, read our <a href="/blog/asl-video-translator">ASL video translation guide</a>. For engineering work, the next useful experiment is one that can distinguish competing explanations—not another polished demo.</p>
 
+      <p>For a visual companion to the input and review checks, see our <a href="/blog/asl-visual-study-guide">ASL visual study guide</a>.</p>
+
       <h2 id="sources">Sources and research context</h2>
       <p>The internal source record is Curify’s ASL engineering index, including its caption-leakage correction, frame-inspector notes, temporal ablations and October 12 consolidation of controlled experiments completed through October 11. The underlying private corpus is not a public benchmark and is not redistributed here.</p>
       <ul className="list-disc pl-6">

@@ -62,6 +62,7 @@ export function useFactoryExport(opts: { runningNote?: string; trackingSurface?:
       } catch (e) {
         // Insufficient credits and out-of-range inputs are rejected BEFORE a
         // project row exists, so this message is actionable.
+        milestone("rejected");
         setPhase("failed");
         setError(e instanceof Error ? e.message : "Could not start the job.");
         return;
@@ -84,6 +85,7 @@ export function useFactoryExport(opts: { runningNote?: string; trackingSurface?:
             return;
           }
           if (st.status === "FAILED") {
+            milestone("failed");
             setPhase("failed");
             setError(st.failure_reason || "The job failed. Try a different input.");
             return;
@@ -92,6 +94,7 @@ export function useFactoryExport(opts: { runningNote?: string; trackingSurface?:
           /* transient — keep polling to the cap */
         }
         if (polls.current >= MAX_POLLS) {
+          milestone("poll-timeout");
           setPhase("failed");
           setError(
             "Still running — check your workspace shortly; the job continues server-side.",

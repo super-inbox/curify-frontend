@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-28",
+  "generator": "built-in image_gen",
+  "selection": "Templates with multiple Pins reaching 1000 impressions and 5 saves in 2026-10-25 analytics",
+  "examples": [
+    {
+      "example_id": "template-space-planet-fact-infographic-mercury",
+      "theme": "Mercury",
+      "generator": "built-in image_gen",
+      "source_file": "daily_inspirations/Oct_28_pinterest_winners/template-space-planet-fact-infographic-mercury.png",
+      "template_base_prompt": "(Planet Fact Infographic Creator) Create a detailed educational infographic poster about the planet '{planet_name}'. Layout: 1. Top: Large glowing title with the planet name. 2. Center: A photorealistic image of the planet set against a starry space background. 3. Multiple labeled sections covering key facts: general statistics, atmosphere, surface features, moons, rotation, and more. 4. Small diagrams and icons explaining phenomena like axial tilt, storms, or ring systems. Style: Cinematic sci-fi aesthetic, high contrast, bold futuristic typography, vibrant colors matching the planet's theme, 4K ultra HD, direct image generation. Subject: 'Educational infographic about {planet_name}'",
+      "params": {
+        "planet_name": "Mercury"
+      },
+      "editorial_brief": "Mercury infographic with a cratered planet and labeled panels showing its 88-day year, approximately 59-day rotation, 176-day solar day, rocky surface and zero moons.",
+      "fact_sources": [
+        "https://science.nasa.gov/mercury/facts/"
+      ],
+      "sha256": "cd3b0e792e610d190565d2b6565bc21e7afa1bc74a0fc22beb15f0203265a7b7"
+    },
+    {
+      "example_id": "template-space-planet-fact-infographic-earth",
+      "theme": "Earth",
+      "generator": "built-in image_gen",
+      "source_file": "daily_inspirations/Oct_28_pinterest_winners/template-space-planet-fact-infographic-earth.png",
+      "template_base_prompt": "(Planet Fact Infographic Creator) Create a detailed educational infographic poster about the planet '{planet_name}'. Layout: 1. Top: Large glowing title with the planet name. 2. Center: A photorealistic image of the planet set against a starry space background. 3. Multiple labeled sections covering key facts: general statistics, atmosphere, surface features, moons, rotation, and more. 4. Small diagrams and icons explaining phenomena like axial tilt, storms, or ring systems. Style: Cinematic sci-fi aesthetic, high contrast, bold futuristic typography, vibrant colors matching the planet's theme, 4K ultra HD, direct image generation. Subject: 'Educational infographic about {planet_name}'",
+      "params": {
+        "planet_name": "Earth"
+      },
+      "editorial_brief": "Earth infographic showing oceans and continents, with panels about its orbit, solar day, one moon, water coverage, atmosphere, life and moving plates.",
+      "fact_sources": [
+        "https://science.nasa.gov/earth/facts/"
+      ],
+      "sha256": "f02f61380f40a4b26c7483eb568155757585c88e59a746cd77d1e00cd0fdaecf"
+    },
+    {
+      "example_id": "template-varieties-food-poster-bagel-varieties",
+      "theme": "Bagel",
+      "generator": "built-in image_gen",
+      "source_file": "daily_inspirations/Oct_28_pinterest_winners/template-varieties-food-poster-bagel-varieties.png",
+      "template_base_prompt": "（Food Varieties Poster Designer）You are a professional food photography infographic designer, specializing in creating clean, appetizing food variety posters. Based on the user-specified {food_theme}, generate a vertical 3:4 premium food varieties poster, matching the minimalist, photorealistic aesthetic of the reference images. Layout: 1. Header: Large bold title \"{food_theme} VARIETIES\", clean off-white background. 2. Grid: 9 food items in 3×3 grid. Each item: Top = high-resolution photorealistic food photography of the dish; Bottom = bold dish name + short descriptive flavor/ingredient text. Style: Clean minimalist design, soft off-white background, professional food styling, natural lighting, vibrant appetizing colors, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {food_theme} varieties food poster.",
+      "params": {
+        "food_theme": "Bagel"
+      },
+      "editorial_brief": "Bagel photo chart with nine labeled varieties: plain, sesame, poppy seed, everything, onion, garlic, cinnamon raisin, whole wheat and pumpernickel.",
+      "fact_sources": [],
+      "sha256": "3662bfcc5e4055759069090df153e71b1925eb11fc82c1c25978273e02a8f509"
+    },
+    {
+      "example_id": "template-varieties-food-poster-dumpling-varieties",
+      "theme": "Dumpling",
+      "generator": "built-in image_gen",
+      "source_file": "daily_inspirations/Oct_28_pinterest_winners/template-varieties-food-poster-dumpling-varieties.png",
+      "template_base_prompt": "（Food Varieties Poster Designer）You are a professional food photography infographic designer, specializing in creating clean, appetizing food variety posters. Based on the user-specified {food_theme}, generate a vertical 3:4 premium food varieties poster, matching the minimalist, photorealistic aesthetic of the reference images. Layout: 1. Header: Large bold title \"{food_theme} VARIETIES\", clean off-white background. 2. Grid: 9 food items in 3×3 grid. Each item: Top = high-resolution photorealistic food photography of the dish; Bottom = bold dish name + short descriptive flavor/ingredient text. Style: Clean minimalist design, soft off-white background, professional food styling, natural lighting, vibrant appetizing colors, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {food_theme} varieties food poster.",
+      "params": {
+        "food_theme": "Dumpling"
+      },
+      "editorial_brief": "Dumpling photo chart with jiaozi, gyoza, mandu, momo, pierogi, khinkali, xiaolongbao, har gow and siu mai arranged in a labeled three-by-three grid.",
+      "fact_sources": [],
+      "sha256": "f57096a4012cfc16c35f28895646918f7ed7f536d0ff6c2a32ec71eac3694dc6"
+    },
+    {
+      "example_id": "template-city-landmark-fridge-magnet-collection-suzhou-landmarks",
+      "theme": "Suzhou landmarks: Tiger Hill, Humble Administrator’s Garden, Pingjiang Road and Panmen Gate",
+      "generator": "built-in image_gen",
+      "source_file": "daily_inspirations/Oct_28_pinterest_winners/template-city-landmark-fridge-magnet-collection-suzhou-landmarks.png",
+      "template_base_prompt": "(City Landmark Fridge Magnet Creator) Set of 6/4 fridge magnet designs themed '{city_info}'. Layout: Each magnet features a unique landmark or scenic spot, framed in a decorative border (flower, cloud, or geometric shape). Style: Clean line art with flat, vibrant colors, Chinese traditional aesthetic, or enamel pin-style 3D layered papercut effect. Includes the location name and brief description. Subject: A collection of fridge magnets celebrating the iconic landmarks of {city_info}.",
+      "params": {
+        "city_info": "Suzhou landmarks: Tiger Hill, Humble Administrator’s Garden, Pingjiang Road and Panmen Gate"
+      },
+      "editorial_brief": "Suzhou landmark magnet concepts in a two-by-two collection, with gold-edged enamel-style illustrations of Tiger Hill, Humble Administrator’s Garden, Pingjiang Road and Panmen Gate.",
+      "fact_sources": [
+        "https://en.panmen.com.cn/visitors/6.html"
+      ],
+      "sha256": "1eefe0127db70d96a69d9b4439bd209e6e80d3def69376106bfee3a104a88bbf"
+    },
+    {
+      "example_id": "template-hairstyle-guide-infographic-mens-wavy-hair-six-cuts",
+      "theme": "Men’s Wavy Hair: Six Cuts",
+      "generator": "built-in image_gen",
+      "source_file": "daily_inspirations/Oct_28_pinterest_winners/template-hairstyle-guide-infographic-mens-wavy-hair-six-cuts.png",
+      "template_base_prompt": "(Hairstyle Guide Infographic Creator) Create a professional hairstyle analysis infographic poster titled '{topic}'. Layout: Structured sections including hair analysis (face shape, texture, density), recommended vs not recommended hairstyles, hair length variations, parting/fringe options, color swatches, and style vibe examples. Use a grid layout with realistic model photos for each hairstyle. Style: Clean, modern, minimalist aesthetic with neutral tones, clear section headers, and direct high-quality image generation. Subject: '{topic} hairstyle guide infographic'.",
+      "params": {
+        "topic": "Men’s Wavy Hair: Six Cuts"
+      },
+      "editorial_brief": "Men’s wavy hair chart with illustrated quiff, textured crop, curtain waves, side-part waves, medium shag and long waves, plus three styling tips.",
+      "fact_sources": [],
+      "sha256": "48e0b4051aa33130a2726a2a6341a55b65c97c4e3bb1167a1ddaf739a4e46021"
+    },
+    {
+      "example_id": "template-hairstyle-guide-infographic-asian-mens-textured-crops-six-cuts",
+      "theme": "Asian Men’s Textured Crops: Six Haircuts",
+      "generator": "built-in image_gen",
+      "source_file": "daily_inspirations/Oct_28_pinterest_winners/template-hairstyle-guide-infographic-asian-mens-textured-crops-six-cuts.png",
+      "template_base_prompt": "(Hairstyle Guide Infographic Creator) Create a professional hairstyle analysis infographic poster titled '{topic}'. Layout: Structured sections including hair analysis (face shape, texture, density), recommended vs not recommended hairstyles, hair length variations, parting/fringe options, color swatches, and style vibe examples. Use a grid layout with realistic model photos for each hairstyle. Style: Clean, modern, minimalist aesthetic with neutral tones, clear section headers, and direct high-quality image generation. Subject: '{topic} hairstyle guide infographic'.",
+      "params": {
+        "topic": "Asian Men’s Textured Crops: Six Haircuts"
+      },
+      "editorial_brief": "Asian men’s haircut chart illustrating classic textured crop, French crop, messy crop, low-fade crop, side-swept crop and spiky textured crop with brief styling tips.",
+      "fact_sources": [],
+      "sha256": "bf3ee130b4700c9f5d658ce9b15134f7e451b83ae1d524e897239313c345b8e2"
+    }
+  ]
+}

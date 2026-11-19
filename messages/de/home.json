@@ -413,6 +413,14 @@
         "title": "AI pet portrait generator",
         "description": "Turn a photo of your cat or dog into a studio portrait, painted keepsake or royal-style portrait. Choose a style and review your pet’s distinctive markings in the result."
       }
+    },
+    "image_to_psd": {
+      "title": "Image to Layered PSD",
+      "desc": "Turn flat illustrations into five editable raster layers: FlatColor, Shadow, Highlight, LineArt and Residue. Download a PSD, individual transparent PNG layers and a preview in one ZIP.",
+      "meta": {
+        "title": "Image to Layered PSD — Illustration Layer Export | Curify",
+        "description": "Separate flat artwork into five raster layers and download a layered PSD with PNG layers. Designed for illustrations, not photo or text reconstruction."
+      }
     }
   },
   "bilingual": {
@@ -1930,6 +1938,32 @@
         "businessTitle": "Katalog- und Marktplatz-Teams",
         "businessBody": "Häufige Drops, viele SKUs, feste Aufnahme-Vorgaben. Der Engpass ist selten ein gutes Bild — es ist, dass ein Kleidungsstück über jede Aufnahme und jede Variante hinweg als dasselbe Kleidungsstück liest. Dafür ist der Commerce-Abschnitt der Liste da. Für Mengen sprich mit uns, statt Bild für Bild zu generieren."
       }
+    }
+  },
+  "imageToPsd": {
+    "title": "Image to Layered PSD",
+    "description": "Turn flat illustrations into five editable raster layers: FlatColor, Shadow, Highlight, LineArt and Residue. Download a PSD, individual transparent PNG layers and a preview in one ZIP.",
+    "metadata": {
+      "title": "Image to Layered PSD — Illustration Layer Export | Curify",
+      "description": "Separate flat artwork into five raster layers and download a layered PSD with PNG layers. Designed for illustrations, not photo or text reconstruction."
+    },
+    "why": {
+      "title": "An editable starting point for your artwork",
+      "point1": "Separate linework from the base color layer.",
+      "point2": "Keep the original dimensions and transparency.",
+      "point3": "A preview and individual layer PNGs accompany the PSD.",
+      "point4": "Texture-heavy images and poor reconstructions are rejected without a charge."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": "Does this recover objects, text or vectors?",
+      "a1": "No. These are five raster layers organized by visual role. Text stays pixels, and the base colors share one layer.",
+      "q2": "Can I recolor the artwork?",
+      "a2": "Yes, with manual selections within FlatColor. Hide Residue while recoloring, because it preserves original detail and may cover your edits.",
+      "q3": "What images work best?",
+      "a3": "Flat illustrations and clean line art. PNG, JPEG or WebP, up to 4 megapixels and 4096 pixels per side. Photos and detailed textures may be rejected.",
+      "q4": "When am I charged?",
+      "a4": "Only after the export succeeds. Free signup credits do not cover this tool; use purchased credits or a paid plan allowance."
     }
   }
 }

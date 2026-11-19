@@ -8544,5 +8544,26 @@
         ]
       }
     }
+  },
+  "template-asl-short-phrase-sequence": {
+    "category": "Kurze ASL-Sätze als Bildfolge",
+    "description": "Zeige Ich liebe dich, Danke oder Bitte in amerikanischer Gebärdensprache.",
+    "title": "Kurze ASL-Sätze als Bildfolge | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Wähle eine von drei Wendungen. Die Bilder zeigen einzelne Gebärden oder Bewegungsphasen einer Gebärde, keine Wort-für-Wort-Übersetzung.",
+        "who": "Für Lernende, Familien und visuelle Lernhilfen im Unterricht.",
+        "how": [
+          "Wähle eine Wendung.",
+          "Erstelle das Poster und prüfe Handform, Position, Ausrichtung und Bewegung.",
+          "Vergleiche mit einem Video einer fließend gebärdenden Person; KI-Illustrationen sind nicht fachlich zertifiziert."
+        ],
+        "prompts": [
+          "Ich liebe dich",
+          "Danke",
+          "Bitte"
+        ]
+      }
+    }
   }
 }

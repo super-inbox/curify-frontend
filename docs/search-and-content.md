@@ -1,6 +1,16 @@
 # Search + Content — Umbrella Tracker
 
-_Last updated: 2026-10-21 (registry-backed tool navigation and persisted tool-query evaluation). Owner: jay. Update after any push that touches the threads below or changes priority order._
+_Last updated: 2026-11-07 (complete zero-click quality audit). Owner: jay._
+
+## 2026-11-07 — full zero-click result-quality audit
+
+[Cycle summary](./content-drops/search-gap-2026-11-07.md) and [all-query ledger with thumbnail evidence](./search-audits/2026-11-07/review.md): 40 public queries reviewed, 6 privacy exceptions. Fixed task/help routing, observed subject drift and two hidden existing gallery matches; added one kite science example. Five remaining content briefs are explicitly not generated. Every future weekly cycle must audit all zero-click queries, not only frequent samples. The personal skill has been updated; its versioned snapshot is alongside the ledger.
+
+
+## 2026-11-05 — weekly search review
+
+[Evidence, windows, decisions and release status](./content-drops/search-gap-2026-11-05.md). Full-name artist queries now retain their subject through rewrites; the existing Dalí painting also matches the unaccented spelling. Four content and four tool-navigation evaluation cases were added. No new images this cycle. Next review: recheck tile-click attribution and whether these fixes have deployed before measuring outcomes.
+
 
 ## 2026-10-21 — tool navigation audit
 
@@ -860,3 +870,7 @@ Ranked by how much each unblocks downstream. Reprioritized 2026-05-19 after runn
 ---
 
 _This doc is the orchestration layer for search + content work. Update it when a thread's priority changes, when a new thread emerges, or after a push that affects multiple threads simultaneously._
+
+### ASL short phrases content drop (2026-11-11)
+
+Added `template-asl-short-phrase-sequence` with I love you, Thank you and Please examples, ten locale descriptions, ASL taxonomy and phrase-level search aliases. The selector distinguishes separate signs from movement phases and restricts generation to these supported phrases. Five persistent search-page regressions check top-ten discovery. Six CDN assets verified; metadata awaits merge/deployment from the existing content branch. This user-requested drop is not a full analytics review. See [drop report](content-drops/asl-short-phrases-2026-11-11.md).
