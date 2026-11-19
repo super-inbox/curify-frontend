@@ -1,6 +1,7 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { businessCaseContext } from "@/lib/business-cases";
+import { Suspense, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { contactService, type ContactRole } from "@/services/contact";
@@ -39,13 +40,21 @@ function ContactForm() {
   const [status, setStatus] = useState<"idle" | "ok" | "error">("idle");
   const [loading, setLoading] = useState(false);
 
+  const submitting = useRef(false);
+  const started = useRef(false);
+  const businessLead = source.startsWith("business:");
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (submitting.current) return;
+    submitting.current = true;
+    if (businessLead) trackAction({ contentId: `contact:attempt:${source}`, contentType: "menu_link" }, "click");
     setLoading(true);
     setStatus("idle");
 
     try {
       await contactService.sendMail({
+        caseContext: businessCaseContext(params.get("case_id")),
         email,
         subject,
         content,
@@ -82,8 +91,10 @@ function ContactForm() {
       setContent("");
       setRole("");
     } catch {
+      if (businessLead) trackAction({ contentId: `contact:error:${source}`, contentType: "menu_link" }, "click");
       setStatus("error");
     } finally {
+      submitting.current = false;
       setLoading(false);
     }
   };
@@ -91,6 +102,11 @@ function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
+      onFocusCapture={() => {
+        if (!businessLead || started.current) return;
+        started.current = true;
+        trackAction({ contentId: `contact:start:${source}`, contentType: "menu_link" }, "click");
+      }}
       className="bg-white p-5 rounded-lg shadow-md flex flex-col flex-1"
     >
       <h2 className="text-lg font-semibold mb-2">📧 {t("form.title")}</h2>

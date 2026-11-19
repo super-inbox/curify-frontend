@@ -1,0 +1,3617 @@
+{
+  "baseline": "origin/main c338efa9; Vercel check success; live rendered production November 19, rewrites live and variable",
+  "data_windows": {
+    "current": "2026-11-12 through 2026-11-18 Asia/Shanghai; UTC [2026-11-11T16:00,2026-11-18T16:00)",
+    "previous": "2026-11-05 through 2026-11-11 Asia/Shanghai",
+    "sparse": "2026-10-20 through 2026-11-18 Asia/Shanghai"
+  },
+  "summary": {
+    "current7": {
+      "search_events": 57,
+      "noresult_markers": 6,
+      "lowresult_markers": 2,
+      "search_actor_keys": 39,
+      "all_signal_actor_keys": 39,
+      "signed_in_search_accounts": 10,
+      "search_sessions": 39,
+      "distinct_query_locale_contexts": 47,
+      "public_contexts": 40,
+      "privacy_exceptions": 7,
+      "search_events_with_card": 3,
+      "search_events_with_broad_card": 8,
+      "search_events_with_redirect": 22,
+      "search_events_with_tool": 13,
+      "zero_card_query_contexts": 44,
+      "by_locale": {
+        "en": 42,
+        "zh": 3,
+        "es": 1,
+        "hi": 3,
+        "tr": 1,
+        "ru": 5,
+        "de": 1,
+        "fr": 1
+      },
+      "manually_replayable_contexts": 36,
+      "manual_privacy_exceptions": 11,
+      "zero_card_public_reviewed": 33
+    },
+    "previous7": {
+      "search_events": 74,
+      "noresult_markers": 6,
+      "lowresult_markers": 4,
+      "search_actor_keys": 56,
+      "all_signal_actor_keys": 56,
+      "signed_in_search_accounts": 7,
+      "search_sessions": 57,
+      "distinct_query_locale_contexts": 55,
+      "public_contexts": 51,
+      "privacy_exceptions": 4,
+      "search_events_with_card": 2,
+      "search_events_with_broad_card": 23,
+      "search_events_with_redirect": 35,
+      "search_events_with_tool": 17,
+      "zero_card_query_contexts": 53,
+      "by_locale": {
+        "en": 54,
+        "es": 5,
+        "ko": 1,
+        "zh": 8,
+        "ru": 1,
+        "de": 5
+      }
+    },
+    "current30": {
+      "search_events": 264,
+      "noresult_markers": 36,
+      "lowresult_markers": 13,
+      "search_actor_keys": 185,
+      "all_signal_actor_keys": 187,
+      "signed_in_search_accounts": 32,
+      "search_sessions": 189,
+      "distinct_query_locale_contexts": 200,
+      "public_contexts": 180,
+      "privacy_exceptions": 20,
+      "search_events_with_card": 19,
+      "search_events_with_broad_card": 55,
+      "search_events_with_redirect": 101,
+      "search_events_with_tool": 70,
+      "zero_card_query_contexts": 182,
+      "by_locale": {
+        "en": 208,
+        "zh": 20,
+        "ko": 7,
+        "fr": 2,
+        "es": 9,
+        "de": 8,
+        "ru": 6,
+        "hi": 3,
+        "tr": 1
+      }
+    }
+  },
+  "privacy_exceptions": "11 contexts withheld: URL/path/identifiable or long input, pasted passage/questions, potentially sensitive input. No original strings replayed or committed. Automated public heuristic alone was insufficient; explicit manual allowlist used.",
+  "queries": [
+    {
+      "query": "asl video translator",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "asl video translator",
+        "locale": "en",
+        "within": "",
+        "searches": 4,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 4,
+        "days": 3,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": true,
+        "has_tool": true,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/tools/asl-video-translator?from_search=asl%20video%20translator",
+      "observed_at": "2026-11-19T02:02:39.314Z",
+      "status": "reviewed",
+      "primary_results": [],
+      "template_rail_observed": [],
+      "classification": "tool/navigation",
+      "priority": "P3",
+      "finding": "ASL video intent reaches existing translator; no card click expected.",
+      "action": "No generation needed; verify downstream completion separately.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/0.jpg",
+      "relevant_at_5": null,
+      "relevant_at_10": null
+    },
+    {
+      "query": "asl · american sign language",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "asl · american sign language",
+        "locale": "en",
+        "within": "",
+        "searches": 3,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 3,
+        "days": 3,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/tools/asl-video-translator?from_search=asl%20%C2%B7%20american%20sign%20language",
+      "observed_at": "2026-11-19T02:02:47.968Z",
+      "status": "reviewed",
+      "primary_results": [],
+      "template_rail_observed": [],
+      "classification": "tool/navigation; ambiguous",
+      "priority": "P2",
+      "finding": "Broad ASL label now routes to translator rather than learning topic; intent could be learning or translation.",
+      "action": "Review navigation intent split; do not infer tool completion from redirect.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/1.jpg",
+      "relevant_at_5": null,
+      "relevant_at_10": null
+    },
+    {
+      "query": "mbti & personality",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "mbti & personality",
+        "locale": "en",
+        "within": "",
+        "searches": 2,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": true,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/topics/mbti?from_search=mbti%20%26%20personality",
+      "observed_at": "2026-11-19T02:03:00.827Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-mbti-ghibli-ashitaka",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-ghibli/template-mbti-ghibli-ashitaka",
+          "title": "Ashitaka — MBTI & Personality",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-ghibli-ashitaka-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-nba-kevendurant",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-nba/template-mbti-nba-kevendurant",
+          "title": "Kevendurant, Kevin Durant — MBTI & Personality",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-nba-en-kevendurant-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-group-anime-character-poster-analysts",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-group-anime-character-poster/template-mbti-group-anime-character-poster-analysts",
+          "title": "Analysts Group (INTJ, INTP, ENTJ, ENTP) — MBTI & Personality",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-group-anime-character-poster-analysts-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-personality-compatibility-infographic-intj-enfp-compatibility",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-personality-compatibility-infographic/template-mbti-personality-compatibility-infographic-intj-enfp-compatibility",
+          "title": "INTJ & ENFP Compatibility — MBTI & Personality",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-personality-compatibility-infographic-intj-enfp-compatibility-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-naruto-gaara",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-naruto/template-mbti-naruto-gaara",
+          "title": "Gaara — MBTI & Personality",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-naruto-gaara-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-pop-culture-matching-chart-soccer-positions-mbti",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/pop-culture-matching-chart/template-pop-culture-matching-chart-soccer-positions-mbti",
+          "title": "Soccer Positions — MBTI personality matched to roles: striker, midfielder, defender, goalkeeper, wing back, false 9, defensi…",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-pop-culture-matching-chart-soccer-positions-mbti-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-harry-potter-mbti-infographic-enfj-harry-potter",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/harry-potter-mbti-infographic/template-harry-potter-mbti-infographic-enfj-harry-potter",
+          "title": "Enfj Harry Potter — MBTI & Personality",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-harry-potter-mbti-infographic-enfj-harry-potter-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-custom-character-card-enfp-fiery-little-sun-male",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/custom-character-card/template-custom-character-card-enfp-fiery-little-sun-male",
+          "title": "enfp fiery little sun male — MBTI & Personality",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-custom-character-card-enfp-fiery-little-sun-male-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-friends-character-mbti-chandler-bing",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/friends-character-mbti/template-friends-character-mbti-chandler-bing",
+          "title": "Chandler Bing — MBTI & Personality",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-friends-character-mbti-chandler-bing-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-stereotype-vs-reality-infographic-enfp",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-stereotype-vs-reality-infographic/template-mbti-stereotype-vs-reality-infographic-enfp",
+          "title": "Enfp — MBTI & Personality",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-stereotype-vs-reality-infographic-enfp-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "no demonstrated defect",
+      "priority": "P3",
+      "finding": "Strong thematic breadth: comparisons, relationships and characters; dense text at thumbnail size.",
+      "action": "No new batch without a narrower brief.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/2.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "xi'an travel poster",
+      "locale": "ru",
+      "within": "",
+      "signals": {
+        "query": "xi'an travel poster",
+        "locale": "ru",
+        "within": "",
+        "searches": 2,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/ru/search?q=xi%27an%20travel%20poster",
+      "observed_at": "2026-11-19T02:03:18.413Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-all-sports-tournament-schedule-infographic-fifa-world-cup-2026-round-of-32-prediction-poster",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/all-sports-tournament-schedule-infographic/template-all-sports-tournament-schedule-infographic-fifa-world-cup-2026-round-of-32-prediction-poster",
+          "title": "fifa world cup 2026 round of 32 prediction poster",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-all-sports-tournament-schedule-infographic-fifa-world-cup-2026-round-of-32-prediction-poster-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-bilingual-chinese-vocabulary-word-card-poster-luxing-travel",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/bilingual-chinese-vocabulary-word-card-poster/template-bilingual-chinese-vocabulary-word-card-poster-luxing-travel",
+          "title": "Luxing Travel",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-bilingual-chinese-vocabulary-word-card-poster-luxing-travel-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-country-tourism-collage-poster-japan",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/country-tourism-collage-poster/template-country-tourism-collage-poster-japan",
+          "title": "Japan Tourism Collage Poster",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-country-tourism-collage-poster-japan-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-country-tourism-collage-poster-italy",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/country-tourism-collage-poster/template-country-tourism-collage-poster-italy",
+          "title": "Italy Tourism Collage Poster",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-country-tourism-collage-poster-italy-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-country-tourism-collage-poster-brazil",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/country-tourism-collage-poster/template-country-tourism-collage-poster-brazil",
+          "title": "Brazil Tourism Collage Poster",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-country-tourism-collage-poster-brazil-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-ip-creative-cultural-goods-mockup-set-deer-travel-journal",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/ip-creative-cultural-goods-mockup-set/template-ip-creative-cultural-goods-mockup-set-deer-travel-journal",
+          "title": "Deer travel journal",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-ip-creative-cultural-goods-mockup-set-deer-travel-journal-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-wc-knockout-matchup-poster-netherlands-vs-morocco",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/wc-knockout-matchup-poster/template-wc-knockout-matchup-poster-netherlands-vs-morocco",
+          "title": "Netherlands vs Morocco — World Cup 2026 Round of 32, Netherlands vs Morocco · Round of 32 · Estadio BBVA, Guadalupe",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp/template-wc-knockout-matchup-poster-netherlands-vs-morocco.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-celebrity-movie-group-poster-canada-2026-world-cup-home-opener-starting-xi",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/celebrity-movie-group-poster/template-celebrity-movie-group-poster-canada-2026-world-cup-home-opener-starting-xi",
+          "title": "Canada 2026 World Cup home opener starting XI — Alphonso Davies (captain), Jonathan David, Stephen Eustáquio, Tajon Buchanan…",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-celebrity-movie-group-poster-canada-2026-world-cup-home-opener-starting-xi-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-vintage-football-jersey-intro-watercolor-poster-croatia-2026-wc",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/vintage-football-jersey-intro-watercolor-poster/template-vintage-football-jersey-intro-watercolor-poster-croatia-2026-wc",
+          "title": "Croatia — 2026 World Cup team poster featuring Luka Modrić, Croatia 2026 World Cup home jersey featuring Luka Modrić",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp/template-vintage-football-jersey-intro-watercolor-poster-croatia-2026-wc.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-weather-nanjing",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/weather/template-weather-nanjing",
+          "title": "Nanjing",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-weather-zh-nanjing-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "retrieval/ranking; missing format; richness",
+      "priority": "P1",
+      "finding": "0/10 Xi’an subjects; catalog has travel and pagoda, but lacks a clear travel-poster option.",
+      "action": "Added one city-specific scrapbook poster; subject+format constraint; top-five regression passed.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/3.jpg",
+      "relevant_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 0,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "amharic language",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "amharic language",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/search?q=amharic%20language",
+      "observed_at": "2026-11-19T02:03:34.836Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-solar-term-daxue",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/solar-term/template-solar-term-daxue",
+          "title": "Daxue",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-solar-term-zh-daxue-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-hotspot-card-iran1",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/hotspot-card/template-hotspot-card-iran1",
+          "title": "Iran1",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-hotspot-card-iran1-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-hotspot-card-iran3",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/hotspot-card/template-hotspot-card-iran3",
+          "title": "Iran3",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-hotspot-card-iran3-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-daily-essentials-learning-card-beauty-products",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/daily-essentials-learning-card/template-daily-essentials-learning-card-beauty-products",
+          "title": "Beauty Products",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-daily-essentials-learning-card-beauty-products-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-daily-essentials-learning-card-fruits",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/daily-essentials-learning-card/template-daily-essentials-learning-card-fruits",
+          "title": "Fruits",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-daily-essentials-learning-card-fruits-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-daily-essentials-learning-card-kitchen-utensils",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/daily-essentials-learning-card/template-daily-essentials-learning-card-kitchen-utensils",
+          "title": "Kitchen Utensils",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-daily-essentials-learning-card-kitchen-utensils-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-series-infographic-live-below-your-means-3",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/series-infographic/template-series-infographic-live-below-your-means-3",
+          "title": "live below your means 3, Flat Illustration Style",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-series-infographic-live-below-your-means-3-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-word-scene-english-french-at-the-airport",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/word-scene/template-word-scene-english-french-at-the-airport",
+          "title": "At the Airport, en fr",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-word-scene-english-french-at-the-airport-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-vocabulary-weddings-en-zh",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/vocabulary/template-vocabulary-weddings-en-zh",
+          "title": "En Zh, Weddings",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-vocabulary-weddings-en-zh-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-word-scene-english-korean-library",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/word-scene/template-word-scene-english-korean-library",
+          "title": "En Ko, Library",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-word-scene-english-korean-library-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "retrieval/ranking; genuine missing content",
+      "priority": "P1",
+      "finding": "Other languages substituted for Amharic; no catalog match in inspirations/gallery.",
+      "action": "Suppress wrong-language matches; defer Amharic instructional assets until language/text QA is available.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/4.jpg",
+      "relevant_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 0,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "architecture",
+      "locale": "fr",
+      "within": "",
+      "signals": {
+        "query": "architecture",
+        "locale": "fr",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/fr/topics/architecture?from_search=architecture",
+      "observed_at": "2026-11-19T02:10:09.709Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-3d-region-landmark-map-egypt",
+          "url": "https://www.curify-ai.com/fr/carousel/template-example/3d-region-landmark-map/template-3d-region-landmark-map-egypt",
+          "title": "Egypt — Architecture",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-3d-region-landmark-map-egypt-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-world-landmark-vintage-info-poster-portugal-belem-tower",
+          "url": "https://www.curify-ai.com/fr/carousel/template-example/world-landmark-vintage-info-poster/template-world-landmark-vintage-info-poster-portugal-belem-tower",
+          "title": "Belem Tower — Architecture",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-world-landmark-vintage-info-poster-portugal-belem-tower-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-cultural-relic-retro-infographic-portugal-jeronimos-monastery",
+          "url": "https://www.curify-ai.com/fr/carousel/template-example/cultural-relic-retro-infographic/template-cultural-relic-retro-infographic-portugal-jeronimos-monastery",
+          "title": "Jeronimos Monastery — Architecture",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-cultural-relic-retro-infographic-portugal-jeronimos-monastery-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-layered-systems-architecture-aiml-orchestration",
+          "url": "https://www.curify-ai.com/fr/carousel/template-example/layered-systems-architecture/template-layered-systems-architecture-aiml-orchestration",
+          "title": "AI/ML Job Orchestration, The 5 layers behind every production model serving platform, L1 — API: Submit — Architecture",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-layered-systems-architecture-aiml-orchestration-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-architecture-empire-state-building",
+          "url": "https://www.curify-ai.com/fr/carousel/template-example/architecture/template-architecture-empire-state-building",
+          "title": "Empire State Building — Architecture",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-architecture-zh-empire-state-building-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-3d-region-landmark-map-france",
+          "url": "https://www.curify-ai.com/fr/carousel/template-example/3d-region-landmark-map/template-3d-region-landmark-map-france",
+          "title": "France — Architecture",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-3d-region-landmark-map-france-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-layered-systems-architecture-kubernetes-deployment",
+          "url": "https://www.curify-ai.com/fr/carousel/template-example/layered-systems-architecture/template-layered-systems-architecture-kubernetes-deployment",
+          "title": "Kubernetes Deployment Stack, The three layers between an incoming request and durable state, L1 — Ingress: Route — Architect…",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-layered-systems-architecture-kubernetes-deployment-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-architecture-giant-wild-goose-pagoda",
+          "url": "https://www.curify-ai.com/fr/carousel/template-example/architecture/template-architecture-giant-wild-goose-pagoda",
+          "title": "giant wild goose pagoda — Architecture",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-architecture-zh-giant-wild-goose-pagoda-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-3d-region-landmark-map-greece",
+          "url": "https://www.curify-ai.com/fr/carousel/template-example/3d-region-landmark-map/template-3d-region-landmark-map-greece",
+          "title": "Greece — Architecture",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-3d-region-landmark-map-greece-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-layered-systems-architecture-llm-inference",
+          "url": "https://www.curify-ai.com/fr/carousel/template-example/layered-systems-architecture/template-layered-systems-architecture-llm-inference",
+          "title": "LLM Inference Stack, From client request to GPU tensor cores in seven layers, L1 — Client: REST — Architecture",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-layered-systems-architecture-llm-inference-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "retrieval/ranking; ambiguous",
+      "priority": "P2",
+      "finding": "Architecture topic mixes landmarks, geographic maps and software architecture.",
+      "action": "Separate physical architecture and software architecture in a follow-up taxonomy change; broad term alone cannot establish one intended meaning.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/5.jpg",
+      "relevant_at_5": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 5,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "car",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "car",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/search?q=car",
+      "observed_at": "2026-11-19T02:03:55.990Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-industrial-design-concept-sketch-futuristic-race-car",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/industrial-design-concept-sketch/template-industrial-design-concept-sketch-futuristic-race-car",
+          "title": "Futuristic Race Car",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-industrial-design-concept-sketch-futuristic-race-car-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-food-neapolitan-pizza",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/food/template-food-neapolitan-pizza",
+          "title": "Neapolitan Pizza",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-food-en-neapolitan-pizza-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-cartoon-english-vocabulary-flashcards-vehicles",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/cartoon-english-vocabulary-flashcards/template-cartoon-english-vocabulary-flashcards-vehicles",
+          "title": "Vehicles",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-vehicles-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        }
+      ],
+      "template_rail_observed": [
+        {
+          "url": "https://www.curify-ai.com/nano-template/travel",
+          "title": "Travel Planning Map"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/mbti-ghibli",
+          "title": "Anime MBTI Infographic Category"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/theme-overview-poster",
+          "title": "Theme Overview Posters"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/mbti-nba",
+          "title": "MBTI Sports Card Category"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/varieties-food-poster",
+          "title": "Food Varieties Posters"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/warmup-routine",
+          "title": "Warm-Up Routine Posters"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/mbti-naruto",
+          "title": "Anime MBTI Infographic Category"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/clothing-evolution-poster",
+          "title": "Clothing Evolution Posters"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/figure-principles-infographic",
+          "title": "Famous Figure Principles Infographic"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/pop-culture-matching-chart",
+          "title": "Pop Culture Chart"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/east-asian-culture-comparison-infographic",
+          "title": "East Asian Culture Comparison"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/sports-battle",
+          "title": "Sports Infographic Category"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/group-vocab-category",
+          "title": "Vocabulary Category Posters"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/friends-character-mbti",
+          "title": "Friends Character MBTI Posters"
+        }
+      ],
+      "classification": "retrieval/ranking",
+      "priority": "P2",
+      "finding": "Car design first, pizza second, vehicle vocabulary third; format not specified.",
+      "action": "Remove pizza contamination with recall-preserving car/vehicle regression in follow-up; no new car content justified.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/6.jpg",
+      "relevant_at_5": {
+        "numerator": 2,
+        "denominator": 3
+      },
+      "relevant_at_10": {
+        "numerator": 2,
+        "denominator": 3
+      }
+    },
+    {
+      "query": "check my credits",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "check my credits",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 1,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": true,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/search?q=check%20my%20credits",
+      "observed_at": "2026-11-19T02:04:04.362Z",
+      "status": "reviewed",
+      "primary_results": [],
+      "template_rail_observed": [],
+      "classification": "tool/navigation; unsupported generation suggestion",
+      "priority": "P1",
+      "finding": "Credit-balance request incorrectly offers image generation.",
+      "action": "Added credit-help entry before retrieval, pointing to signed-in workspace credit indicator; no balance disclosed.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/7.jpg",
+      "relevant_at_5": null,
+      "relevant_at_10": null
+    },
+    {
+      "query": "china",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "china",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/topics/china?from_search=china",
+      "observed_at": "2026-11-19T02:04:12.021Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-travel-beijing",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/travel/template-travel-beijing",
+          "title": "Beijing — China",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-travel-zh-beijing-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-theme-overview-poster-china-ethnic-costumes",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/theme-overview-poster/template-theme-overview-poster-china-ethnic-costumes",
+          "title": "China Ethnic Costumes, Traditional Costumes of China's Ethnic Groups — China",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-theme-overview-poster-china-ethnic-costumes-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-cuisine-food-vocab-poster-beijing",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/cuisine-food-vocab-poster/template-cuisine-food-vocab-poster-beijing",
+          "title": "Beijing, Beijing Cuisine — China",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-cuisine-food-vocab-poster-beijing-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-watercolor-world-map-illustration-asia",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/watercolor-world-map-illustration/template-watercolor-world-map-illustration-asia",
+          "title": "Asia — China",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-watercolor-world-map-illustration-asia-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-clothing-evolution-poster-chinese",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/clothing-evolution-poster/template-clothing-evolution-poster-chinese",
+          "title": "Chinese — China",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-clothing-evolution-poster-chinese-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-3d-region-landmark-map-china",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/3d-region-landmark-map/template-3d-region-landmark-map-china",
+          "title": "China — China",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-3d-region-landmark-map-china-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-pop-culture-matching-chart-ghibli-chinese-zodiac-characters",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/pop-culture-matching-chart/template-pop-culture-matching-chart-ghibli-chinese-zodiac-characters",
+          "title": "ghibli chinese zodiac characters — China",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-pop-culture-matching-chart-ghibli-chinese-zodiac-characters-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-east-asian-culture-comparison-infographic-tang-silk-road-vs-maritime-trade",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/east-asian-culture-comparison-infographic/template-east-asian-culture-comparison-infographic-tang-silk-road-vs-maritime-trade",
+          "title": "tang dynasty silk road merchant culture vs maritime trade culture — China",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-east-asian-culture-comparison-infographic-tang-silk-road-vs-maritime-trade-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-world-landmark-vintage-info-poster-great-wall",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/world-landmark-vintage-info-poster/template-world-landmark-vintage-info-poster-great-wall",
+          "title": "Great Wall — China",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-world-landmark-vintage-info-poster-great-wall-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-regional-alcoholic-drinks-infographic-dragon-boat-festival",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/regional-alcoholic-drinks-infographic/template-regional-alcoholic-drinks-infographic-dragon-boat-festival",
+          "title": "Dragon Boat Festival — China",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-regional-alcoholic-drinks-infographic-dragon-boat-festival-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "no demonstrated defect",
+      "priority": "P3",
+      "finding": "Broad China subject has travel, food, clothing, history and characters.",
+      "action": "Rich enough for broad intent; narrow by use case before generating.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/8.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "deaf",
+      "locale": "hi",
+      "within": "",
+      "signals": {
+        "query": "deaf",
+        "locale": "hi",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/hi/topics/asl?from_search=deaf",
+      "observed_at": "2026-11-19T02:04:20.005Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-asl-sign-language-tutorial-infographic-big-vs-very-big",
+          "url": "https://www.curify-ai.com/hi/carousel/template-example/asl-sign-language-tutorial-infographic/template-asl-sign-language-tutorial-infographic-big-vs-very-big",
+          "title": "big vs very big — ASL · अमेरिकी सांकेतिक भाषा",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-asl-sign-language-tutorial-infographic-big-vs-very-big-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-asl-short-phrase-sequence-i-love-you",
+          "url": "https://www.curify-ai.com/hi/carousel/template-example/asl-short-phrase-sequence/template-asl-short-phrase-sequence-i-love-you",
+          "title": "मैं तुमसे प्यार करता हूँ — ASL, I love you — ASL · अमेरिकी सांकेतिक भाषा",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-asl-short-phrase-sequence-i-love-you-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-asl-sign-language-tutorial-infographic-brother-sister-difference",
+          "url": "https://www.curify-ai.com/hi/carousel/template-example/asl-sign-language-tutorial-infographic/template-asl-sign-language-tutorial-infographic-brother-sister-difference",
+          "title": "Brother Sister Difference — ASL · अमेरिकी सांकेतिक भाषा",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-asl-sign-language-tutorial-infographic-brother-sister-difference-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-asl-short-phrase-sequence-thank-you",
+          "url": "https://www.curify-ai.com/hi/carousel/template-example/asl-short-phrase-sequence/template-asl-short-phrase-sequence-thank-you",
+          "title": "धन्यवाद — ASL, Thank you — ASL · अमेरिकी सांकेतिक भाषा",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-asl-short-phrase-sequence-thank-you-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-asl-sign-language-tutorial-infographic-five-parameters-of-asl",
+          "url": "https://www.curify-ai.com/hi/carousel/template-example/asl-sign-language-tutorial-infographic/template-asl-sign-language-tutorial-infographic-five-parameters-of-asl",
+          "title": "five parameters of asl — ASL · अमेरिकी सांकेतिक भाषा",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-asl-sign-language-tutorial-infographic-five-parameters-of-asl-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-asl-short-phrase-sequence-please",
+          "url": "https://www.curify-ai.com/hi/carousel/template-example/asl-short-phrase-sequence/template-asl-short-phrase-sequence-please",
+          "title": "कृपया — ASL, Please — ASL · अमेरिकी सांकेतिक भाषा",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-asl-short-phrase-sequence-please-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-asl-sign-language-tutorial-infographic-how-to-sign-great",
+          "url": "https://www.curify-ai.com/hi/carousel/template-example/asl-sign-language-tutorial-infographic/template-asl-sign-language-tutorial-infographic-how-to-sign-great",
+          "title": "how to sign great — ASL · अमेरिकी सांकेतिक भाषा",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-asl-sign-language-tutorial-infographic-how-to-sign-great-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-asl-sign-language-tutorial-infographic-size-and-intensity",
+          "url": "https://www.curify-ai.com/hi/carousel/template-example/asl-sign-language-tutorial-infographic/template-asl-sign-language-tutorial-infographic-size-and-intensity",
+          "title": "BIG और VERY BIG: गति और चेहरे के भाव, Generate a finished vertical 1024x1536 ASL educational photo infographic. This must fe…",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-asl-sign-language-tutorial-infographic-size-and-intensity-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-asl-sign-language-tutorial-infographic-mother-father-location",
+          "url": "https://www.curify-ai.com/hi/carousel/template-example/asl-sign-language-tutorial-infographic/template-asl-sign-language-tutorial-infographic-mother-father-location",
+          "title": "MOTHER और FATHER: संकेत का स्थान, Generate a finished vertical 1024x1536 ASL educational photo infographic. This must featur…",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-asl-sign-language-tutorial-infographic-mother-father-location-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-asl-sign-language-tutorial-infographic-questions-on-the-face",
+          "url": "https://www.curify-ai.com/hi/carousel/template-example/asl-sign-language-tutorial-infographic/template-asl-sign-language-tutorial-infographic-questions-on-the-face",
+          "title": "ASL में प्रश्न: भौंहें और चेहरे के भाव, Generate a finished vertical 1024x1536 ASL educational photo infographic. This must…",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-asl-sign-language-tutorial-infographic-questions-on-the-face-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "tool/navigation; ambiguous",
+      "priority": "P2",
+      "finding": "Hindi visitor sees American Sign Language content; deaf does not specify ASL or Indian Sign Language.",
+      "action": "Preserve ambiguity; do not claim ASL is universal. Follow-up language selection/help.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/9.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "deaf isl",
+      "locale": "hi",
+      "within": "",
+      "signals": {
+        "query": "deaf isl",
+        "locale": "hi",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/hi/search?q=deaf%20isl",
+      "observed_at": "2026-11-19T02:04:27.743Z",
+      "status": "reviewed",
+      "primary_results": [],
+      "template_rail_observed": [],
+      "classification": "unsupported capability/help intent",
+      "priority": "P2",
+      "finding": "No ISL results; generic science-style generation preview does not establish sign-language support.",
+      "action": "Clarify requested sign language and capability before offering generation; do not invent ISL educational signs.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/10.jpg",
+      "relevant_at_5": null,
+      "relevant_at_10": null
+    },
+    {
+      "query": "estp",
+      "locale": "de",
+      "within": "",
+      "signals": {
+        "query": "estp",
+        "locale": "de",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/de/topics/mbti-estp?from_search=estp",
+      "observed_at": "2026-11-19T02:04:34.450Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-mbti-nba-erling-haaland",
+          "url": "https://www.curify-ai.com/de/carousel/template-example/mbti-nba/template-mbti-nba-erling-haaland",
+          "title": "Erling Haaland — ESTP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-nba-erling-haaland-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-stereotype-vs-reality-infographic-estp",
+          "url": "https://www.curify-ai.com/de/carousel/template-example/mbti-stereotype-vs-reality-infographic/template-mbti-stereotype-vs-reality-infographic-estp",
+          "title": "Estp — ESTP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-stereotype-vs-reality-infographic-estp-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-marvel-thorodinson",
+          "url": "https://www.curify-ai.com/de/carousel/template-example/mbti-marvel/template-mbti-marvel-thorodinson",
+          "title": "Thorodinson, Thor Odinson — ESTP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-marvel-en-thorodinson-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-zhenhuan-mbti-character-analysis-estp-qiguiren",
+          "url": "https://www.curify-ai.com/de/carousel/template-example/zhenhuan-mbti-character-analysis/template-zhenhuan-mbti-character-analysis-estp-qiguiren",
+          "title": "Estp Qiguiren — ESTP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-zhenhuan-mbti-character-analysis-estp-qiguiren-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-breakingbad-hank-schrader",
+          "url": "https://www.curify-ai.com/de/carousel/template-example/mbti-breakingbad/template-mbti-breakingbad-hank-schrader",
+          "title": "Hank Schrader — ESTP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-breakingbad-en-hank-schrader-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-marvel-marvel-rocketraccoon",
+          "url": "https://www.curify-ai.com/de/carousel/template-example/mbti-marvel/template-mbti-marvel-marvel-rocketraccoon",
+          "title": "Marvel Rocketraccoon, Rocket Raccoon — ESTP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-marvel-en-marvel-rocketraccoon-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-breakingbad-tuco-salamanca",
+          "url": "https://www.curify-ai.com/de/carousel/template-example/mbti-breakingbad/template-mbti-breakingbad-tuco-salamanca",
+          "title": "Tuco Salamanca — ESTP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-breakingbad-en-tuco-salamanca-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-marvel-domino",
+          "url": "https://www.curify-ai.com/de/carousel/template-example/mbti-marvel/template-mbti-marvel-domino",
+          "title": "Domino — ESTP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-marvel-en-domino-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-breakingbad-hankschrader",
+          "url": "https://www.curify-ai.com/de/carousel/template-example/mbti-breakingbad/template-mbti-breakingbad-hankschrader",
+          "title": "Hankschrader, Hank Schrader — ESTP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-breakingbad-en-hankschrader-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-marvel-Gambit",
+          "url": "https://www.curify-ai.com/de/carousel/template-example/mbti-marvel/template-mbti-marvel-Gambit",
+          "title": "Gambit — ESTP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-marvel-Gambit-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "richness",
+      "priority": "P2",
+      "finding": "Relevant ESTP examples, but character franchise layouts dominate; duplicated Hank Schrader concept.",
+      "action": "Brief: non-fandom comparison or everyday communication worksheet if demand repeats; do not simply add more character cards.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/11.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "flashcard",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "flashcard",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/topics/vocabulary?from_search=flashcard",
+      "observed_at": "2026-11-19T02:04:41.515Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-cuisine-food-vocab-poster-thai",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/cuisine-food-vocab-poster/template-cuisine-food-vocab-poster-thai",
+          "title": "Thai, Thai Cuisine — Vocabulary",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-cuisine-food-vocab-poster-thai-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-room-vocabulary-infographic-bathroom",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/room-vocabulary-infographic/template-room-vocabulary-infographic-bathroom",
+          "title": "Bathroom — Vocabulary",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-room-vocabulary-infographic-bathroom-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-english-confusing-word-pair-educational-poster-accept-vs-except",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/english-confusing-word-pair-educational-poster/template-english-confusing-word-pair-educational-poster-accept-vs-except",
+          "title": "Accept Vs Except — Vocabulary",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-english-confusing-word-pair-educational-poster-accept-vs-except-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-kids-theme-fill-in-worksheet-best-friend",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/kids-theme-fill-in-worksheet/template-kids-theme-fill-in-worksheet-best-friend",
+          "title": "Best Friend — Vocabulary",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-kids-theme-fill-in-worksheet-best-friend-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-chinese-verb-opposite-infographic-action-words",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/chinese-verb-opposite-infographic/template-chinese-verb-opposite-infographic-action-words",
+          "title": "Action Words — Vocabulary",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-chinese-verb-opposite-infographic-action-words-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-english-homograph-educational-poster-affect-converse-skied",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/english-homograph-educational-poster/template-english-homograph-educational-poster-affect-converse-skied",
+          "title": "Affect Converse Skied — Vocabulary",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-english-homograph-educational-poster-affect-converse-skied-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-group-vocab-category-animals",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/group-vocab-category/template-group-vocab-category-animals",
+          "title": "Animals, Group Names of Animals — Vocabulary",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-group-vocab-category-animals-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-emotion-vs-emotion-illustration-anxious-excited",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/emotion-vs-emotion-illustration/template-emotion-vs-emotion-illustration-anxious-excited",
+          "title": "Anxious Excited — Vocabulary",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-emotion-vs-emotion-illustration-anxious-excited-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-slang-week-recap-infographic-bet-drip-stan-clapped-rent-free-main-character",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/slang-week-recap-infographic/template-slang-week-recap-infographic-bet-drip-stan-clapped-rent-free-main-character",
+          "title": "bet drip stan clapped rent free main character — Vocabulary",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-slang-week-recap-infographic-bet-drip-stan-clapped-rent-free-main-character-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-bilingual-object-structure-labeling-apple",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/bilingual-object-structure-labeling/template-bilingual-object-structure-labeling-apple",
+          "title": "Apple — Vocabulary",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-bilingual-object-structure-labeling-apple-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "format coverage; retrieval/ranking",
+      "priority": "P2",
+      "finding": "Vocabulary topic is broad, but mostly posters/infographics rather than individual flashcards.",
+      "action": "Follow-up flashcard-format facet; inspect printable card structure before generating additional vocabulary.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/12.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "flesh card",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "flesh card",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/search?q=flesh%20card",
+      "observed_at": "2026-11-19T02:04:50.159Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-species-baiji",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/species/template-species-baiji",
+          "title": "Baiji",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-species-zh-baiji-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-species-giant-panda",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/species/template-species-giant-panda",
+          "title": "Giant Panda",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-species-zh-giant-panda-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-evolution-transportation",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/evolution/template-evolution-transportation",
+          "title": "Transportation",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-evolution-zh-transportation-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-herbal-angelica",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/herbal/template-herbal-angelica",
+          "title": "Angelica",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-herbal-zh-angelica-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-food-italian-pasta",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/food/template-food-italian-pasta",
+          "title": "Italian Pasta",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-food-zh-italian-pasta-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-food-sukiyaki",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/food/template-food-sukiyaki",
+          "title": "Sukiyaki",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-food-zh-sukiyaki-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-food-thai-basil-chicken-rice",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/food/template-food-thai-basil-chicken-rice",
+          "title": "thai basil chicken rice",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-food-zh-thai-basil-chicken-rice-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-solar-term-dongzhi",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/solar-term/template-solar-term-dongzhi",
+          "title": "Dongzhi",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-solar-term-zh-dongzhi-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-solar-term-guyu",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/solar-term/template-solar-term-guyu",
+          "title": "Guyu",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-solar-term-zh-guyu-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-solar-term-qingming",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/solar-term/template-solar-term-qingming",
+          "title": "Qingming",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-solar-term-zh-qingming-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "retrieval/ranking; ambiguous",
+      "priority": "P2",
+      "finding": "Likely flashcard typo, but results are wildlife/food/solar terms.",
+      "action": "Add spelling suggestion with negative controls in follow-up; do not silently equate every flesh query with flashcards.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/13.jpg",
+      "relevant_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 0,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "food",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "food",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": true,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/topics/food?from_search=food",
+      "observed_at": "2026-11-19T02:04:58.249Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-fruit-commercial-lifestyle-infographic-poster-banana",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/fruit-commercial-lifestyle-infographic-poster/template-fruit-commercial-lifestyle-infographic-poster-banana",
+          "title": "Banana — Food",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fruit-commercial-lifestyle-infographic-poster-banana-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-varieties-food-poster-egg-sandwich",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/varieties-food-poster/template-varieties-food-poster-egg-sandwich",
+          "title": "Egg Sandwich, High Protein Egg Sandwich — Food",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-varieties-food-poster-egg-sandwich-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-cuisine-food-vocab-poster-thai",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/cuisine-food-vocab-poster/template-cuisine-food-vocab-poster-thai",
+          "title": "Thai, Thai Cuisine — Food",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-cuisine-food-vocab-poster-thai-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-watercolor-world-map-illustration-chinese-provincial-cuisine-map",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/watercolor-world-map-illustration/template-watercolor-world-map-illustration-chinese-provincial-cuisine-map",
+          "title": "China — provincial cuisine map: Sichuan / Cantonese / Hunan / Shandong / Jiangsu / Anhui regional dishes — Food",
+          "image_url": "",
+          "image_loaded_at_snapshot": false,
+          "grade": "exact"
+        },
+        {
+          "id": "template-3d-region-landmark-map-italian-regional-pasta-map",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/3d-region-landmark-map/template-3d-region-landmark-map-italian-regional-pasta-map",
+          "title": "Italy — regional pasta map: Bolognese / Carbonara / Cacio e Pepe / Pesto / Orecchiette by province — Food",
+          "image_url": "",
+          "image_loaded_at_snapshot": false,
+          "grade": "exact"
+        },
+        {
+          "id": "template-regional-alcoholic-drinks-infographic-french",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/regional-alcoholic-drinks-infographic/template-regional-alcoholic-drinks-infographic-french",
+          "title": "French — Food",
+          "image_url": "",
+          "image_loaded_at_snapshot": false,
+          "grade": "exact"
+        },
+        {
+          "id": "template-premium-recipe-card-infographic-cheesy-bacon-burger-bites",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/premium-recipe-card-infographic/template-premium-recipe-card-infographic-cheesy-bacon-burger-bites",
+          "title": "cheesy bacon burger bites — Food",
+          "image_url": "",
+          "image_loaded_at_snapshot": false,
+          "grade": "exact"
+        },
+        {
+          "id": "template-anatomy-cut-guide-beef-cuts",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/anatomy-cut-guide/template-anatomy-cut-guide-beef-cuts",
+          "title": "Beef Cuts — Food",
+          "image_url": "",
+          "image_loaded_at_snapshot": false,
+          "grade": "exact"
+        },
+        {
+          "id": "template-nutrition-food-guide-poster-antioxidant-rich-foods",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/nutrition-food-guide-poster/template-nutrition-food-guide-poster-antioxidant-rich-foods",
+          "title": "Antioxidant Rich Foods — Food",
+          "image_url": "",
+          "image_loaded_at_snapshot": false,
+          "grade": "exact"
+        },
+        {
+          "id": "template-food-photo-doodle-sticker-overlay-brunch",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/food-photo-doodle-sticker-overlay/template-food-photo-doodle-sticker-overlay-brunch",
+          "title": "Brunch — Food",
+          "image_url": "",
+          "image_loaded_at_snapshot": false,
+          "grade": "exact"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "no demonstrated defect",
+      "priority": "P3",
+      "finding": "Varied cuisine, nutrition, maps and recipe visuals.",
+      "action": "No new broad food batch.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/14.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "hola buenos dias buenas noches bienvenido",
+      "locale": "es",
+      "within": "",
+      "signals": {
+        "query": "hola buenos dias buenas noches bienvenido",
+        "locale": "es",
+        "within": "",
+        "searches": 1,
+        "noresult": 1,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": true,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/es/search?q=hola%20buenos%20dias%20buenas%20noches%20bienvenido",
+      "observed_at": "2026-11-19T02:05:08.567Z",
+      "status": "reviewed",
+      "primary_results": [],
+      "template_rail_observed": [],
+      "classification": "genuine missing content; ambiguous format",
+      "priority": "P2",
+      "finding": "Spanish greetings list has no rendered example. Generic vocabulary template exists; exact requested greeting set absent.",
+      "action": "Brief: four greeting cards with time/context and EN/ES labels, after validating phrasing; deferred behind two design clusters.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/15.jpg",
+      "relevant_at_5": null,
+      "relevant_at_10": null
+    },
+    {
+      "query": "infp",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "infp",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/topics/mbti-infp?from_search=infp",
+      "observed_at": "2026-11-19T02:05:15.714Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-mbti-ghibli-chihiro",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-ghibli/template-mbti-ghibli-chihiro",
+          "title": "Chihiro — INFP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-ghibli-chihiro-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-friends-character-mbti-phoebe-buffay",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/friends-character-mbti/template-friends-character-mbti-phoebe-buffay",
+          "title": "Phoebe Buffay — INFP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-friends-character-mbti-phoebe-buffay-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-stereotype-vs-reality-infographic-infp",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-stereotype-vs-reality-infographic/template-mbti-stereotype-vs-reality-infographic-infp",
+          "title": "Infp — INFP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-stereotype-vs-reality-infographic-infp-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-marvel-rogue",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-marvel/template-mbti-marvel-rogue",
+          "title": "Rogue — INFP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-marvel-en-rogue-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-ghibli-kaonashi",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-ghibli/template-mbti-ghibli-kaonashi",
+          "title": "Kaonashi — INFP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-ghibli-kaonashi-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-marvel-wandamaximoff",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-marvel/template-mbti-marvel-wandamaximoff",
+          "title": "Wandamaximoff, Wanda Maximoff — INFP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-marvel-en-wandamaximoff-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-ghibli-kodama",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-ghibli/template-mbti-ghibli-kodama",
+          "title": "Kodama — INFP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-ghibli-kodama-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-marvel-marvel-nightcrawler",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-marvel/template-mbti-marvel-marvel-nightcrawler",
+          "title": "Marvel Nightcrawler — INFP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-marvel-en-marvel-nightcrawler-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-marvel-cloak-and-dagger",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-marvel/template-mbti-marvel-cloak-and-dagger",
+          "title": "Cloak And Dagger — INFP",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-marvel-cloak-and-dagger-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        }
+      ],
+      "template_rail_observed": [
+        {
+          "url": "https://www.curify-ai.com/nano-template/mbti-ghibli",
+          "title": "Anime MBTI Infographic Category"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/friends-character-mbti",
+          "title": "Friends Character MBTI Posters"
+        }
+      ],
+      "classification": "richness",
+      "priority": "P2",
+      "finding": "Nine relevant INFP examples; eight are character-centric, one stereotypes comparison.",
+      "action": "Diversify use cases before adding more characters; external benchmark not completed for this cluster.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/16.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 9,
+        "denominator": 9
+      }
+    },
+    {
+      "query": "intj",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "intj",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": true,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/topics/mbti-intj?from_search=intj",
+      "observed_at": "2026-11-19T02:05:22.889Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-mbti-ghibli-baron-humbert-von-gikkingen",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-ghibli/template-mbti-ghibli-baron-humbert-von-gikkingen",
+          "title": "baron humbert von gikkingen — INTJ",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-ghibli-baron-humbert-von-gikkingen-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-nba-alexia-putellas",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-nba/template-mbti-nba-alexia-putellas",
+          "title": "Alexia Putellas — INTJ",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-nba-alexia-putellas-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-group-anime-character-poster-analysts",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-group-anime-character-poster/template-mbti-group-anime-character-poster-analysts",
+          "title": "Analysts Group (INTJ, INTP, ENTJ, ENTP) — INTJ",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-group-anime-character-poster-analysts-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-friends-character-mbti-ross-geller",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/friends-character-mbti/template-friends-character-mbti-ross-geller",
+          "title": "Ross Geller — INTJ",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-friends-character-mbti-ross-geller-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-stereotype-vs-reality-infographic-intj",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-stereotype-vs-reality-infographic/template-mbti-stereotype-vs-reality-infographic-intj",
+          "title": "Intj — INTJ",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-stereotype-vs-reality-infographic-intj-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-in-love-infographic-intj",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-in-love-infographic/template-mbti-in-love-infographic-intj",
+          "title": "Intj — INTJ",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-in-love-infographic-intj-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-marvel-mister-sinister",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-marvel/template-mbti-marvel-mister-sinister",
+          "title": "Mister Sinister — INTJ",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-marvel-en-mister-sinister-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-breakingbad-gus-fring",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-breakingbad/template-mbti-breakingbad-gus-fring",
+          "title": "Gus Fring — INTJ",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-breakingbad-en-gus-fring-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-marvel-moondragon",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-marvel/template-mbti-marvel-moondragon",
+          "title": "Moondragon — INTJ",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-marvel-en-moondragon-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-mbti-breakingbad-walter-white",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/mbti-breakingbad/template-mbti-breakingbad-walter-white",
+          "title": "Walter White — INTJ",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-breakingbad-en-walter-white-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "richness",
+      "priority": "P2",
+      "finding": "Relevant but character-heavy; comparison/love posters add some variety.",
+      "action": "Defer more fandom cards; evaluate practical communication or work-context format.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/17.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "isl",
+      "locale": "hi",
+      "within": "",
+      "signals": {
+        "query": "isl",
+        "locale": "hi",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/hi/search?q=isl",
+      "observed_at": "2026-11-19T02:05:30.663Z",
+      "status": "reviewed",
+      "primary_results": [],
+      "template_rail_observed": [],
+      "classification": "ambiguous; unsupported capability/help intent",
+      "priority": "P2",
+      "finding": "ISL acronym has no results; generic science generation fallback is not an answer.",
+      "action": "Ask which sign language/context; do not route unconditionally to ASL.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/18.jpg",
+      "relevant_at_5": null,
+      "relevant_at_10": null
+    },
+    {
+      "query": "korea",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "korea",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": true,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/topics/korea?from_search=korea",
+      "observed_at": "2026-11-19T02:05:38.111Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-travel-seoul",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/travel/template-travel-seoul",
+          "title": "Seoul — Korea",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-travel-seoul-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-theme-overview-poster-korean-traditional-foods",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/theme-overview-poster/template-theme-overview-poster-korean-traditional-foods",
+          "title": "Korean Traditional Foods, Traditional Korean Foods for Health & Wellness — Korea",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-theme-overview-poster-korean-traditional-foods-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-cuisine-food-vocab-poster-korea",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/cuisine-food-vocab-poster/template-cuisine-food-vocab-poster-korea",
+          "title": "Korea, Korean Cuisine — Korea",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-cuisine-food-vocab-poster-korea-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-clothing-evolution-poster-korean",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/clothing-evolution-poster/template-clothing-evolution-poster-korean",
+          "title": "Korean — Korea",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-clothing-evolution-poster-korean-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-regional-alcoholic-drinks-infographic-korean",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/regional-alcoholic-drinks-infographic/template-regional-alcoholic-drinks-infographic-korean",
+          "title": "Korean — Korea",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-regional-alcoholic-drinks-infographic-korean-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-whimsical-travel-map-south-korea",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/whimsical-travel-map/template-whimsical-travel-map-south-korea",
+          "title": "South Korea — Korea",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-whimsical-travel-map-south-korea-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-country-dos-and-donts-infographic-korea",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/country-dos-and-donts-infographic/template-country-dos-and-donts-infographic-korea",
+          "title": "Korea — Korea",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-country-dos-and-donts-infographic-korea-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-food-korean-cold-noodles",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/food/template-food-korean-cold-noodles",
+          "title": "Korean Cold Noodles — Korea",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-food-zh-korean-cold-noodles-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-country-top10-travel-destinations-south-korea",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/country-top10-travel-destinations/template-country-top10-travel-destinations-south-korea",
+          "title": "South Korea — Korea",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-country-top10-travel-destinations-south-korea-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-costume-korean-hanbok-mens",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/costume/template-costume-korean-hanbok-mens",
+          "title": "Korean Hanbok Mens — Korea",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-costume-korean-hanbok-mens-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "no demonstrated defect",
+      "priority": "P3",
+      "finding": "Country content spans maps, city, food, dress and practical customs.",
+      "action": "No unsupported richness gap claim.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/19.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "mockups & ui",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "mockups & ui",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/topics/mockups?from_search=mockups%20%26%20ui",
+      "observed_at": "2026-11-19T02:05:45.618Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-fashion-inspired-gown-design-sheet-butterfly",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/fashion-inspired-gown-design-sheet/template-fashion-inspired-gown-design-sheet-butterfly",
+          "title": "Butterfly wing gown sketch with technical flat — Mockups & UI",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-inspired-gown-design-sheet-butterfly-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-chinese-ancient-bronze-cultural-creative-product-technical-design-sheet-beast-phone-stand",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/chinese-ancient-bronze-cultural-creative-product-technical-design-sheet/template-chinese-ancient-bronze-cultural-creative-product-technical-design-sheet-beast-phone-stand",
+          "title": "Beast Phone Stand — Mockups & UI",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-chinese-ancient-bronze-cultural-creative-product-technical-design-sheet-beast-phone-stand-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-vintage-collage-fashion-collection-poster-denim-chic-stella-mccartney",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/vintage-collage-fashion-collection-poster/template-vintage-collage-fashion-collection-poster-denim-chic-stella-mccartney",
+          "title": "denim chic stella mccartney — Mockups & UI",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-vintage-collage-fashion-collection-poster-denim-chic-stella-mccartney-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-interior-design-mood-board-generator-bedroom",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/interior-design-mood-board-generator/template-interior-design-mood-board-generator-bedroom",
+          "title": "Bedroom — Mockups & UI",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-interior-design-mood-board-generator-bedroom-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-ip-character-design-specification-sheet-bear",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/ip-character-design-specification-sheet/template-ip-character-design-specification-sheet-bear",
+          "title": "Bear — Mockups & UI",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-ip-character-design-specification-sheet-bear-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-celebrity-meme-sticker-merchandise-collection-poster-andrew-tate-topg",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/celebrity-meme-sticker-merchandise-collection-poster/template-celebrity-meme-sticker-merchandise-collection-poster-andrew-tate-topg",
+          "title": "Andrew Tate (Top G) viral meme sticker pack & merch collection, Andrew Tate Top G viral meme sticker pack & merch collection…",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp/template-celebrity-meme-sticker-merchandise-collection-poster-andrew-tate-topg.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-brand-ip-mascot-design-board-coca-cola-fizz",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/brand-ip-mascot-design-board/template-brand-ip-mascot-design-board-coca-cola-fizz",
+          "title": "Coca Cola Fizz — Mockups & UI",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-brand-ip-mascot-design-board-coca-cola-fizz-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-pro-athlete-stat-infographic-poster-michael-phelps-swimming",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/pro-athlete-stat-infographic-poster/template-pro-athlete-stat-infographic-poster-michael-phelps-swimming",
+          "title": "Michael Phelps Swimming — Mockups & UI",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-pro-athlete-stat-infographic-poster-michael-phelps-swimming-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-whimsical-travel-map-australia",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/whimsical-travel-map/template-whimsical-travel-map-australia",
+          "title": "Australia — Mockups & UI",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-whimsical-travel-map-australia-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-theme-color-palette-card-beach-starfish-anime",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/theme-color-palette-card/template-theme-color-palette-card-beach-starfish-anime",
+          "title": "Beach Starfish Anime — Mockups & UI",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-theme-color-palette-card-beach-starfish-anime-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "retrieval/ranking; format coverage",
+      "priority": "P2",
+      "finding": "Mockup topic mixes merchandise/product boards with travel and educational cards; no clear UI designs in first ten.",
+      "action": "Split interface design versus physical-product mockups and audit taxonomy; substantial follow-up to avoid losing valid product examples.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/20.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 7,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "peçka",
+      "locale": "tr",
+      "within": "",
+      "signals": {
+        "query": "peçka",
+        "locale": "tr",
+        "within": "",
+        "searches": 1,
+        "noresult": 1,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/tr/search?q=pe%C3%A7ka",
+      "observed_at": "2026-11-19T02:05:53.639Z",
+      "status": "reviewed",
+      "primary_results": [],
+      "template_rail_observed": [],
+      "classification": "ambiguous",
+      "priority": "P3",
+      "finding": "Unresolved short Turkish-locale term; no results.",
+      "action": "Do not invent intent or generate on spelling guess.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/21.jpg",
+      "relevant_at_5": null,
+      "relevant_at_10": null
+    },
+    {
+      "query": "romantic",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "romantic",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/search?q=romantic",
+      "observed_at": "2026-11-19T02:06:01.382Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-football-f4-garden-romantic-academy-poster-ancelotti",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/football-f4-garden-romantic-academy-poster/template-football-f4-garden-romantic-academy-poster-ancelotti",
+          "title": "Ancelotti",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-football-f4-garden-romantic-academy-poster-ancelotti-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-football-f4-garden-romantic-academy-poster-bellarina",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/football-f4-garden-romantic-academy-poster/template-football-f4-garden-romantic-academy-poster-bellarina",
+          "title": "Bellarina",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-football-f4-garden-romantic-academy-poster-bellarina-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-football-f4-garden-romantic-academy-poster-cristiano-ronaldo",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/football-f4-garden-romantic-academy-poster/template-football-f4-garden-romantic-academy-poster-cristiano-ronaldo",
+          "title": "Cristiano Ronaldo",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-football-f4-garden-romantic-academy-poster-cristiano-ronaldo-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-brand-logo-variant-set-florist-romantic-pastel",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/brand-logo-variant-set/template-brand-logo-variant-set-florist-romantic-pastel",
+          "title": "Flower Shop Branding — Romantic Pastel",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-brand-logo-variant-set-florist-romantic-pastel-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-food-wine-mussels",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/food/template-food-wine-mussels",
+          "title": "Wine Mussels",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-food-zh-wine-mussels-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-food-beef-bourguignon",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/food/template-food-beef-bourguignon",
+          "title": "Beef Bourguignon",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-food-en-beef-bourguignon-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-fashion-ecommerce-necklace",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/fashion-ecommerce/template-fashion-ecommerce-necklace",
+          "title": "Necklace",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-ecommerce-zh-necklace-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-fashion-ecommerce-dress",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/fashion-ecommerce/template-fashion-ecommerce-dress",
+          "title": "Dress",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-ecommerce-zh-dress-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-city-miniature-paris",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/city-miniature/template-city-miniature-paris",
+          "title": "Paris",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-city-miniature-zh-paris-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-poetry-ink-wash-illustration-on-the-bird-tower",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/poetry-ink-wash-illustration/template-poetry-ink-wash-illustration-on-the-bird-tower",
+          "title": "The Bird Tower, 登鹳雀楼\n白日依山尽，黄河入海流。\n欲穷千里目，更上一层楼。\n——王之涣",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-poetry-ink-wash-illustration-on-the-bird-tower-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "ambiguous; richness",
+      "priority": "P3",
+      "finding": "Romantic visual mood has florals, fashion, food, travel and stylized characters; task/format unspecified.",
+      "action": "Request/narrow use case; aesthetic breadth alone is not a defect.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/22.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "sing language",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "sing language",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/search?q=sing%20language",
+      "observed_at": "2026-11-19T02:06:12.571Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-asl-sign-language-tutorial-infographic-brother-sister-difference",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/asl-sign-language-tutorial-infographic/template-asl-sign-language-tutorial-infographic-brother-sister-difference",
+          "title": "Brother Sister Difference",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-asl-sign-language-tutorial-infographic-brother-sister-difference-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-asl-sign-language-tutorial-infographic-big-vs-very-big",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/asl-sign-language-tutorial-infographic/template-asl-sign-language-tutorial-infographic-big-vs-very-big",
+          "title": "big vs very big",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-asl-sign-language-tutorial-infographic-big-vs-very-big-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-asl-sign-language-tutorial-infographic-five-parameters-of-asl",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/asl-sign-language-tutorial-infographic/template-asl-sign-language-tutorial-infographic-five-parameters-of-asl",
+          "title": "five parameters of asl",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-asl-sign-language-tutorial-infographic-five-parameters-of-asl-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-detailed-vocab-flashcard-apple",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/detailed-vocab-flashcard/template-detailed-vocab-flashcard-apple",
+          "title": "Apple, 苹果",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-detailed-vocab-flashcard-apple-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-detailed-vocab-flashcard-book",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/detailed-vocab-flashcard/template-detailed-vocab-flashcard-book",
+          "title": "Book, 书",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-detailed-vocab-flashcard-book-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-detailed-vocab-flashcard-dog",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/detailed-vocab-flashcard/template-detailed-vocab-flashcard-dog",
+          "title": "Dog, 狗",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-detailed-vocab-flashcard-dog-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-english-confusing-word-pair-educational-poster-cite-vs-site",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/english-confusing-word-pair-educational-poster/template-english-confusing-word-pair-educational-poster-cite-vs-site",
+          "title": "Cite vs Site",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-english-confusing-word-pair-educational-poster-cite-vs-site-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-english-confusing-word-pair-educational-poster-peak-vs-peek",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/english-confusing-word-pair-educational-poster/template-english-confusing-word-pair-educational-poster-peak-vs-peek",
+          "title": "Peak vs Peek",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-english-confusing-word-pair-educational-poster-peak-vs-peek-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-english-confusing-word-pair-educational-poster-capital-vs-capitol",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/english-confusing-word-pair-educational-poster/template-english-confusing-word-pair-educational-poster-capital-vs-capitol",
+          "title": "Capital vs Capitol",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-english-confusing-word-pair-educational-poster-capital-vs-capitol-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-word-scene-child-park",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/word-scene/template-word-scene-child-park",
+          "title": "Child Park, en zh",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-word-scene-zh-child-park-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "retrieval/ranking",
+      "priority": "P2",
+      "finding": "Likely sign-language typo: first three ASL examples then unrelated spoken-language cards.",
+      "action": "Follow-up spelling suggestion + sign-language subject retention; preserve potential singing-language interpretation.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/23.jpg",
+      "relevant_at_5": {
+        "numerator": 3,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 3,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "stoichiometry",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "stoichiometry",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 1,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 1,
+        "has_card": true,
+        "has_broad_card": true,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": [
+          [
+            "NANO_INSPIRATION_EXAMPLE_GRID",
+            "template-educational-topic-cheat-sheet-poster:template-educational-topic-cheat-sheet-poster-chemistry-stoichiometry-made-easy"
+          ]
+        ]
+      },
+      "live_url": "https://www.curify-ai.com/search?q=stoichiometry",
+      "observed_at": "2026-11-19T02:06:20.276Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-educational-topic-cheat-sheet-poster-chemistry-stoichiometry-made-easy",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/educational-topic-cheat-sheet-poster/template-educational-topic-cheat-sheet-poster-chemistry-stoichiometry-made-easy",
+          "title": "chemistry stoichiometry made easy",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-educational-topic-cheat-sheet-poster-chemistry-stoichiometry-made-easy-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        }
+      ],
+      "template_rail_observed": [
+        {
+          "url": "https://www.curify-ai.com/nano-template/educational-topic-cheat-sheet-poster",
+          "title": "Educational Topic Cheat Sheet Poster"
+        }
+      ],
+      "classification": "no demonstrated defect",
+      "priority": "P3",
+      "finding": "One exact stoichiometry study poster; observed card interaction. Dense but relevant study format.",
+      "action": "Do not inflate a thin, relevant set just to increase counts; factual chemistry audit not performed.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/24.jpg",
+      "relevant_at_5": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "relevant_at_10": {
+        "numerator": 1,
+        "denominator": 1
+      }
+    },
+    {
+      "query": "times in a day",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "times in a day",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/search?q=times%20in%20a%20day",
+      "observed_at": "2026-11-19T02:06:28.121Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-lifestyle-photo-grid-wedding-day-ceremony",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/lifestyle-photo-grid/template-lifestyle-photo-grid-wedding-day-ceremony",
+          "title": "Wedding Day Ceremony",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-lifestyle-photo-grid-wedding-day-ceremony-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-cultural-festival-poster-day-of-the-dead",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/cultural-festival-poster/template-cultural-festival-poster-day-of-the-dead",
+          "title": "day of the dead",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-cultural-festival-poster-day-of-the-dead-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-self-care-illustration-poster-sick-day",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/self-care-illustration-poster/template-self-care-illustration-poster-sick-day",
+          "title": "Sick Day",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-self-care-illustration-poster-sick-day-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-hsk-bilingual-reading-text-lesson-poster-hsk1-day-at-school",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/hsk-bilingual-reading-text-lesson-poster/template-hsk-bilingual-reading-text-lesson-poster-hsk1-day-at-school",
+          "title": "HSK1 在学校的一天 A Day at School reading worksheet",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-hsk-bilingual-reading-text-lesson-poster-hsk1-day-at-school-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-hsk-bilingual-reading-text-lesson-poster-hsk1-a-day-at-school",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/hsk-bilingual-reading-text-lesson-poster/template-hsk-bilingual-reading-text-lesson-poster-hsk1-a-day-at-school",
+          "title": "hsk1 a day at school",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-hsk-bilingual-reading-text-lesson-poster-hsk1-a-day-at-school-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-hsk-bilingual-reading-text-lesson-poster-hsk2-my-day",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/hsk-bilingual-reading-text-lesson-poster/template-hsk-bilingual-reading-text-lesson-poster-hsk2-my-day",
+          "title": "Hsk2 My Day",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-hsk-bilingual-reading-text-lesson-poster-hsk2-my-day-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-chocolate-giftbox-packaging-valentine-s-day",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/chocolate-giftbox-packaging/template-chocolate-giftbox-packaging-valentine-s-day",
+          "title": "Valentine's Day, heart shaped chocolate pralines in pink and red wrappers, Rosette Chocolaterie",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-chocolate-giftbox-packaging-valentine-s-day-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-travel-canada-5-day-itinerary",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/travel/template-travel-canada-5-day-itinerary",
+          "title": "canada 5 day itinerary",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-travel-canada-5-day-itinerary-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-wc-daily-recap-poster-2026-06-21",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/wc-daily-recap-poster/template-wc-daily-recap-poster-2026-06-21",
+          "title": "Today: Sunday, June 21, 2026; Yesterday: June 20 Results — (1) Netherlands 5 1 Sweden Group F FT; Netherlands scorers: Brian…",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-wc-daily-recap-poster-2026-06-21-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-fashion-ecommerce-sneakers-minimalist-studio",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/fashion-ecommerce/template-fashion-ecommerce-sneakers-minimalist-studio",
+          "title": "Minimalist Studio Sneakers, Clean minimalist all day comfort",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-ecommerce-sneakers-minimalist-studio-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "retrieval/ranking; possible missing content",
+      "priority": "P2",
+      "finding": "Day-token matches dominate; no explicit times-of-day reference. Daily routines are only adjacent.",
+      "action": "Brief: morning/afternoon/evening/night scene cards; confirm intended learner/language, defer batch.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/25.jpg",
+      "relevant_at_5": {
+        "numerator": 2,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 3,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "travel maps soel",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "travel maps soel",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 1,
+        "has_card": true,
+        "has_broad_card": true,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": [
+          [
+            "NANO_INSPIRATION_TEMPLATE_CARD",
+            "other-templates-strip:template-travel"
+          ]
+        ]
+      },
+      "live_url": "https://www.curify-ai.com/search?q=travel%20maps%20soel",
+      "observed_at": "2026-11-19T02:06:39.137Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-book-series-Journey-to-the-West%202",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/book-series/template-book-series-Journey-to-the-West%202",
+          "title": "Journey to the West 2",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-book-series-Journey-to-the-West%202-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-book-series-Journey-to-the-West%205",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/book-series/template-book-series-Journey-to-the-West%205",
+          "title": "Journey to the West 5",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-book-series-Journey-to-the-West%205-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-book-series-Journey-to-the-West%206",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/book-series/template-book-series-Journey-to-the-West%206",
+          "title": "Journey to the West 6",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-book-series-Journey-to-the-West%206-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-travel-spain",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/travel/template-travel-spain",
+          "title": "Spain",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-travel-spain-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-cultural-relic-simu-wu-ding",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/cultural-relic/template-cultural-relic-simu-wu-ding",
+          "title": "Simu Wu Ding",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-cultural-relic-zh-simu-wu-ding-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-education-card-time-dilation",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/education-card/template-education-card-time-dilation",
+          "title": "Time Dilation",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-education-card-time-dilation-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-educational-flashcard-ontology-mindmap-infographic-world-countries-geography-mindmap",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/educational-flashcard-ontology-mindmap-infographic/template-educational-flashcard-ontology-mindmap-infographic-world-countries-geography-mindmap",
+          "title": "world countries geography mindmap",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-educational-flashcard-ontology-mindmap-infographic-world-countries-geography-mindmap-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        }
+      ],
+      "template_rail_observed": [
+        {
+          "url": "https://www.curify-ai.com/nano-template/travel",
+          "title": "Travel Planning Map"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/educational-flashcard-ontology-mindmap-infographic",
+          "title": "Educational Flashcard Ontology Mindmap Infographic"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/mbti-nba",
+          "title": "MBTI Sports Card Category"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/historical-figure-biography-vintage-infographic",
+          "title": "Historical Figure Biography Vintage Infographic"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/top10-visual-guide-infographic",
+          "title": "Top 10 Visual Guide Infographic"
+        },
+        {
+          "url": "https://www.curify-ai.com/nano-template/ethnic-costume-deconstruction-board",
+          "title": "Ethnic Costume Deconstruction Board"
+        }
+      ],
+      "classification": "retrieval/ranking",
+      "priority": "P1",
+      "finding": "0/7 Seoul map matches despite an existing Seoul travel map; observed click is not proof of quality.",
+      "action": "Normalize soel and retain Seoul+travel/map; existing example top-five regression passed.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/26.jpg",
+      "relevant_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 0,
+        "denominator": 7
+      }
+    },
+    {
+      "query": "travel posters & maps",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "travel posters & maps",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 1,
+        "has_card": true,
+        "has_broad_card": true,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": [
+          [
+            "NANO_INSPIRATION_TEMPLATE_CARD",
+            "other-templates-strip:template-travel"
+          ]
+        ]
+      },
+      "live_url": "https://www.curify-ai.com/topics/travel?from_search=travel%20posters%20%26%20maps",
+      "observed_at": "2026-11-19T02:06:49.609Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-travel-beijing",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/travel/template-travel-beijing",
+          "title": "Beijing — Travel Posters & Maps",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-travel-zh-beijing-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-hsk-bilingual-reading-text-lesson-poster-hsk2-my-first-weekend-in-beijing",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/hsk-bilingual-reading-text-lesson-poster/template-hsk-bilingual-reading-text-lesson-poster-hsk2-my-first-weekend-in-beijing",
+          "title": "HSK2 我在北京的周末 My Weekend in Beijing — Travel Posters & Maps",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-hsk-bilingual-reading-text-lesson-poster-hsk2-my-first-weekend-in-beijing-watercolor-v2-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-watercolor-world-map-illustration-africa",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/watercolor-world-map-illustration/template-watercolor-world-map-illustration-africa",
+          "title": "Africa — Travel Posters & Maps",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-watercolor-world-map-illustration-africa-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-3d-region-landmark-map-egypt",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/3d-region-landmark-map/template-3d-region-landmark-map-egypt",
+          "title": "Egypt — Travel Posters & Maps",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-3d-region-landmark-map-egypt-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-world-landmark-vintage-info-poster-colosseum",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/world-landmark-vintage-info-poster/template-world-landmark-vintage-info-poster-colosseum",
+          "title": "Colosseum — Travel Posters & Maps",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-world-landmark-vintage-info-poster-colosseum-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-regional-alcoholic-drinks-infographic-french",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/regional-alcoholic-drinks-infographic/template-regional-alcoholic-drinks-infographic-french",
+          "title": "French — Travel Posters & Maps",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-regional-alcoholic-drinks-infographic-french-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-whimsical-travel-map-australia",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/whimsical-travel-map/template-whimsical-travel-map-australia",
+          "title": "Australia — Travel Posters & Maps",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-whimsical-travel-map-australia-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-country-souvenirs-watercolor-brazil",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/country-souvenirs-watercolor/template-country-souvenirs-watercolor-brazil",
+          "title": "Brazil — Travel Posters & Maps",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-country-souvenirs-watercolor-brazil-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-country-dos-and-donts-infographic-france",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/country-dos-and-donts-infographic/template-country-dos-and-donts-infographic-france",
+          "title": "France — Travel Posters & Maps",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-country-dos-and-donts-infographic-france-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-ip-creative-cultural-goods-mockup-set-big-ben",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/ip-creative-cultural-goods-mockup-set/template-ip-creative-cultural-goods-mockup-set-big-ben",
+          "title": "Big Ben — Travel Posters & Maps",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-ip-creative-cultural-goods-mockup-set-big-ben-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "no demonstrated defect",
+      "priority": "P3",
+      "finding": "Country maps, landmark posters and travel guides provide varied visual directions.",
+      "action": "A language reading and drinks poster are adjacent; refine format in follow-up rather than generic travel batch.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/27.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "wc-argentina",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "wc-argentina",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/topics/argentina-world-cup?from_search=wc-argentina",
+      "observed_at": "2026-11-19T02:06:56.900Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-sports-battle-brazil-vs-argentina-world-cup",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/sports-battle/template-sports-battle-brazil-vs-argentina-world-cup",
+          "title": "Brazil National Football Team, Argentina National Football Team — WC Argentina",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-sports-battle-brazil-vs-argentina-world-cup-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-celebrity-movie-group-poster-argentina-2026-world-cup-squad",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/celebrity-movie-group-poster/template-celebrity-movie-group-poster-argentina-2026-world-cup-squad",
+          "title": "Argentina 2026 World Cup squad — Messi, Di María, Álvarez, Mac Allister, Lautaro Martínez, Emiliano Martínez — WC Argentina",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-celebrity-movie-group-poster-argentina-2026-world-cup-squad-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-world-cup-team-sticker-poster-argentina",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/world-cup-team-sticker-poster/template-world-cup-team-sticker-poster-argentina",
+          "title": "Argentina National Team — WC Argentina",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-world-cup-team-sticker-poster-argentina-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-sports-team-mbti-character-card-poster-argentina-mbti-estj",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/sports-team-mbti-character-card-poster/template-sports-team-mbti-character-card-poster-argentina-mbti-estj",
+          "title": "Argentina National Football Team — ESTJ (The Executive) — clinical, disciplined, ruthless winners — WC Argentina",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-sports-team-mbti-character-card-poster-argentina-mbti-estj-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-player-vintage-stats-card-poster-lionel-messi-argentina",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/player-vintage-stats-card-poster/template-player-vintage-stats-card-poster-lionel-messi-argentina",
+          "title": "Lionel Messi — Argentina national team — career stats, World Cup honours, Ballon d'Or record — WC Argentina",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-player-vintage-stats-card-poster-lionel-messi-argentina-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-history-timeline-infographic-argentina-world-cup-history",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/history-timeline-infographic/template-history-timeline-infographic-argentina-world-cup-history",
+          "title": "Argentina at the FIFA World Cup — Maradona's 1986, Messi's 2022, three championship years (1978, 1986, 2022), the full tourn…",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-history-timeline-infographic-argentina-world-cup-history-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-group-team-vertical-banner-country-poster-wc-2026-group-a",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/group-team-vertical-banner-country-poster/template-group-team-vertical-banner-country-poster-wc-2026-group-a",
+          "title": "2026 World Cup Group A: Mexico, Poland, Saudi Arabia, Argentina — North American host opener group — WC Argentina",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-group-team-vertical-banner-country-poster-wc-2026-group-a-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-sports-battle-england-vs-argentina-world-cup",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/sports-battle/template-sports-battle-england-vs-argentina-world-cup",
+          "title": "England National Football Team, Argentina National Football Team — WC Argentina",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-sports-battle-england-vs-argentina-world-cup-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-sports-battle-argentina-vs-france-world-cup-2022-final",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/sports-battle/template-sports-battle-argentina-vs-france-world-cup-2022-final",
+          "title": "Argentina National Football Team, France National Football Team — WC Argentina",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-sports-battle-argentina-vs-france-world-cup-2022-final-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "tool/navigation; retrieval/ranking",
+      "priority": "P2",
+      "finding": "Redirect works; Argentina-related rivalry examples appear alongside team subjects. Group/squad factual accuracy not certified.",
+      "action": "Keep arrival separate from click; audit dated sports facts before further content reuse.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/28.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 9,
+        "denominator": 9
+      }
+    },
+    {
+      "query": "weather",
+      "locale": "en",
+      "within": "",
+      "signals": {
+        "query": "weather",
+        "locale": "en",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": true,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/topics/weather?from_search=weather",
+      "observed_at": "2026-11-19T02:07:04.559Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-kid-friendly-grid-fun-fact-infographic-rain-facts",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/kid-friendly-grid-fun-fact-infographic/template-kid-friendly-grid-fun-fact-infographic-rain-facts",
+          "title": "Rain Facts — Weather",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-kid-friendly-grid-fun-fact-infographic-rain-facts-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-weather-education-infographic-cloudy",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/weather-education-infographic/template-weather-education-infographic-cloudy",
+          "title": "Cloudy — Weather",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-weather-education-infographic-cloudy-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-chinese-radical-learning-rain-radical",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/chinese-radical-learning/template-chinese-radical-learning-rain-radical",
+          "title": "Rain Radical — Weather",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-chinese-radical-learning-rain-radical-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-vocabulary-weather",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/vocabulary/template-vocabulary-weather",
+          "title": "Weather, en zh — Weather",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-vocabulary-weather-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-education-weather-clouds",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/education/template-education-weather-clouds",
+          "title": "Types of Clouds — Weather",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-education-weather-clouds-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-kids-vocabulary-poster-weather-seasons",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/kids-vocabulary-poster/template-kids-vocabulary-poster-weather-seasons",
+          "title": "Weather Seasons — Weather",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-kids-vocabulary-poster-weather-seasons-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-weird-cold-knowledge-popular-science-card-desert-snow",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/weird-cold-knowledge-popular-science-card/template-weird-cold-knowledge-popular-science-card-desert-snow",
+          "title": "Desert Snow — Weather",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-weird-cold-knowledge-popular-science-card-desert-snow-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-kid-friendly-grid-fun-fact-infographic-weather-facts",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/kid-friendly-grid-fun-fact-infographic/template-kid-friendly-grid-fun-fact-infographic-weather-facts",
+          "title": "Weather Facts — Weather",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-kid-friendly-grid-fun-fact-infographic-weather-facts-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-weather-education-infographic-rain",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/weather-education-infographic/template-weather-education-infographic-rain",
+          "title": "Rain — Weather",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-weather-education-infographic-rain-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-vocabulary-weather-types-en-zh",
+          "url": "https://www.curify-ai.com/en/carousel/template-example/vocabulary/template-vocabulary-weather-types-en-zh",
+          "title": "En Zh, Types of Weather — Weather",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-vocabulary-weather-types-en-zh-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "no demonstrated defect",
+      "priority": "P3",
+      "finding": "Varied weather cards, facts, vocabulary and cloud diagrams; Chinese radical is only adjacent.",
+      "action": "No new broad weather batch; scientific fact certification out of this thumbnail review.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/29.jpg",
+      "relevant_at_5": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 10,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "xi`an",
+      "locale": "ru",
+      "within": "",
+      "signals": {
+        "query": "xi`an",
+        "locale": "ru",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/ru/search?q=xi%60an",
+      "observed_at": "2026-11-19T02:07:14.516Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-weather-nanjing",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/weather/template-weather-nanjing",
+          "title": "Nanjing",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-weather-zh-nanjing-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-fashion-ecommerce-eyemask",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/fashion-ecommerce/template-fashion-ecommerce-eyemask",
+          "title": "Eyemask",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-ecommerce-zh-eyemask-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-weather-foster-city",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/weather/template-weather-foster-city",
+          "title": "Foster City",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-weather-en-foster-city-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-city-miniature-spain-barcelona",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/city-miniature/template-city-miniature-spain-barcelona",
+          "title": "Barcelona",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-city-miniature-spain-barcelona-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-city-miniature-mexico-oaxaca",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/city-miniature/template-city-miniature-mexico-oaxaca",
+          "title": "Oaxaca",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-city-miniature-mexico-oaxaca-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        }
+      ],
+      "template_rail_observed": [
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/travel",
+          "title": "Планирование путешествий"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/top10-visual-guide-infographic",
+          "title": "Инфографика визуального руководства Топ 10"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/ethnic-costume-deconstruction-board",
+          "title": "Доска деконструкции этнического костюма"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/watercolor-world-map-illustration",
+          "title": "Акварельные карты мира"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/3d-region-landmark-map",
+          "title": "3D карта"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/east-asian-culture-comparison-infographic",
+          "title": "Инфографика сравнения культур Восточной Азии"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/world-landmark-vintage-info-poster",
+          "title": "Винтажный плакат мировых достопримечательностей"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/cultural-festival-poster",
+          "title": "Постеры культурных фестивалей"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/regional-alcoholic-drinks-infographic",
+          "title": "Инфографика Региональных Алкогольных Напитков"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/whimsical-travel-map",
+          "title": "Карта путешествий"
+        }
+      ],
+      "classification": "retrieval/ranking",
+      "priority": "P1",
+      "finding": "0/5 city matches: punctuation variant loses Xi’an.",
+      "action": "Normalize city variant; retain Xi’an subject; existing+new examples regression passed.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/30.jpg",
+      "relevant_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 0,
+        "denominator": 5
+      }
+    },
+    {
+      "query": "пакет",
+      "locale": "ru",
+      "within": "",
+      "signals": {
+        "query": "пакет",
+        "locale": "ru",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 1,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/ru/search?q=%D0%BF%D0%B0%D0%BA%D0%B5%D1%82",
+      "observed_at": "2026-11-19T02:07:23.507Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-football-star-chibi-sticker-set-cristiano-ronaldo-portugal",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/football-star-chibi-sticker-set/template-football-star-chibi-sticker-set-cristiano-ronaldo-portugal",
+          "title": "Cristiano Ronaldo Portugal",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-football-star-chibi-sticker-set-cristiano-ronaldo-portugal-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "unresolved"
+        },
+        {
+          "id": "template-football-star-chibi-sticker-set-haaland-man-city",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/football-star-chibi-sticker-set/template-football-star-chibi-sticker-set-haaland-man-city",
+          "title": "Haaland Man City",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-football-star-chibi-sticker-set-haaland-man-city-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "unresolved"
+        },
+        {
+          "id": "template-football-star-chibi-sticker-set-kylian-mbappe-france",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/football-star-chibi-sticker-set/template-football-star-chibi-sticker-set-kylian-mbappe-france",
+          "title": "Kylian Mbappe France",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-football-star-chibi-sticker-set-kylian-mbappe-france-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "unresolved"
+        }
+      ],
+      "template_rail_observed": [
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/football-star-chibi-sticker-set",
+          "title": "Набор стикеров Чиби Футбольной Звезды"
+        }
+      ],
+      "classification": "ambiguous",
+      "priority": "P2",
+      "finding": "Russian пакет can mean bag/package/pack; only sticker packs shown.",
+      "action": "Offer packaging vs sticker-pack disambiguation; do not count as confirmed paper-bag demand.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/31.jpg",
+      "relevant_at_5": null,
+      "relevant_at_10": null
+    },
+    {
+      "query": "世界杯-葡萄牙",
+      "locale": "zh",
+      "within": "",
+      "signals": {
+        "query": "世界杯-葡萄牙",
+        "locale": "zh",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/zh/search?q=%E4%B8%96%E7%95%8C%E6%9D%AF-%E8%91%A1%E8%90%84%E7%89%99",
+      "observed_at": "2026-11-19T02:07:33.876Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-celebrity-movie-group-poster-portugal-2026-world-cup-squad",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/celebrity-movie-group-poster/template-celebrity-movie-group-poster-portugal-2026-world-cup-squad",
+          "title": "Portugal 2026 World Cup squad — Cristiano Ronaldo, Bruno Fernandes, Bernardo Silva, Diogo Jota, Cancelo, Diogo Costa",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-celebrity-movie-group-poster-portugal-2026-world-cup-squad-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-celebrity-movie-group-poster-portugal-2026-world-cup-cristiano-ronaldo-only-0qv5g16",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/celebrity-movie-group-poster/template-celebrity-movie-group-poster-portugal-2026-world-cup-cristiano-ronaldo-only-0qv5g16",
+          "title": "Portugal 2026 World Cup  — Cristiano Ronaldo, only",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-celebrity-movie-group-poster-portugal-2026-world-cup-cristiano-ronaldo-only-0qv5g16-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-celebrity-movie-group-poster-portugal-2026-world-cup-cristiano-ronaldo-only-one-06tcp58",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/celebrity-movie-group-poster/template-celebrity-movie-group-poster-portugal-2026-world-cup-cristiano-ronaldo-only-one-06tcp58",
+          "title": "Portugal 2026 World Cup  — Cristiano Ronaldo, only one",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-celebrity-movie-group-poster-portugal-2026-world-cup-cristiano-ronaldo-only-one-06tcp58-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "exact"
+        },
+        {
+          "id": "template-world-cup-team-sticker-poster-argentina",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/world-cup-team-sticker-poster/template-world-cup-team-sticker-poster-argentina",
+          "title": "Argentina National Team",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-world-cup-team-sticker-poster-argentina-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-group-team-vertical-banner-country-poster-wc-2026-group-a",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/group-team-vertical-banner-country-poster/template-group-team-vertical-banner-country-poster-wc-2026-group-a",
+          "title": "2026 World Cup Group A: Mexico, Poland, Saudi Arabia, Argentina — North American host opener group",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-group-team-vertical-banner-country-poster-wc-2026-group-a-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-group-team-vertical-banner-country-poster-wc-2026-group-c",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/group-team-vertical-banner-country-poster/template-group-team-vertical-banner-country-poster-wc-2026-group-c",
+          "title": "2026 World Cup Group C: Brazil, Senegal, Iran, Australia — Brazil's Selecao chase the sixth star",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-group-team-vertical-banner-country-poster-wc-2026-group-c-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-group-team-vertical-banner-country-poster-group-a-portugal-jamaica-uzbekistan-colombia",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/group-team-vertical-banner-country-poster/template-group-team-vertical-banner-country-poster-group-a-portugal-jamaica-uzbekistan-colombia",
+          "title": "group a portugal jamaica uzbekistan colombia",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-group-team-vertical-banner-country-poster-group-a-portugal-jamaica-uzbekistan-colombia-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "useful adjacent"
+        },
+        {
+          "id": "template-world-cup-debut-team-preview-poster-cape-verde-island-dreams",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/world-cup-debut-team-preview-poster/template-world-cup-debut-team-preview-poster-cape-verde-island-dreams",
+          "title": "cape verde island dreams",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-world-cup-debut-team-preview-poster-cape-verde-island-dreams-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-vintage-football-jersey-intro-watercolor-poster-south-africa-2026-wc",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/vintage-football-jersey-intro-watercolor-poster/template-vintage-football-jersey-intro-watercolor-poster-south-africa-2026-wc",
+          "title": "South Africa 2026 世界杯球队海报：Lyle Foster, South Africa 2026 World Cup home jersey featuring Lyle Foster",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp/template-vintage-football-jersey-intro-watercolor-poster-south-africa-2026-wc.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-world-cup-team-sticker-poster-france",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/world-cup-team-sticker-poster/template-world-cup-team-sticker-poster-france",
+          "title": "France National Team",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-world-cup-team-sticker-poster-france-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        }
+      ],
+      "template_rail_observed": [],
+      "classification": "retrieval/ranking",
+      "priority": "P2",
+      "finding": "First three Portugal results relevant, other countries dominate tail.",
+      "action": "Follow-up localized World Cup routing and topic-tail audit; do not simply redirect into an unreviewed topic.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/32.jpg",
+      "relevant_at_5": {
+        "numerator": 3,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 4,
+        "denominator": 10
+      }
+    },
+    {
+      "query": "回民街",
+      "locale": "ru",
+      "within": "",
+      "signals": {
+        "query": "回民街",
+        "locale": "ru",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/ru/search?q=%E5%9B%9E%E6%B0%91%E8%A1%97",
+      "observed_at": "2026-11-19T02:07:44.910Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-musical-score-illustrated-art-poster-venice-street-life-jazz-score",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/musical-score-illustrated-art-poster/template-musical-score-illustrated-art-poster-venice-street-life-jazz-score",
+          "title": "venice street life jazz score",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-musical-score-illustrated-art-poster-venice-street-life-jazz-score-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-movie-poster-sing-street",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/movie-poster/template-movie-poster-sing-street",
+          "title": "Sing Street",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-movie-poster-sing-street-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-varieties-food-poster-world-sandwiches",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/varieties-food-poster/template-varieties-food-poster-world-sandwiches",
+          "title": "World Sandwiches",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-varieties-food-poster-world-sandwiches-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-city-miniature-cape-town",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/city-miniature/template-city-miniature-cape-town",
+          "title": "Cape Town",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-city-miniature-cape-town-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-city-miniature-havana",
+          "url": "https://www.curify-ai.com/ru/carousel/template-example/city-miniature/template-city-miniature-havana",
+          "title": "Havana",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-city-miniature-havana-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        }
+      ],
+      "template_rail_observed": [
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/travel",
+          "title": "Планирование путешествий"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/musical-score-illustrated-art-poster",
+          "title": "Musical Score Illustrated Art Poster"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/varieties-food-poster",
+          "title": "Постеры разновидностей еды"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/top10-visual-guide-infographic",
+          "title": "Инфографика визуального руководства Топ 10"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/ethnic-costume-deconstruction-board",
+          "title": "Доска деконструкции этнического костюма"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/watercolor-world-map-illustration",
+          "title": "Акварельные карты мира"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/3d-region-landmark-map",
+          "title": "3D карта"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/east-asian-culture-comparison-infographic",
+          "title": "Инфографика сравнения культур Восточной Азии"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/world-landmark-vintage-info-poster",
+          "title": "Винтажный плакат мировых достопримечательностей"
+        },
+        {
+          "url": "https://www.curify-ai.com/ru/nano-template/cultural-festival-poster",
+          "title": "Постеры культурных фестивалей"
+        }
+      ],
+      "classification": "retrieval/ranking; genuine missing content",
+      "priority": "P1",
+      "finding": "No Muslim Quarter subject among five results; street token retrieves other cities/music.",
+      "action": "Added city poster with identifiable Muslim Quarter scene and alias; retain exact place. A dedicated food-street guide remains a future format.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/33.jpg",
+      "relevant_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 0,
+        "denominator": 5
+      }
+    },
+    {
+      "query": "字幕生成器",
+      "locale": "zh",
+      "within": "",
+      "signals": {
+        "query": "字幕生成器",
+        "locale": "zh",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": true,
+        "has_tool": true,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/zh/tools/bilingual-subtitles?from_search=%E5%AD%97%E5%B9%95%E7%94%9F%E6%88%90%E5%99%A8",
+      "observed_at": "2026-11-19T02:07:53.306Z",
+      "status": "reviewed",
+      "primary_results": [],
+      "template_rail_observed": [],
+      "classification": "tool/navigation",
+      "priority": "P3",
+      "finding": "Subtitle-generator query reaches subtitle tool.",
+      "action": "No image-content gap inferred.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/34.jpg",
+      "relevant_at_5": null,
+      "relevant_at_10": null
+    },
+    {
+      "query": "纸袋",
+      "locale": "zh",
+      "within": "",
+      "signals": {
+        "query": "纸袋",
+        "locale": "zh",
+        "within": "",
+        "searches": 1,
+        "noresult": 0,
+        "lowresult": 0,
+        "actors": 1,
+        "days": 1,
+        "searches_with_card": 0,
+        "has_card": false,
+        "has_broad_card": false,
+        "has_redirect": false,
+        "has_tool": false,
+        "targets": []
+      },
+      "live_url": "https://www.curify-ai.com/zh/search?q=%E7%BA%B8%E8%A2%8B",
+      "observed_at": "2026-11-19T02:10:43.835Z",
+      "status": "reviewed",
+      "primary_results": [
+        {
+          "id": "template-solar-term-dongzhi",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/solar-term/template-solar-term-dongzhi",
+          "title": "Dongzhi",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-solar-term-zh-dongzhi-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-solar-term-guyu",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/solar-term/template-solar-term-guyu",
+          "title": "Guyu",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-solar-term-zh-guyu-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-fashion-ecommerce-bag",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/fashion-ecommerce/template-fashion-ecommerce-bag",
+          "title": "Bag",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-fashion-ecommerce-zh-bag-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-solar-term-spring-clothing-health",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/solar-term/template-solar-term-spring-clothing-health",
+          "title": "Spring Clothing Health",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-solar-term-spring-clothing-health-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        },
+        {
+          "id": "template-east-asian-culture-comparison-infographic-festival-celebrations",
+          "url": "https://www.curify-ai.com/zh/carousel/template-example/east-asian-culture-comparison-infographic/template-east-asian-culture-comparison-infographic-festival-celebrations",
+          "title": "Festival Celebrations",
+          "image_url": "https://cdn.curify-ai.com/images/nano_insp_preview/template-east-asian-culture-comparison-infographic-festival-celebrations-prev.jpg",
+          "image_loaded_at_snapshot": true,
+          "grade": "off-intent"
+        }
+      ],
+      "template_rail_observed": [
+        {
+          "url": "https://www.curify-ai.com/zh/nano-template/east-asian-culture-comparison-infographic",
+          "title": "东亚文化对比信息图"
+        },
+        {
+          "url": "https://www.curify-ai.com/zh/nano-template/solar-term",
+          "title": "二十四节气类"
+        },
+        {
+          "url": "https://www.curify-ai.com/zh/nano-template/fashion-ecommerce",
+          "title": "服饰电商详情类"
+        }
+      ],
+      "classification": "retrieval/ranking; genuine missing content; richness",
+      "priority": "P1",
+      "finding": "All five reread results off-intent; paper bags absent from both catalogs. Initial blank thumbnails loaded on retry, not proven broken URLs.",
+      "action": "Added two distinct bakery/tea carrier-bag concepts and concrete-subject filter. No print-ready/dieline claim.",
+      "visual_review": "Rendered screenshot inspected for subject, composition, thumbnail legibility and broad variety; no factual certification of historical images.",
+      "screenshot_local": "/private/tmp/gap-render/35.jpg",
+      "relevant_at_5": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "relevant_at_10": {
+        "numerator": 0,
+        "denominator": 5
+      }
+    }
+  ]
+}

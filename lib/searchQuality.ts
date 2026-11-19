@@ -12,6 +12,10 @@ const aliases: Record<string, string> = {
   kazahkstan: 'kazakhstan',
   'weaather and seasons': 'weather and seasons',
   llaveros: 'keychain keyring',
+  'travel maps soel': 'seoul travel map',
+  'xi`an': 'xian',
+  "xi'an travel poster": 'xian travel poster',
+  '纸袋': 'paper bag',
   'reading about kite': 'kite',
   '风筝': 'kite 风筝',
 };
@@ -27,6 +31,12 @@ export function subjectGroups(query: string): string[][] {
   // Evidence-bounded constraints from the full zero-click audit.
   // Separate groups require BOTH the requested subject and output form.
   const audited: Record<string, string[][]> = {
+    "xi'an travel poster": [['xian', "xi'an", 'xi’an', '西安'], ['poster', '海报']],
+    'xi`an': [['xian', "xi'an", 'xi’an', '西安']],
+    'travel maps soel': [['seoul', '首尔'], ['travel', 'map', '旅行', '地图']],
+    '回民街': [['muslim quarter', 'huimin street', '回民街']],
+    '纸袋': [['paper bag', 'paper carrier bag', 'paper shopping bag', '纸袋']],
+    'amharic language': [['amharic', 'አማርኛ', '阿姆哈拉']],
     'glamour under the spotlight': [['glamour under the spotlight']],
     'basketball rules': [['basketball', '篮球'], ['rules', '规则']],
     'pizza box': [['pizza', '披萨'], ['box', 'packaging', '盒', '包装']],
@@ -97,7 +107,7 @@ export function matchesCuratedGallery(query: string, entry: { aliases?: string[]
 /** For the audited subjects, generic alias/tag words are not proof that the
  * depicted example matches. Check its identity, title and chosen parameters. */
 export function needsConcreteSubject(query: string): boolean {
-  return new Set(['pizza box', 'chinese costume', 'leggings', '徽章']).has(query.trim().toLowerCase());
+  return new Set(['pizza box', 'chinese costume', 'leggings', '徽章', '纸袋', "xi'an travel poster", 'xi`an', '回民街', 'amharic language']).has(query.trim().toLowerCase());
 }
 export function concreteSubjectText(record: { id?: string; params?: unknown; locales?: unknown }): string {
   const locales = record.locales && typeof record.locales === 'object' ? Object.values(record.locales) : [];

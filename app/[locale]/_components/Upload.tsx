@@ -74,6 +74,7 @@ interface Props {
   onUploadError?: (error: string, isAuthError?: boolean) => void;
   /** What kind of file this Upload accepts. Defaults to "video". */
   acceptedKinds?: UploadKind;
+  imageUploadEndpoint?: '/images/upload' | '/creative-video/upload';
   /** Audio-only tools: extract the audio track in the browser and upload just
    *  that (16 kHz mono WAV). A video is decoded to audio; an audio file is sent
    *  as-is; if decoding fails we fall back to uploading the original file. */
@@ -90,6 +91,7 @@ export default function Upload({
   onUploadStart,
   onUploadError,
   acceptedKinds = "video",
+  imageUploadEndpoint = "/images/upload",
   extractAudio = false,
   compact = false,
 }: Props) {
@@ -121,7 +123,7 @@ export default function Upload({
     // back (image_id, blob_url); video/audio keep the existing path.
     try {
       if (acceptedKinds === "image") {
-        const res = await imageService.uploadImage(file);
+        const res = await imageService.uploadImage(file, imageUploadEndpoint);
         onUploaded(res.image_id, res.blob_url);
       } else {
         // Audio-only tools: upload just the audio track. A video is decoded to

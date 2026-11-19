@@ -83,9 +83,9 @@ export default function HomeSolutionsGrid() {
     >
       <div className="mb-6">
         <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
-          {t("heading")}
+          {locale === "zh" ? "行业方案与批量制作" : "Industry solutions & batch production"}
         </h2>
-        <p className="mt-1.5 text-sm text-neutral-600 sm:text-base">{t("subheading")}</p>
+        <p className="mt-1.5 text-sm text-neutral-600 sm:text-base">{locale === "zh" ? "有一批素材或定制需求？选择适合你的行业方案。" : "Have a batch or a custom brief? Explore the right service for your team."}</p>
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {SOLUTIONS.map((s) => (

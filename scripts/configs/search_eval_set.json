@@ -1004,6 +1004,27 @@
       "expected": "empty",
       "expected_templates": "",
       "notes": "Use the companion server-page regression to check subject relevance after rewrite."
+    },
+    {
+      "query": "xi'an travel poster",
+      "source": "weekly-search-2026-11-19",
+      "expected": "thin",
+      "expected_templates": "",
+      "notes": "Use search_quality_page integration tests for exact subject preservation and top-five ranking; legacy richness is not quality."
+    },
+    {
+      "query": "纸袋",
+      "source": "weekly-search-2026-11-19",
+      "expected": "thin",
+      "expected_templates": "",
+      "notes": "Use search_quality_page integration tests for exact subject preservation and top-five ranking; legacy richness is not quality."
+    },
+    {
+      "query": "amharic language",
+      "source": "weekly-search-2026-11-19",
+      "expected": "empty",
+      "expected_templates": "",
+      "notes": "Use search_quality_page integration tests for exact subject preservation and top-five ranking; legacy richness is not quality."
     }
   ]
 }

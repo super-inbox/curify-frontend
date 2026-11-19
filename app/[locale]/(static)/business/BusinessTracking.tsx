@@ -21,8 +21,10 @@ export default function BusinessTracking({ lang, children }: { lang: BusinessLan
   return (
     <div id="business-page" lang={lang} className="mx-auto max-w-6xl px-5 py-10 text-neutral-900 sm:px-8 sm:py-10"
       onClick={(event) => {
-        const link = (event.target as Element).closest<HTMLAnchorElement>('a[data-business-event]');
+        const link = (event.target as Element).closest<HTMLElement>('[data-business-event]');
         if (!link || !event.currentTarget.contains(link)) return;
+        // Closing an already-open brief is not a new inquiry intent.
+        if (link.tagName === "SUMMARY" && link.parentElement?.hasAttribute("open")) return;
         trackAction({ contentId: `business:${lang}:${link.dataset.businessEvent}`, contentType: 'menu_link' }, 'click');
       }}
       onPlayingCapture={(event) => {

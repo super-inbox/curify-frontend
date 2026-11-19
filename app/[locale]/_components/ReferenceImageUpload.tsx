@@ -1,5 +1,6 @@
 "use client";
 
+import { trackTaskStage } from "@/services/taskTracking";
 import { useState } from "react";
 import { X } from "lucide-react";
 import { useAtomValue, useSetAtom } from "jotai";
@@ -26,6 +27,7 @@ type Props = {
    *  re-render must not silently drop the thumbnail. Omit it and the component
    *  stays uncontrolled exactly as before (all pre-existing callers do). */
   value?: string | null;
+  imageUploadEndpoint?: '/images/upload' | '/creative-video/upload';
   onChange: (blobUrl: string | null) => void;
   onUploadingChange?: (uploading: boolean) => void;
   /** Extra side-effect on remove (e.g. clear a stale generated result). */
@@ -52,6 +54,7 @@ type Props = {
 
 export default function ReferenceImageUpload({
   value,
+  imageUploadEndpoint,
   onChange,
   onUploadingChange,
   onRemove,
@@ -180,6 +183,7 @@ export default function ReferenceImageUpload({
           <Upload
             compact={compact}
             acceptedKinds="image"
+            imageUploadEndpoint={imageUploadEndpoint}
             onPreviewReady={(localUrl) => {
               setPreviewUrl(localUrl);
               setError(null);
@@ -187,6 +191,7 @@ export default function ReferenceImageUpload({
             onUploadStart={() => setUploadingState(true)}
             onUploaded={(_imageId, blobUrl) => {
               onChange(blobUrl);
+              trackTaskStage("upload");
               setUploadingState(false);
             }}
             onUploadError={(err, isAuthError) => {

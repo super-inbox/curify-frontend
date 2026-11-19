@@ -1,5 +1,8 @@
 "use client";
 
+import { useMemo } from "react";
+import { useClientSearchParams } from "@/lib/useClientSearchParams";
+import { taskForLocation } from "@/lib/creation-tasks";
 import ReproduceWorkbench from "@/app/[locale]/_components/ReproduceWorkbench";
 import type { TemplateParameter } from "@/lib/nano_pure";
 
@@ -33,12 +36,22 @@ export default function EcommercePhotoGenerate({
   uploadHint?: string;
   trackingContentId?: string;
 }) {
+  const query = useClientSearchParams();
+  const example = query?.get("example");
+  const taskId = query?.get("task");
+  const overrides = useMemo(() => {
+    if (typeof window === 'undefined') return undefined;
+    const task = taskForLocation(window.location.pathname, new URLSearchParams({ task: taskId ?? '', example: example ?? '' }).toString());
+    return task?.id === 'wedding' && data.templateId === 'template-wedding-portrait-styles'
+      ? { style: 'Studio wedding portrait' } : undefined;
+  }, [taskId, example, data.templateId]);
   return (
     <ReproduceWorkbench
       locale={locale}
       templateId={data.templateId}
       parameters={data.parameters}
       initialParams={{}}
+      parameterOverrides={overrides}
       basePrompt={data.basePrompt}
       allowGeneration={data.allowGeneration}
       requiresImageUpload

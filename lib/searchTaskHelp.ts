@@ -1,7 +1,8 @@
-export type SearchHelpIntent = 'workspace' | 'video' | 'slides' | 'upload' | 'local-file' | 'translate' | 'combine';
+export type SearchHelpIntent = 'credits' | 'workspace' | 'video' | 'slides' | 'upload' | 'local-file' | 'translate' | 'combine';
 
 export function searchHelpIntent(query: string): SearchHelpIntent | null {
   const q = query.trim().toLowerCase().replace(/\s+/g, ' ');
+  if (/^(check my credits|my credits|credit balance)$/.test(q)) return 'credits';
   if (/^(my videos|my workplace|my workspace)$/.test(q)) return 'workspace';
   if (/^(hacer un video|make a video|create a video)$/.test(q)) return 'video';
   if (q === 'generar un video a partir de un link de diapositiva') return 'slides';

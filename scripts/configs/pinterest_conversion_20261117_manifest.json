@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-17",
+  "branch": "codex/pinterest-conversion-batch-20261117",
+  "new_examples": 10,
+  "original_images": 10,
+  "web_assets": 20,
+  "locales": 10,
+  "allocation": {
+    "daily_essentials": 4,
+    "room_vocabulary": 2,
+    "chinese_opposites": 2,
+    "fashion_control": 2
+  },
+  "visual_review": "PASS: originals, text/object matching, corrected Pull arrow, 236px feed and footer",
+  "published_count": 0,
+  "pending_count": 10,
+  "production_landing_status": "all 10 HTTP404 on preflight",
+  "cdn_uploaded": true,
+  "blocker": "New catalog requires production deployment. Vercel git configuration enables main only; no merge or production deployment performed.",
+  "automation_updated": true,
+  "merge_main": false,
+  "validation": "Previous catalog and locale entries unchanged; checksums and assets validated"
+}

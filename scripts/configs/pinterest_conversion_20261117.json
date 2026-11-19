@@ -1,0 +1,126 @@
+{
+  "examples": [
+    {
+      "example_id": "template-daily-essentials-learning-card-gaming-gear-conversion",
+      "source_file": "daily_inspirations/Nov_17_pinterest_conversion/template-daily-essentials-learning-card-gaming-gear-conversion.png",
+      "sha256": "9898ed683f175c4ce75c79ad6f3b7d2f367a1b54ab861267048bd68f3c1b9988",
+      "generator": "built-in image_gen",
+      "params": {
+        "theme": "Gaming gear, English-only labels"
+      },
+      "base_prompt": "You are a professional kids' educational card designer, specializing in making cute and clear daily items learning posters. Based on the user-given {theme}, create a vertical 3:4 high-quality \"Daily Essentials Learning Card\" in kawaii cartoon style. Layout: 1. Title area: Large title \"Daily Essentials Learning Card\" + theme name \"{theme}\". 2. Grid area: 6 cartoon cards in 2×3 layout. Each card includes cute cartoon illustration of the daily item, bold English word, simple Chinese translation. Style: Clean rounded UI, soft pastel colors, kawaii style, text easy to read. Add Curify watermark at top left, vertical 3:4 ratio, 4K ultra HD, clean and tidy. Subject: {theme} Daily Essentials Learning Card.",
+      "title": "Gaming Gear Vocabulary",
+      "group": "conversion-expansion"
+    },
+    {
+      "example_id": "template-daily-essentials-learning-card-computer-desk-conversion",
+      "source_file": "daily_inspirations/Nov_17_pinterest_conversion/template-daily-essentials-learning-card-computer-desk-conversion.png",
+      "sha256": "2c559bc24a572bea9e0f454cfbf92d173d1f3b9c1b517075674c199f73f51fb1",
+      "generator": "built-in image_gen",
+      "params": {
+        "theme": "Computer desk essentials, English-only labels"
+      },
+      "base_prompt": "You are a professional kids' educational card designer, specializing in making cute and clear daily items learning posters. Based on the user-given {theme}, create a vertical 3:4 high-quality \"Daily Essentials Learning Card\" in kawaii cartoon style. Layout: 1. Title area: Large title \"Daily Essentials Learning Card\" + theme name \"{theme}\". 2. Grid area: 6 cartoon cards in 2×3 layout. Each card includes cute cartoon illustration of the daily item, bold English word, simple Chinese translation. Style: Clean rounded UI, soft pastel colors, kawaii style, text easy to read. Add Curify watermark at top left, vertical 3:4 ratio, 4K ultra HD, clean and tidy. Subject: {theme} Daily Essentials Learning Card.",
+      "title": "Computer Desk Vocabulary",
+      "group": "conversion-expansion"
+    },
+    {
+      "example_id": "template-daily-essentials-learning-card-digital-tools-conversion",
+      "source_file": "daily_inspirations/Nov_17_pinterest_conversion/template-daily-essentials-learning-card-digital-tools-conversion.png",
+      "sha256": "a8e3cbcea2904a0c03eb855459eb43069c43aac0fe8225c8982d4acb5cacc42e",
+      "generator": "built-in image_gen",
+      "params": {
+        "theme": "Digital tools, English-only labels"
+      },
+      "base_prompt": "You are a professional kids' educational card designer, specializing in making cute and clear daily items learning posters. Based on the user-given {theme}, create a vertical 3:4 high-quality \"Daily Essentials Learning Card\" in kawaii cartoon style. Layout: 1. Title area: Large title \"Daily Essentials Learning Card\" + theme name \"{theme}\". 2. Grid area: 6 cartoon cards in 2×3 layout. Each card includes cute cartoon illustration of the daily item, bold English word, simple Chinese translation. Style: Clean rounded UI, soft pastel colors, kawaii style, text easy to read. Add Curify watermark at top left, vertical 3:4 ratio, 4K ultra HD, clean and tidy. Subject: {theme} Daily Essentials Learning Card.",
+      "title": "Digital Tools Vocabulary",
+      "group": "conversion-expansion"
+    },
+    {
+      "example_id": "template-daily-essentials-learning-card-study-desk-conversion",
+      "source_file": "daily_inspirations/Nov_17_pinterest_conversion/template-daily-essentials-learning-card-study-desk-conversion.png",
+      "sha256": "5a33262a4a6ee5ea1fe9bea88220c9d3132d3e89c9f13cd488aa799e4d270321",
+      "generator": "built-in image_gen",
+      "params": {
+        "theme": "Study desk essentials, English-only labels"
+      },
+      "base_prompt": "You are a professional kids' educational card designer, specializing in making cute and clear daily items learning posters. Based on the user-given {theme}, create a vertical 3:4 high-quality \"Daily Essentials Learning Card\" in kawaii cartoon style. Layout: 1. Title area: Large title \"Daily Essentials Learning Card\" + theme name \"{theme}\". 2. Grid area: 6 cartoon cards in 2×3 layout. Each card includes cute cartoon illustration of the daily item, bold English word, simple Chinese translation. Style: Clean rounded UI, soft pastel colors, kawaii style, text easy to read. Add Curify watermark at top left, vertical 3:4 ratio, 4K ultra HD, clean and tidy. Subject: {theme} Daily Essentials Learning Card.",
+      "title": "Study Desk Vocabulary",
+      "group": "conversion-expansion"
+    },
+    {
+      "example_id": "template-room-vocabulary-infographic-computer-lab-conversion",
+      "source_file": "daily_inspirations/Nov_17_pinterest_conversion/template-room-vocabulary-infographic-computer-lab-conversion.png",
+      "sha256": "ac0a94c9df35dd5d1ffe2504ce972a6ac9445e01b6371c8e5b835460a86025a9",
+      "generator": "built-in image_gen",
+      "params": {
+        "room_type": "Computer Lab"
+      },
+      "base_prompt": "(Room Vocabulary Infographic Designer) Create a clean, educational vocabulary infographic titled \"{room_type} VOCABULARY\". Layout: 1. Top title in playful hand-drawn font with small doodles matching the theme. 2. Center: A detailed line-art illustration of the room, with key objects labeled. 3. Smaller labeled doodles of related items grouped at the bottom. 4. All labels are in simple, clear text with arrows pointing to the objects. Style: Minimalist black-and-white line art with subtle pastel accents, cute and educational aesthetic, no shading, 4K ultra HD, direct image generation. Subject: '{room_type} vocabulary infographic for language learning'.",
+      "title": "Computer Lab Vocabulary",
+      "group": "conversion-expansion"
+    },
+    {
+      "example_id": "template-room-vocabulary-infographic-creative-studio-conversion",
+      "source_file": "daily_inspirations/Nov_17_pinterest_conversion/template-room-vocabulary-infographic-creative-studio-conversion.png",
+      "sha256": "57fc113e3144d83d740e0f9d066a733fb0b4423c3d4fcc11515f3f45d7a39ee5",
+      "generator": "built-in image_gen",
+      "params": {
+        "room_type": "Creative Studio"
+      },
+      "base_prompt": "(Room Vocabulary Infographic Designer) Create a clean, educational vocabulary infographic titled \"{room_type} VOCABULARY\". Layout: 1. Top title in playful hand-drawn font with small doodles matching the theme. 2. Center: A detailed line-art illustration of the room, with key objects labeled. 3. Smaller labeled doodles of related items grouped at the bottom. 4. All labels are in simple, clear text with arrows pointing to the objects. Style: Minimalist black-and-white line art with subtle pastel accents, cute and educational aesthetic, no shading, 4K ultra HD, direct image generation. Subject: '{room_type} vocabulary infographic for language learning'.",
+      "title": "Creative Studio Vocabulary",
+      "group": "conversion-expansion"
+    },
+    {
+      "example_id": "template-chinese-verb-opposite-infographic-everyday-actions-conversion",
+      "source_file": "daily_inspirations/Nov_17_pinterest_conversion/template-chinese-verb-opposite-infographic-everyday-actions-conversion.png",
+      "sha256": "a81c1a68f151ef6bfd7098d357c514cbcd3c6756c0f0b379f52dabf85ed9eecf",
+      "generator": "built-in image_gen",
+      "params": {
+        "chart_title": "Everyday Opposites: Open/Close, Sit/Stand, Come/Go"
+      },
+      "base_prompt": "(Chinese Verb Opposite Learning Chart Designer) Create an educational infographic poster titled '{chart_title}'. Layout: 1. Clean, light-colored background with the main title at the top. 2. A series of horizontal rows, each showing a pair of opposite Chinese verbs: left word with pinyin/English, center cartoon illustration pair, and right word with pinyin/English. 3. Each row has a colored arrow/hexagon shape background, clearly showing the contrast between the two actions. Style: Simple, friendly cartoon illustrations, clear sans-serif font, soft pastel colors, educational language-learning aesthetic, horizontal format, 4K ultra HD, direct image generation. Subject: {chart_title} Infographic.",
+      "title": "Everyday Chinese Verb Opposites",
+      "group": "conversion-expansion"
+    },
+    {
+      "example_id": "template-chinese-verb-opposite-infographic-action-pairs-conversion",
+      "source_file": "daily_inspirations/Nov_17_pinterest_conversion/template-chinese-verb-opposite-infographic-action-pairs-conversion.png",
+      "sha256": "556df735cfde85d7118e6aa3b139660dce8ada24f0e6fa3878cb405caef89efb",
+      "generator": "built-in image_gen",
+      "params": {
+        "chart_title": "Action Opposites: Push/Pull, Buy/Sell, Go up/Go down"
+      },
+      "base_prompt": "(Chinese Verb Opposite Learning Chart Designer) Create an educational infographic poster titled '{chart_title}'. Layout: 1. Clean, light-colored background with the main title at the top. 2. A series of horizontal rows, each showing a pair of opposite Chinese verbs: left word with pinyin/English, center cartoon illustration pair, and right word with pinyin/English. 3. Each row has a colored arrow/hexagon shape background, clearly showing the contrast between the two actions. Style: Simple, friendly cartoon illustrations, clear sans-serif font, soft pastel colors, educational language-learning aesthetic, horizontal format, 4K ultra HD, direct image generation. Subject: {chart_title} Infographic.",
+      "title": "Chinese Action Opposites",
+      "group": "conversion-expansion"
+    },
+    {
+      "example_id": "template-fashion-shape-guide-infographic-neckline-styles-conversion",
+      "source_file": "daily_inspirations/Nov_17_pinterest_conversion/template-fashion-shape-guide-infographic-neckline-styles-conversion.png",
+      "sha256": "e986e44073e39da4628be0f0bb0512473d67878781298f823ede9731d04bb425",
+      "generator": "built-in image_gen",
+      "params": {
+        "topic": "Six neckline styles, neutral mannequin reference without body ranking"
+      },
+      "base_prompt": "(Fashion Style Guide Infographic Creator) Create a clean, helpful fashion guide poster titled '{topic}'. Layout: A soft pink sparkly background with clear rows for different categories (face shapes: oval, round, square, heart, diamond / body types: hourglass, pear, apple, rectangle, inverted triangle). Each section includes a reference illustration (face or body shape) paired with simple line-art icons of the most flattering styles, plus text labels. Include 'Most Flattering' sections and optional 'Avoid' sections. Style: Minimalist design, neutral brown text, soft pastels, clear typography, direct image generation. Subject: '{topic} fashion guide infographic'.",
+      "title": "Six Neckline Styles",
+      "group": "outbound-control"
+    },
+    {
+      "example_id": "template-fashion-shape-guide-infographic-sleeve-styles-conversion",
+      "source_file": "daily_inspirations/Nov_17_pinterest_conversion/template-fashion-shape-guide-infographic-sleeve-styles-conversion.png",
+      "sha256": "5f1c1da48f482340904c834b7f3390488c03f0bd7fc64af91321618dd2945997",
+      "generator": "built-in image_gen",
+      "params": {
+        "topic": "Six sleeve styles, neutral mannequin reference without body ranking"
+      },
+      "base_prompt": "(Fashion Style Guide Infographic Creator) Create a clean, helpful fashion guide poster titled '{topic}'. Layout: A soft pink sparkly background with clear rows for different categories (face shapes: oval, round, square, heart, diamond / body types: hourglass, pear, apple, rectangle, inverted triangle). Each section includes a reference illustration (face or body shape) paired with simple line-art icons of the most flattering styles, plus text labels. Include 'Most Flattering' sections and optional 'Avoid' sections. Style: Minimalist design, neutral brown text, soft pastels, clear typography, direct image generation. Subject: '{topic} fashion guide infographic'.",
+      "title": "Six Sleeve Styles",
+      "group": "outbound-control"
+    }
+  ],
+  "merge_main": false,
+  "publication_gate": "Exact example HTTP200 without redirect, image match; never publish before deployment"
+}

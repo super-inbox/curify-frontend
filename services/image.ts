@@ -11,7 +11,7 @@ export interface ImageUploadResponse {
 }
 
 export const imageService = {
-  async uploadImage(file: File): Promise<ImageUploadResponse> {
+  async uploadImage(file: File, endpoint: '/images/upload' | '/creative-video/upload' = '/images/upload'): Promise<ImageUploadResponse> {
     const formData = new FormData();
     formData.append("image_file", file);
 
@@ -25,7 +25,7 @@ export const imageService = {
     const timer = setTimeout(() => controller.abort(), 60_000);
     try {
       const res = await apiClient.request<{ data: ImageUploadResponse | null; message?: string }>(
-        '/images/upload',
+        endpoint,
         { method: 'POST', body: formData, signal: controller.signal },
       );
       // The backend returns HTTP 200 even for validation failures (APIResponse

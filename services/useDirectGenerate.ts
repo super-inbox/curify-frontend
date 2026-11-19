@@ -1,4 +1,5 @@
 "use client";
+import { trackTaskStage } from "./taskTracking";
 
 import { navigateToAwaitingCredits } from "@/lib/awaitingCredits";
 
@@ -196,6 +197,7 @@ export function useDirectGenerate({
       setIsGenerating(true);
       isGeneratingRef.current = true;
       trackAction(tracking, "generate");
+      trackTaskStage("attempt");
       trackGenerationStage("request", tracking.contentId);
       const res = await nanoGenerateService.generate({
         template_id: templateId,
@@ -205,6 +207,7 @@ export function useDirectGenerate({
       });
       if (!res?.success) throw userError(res?.message || "Generation failed");
 
+      trackTaskStage("accepted");
       // Legacy synchronous backend returned signed_url directly; the async
       // backend returns a project_id we poll until the render completes.
       let imageUrl = res.signed_url;
@@ -220,8 +223,10 @@ export function useDirectGenerate({
       lastGeneratedExIdRef.current = exId;
       trackGenerationStage("success", tracking.contentId);
       trackFirstGeneration("nano-template");
+      trackTaskStage("success");
       onSuccess(imageUrl, exId, { projectId: res.project_id, watermarked });
     } catch (err) {
+      trackTaskStage("error");
       if (navigateToAwaitingCredits(err)) {
         trackGenerationStage("credits_required", tracking.contentId);
         return;
