@@ -874,3 +874,7 @@ _This doc is the orchestration layer for search + content work. Update it when a
 ### ASL short phrases content drop (2026-11-11)
 
 Added `template-asl-short-phrase-sequence` with I love you, Thank you and Please examples, ten locale descriptions, ASL taxonomy and phrase-level search aliases. The selector distinguishes separate signs from movement phases and restricts generation to these supported phrases. Five persistent search-page regressions check top-ten discovery. Six CDN assets verified; metadata awaits merge/deployment from the existing content branch. This user-requested drop is not a full analytics review. See [drop report](content-drops/asl-short-phrases-2026-11-11.md).
+
+### November 19 search demand and design-quality review
+
+[Fresh review](content-drops/search-gap-2026-11-19.md): November 12–18 versus November 5–11; 33 public zero-card contexts plus three clicked controls inspected (237 primary cards), 11 privacy exceptions. Delivered bounded city/language/bag/Seoul retrieval fixes, credit-help routing, two differentiated paper-bag concepts and one Xi'an poster. 288 tests and TypeScript pass; CDN verified; branch awaiting review/deployment. Skill now includes richness, visual appeal and external benchmarks. Pinterest/Bing benchmarking remains partial, with deferred topic-taxonomy and capability work; do not advance the last fully completed cycle date from November 7 based on this partial expanded review.

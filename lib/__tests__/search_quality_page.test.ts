@@ -144,3 +144,23 @@ it.each([
  const r=await page(q);
  expect(r.props.inspirations.slice(0,10).some((x:any)=>x.id.startsWith('template-asl-short-phrase-sequence') && x.id.endsWith(suffix))).toBe(true);
 });
+
+it.each([
+ ["xi'an travel poster", 'xian-city-wall-muslim-quarter'],
+ ['xi`an', 'xian'],
+ ['回民街', 'xian-city-wall-muslim-quarter'],
+ ['纸袋', 'paper-bag-20261119'],
+ ['travel maps soel', 'travel-seoul'],
+])('preserves the November 19 design demand: %s', async(q,id) => {
+ const r=await page(q);
+ expect(r.props.inspirations.slice(0,5).some((x:any)=>x.id.includes(id))).toBe(true);
+ expect(r.props.inspirations.some((x:any)=>/world-cup|japan|brazil/.test(x.id))).toBe(false);
+});
+it('does not substitute other languages for Amharic',async()=>{
+ const r=await page('amharic language');
+ expect(r.props.inspirations).toHaveLength(0);
+ expect(r.props.matchedTemplates).toHaveLength(0);
+});
+it('recognizes credit help before content retrieval',async()=>{
+ const r=await page('check my credits');expect(r.props.kind).toBe('credits');
+});
