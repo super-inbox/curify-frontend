@@ -12,7 +12,7 @@ const CHILD_SITEMAPS: Array<{ path: string; lastmod: string }> = [
   // <image:image> children for its inspiration gallery. Image search is the
   // site's largest surface (19,035 impr/28d vs web's 12,752) and had no
   // sitemap coverage at all; see lib/sitemap_images.ts.
-  { path: "/sitemap.xml",          lastmod: "2026-09-01T00:00:00.000Z" },
+  { path: "/sitemap.xml",          lastmod: "2026-11-20T00:00:00.000Z" },
   // Bumped 2026-09-01 — each post entry now carries its hero <image:image>.
   // Same image-search push as /sitemap.xml above.
   { path: "/sitemap-blogs.xml",    lastmod: "2026-09-15T00:00:00.000Z" },
