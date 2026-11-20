@@ -1,3 +1,4 @@
+import { CREATIVE_VIDEO_PAGES, CREATIVE_VIDEO_LOCALES, CREATIVE_VIDEO_INDEX_DATE } from '@/lib/creative-video-seo';
 import { GENERATION_DESTINATIONS } from "@/lib/generation-destinations";
 import { NextResponse } from "next/server";
 import { routing } from "@/i18n/routing";
@@ -361,6 +362,18 @@ export async function GET() {
       changefreq: "monthly",
       priority: "0.8",
       availableLocales: ["en", "zh"],
+    });
+  });
+
+  // Dedicated video routes have authored EN/ZH pages outside TOOL_REGISTRY.
+  Object.values(CREATIVE_VIDEO_PAGES).forEach(({ route }) => {
+    CREATIVE_VIDEO_LOCALES.forEach(locale => {
+      urls += generateUrlEntry(locale, route, {
+        lastmod: CREATIVE_VIDEO_INDEX_DATE,
+        changefreq: "monthly",
+        priority: "0.8",
+        availableLocales: CREATIVE_VIDEO_LOCALES,
+      });
     });
   });
 
