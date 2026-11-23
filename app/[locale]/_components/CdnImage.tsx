@@ -98,6 +98,6 @@ export default function CdnImage(props: ImageProps) {
 
   const finalSrc = toCdnUrl(trimmed);
 
-  // ✅ For CDN/remote strings: default to unoptimized=true to avoid Vercel transformations
-  return render(finalSrc, true);
+  // Keep direct CDN delivery by default; callers may opt into responsive optimization.
+  return render(finalSrc);
 }

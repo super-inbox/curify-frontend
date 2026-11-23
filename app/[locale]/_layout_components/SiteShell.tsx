@@ -1,6 +1,5 @@
 import "../../globals.css";
 import { NextIntlClientProvider } from "next-intl";
-import Script from "next/script";
 import { Suspense } from "react";
 import JotaiProvider from "../_components/JotaiProvider";
 import { Toaster } from "react-hot-toast";
@@ -54,24 +53,7 @@ export default function SiteShell({
           <GoogleAnalyticsTracker />
         </Suspense>
         <SessionStartTracker />
-        <Script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" strategy="afterInteractive" />
-        <Script id="init-mermaid" strategy="afterInteractive">
-          {`
-            setTimeout(() => {
-              if (typeof mermaid !== 'undefined') {
-                mermaid.initialize({ 
-                  startOnLoad: true, 
-                  theme: 'default',
-                  flowchart: {
-                    useMaxWidth: true,
-                    htmlLabels: true
-                  }
-                });
-                mermaid.run();
-              }
-            }, 1000);
-          `}
-        </Script>
+
 
         <JotaiProvider>
           <NextIntlClientProvider locale={locale} messages={clientMessages}>

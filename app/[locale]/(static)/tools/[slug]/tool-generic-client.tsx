@@ -1,6 +1,8 @@
 // app/[locale]/(static)/tools/[slug]/tool-generic-client.tsx
 "use client";
 
+import { preload } from "react-dom";
+
 
 import { WeddingRetouchEvidence, WeddingGenerationEvidence } from "@/app/[locale]/_components/WeddingEvidence";
 import ProductWorkflowLinks from "@/app/[locale]/_components/ProductWorkflowLinks";
@@ -168,6 +170,9 @@ export default function ToolGenericClient({
   };
 
   const demo = tool.demo;
+  if (slug === "product-video" && demo?.type === "single_video" && demo.poster) {
+    preload(demo.poster, { as: "image", fetchPriority: "high" });
+  }
 
   // The image2image `generate` tool renders the 3-column reproduce workbench,
   // which is cramped at max-w-5xl — give that page a relaxed (still centered)
@@ -222,13 +227,13 @@ export default function ToolGenericClient({
       ) : demo?.type === "single_video" ? (
         <>
           {/* Dual cap so BOTH orientations stay reasonable and centered:
-              max-w-2xl (672px) bounds landscape width; max-h-[70vh] bounds
+              min(100%, 42rem) bounds landscape width to both viewport and desktop cap; max-h-[70vh] bounds
               portrait height (9:16 workflow demos are 1080×1920 — without a
               height cap a 672px-wide portrait video renders ~1200px tall and
               dominates the page). w-auto lets the video keep its aspect ratio
               within whichever bound binds first. */}
           <CdnVideo
-            className="w-auto max-w-2xl max-h-[70vh] mx-auto rounded-xl shadow mb-4"
+            className="w-auto max-w-[min(100%,42rem)] max-h-[70vh] mx-auto rounded-xl shadow mb-4"
             controls
             playsInline
             preload="metadata"
