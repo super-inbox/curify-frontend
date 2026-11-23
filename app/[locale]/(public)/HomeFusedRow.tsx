@@ -97,6 +97,8 @@ function ExampleTile({
         className="relative aspect-[1/1] overflow-hidden bg-neutral-50"
       >
         <CdnImage
+          unoptimized={false}
+          sizes="(min-width: 1280px) 17vw, (min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw"
           src={tile.preview}
           alt={tile.title || "Example"}
           fill
@@ -164,6 +166,8 @@ function GalleryPromptTile({
       </span>
       <div className="relative mb-2 aspect-[1/1] overflow-hidden rounded-xl border border-indigo-100 bg-white shadow-inner">
         <CdnImage
+          unoptimized={false}
+          sizes="(min-width: 1280px) 17vw, (min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw"
           src={prompt.image_url}
           alt={prompt.title}
           fill

@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import Image from "next/image";
 import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
 import { useClickTracking } from "@/services/useTracking";
 
@@ -74,10 +75,12 @@ export default function HomeHero({ montageImages = [] }: { montageImages?: strin
                       key={i}
                       className="mb-3 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100"
                     >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                      <Image
                         src={toCdnUrl(src)}
                         alt=""
+                        width={320}
+                        height={426}
+                        sizes="(min-width: 1024px) 16vw, 1px"
                         loading="lazy"
                         className="aspect-[3/4] w-full object-cover"
                       />
