@@ -37,3 +37,7 @@ Seven WebP previews, about 1.2 MB total, under `public/service-examples/wedding/
 ## Follow-up
 
 Use today's existing GSC inspection as baseline rather than resubmitting. Batch QA +7 remains November 25; ZEELUM/indexing follow-up stays in the GTM release ledger. After merge and actual deployment, verify live body, assets, canonical, robots, sitemap and inquiry links; schedule +7/+28 from deployment. Do not request repeated real-estate indexing. Other locales' old product copy is outside this EN/ZH change and needs separate localization review.
+
+## Playback follow-up
+
+User reported a blank product demo. The original CDN MP4 returned 200 and matched the local source hash; ffmpeg decoded it correctly. In the in-app browser the embedded player advanced while showing blank frames, while a direct video tab displayed normally. Added playsInline and metadata preload to the existing single-video demo rendering, plus a static poster for product-video. Verified the original CDN source visibly playing with time advancing to 23.3 seconds. A temporary compatibility transcode was tested but not retained: the original video works with the player fix. Previous acceptance covered page layout but missed video playback; this follow-up closes that gap.

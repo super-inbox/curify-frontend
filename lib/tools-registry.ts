@@ -506,6 +506,7 @@ export const TOOL_REGISTRY: ToolDef[] = [
     demo: {
       type: "single_video",
       src: "/video/demo_product_video.mp4",
+      poster: "/service-examples/product-video/headphones-poster.jpg",
     },
   },
 

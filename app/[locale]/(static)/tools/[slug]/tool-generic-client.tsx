@@ -230,6 +230,8 @@ export default function ToolGenericClient({
           <CdnVideo
             className="w-auto max-w-2xl max-h-[70vh] mx-auto rounded-xl shadow mb-4"
             controls
+            playsInline
+            preload="metadata"
             poster={demo.poster}
             src={demo.src}
           />
