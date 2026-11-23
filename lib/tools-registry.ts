@@ -506,6 +506,7 @@ export const TOOL_REGISTRY: ToolDef[] = [
     demo: {
       type: "single_video",
       src: "/video/demo_product_video.mp4",
+      poster: "/service-examples/product-video/headphones-poster.jpg",
     },
   },
 
@@ -1023,12 +1024,12 @@ export const TOOL_BLOG_CATEGORIES: Record<string, string[]> = {
   //                              packaging-mockup
   //   url-to-product-video     → ai-product-photo-generator, ecommerce-photo,
   //                              product-video
-  "ecommerce-photo":             ["merch-pod"],
-  "ai-product-photo-generator":  ["merch-pod"],
+  "ecommerce-photo":             ["merch-pod", "creator-tools"],
+  "ai-product-photo-generator":  ["merch-pod", "creator-tools"],
   "packaging-mockup":            ["merch-pod"],
   "die-cut-sticker-file":        ["merch-pod"],
   "acrylic-factory-export":      ["merch-pod"],
-  "product-video":               ["merch-pod"],
+  "product-video":               ["merch-pod", "creator-tools"],
 };
 
 // Tool slug → blog slugs to hoist in "Related reading", ahead of the freshness
@@ -1054,7 +1055,7 @@ export const TOOL_PINNED_BLOGS: Record<string, string[]> = {
   // and `asl-video-translator` carries lastmod 2026-06-05, so the freshness sort
   // would never surface it in the 3 slots the component renders.
   "asl-video-translator": ["asl-video-translator", "asl-visual-study-guide"],
-  "product-video":              ["product-photos-to-feature-video", "url-to-product-video"],
-  "ecommerce-photo":            ["url-to-product-video", "ghost-mannequin-ai-guide"],
-  "ai-product-photo-generator": ["url-to-product-video", "ghost-mannequin-ai-guide"],
+  "product-video":              ["product-photos-to-feature-video", "batch-product-image-quality-control", "ghost-mannequin-ai-guide"],
+  "ecommerce-photo":            ["product-photos-to-feature-video", "batch-product-image-quality-control", "ghost-mannequin-ai-guide"],
+  "ai-product-photo-generator": ["product-photos-to-feature-video", "batch-product-image-quality-control", "ghost-mannequin-ai-guide"],
 };

@@ -119,6 +119,10 @@ TOOL_LASTMOD_OVERRIDES["/tools/ai-pet-portrait-generator"] = "2026-10-25T00:00:0
 TOOL_LASTMOD_OVERRIDES["/tools/product-photo-retouching-service"] = "2026-11-17T00:00:00.000Z";
 TOOL_LASTMOD_OVERRIDES["/tools/real-estate-photo-editing"] = "2026-10-15T00:00:00.000Z";
 
+for (const slug of ["wedding-photo-editing", "ai-wedding-photo-generator", "ai-product-photo-generator", "ecommerce-photo", "product-video"]) {
+  TOOL_LASTMOD_OVERRIDES[`/tools/${slug}`] = "2026-11-23T00:00:00.000Z";
+}
+
 // Use-case pages: 08-12 added the worked-case block and moved the demo cards
 // into the tools grid — a visible change on all of them.
 const USE_CASES_LASTMOD = "2026-08-12T00:00:00.000Z";
@@ -128,7 +132,7 @@ const USE_CASES_LASTMOD = "2026-08-12T00:00:00.000Z";
 // the shared constant instead would claim every OTHER use-case page changed
 // today, which is the same lie in the other direction.
 const USE_CASE_LASTMOD_OVERRIDES: Record<string, string> = {
-  "for-photographers": "2026-10-21T00:00:00.000Z",
+  "for-photographers": "2026-11-23T00:00:00.000Z",
   "for-dtc-brands": "2026-10-15T00:00:00.000Z",
 };
 

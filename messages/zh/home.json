@@ -265,10 +265,10 @@
     },
     "product_video": {
       "title": "Product video generator",
-      "desc": "Turn a product link or a few product photos into a short, ready-to-post marketing video — features, price, and call-to-action auto-composed into animated scenes.",
+      "desc": "上传1–6张商品照片与卖点，制作营销短视频。需要定制产品动作或品牌分镜，可查看真实案例并咨询制作。",
       "meta": {
-        "title": "AI Product Video Generator — Product Link to Marketing Video | Curify AI",
-        "description": "Turn a product URL or product photos into a short marketing video: auto-composed scenes for features, price, and CTA, with optional narration and background music. Watch the demo, join early access."
+        "title": "AI 商品视频生成器：从商品照片制作短片 | Curify",
+        "description": "上传1–6张商品照片与卖点，制作营销短视频。需要定制产品动作或品牌分镜，可查看真实案例并咨询制作。"
       }
     },
     "video_enhance": {
@@ -292,18 +292,18 @@
     },
     "ai_product_photo_generator": {
       "title": "AI 产品照片生成器",
-      "desc": "大规模生成品牌一致的产品照片——9张图片的网格、包装、服装试穿和生活方式照片，基于模板提示。",
+      "desc": "上传商品照片，生成推广场景图。对照原图检查标识、形状与颜色；需要统一审核的批次可咨询商品修图服务。",
       "meta": {
         "title": "AI Product Photo Generator | Templated Catalog Photos at Scale | Curify",
-        "description": "AI product photo generator with templated visual style — 9-image grids, packaging mockups, outfit try-ons, and lifestyle shots from one prompt. Free demo + early access."
+        "description": "上传商品照片，生成推广场景图。对照原图检查标识、形状与颜色；需要统一审核的批次可咨询商品修图服务。"
       }
     },
     "ecommerce_photo": {
       "title": "产品照片 → 电子商务列表图像",
-      "desc": "上传任何产品照片 — 30秒内获得适合列表的图像。适合Etsy / DTC品牌页面的温馨主图；适合Shopee、TikTok Shop、RedNote的9:16细节图布局。",
+      "desc": "用商品照片制作推广场景图。上架前核查商品细节和平台要求；视频与批量制作使用独立流程。",
       "meta": {
         "title": "上传产品照片 → 电子商务列表图像 | AI工具 | Curify",
-        "description": "上传任何产品照片 — 30秒内获得准备好的电子商务图像。温馨的主图 + 9:16细节图布局。免费演示；加入早期访问以进行批量上传。"
+        "description": "用商品照片制作推广场景图。上架前核查商品细节和平台要求；视频与批量制作使用独立流程。"
       }
     },
     "character_sticker_sheet": {
@@ -926,50 +926,52 @@
   },
   "productVideo": {
     "metadata": {
-      "title": "AI Product Video Generator | Product Link → Marketing Video",
-      "description": "Turn a product URL — or a few product photos plus details — into a short, social-ready marketing video. Auto-composed feature, price, and call-to-action scenes with optional narration and music. See a real example; join early access."
+      "title": "AI 商品视频生成器：从商品照片制作短片",
+      "description": "上传1–6张商品照片与卖点，制作营销短视频。需要定制产品动作或品牌分镜，可查看真实案例并咨询制作。"
     },
     "title": "AI Product Video Generator",
-    "description": "Turn a product page URL — or just a few product photos and a short description — into a social-ready marketing video. Curify plans a storyboard, animates your product with feature, price, and call-to-action scenes, and can add narration and background music. Watch a real generated example below.",
-    "example": "Example: a pair of headphones turned into a ~15-second product video — hero shot, animated feature callouts, price, and a closing call-to-action.",
-    "cta": "Join Early Access",
+    "description": "上传1–6张商品照片，填写商品名、卖点以及可选的价格和行动引导，制作简短营销视频。本表单不导入商品链接；演示商品动作的定制镜头需要另行确认制作方案。",
+    "example": "耳机商品视频示例：用商品图组成卖点、价格和行动引导场景。这是编排式营销短片，并非定制的产品功能动作演示。",
+    "cta": "开始制作",
     "why": {
-      "title": "Why Use Curify to Make Product Videos?",
-      "point1": "Start from what you already have — a product link, or a few photos plus the title, features, price, and CTA.",
-      "point2": "Auto-composed scenes: a hero shot, animated feature callouts, a price beat, and a closing call-to-action — no timeline editing.",
-      "point3": "Optional AI narration and background music turn a silent slideshow into a post that holds attention.",
-      "point4": "Demo-only today; join early access to generate videos for your own products when the pipeline opens."
+      "title": "为什么用 Curify 制作商品短视频？",
+      "point1": "使用已有商品照片，搭配名称、卖点、价格和行动引导。",
+      "point2": "一张照片即可开始，多角度图片能提供更多场景变化；最多上传六张。",
+      "point3": "通过结构化表单制作短片，无需手工编排时间线。仍须检查画面、文字与音轨。",
+      "point4": "登录后可使用下方生成表单。定制功能演示或品牌分镜请单独沟通项目。"
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "q1": "Is the product video generator available today?",
-      "a1": "Not yet — this page shows a real generated example. The production pipeline is in private testing. Join early access and we will reach out when you can run your own products.",
-      "q2": "Do I only need a product link?",
-      "a2": "A product URL works, but automated page scraping is unreliable, so the best results come from a few product photos plus the title, key features, price, and a call-to-action line. The generator composes those into an animated video with optional narration and music."
+      "title": "常见问题",
+      "q1": "现在可以在这里生成商品视频吗？",
+      "a1": "可以。登录后上传至少一张商品图，填写名称，确认显示的积分费用再生成。",
+      "q2": "可以直接粘贴商品链接吗？",
+      "a2": "不可以。本表单接收上传的商品照片与结构化文字，不会导入商品URL。请将名称和卖点填入对应字段。",
+      "q3": "可以自动制作ZEELUM那样的功能演示吗？",
+      "a3": "不能直接等同。ZEELUM案例使用定制的多步制作流程，动作、连续性和产品细节需要单独的需求与审核。可查看下方案例并咨询制作范围。"
     },
     "deep": {
       "what": {
-        "title": "What Is an AI Product Video Generator?",
-        "p1": "An AI product video generator turns a product — described by a link, or by a few images plus its title, features, and price — into a short marketing video without a human editor opening a timeline. Instead of cutting clips, it plans scenes and animates stills into motion.",
-        "p2": "The input is intentionally light: a URL to scrape, or (more reliably) a small structured brief — product images, a name, a handful of selling points, a price, and a call-to-action. The output is a 15–30 second vertical or landscape clip ready for a product page, an ad, or a social post.",
-        "p3": "This is not stock-footage assembly. Each video is composed around your specific product image with feature, price, and CTA scenes generated from your details, so the result is on-brand and specific rather than a generic template with your logo dropped in."
+        "title": "商品视频生成器做什么",
+        "p1": "本工具将上传的商品图片和卖点文字编排成简短营销视频。",
+        "p2": "输入为一至六张商品照片、名称、卖点以及可选的价格和行动引导。本表单不抓取商品网页。",
+        "p3": "编排式短片与定制功能动作演示是不同交付物；需要展现特定结构或动作时应先确认制作流程。"
       },
       "how": {
-        "title": "How Curify Builds a Product Video",
-        "p1": "Product video generation is a pipeline of specialized steps, each handling one job, sequenced so the output of one feeds the next.",
-        "p2": "Step 1: Input and enrichment. A product URL is scraped for images and copy, or you supply a structured brief directly (more reliable). Missing imagery can fall back to relevant stock.",
-        "p3": "Step 2: Storyboard planning. A language model turns the product details into a scene-by-scene plan — hero, features, price, and call-to-action — with on-screen text and pacing.",
-        "p4": "Step 3: Narration. Optional text-to-speech generates a natural voiceover from the storyboard so the video works with sound on.",
-        "p5": "Step 4: Composition and export. The product image is animated across the planned scenes with transitions, optional music, and captions, then encoded to a share-ready MP4."
+        "title": "从商品照片到短片",
+        "p1": "选择清晰商品照片，一张可以开始，多角度素材能提供更多变化。",
+        "p2": "填写商品名称、关键卖点以及可选价格和行动引导。",
+        "p3": "确认费用后开始生成，流程使用照片与文字编排短片。",
+        "p4": "观看结果，检查商品细节、宣传表述、文字与音频后再下载或分享。",
+        "p5": "需要定制动作或系列广告时，通过制作询盘与ZEELUM案例讨论范围。"
       },
       "usecases": {
-        "title": "Who Uses Product Video Generation?",
-        "creatorsTitle": "For Creators and Affiliates",
-        "creatorsBody": "Creators and affiliate sellers who promote many products need a fast way to turn each listing into a short, watchable clip for TikTok, Reels, or Shorts — without editing every one by hand.",
-        "educationTitle": "For Small Teams Without a Video Editor",
-        "educationBody": "Small shops and solo founders rarely have a dedicated editor. A generator that turns a link or a few photos into a finished clip lets them ship product videos on every launch instead of skipping video entirely.",
-        "businessTitle": "For DTC Brands and Marketplaces",
-        "businessBody": "Direct-to-consumer brands and marketplace sellers with large catalogs use product video generation to produce ad creative and listing videos at catalog scale — one pipeline, hundreds of SKUs, consistent format."
+        "title": "适合哪些需求",
+        "creatorsTitle": "创作者与推广者",
+        "creatorsBody": "将现有商品图和准确的卖点用于简短推广视频。",
+        "educationTitle": "没有专职剪辑的小团队",
+        "educationBody": "简单营销短片使用结构化表单；复杂分镜仍需要制作需求。",
+        "businessTitle": "品牌与电商团队",
+        "businessBody": "有审核要求的批次与统一广告规范可咨询服务团队，本表单不代表已提供批量生成。"
       }
     }
   },
@@ -1195,98 +1197,102 @@
   "aiProductPhotoGenerator": {
     "metadata": {
       "title": "AI 产品照片生成器 | 大规模模板目录照片",
-      "description": "具有模板视觉风格的AI产品照片生成器——从一个提示生成9张产品网格、包装模型、服装试穿和生活方式照片。演示 + 提前访问。"
+      "description": "上传商品照片，生成推广场景图。对照原图检查标识、形状与颜色；需要统一审核的批次可咨询商品修图服务。"
     },
     "title": "AI 产品照片生成器",
-    "description": "大规模生成品牌一致的产品照片——9张生活方式网格、包装模型、服装试穿卡和宣传海报，基于模板提示。一次锁定视觉风格；每个变体都继承该风格。演示在真实模板上运行；加入提前访问以输入您自己的产品目录。",
-    "example": "示例：从一个提示生成的9张生活方式网格。同一主题，不同场景，确定性的品牌一致视觉——程序化SEO着陆页所需的变体集。",
-    "cta": "加入提前访问",
+    "description": "上传商品照片，制作新的商品场景图。下方默认使用商品海报模板；使用前请对照实物核查结果。九宫格、包装样机和商品视频分别使用独立的模板或工具。",
+    "example": "独立模板示例：同一条丝巾的九场景拼图。这是生活方式九宫格模板生成的一张合成图，不是下方默认商品海报工作台的输出。",
+    "cta": "开始制作",
     "why": {
       "title": "为什么选择Curify进行AI产品照片？",
-      "point1": "模板优先生成——一次锁定视觉风格（光线、构图、取景、颜色注册），每个产品变体都继承该风格。以确定性的品牌一致视觉发布1,000个产品页面。",
-      "point2": "模板提示支持多种输出格式：9张生活方式网格、包装模型、服装试穿卡、前后时尚变体、宣传海报。",
-      "point3": "面向规模化场景 — DTC 商品目录、程序化 SEO 页面、A/B 创意测试。输出为源文件（PNG/JPEG），而非低清预览图。免费版下载会带一个小的 Curify 标识，任意充值即可去除。",
-      "point4": "今天仅限演示；注册提前访问，当管道开放时，可以通过模板运行您自己的产品目录。"
+      "point1": "从已有商品照片开始，说明期望的场景。默认流程生成一张商品推广图片。",
+      "point2": "模板提供构图与风格起点，但商品细节可能变化，每张输出都需要检查。",
+      "point3": "包装样机、九宫格和商品视频使用不同工作流，请先确定交付格式。",
+      "point4": "整批商品请先沟通样片、数量、必须保留的细节与审核方式，再确认制作范围。"
     },
     "faq": {
       "title": "常见问题",
-      "q1": "AI产品照片生成器今天可用吗？",
-      "a1": "还没有——此页面展示了一个样本模板的工作演示。生产管道（上传您自己的产品照片/变体/目录）正在私密测试中。加入提前访问，我们会在适合您的用例时联系您。",
-      "q2": "这与Midjourney或通用AI图像生成有什么不同？",
-      "a2": "通用AI生成在规模上产生不一致的视觉效果——1,000个产品页面得到1,000种不同的解释。Curify的模板优先方法提前锁定视觉风格，因此每个变体看起来都像是来自同一次拍摄。这是DTC产品目录和程序化SEO着陆页的护城河，在这些地方，一致性比多样性更重要。"
+      "q1": "现在可以在这里生成商品图吗？",
+      "a1": "可以。登录、上传商品参考图后使用下方工作台，生成前确认显示的积分费用。本页默认使用商品海报模板，不提供CSV目录批量上传。",
+      "q2": "商品细节会完全不变吗？",
+      "a2": "参考图不能保证形状、商标、颜色或配件完全不变。发布前需要逐项对照原图。精确修图或需要审核的批次可咨询商品修图服务。",
+      "q3": "这里会生成九张独立图片吗？",
+      "a3": "上方九场景示例是另一模板生成的一张拼图。本页默认生成商品海报，不会一次输出九个独立文件。"
     },
     "deep": {
       "what": {
         "title": "什么是AI产品照片生成？",
-        "p1": "AI产品照片生成产生目录级视觉效果——生活方式照片、包装模型、服装试穿、宣传海报——无需拍摄。提示编码视觉风格（光线、构图、颜色注册、道具放置）和产品规格（SKU或变体）。",
-        "p2": "2026年生成的生成图像模型（Nano Banana Pro、GPT Image 2、Midjourney v7）提供了基础能力。缺失的是模板层：一种一次锁定风格并生成数百或数千个变体的方式，确保品牌一致的质量。Curify的模板优先生成填补了这一空白。",
-        "p3": "输出格式：垂直3:4产品肖像、9张生活方式网格（同一主题跨越九个场景）、1:1方形Instagram准备好的照片、包装模型合成、前后服装注释卡和完整的宣传海报，带有标题文本。"
+        "p1": "AI商品图生成根据参考照片与场景描述，制作新的推广图片，可用于探索背景、光线和风格。",
+        "p2": "模板提供起点，不保证每个SKU的细节和效果完全一致。应检查形状、材质、颜色、品牌文字与配件。",
+        "p3": "本页默认从单张商品海报开始。九宫格、包装样机与视频有各自的制作流程。"
       },
       "how": {
-        "title": "Curify如何大规模生成产品照片",
-        "p1": "管道分为三个阶段运行。首先，从图库中选择一个模板——9张图片集的生活方式照片网格、英雄照片的产品海报、时尚变体的AI服装试穿海报、包装模型设计的食品产品包装等。每个模板编码锁定的视觉风格。",
-        "p2": "其次，提供变体参数——产品名称、类别、颜色、场景预设（Met Gala、巴黎时装周、海滩夏季、秋季公园）。模板提示用这些参数填充；锁定的风格保持不变。",
-        "p3": "第三，生成在Nano Banana Pro上运行。输出是每个变体一张图像，风格确定且符合该产品线的品牌。对于9张图片网格，生成器产生一张复合图，显示九个场景变体。",
-        "p4": "对于程序化SEO用例，管道是批处理的：传递一个产品变体的CSV，返回一个与每个SKU关联的一致视觉文件夹。每个着陆页都有自己独特的品牌图像，而目录中的每个页面都继承相同的视觉注册。",
-        "p5": "此页面上的演示显示了单个生活方式照片网格输出。提前访问的上传将以您的目录所需的任何数量运行相同的管道。"
+        "title": "如何从商品照片开始生成",
+        "p1": "上传能看清商品关键细节的照片。",
+        "p2": "检查海报描述，写明场景、光线以及必须保留的商品特征。",
+        "p3": "确认显示的费用后生成一张图片。",
+        "p4": "对照原图核查文字、标识、结构、颜色及多余或缺失的部件，再下载使用。",
+        "p5": "多SKU项目请通过服务询盘确认试片、格式和审核范围。本页没有目录CSV上传功能。"
       },
       "usecases": {
         "title": "AI产品照片的重要性",
         "creatorsTitle": "针对DTC和电子商务品牌",
-        "creatorsBody": "拥有数千个SKU的目录无法承担每个SKU的拍摄费用。AI产品照片生成以程序化规模提供每个SKU的视觉效果，并在整个目录中保持品牌风格。与程序化SEO着陆页配对（请参见/blog/best-programmatic-seo-tools）以获得复合效果。",
+        "creatorsBody": "为商品发布探索场景与光线，再对照实际商品检查。",
         "educationTitle": "用于程序化SEO和内容自动化",
-        "educationBody": "程序化SEO页面需要每个变体独特的视觉效果。通用的AI生成在规模上产生不一致的质量；Curify的模板优先方法为每个页面提供独特的品牌形象。请参见/use-cases/for-programmatic-seo以了解集成形态。",
+        "educationBody": "为商品页面制作有用的图片，每个生成版本仍须审核。",
         "businessTitle": "针对进行A/B创意测试的营销团队",
-        "businessBody": "在付费渠道上测试同一产品的20种视觉变体，而无需20次拍摄的预算。模板锁定基线风格；变体仅在测试轴（背景、模特、场景）上有所不同。比通用AI生成所带来的不一致性更清晰的实验设计。"
+        "businessBody": "需要统一规格、试片确认和返修记录时，可咨询定制批量制作。"
       }
     }
   },
   "ecommercePhoto": {
     "metadata": {
       "title": "上传产品照片 → 电子商务列表图像 | AI工具",
-      "description": "上传任何产品照片 — 30秒内获取准备上市的电子商务图像。温馨的主图 + 9:16细节图布局。免费演示；加入早期访问以进行批量上传。"
+      "description": "用商品照片制作推广场景图。上架前核查商品细节和平台要求；视频与批量制作使用独立流程。"
     },
     "title": "上传您的产品 → 电子商务上市图像",
-    "description": "将任何产品照片转化为准备上市的图像，无需拍摄。两个提供的模板覆盖了两种主流的电子商务视觉语法：温馨的主图（Etsy / DTC品牌美学）和干净的9:16垂直细节图布局（Shopee / TikTok Shop / 小红书）。上传一次；模板锁定构图、光线和框架。下面有免费演示。",
-    "example": "示例：一张自行车运动衫的产品照片呈现为9:16垂直细节图布局 — Shopee、TikTok Shop和RedNote列表实际转换的格式。",
-    "cta": "立即尝试",
+    "description": "上传商品照片，用商品海报模板生成推广场景图。发布前请核查商品细节以及目标平台的图片要求。视频和需要统一审核的整批商品使用独立流程。",
+    "example": "工作流演示：一张商品照片经过多个步骤，形成更完整的营销素材。下方工作台生成静态图片，不会一次制作整套营销包或视频。",
+    "cta": "开始制作",
     "why": {
       "title": "为什么通过 Curify 将产品照片转化为商品列表？",
-      "point1": "两个已发货的模板覆盖了两种主流的电子商务视觉语法——适用于 Etsy / DTC 品牌页面的温暖舒适的主图，以及适用于 Shopee、TikTok Shop 和 RedNote 的 9:16 纵向细节图布局。选择与您列出商品的平台匹配的模板。",
-      "point2": "上传您已有的产品照片。模板保留了确切的产品身份——形状、比例、颜色、材料、品牌——同时用舒适的室内灯光或干净的品牌目录布局替换场景。",
-      "point3": "输出是一个准备好的商品列表。不是情绪板，也不是“概念”。生成的图像可以直接放入 Etsy / Shopify / TikTok Shop 列表中，无需后期制作。",
-      "point4": "演示在真实模板上运行。提前访问打开批量处理管道——上传一个 SKU 文件夹，获取一组协调一致的商品列表图像，整个目录的视觉风格保持一致。"
+      "point1": "默认商品海报模板用于制作推广场景，可描述所需的构图和光线。",
+      "point2": "上传图用于参考商品外观；请检查形状、比例、材质、标签和配件。",
+      "point3": "上架前核对尺寸、裁切、背景与平台规则。推广场景图不自动等于合规的商品主图。",
+      "point4": "多SKU系列需要试片和审核，请先咨询范围；本页不是整文件夹批量上传工具。"
     },
     "faq": {
       "title": "常见问题",
-      "q1": "我可以上传自己的产品照片吗？",
-      "a1": "可以。两个基础模板（template-product-poster 和 template-fashion-ecommerce）都使用您实际产品的参考照片。AI 保留产品的身份，并替换场景/构图/照明。您的列表图像最终显示的是您的产品，而不是一个通用的“类似”产品。",
-      "q2": "这与 ChatGPT 或 Midjourney 的产品照片有什么不同？",
-      "a2": "通用的 AI 生成器在 SKU 之间产生不一致的输出——每个产品最终呈现出不同的视觉风格，这在列表页面上显得不专业。Curify 的模板化方法在每次生成中锁定构图、照明和框架，因此您目录中的 20 个产品看起来都像是来自同一次拍摄。这种一致性是买家所认同的“真正品牌”。"
+      "q1": "需要上传自己的商品照片吗？",
+      "a1": "需要。登录后上传清晰的商品参考图。本页默认使用商品海报模板，生成静态图片。",
+      "q2": "上方营销包视频就是这个工具的输出吗？",
+      "a2": "不是。视频演示的是多个步骤组成的工作流。本工作台生成图片；短视频使用商品视频工具，复杂项目可咨询定制制作。",
+      "q3": "生成图可以直接用于所有电商平台吗？",
+      "a3": "不能保证。请核对商品准确性及平台当前对背景、裁切和文字的要求。生成场景可能改变商品细节，需要复查或修改。"
     },
     "deep": {
       "what": {
         "title": "什么是AI电子商务列表图像？",
-        "p1": "电子商务列表图像是出现在市场或DTC商店的主要产品照片——在搜索网格、产品卡片和列表页面顶部显示的图像。它是转化漏斗中影响最大的视觉资产。传统的目录摄影需要一个物理工作室、照明设备和每个SKU的摄影师。",
-        "p2": "AI电子商务列表生成替代了这种工作流程。上传产品（在厨房台面拍摄的手机照片就足够了），AI会在一个适当构图的列表场景中渲染它——温暖舒适的室内，或干净的垂直细节拍摄布局——同时保持产品的真实性：相同的形状、相同的颜色、相同的纹理、相同的品牌。输出是一个静态图像，准备上传到Etsy、Shopify、Amazon、TikTok Shop、RedNote或您的DTC商店。",
-        "p3": "2026年图像到图像模型的生成（Nano Banana Pro、Gemini 3 Pro Image、GPT Image 2）提供了基础能力。直到现在缺失的是模板层——一种确保每次生成都在相同视觉注册中的方法，这样50个产品的目录就能作为一个品牌呈现，而不是50个不同的AI输出。"
+        "p1": "电商推广图片展示商品的场景与用途，可用于店铺、活动或社交内容；平台主图的要求可能不同。",
+        "p2": "参考图指导生成，但文字、结构、颜色和小部件可能变化，需要与原图逐项核对。",
+        "p3": "模板帮助定义构图与风格，不能保证不同商品完全一致，也不能代替上架前审核。"
       },
       "how": {
         "title": "Curify如何将您的产品照片转化为电子商务图像",
-        "p1": "第一步：选择与您列表匹配的视觉语法。温暖舒适的主图是 Etsy / DTC 品牌页面的美学——柔和的室内灯光，自然道具，木质表面布景。垂直 9:16 的细节图布局是 Shopee / TikTok Shop / RedNote 的美学——干净的背景，特征标注，适合移动网格的较大产品框架比例。",
-        "p2": "第二步：上传您的产品照片。任何角度都可以，但光线良好的主图（厨房台面，自然窗光）为 AI 提供了最清晰的参考，以保留身份。",
-        "p3": "第三步：模板运行。`template-product-poster`（排名 90）生成舒适的主图变体。`template-fashion-ecommerce`（排名 80）生成 9:16 的细节图变体。两者都编码了构图 + 灯光 + 取景，因此您无需进行提示工程。",
-        "p4": "第四步：输出生成。下载静态图像，将其放入您的列表中。无需裁剪，无需色彩校正，无需场景清理。模板已经锁定了这些决策。",
-        "p5": "对于目录规模——20+ SKU 或完整的 DTC 产品线——批处理管道（早期访问）接受一文件夹的产品照片，并返回一组协调的列表图像，所有图像看起来都来自同一次拍摄。这就是如何在没有每个 SKU 拍摄预算的情况下构建程序化 SEO 登陆页面。"
+        "p1": "从本页的商品海报工作台开始。",
+        "p2": "上传光线充足、对焦清晰、关键部件可见的商品照片。",
+        "p3": "描述推广场景，确认显示的费用后开始生成。",
+        "p4": "对照原图检查生成图片中的文字、商品部件与裁切，再下载。",
+        "p5": "需要视频时使用独立视频工具；批量统一规格的项目请提供样片情况、数量和截止时间。"
       },
       "usecases": {
         "title": "AI电子商务商品图片的重要性",
         "creatorsTitle": "适用于Etsy / Shopify / RedNote卖家",
-        "creatorsBody": "独立卖家无法承担每个SKU的摄影费用。AI电子商务生成填补了这一空白——上传您已有的产品照片，获取一张看起来像真实品牌的商品列表图像。请参阅/use-cases/for-designers以了解更广泛的设计师工作流程，以及/blog/ai-product-photo-to-ecommerce-listing以获取逐模板调查。",
+        "creatorsBody": "为店铺生成场景创意，每张使用前都需检查。",
         "educationTitle": "适用于DTC目录和程序化SEO",
-        "educationBody": "拥有50多个SKU的DTC目录需要在每个产品页面保持视觉一致性——否则目录看起来像一个市场，而不是一个品牌。Curify的模板化方法保证了一致性。结合/blog/programmatic-seo-dtc-visual-first进行复合SEO策略。",
+        "educationBody": "整套目录请先确认商品保留规则与试片，再推进批量。",
         "businessTitle": "针对 POD / 商品运营商，提供可打印设计的运输服务",
-        "businessBody": "POD 运营商（T恤、贴纸、海报、杯子）需要在可打印设计文件的基础上，提供模型和列表图像。此工具涵盖了列表图像部分；请参阅 /use-cases/for-merch-operators 了解商品级管道，以及 /blog/merchandise-design-hub 了解 SKU 速度手册。"
+        "businessBody": "推广图可与设计和导出流程配合；本工具不单独生成可直接制造的印刷生产文件。"
       }
     }
   },
