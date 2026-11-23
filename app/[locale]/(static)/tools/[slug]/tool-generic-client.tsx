@@ -2,6 +2,8 @@
 "use client";
 
 
+import { WeddingRetouchEvidence, WeddingGenerationEvidence } from "@/app/[locale]/_components/WeddingEvidence";
+import ProductWorkflowLinks from "@/app/[locale]/_components/ProductWorkflowLinks";
 import BatchProductCaseLink from "@/app/[locale]/_components/BatchProductCaseLink";
 import { IMAGE_GENERATION_CREDITS, IMAGE_TO_PSD_CREDITS, USD_PER_CREDIT } from "@/lib/pricing";
 import TaskEntryContext from "@/app/[locale]/_components/TaskEntryContext";
@@ -52,10 +54,7 @@ const FAQ_SLOTS = Array.from({ length: 14 }, (_, i) => i + 1);
 // commercial tool pages have no traffic, and the page that does have traffic
 // sells nothing.
 const BULK_CALLOUT_TOOLS = new Set([
-  "ai-product-photo-generator",
-  "ecommerce-photo",
   "ai-fashion-model-generator",
-  "wedding-photo-editing",
   "character-sticker-sheet",
   "mockup",
   "die-cut-sticker-file",
@@ -64,7 +63,6 @@ const BULK_CALLOUT_TOOLS = new Set([
   "packaging-mockup",
   "style-transfer",
   "brand-direction-explorer",
-  "product-video",
 ]);
 const HOWTO_SLOTS = [1, 2, 3, 4, 5, 6, 7, 8];
 import {
@@ -350,6 +348,10 @@ export default function ToolGenericClient({
           </p>
         )}
       </div>
+
+      {slug === "wedding-photo-editing" && <WeddingRetouchEvidence locale={locale} source={`tool/${slug}`} />}
+      {slug === "ai-wedding-photo-generator" && <WeddingGenerationEvidence locale={locale} source={`tool/${slug}`} />}
+      <ProductWorkflowLinks slug={slug} locale={locale} />
 
       {t.has("batch.title") && (
         <section className="mx-auto mt-10 max-w-2xl rounded-2xl border border-neutral-200 p-6">

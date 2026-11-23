@@ -1,5 +1,6 @@
 "use client";
 
+import { WeddingRetouchEvidence } from "@/app/[locale]/_components/WeddingEvidence";
 import { useCallback, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Download, ArrowRight } from "lucide-react";
@@ -528,6 +529,8 @@ export default function UseCaseClient({
           </nav>
         </section>
       )}
+
+      {slug === "for-photographers" && <WeddingRetouchEvidence locale={locale} source={`use-case/${slug}`} />}
 
       {(USE_CASE_EXAMPLES[slug]?.length ?? 0) > 0 &&
         t.has(`${slug}.examples.title` as never) && (

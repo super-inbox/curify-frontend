@@ -292,10 +292,10 @@
     },
     "product_video": {
       "title": "Product video generator",
-      "desc": "Turn a product link or a few product photos into a short, ready-to-post marketing video — features, price, and call-to-action auto-composed into animated scenes.",
+      "desc": "Turn 1–6 product photos and key features into a short marketing video. For custom product-action scenes, explore our production case study.",
       "meta": {
-        "title": "AI Product Video Generator — Product Link to Marketing Video | Curify AI",
-        "description": "Turn a product URL or product photos into a short marketing video: auto-composed scenes for features, price, and CTA, with optional narration and background music. Watch the demo, join early access."
+        "title": "AI Product Video Generator from Product Photos | Curify",
+        "description": "Turn 1–6 product photos and key features into a short marketing video. For custom product-action scenes, explore our production case study."
       }
     },
     "video_enhance": {
@@ -329,18 +329,18 @@
     },
     "ai_product_photo_generator": {
       "title": "AI Product Photo Generator",
-      "desc": "Turn a product photo into catalog-grade images — lifestyle grids, mockups, try-ons, and posters. Upload once; the template locks the style. Free demo.",
+      "desc": "Generate a product scene image from your photo. Review logos, shape and colour, or discuss a custom retouching batch with Curify.",
       "meta": {
         "title": "AI Product Photo Generator | Templated Catalog Photos at Scale | Curify",
-        "description": "AI product photo generator with templated visual style — 9-image grids, packaging mockups, outfit try-ons, and lifestyle shots from one prompt. Free demo + early access."
+        "description": "Generate a product scene image from your photo. Review logos, shape and colour, or discuss a custom retouching batch with Curify."
       }
     },
     "ecommerce_photo": {
       "title": "Product Photo → E-Commerce Listing Image",
-      "desc": "Upload any product photo — get a listing-ready promotional image in 30 seconds, styled for your marketplace (Etsy / DTC hero or Shopee / TikTok Shop / RedNote vertical).",
+      "desc": "Create a promotional scene from your product photo. Check product details and marketplace requirements before using the image in a listing.",
       "meta": {
         "title": "Upload Product Photo → E-Commerce Listing Image | AI Tool | Curify",
-        "description": "Upload any product photo — get a listing-ready promotional image in 30 seconds, styled for your marketplace. Free demo; join early access for batch upload."
+        "description": "Create a promotional scene from your product photo. Check product details and marketplace requirements before using the image in a listing."
       }
     },
     "character_sticker_sheet": {
@@ -777,50 +777,52 @@
   },
   "productVideo": {
     "metadata": {
-      "title": "AI Product Video Generator from a Product Link",
-      "description": "Turn a product URL — or a few product photos plus details — into a short, social-ready marketing video. Auto-composed feature, price, and call-to-action scenes with optional narration and music. See a real example; join early access."
+      "title": "AI Product Video Generator from Product Photos",
+      "description": "Turn 1–6 product photos and key features into a short marketing video. For custom product-action scenes, explore our production case study."
     },
     "title": "AI Product Video Generator",
-    "description": "Turn a product page URL — or just a few product photos and a short description — into a social-ready marketing video. Curify plans a storyboard, animates your product with feature, price, and call-to-action scenes, and can add narration and background music. Watch a real generated example below.",
-    "example": "Example: a pair of headphones turned into a ~15-second product video — hero shot, animated feature callouts, price, and a closing call-to-action.",
-    "cta": "Join Early Access",
+    "description": "Upload 1–6 product photos and add a product name, key features, an optional price and a call to action. Generate a short marketing video from those images and details. This form does not import product URLs; custom product-action scenes require a separate production brief.",
+    "example": "Generated headphone-video example: product imagery arranged with feature, price and call-to-action scenes. It illustrates the composed marketing-video format, not a custom demonstration of how a product physically works.",
+    "cta": "Start creating",
     "why": {
       "title": "Why Use Curify to Make Product Videos?",
-      "point1": "Start from what you already have — a product link, or a few photos plus the title, features, price, and CTA.",
-      "point2": "Auto-composed scenes: a hero shot, animated feature callouts, a price beat, and a closing call-to-action — no timeline editing.",
-      "point3": "Optional AI narration and background music turn a silent slideshow into a post that holds attention.",
-      "point4": "Demo-only today; join early access to generate videos for your own products when the pipeline opens."
+      "point1": "Use product photos you already have, plus the product name, features, price and call to action.",
+      "point2": "One photo is enough; several views give the scenes more visual variety. The form accepts up to six photos.",
+      "point3": "Generate a composed marketing clip without building a timeline. Review the wording, imagery and soundtrack in the result.",
+      "point4": "The generation form is available below after sign-in. For a custom feature demonstration or branded sequence, discuss the project separately."
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "q1": "Is the product video generator available today?",
-      "a1": "Not yet — this page shows a real generated example. The production pipeline is in private testing. Join early access and we will reach out when you can run your own products.",
-      "q2": "Do I only need a product link?",
-      "a2": "A product URL works, but automated page scraping is unreliable, so the best results come from a few product photos plus the title, key features, price, and a call-to-action line. The generator composes those into an animated video with optional narration and music."
+      "title": "Frequently asked questions",
+      "q1": "Can I generate a product video here today?",
+      "a1": "Yes. Sign in, upload at least one product photo, enter the product name and review the displayed credit cost before generating.",
+      "q2": "Can I paste a product link?",
+      "a2": "No. This form accepts uploaded product photos and structured details. Copy the relevant product name and features into the fields; a product URL is not imported.",
+      "q3": "Does this make a custom product demonstration like ZEELUM?",
+      "a3": "Not automatically. The ZEELUM feature-video case used a custom multi-step process. Actions, continuity and physical product details need a separate brief and review. See the case study and custom-production inquiry below."
     },
     "deep": {
       "what": {
         "title": "What Is an AI Product Video Generator?",
-        "p1": "An AI product video generator turns a product — described by a link, or by a few images plus its title, features, and price — into a short marketing video without a human editor opening a timeline. Instead of cutting clips, it plans scenes and animates stills into motion.",
-        "p2": "The input is intentionally light: a URL to scrape, or (more reliably) a small structured brief — product images, a name, a handful of selling points, a price, and a call-to-action. The output is a 15–30 second vertical or landscape clip ready for a product page, an ad, or a social post.",
-        "p3": "This is not stock-footage assembly. Each video is composed around your specific product image with feature, price, and CTA scenes generated from your details, so the result is on-brand and specific rather than a generic template with your logo dropped in."
+        "p1": "This tool turns uploaded product images and written selling points into a short composed marketing video.",
+        "p2": "The input is one to six product photos, a product name, features and optional price and call-to-action text. The form does not scrape a product page.",
+        "p3": "A composed marketing clip and a custom product-action demonstration are different deliverables. Agree the production process when a scene must show specific mechanisms or movements."
       },
       "how": {
         "title": "How Curify Builds a Product Video",
-        "p1": "Product video generation is a pipeline of specialized steps, each handling one job, sequenced so the output of one feeds the next.",
-        "p2": "Step 1: Input and enrichment. A product URL is scraped for images and copy, or you supply a structured brief directly (more reliable). Missing imagery can fall back to relevant stock.",
-        "p3": "Step 2: Storyboard planning. A language model turns the product details into a scene-by-scene plan — hero, features, price, and call-to-action — with on-screen text and pacing.",
-        "p4": "Step 3: Narration. Optional text-to-speech generates a natural voiceover from the storyboard so the video works with sound on.",
-        "p5": "Step 4: Composition and export. The product image is animated across the planned scenes with transitions, optional music, and captions, then encoded to a share-ready MP4."
+        "p1": "Select clear product photos. One works; multiple views provide more visual variety.",
+        "p2": "Enter the product name, key features, optional price and call to action.",
+        "p3": "Review the cost and start generation. The workflow uses those images and details to compose the clip.",
+        "p4": "Watch the result and check product details, claims, text and audio before downloading or sharing.",
+        "p5": "If you need custom actions or a coordinated set of ads, use the production inquiry and the ZEELUM case to discuss scope."
       },
       "usecases": {
         "title": "Who Uses Product Video Generation?",
         "creatorsTitle": "For Creators and Affiliates",
-        "creatorsBody": "Creators and affiliate sellers who promote many products need a fast way to turn each listing into a short, watchable clip for TikTok, Reels, or Shorts — without editing every one by hand.",
+        "creatorsBody": "Create short promotional clips from existing product photos and accurate selling points.",
         "educationTitle": "For Small Teams Without a Video Editor",
-        "educationBody": "Small shops and solo founders rarely have a dedicated editor. A generator that turns a link or a few photos into a finished clip lets them ship product videos on every launch instead of skipping video entirely.",
+        "educationBody": "Use the structured form for a simple marketing clip; complex scenes still need a production brief.",
         "businessTitle": "For DTC Brands and Marketplaces",
-        "businessBody": "Direct-to-consumer brands and marketplace sellers with large catalogs use product video generation to produce ad creative and listing videos at catalog scale — one pipeline, hundreds of SKUs, consistent format."
+        "businessBody": "Discuss reviewed batches and consistent campaign requirements with the service team rather than assuming bulk generation is part of this form."
       }
     }
   },
@@ -1046,98 +1048,102 @@
   "aiProductPhotoGenerator": {
     "metadata": {
       "title": "AI Product Photo Generator | Templated Catalog Photos at Scale",
-      "description": "AI product photo generator with templated visual style — ship 9-image product grids, packaging mockups, outfit try-ons, and lifestyle shots from one prompt. Demo + early access."
+      "description": "Generate a product scene image from your photo. Review logos, shape and colour, or discuss a custom retouching batch with Curify."
     },
     "title": "AI Product Photo Generator",
-    "description": "Turn one product photo into catalog-grade images — 9-image lifestyle grids, packaging mockups, outfit try-ons, and promotional posters — generated in seconds. Upload your product; the template locks composition, lighting, and framing so every variant stays on-brand. Free demo below.",
-    "example": "Example: a product photo rendered as a 9-image lifestyle grid — one template, nine on-brand scenes. (For a clean marketplace listing shot instead, use the E-Commerce Listing Image tool.)",
-    "cta": "Join Early Access",
+    "description": "Create a product scene image from your own photo. The workbench starts with a product-poster template; review the result against your product before using it. Other formats, including lifestyle grids and packaging mockups, have separate template or tool pages.",
+    "example": "Separate-template example: one silk scarf shown in a nine-scene lifestyle grid. This is a single composite image from the lifestyle-grid template, not the default output of the product-poster workbench below.",
+    "cta": "Start creating",
     "why": {
       "title": "Why use Curify for AI product photos?",
-      "point1": "Template-first generation — lock the visual style once (lighting, composition, framing, color register), and every product variant inherits that style. Ship 1,000 product pages with deterministic on-brand visuals.",
-      "point2": "Multiple output formats supported by templated prompts: 9-image lifestyle grids, packaging mockups, outfit try-on cards, before/after fashion variants, promotional posters.",
-      "point3": "Built for scale — DTC catalogs, programmatic SEO pages, A/B-test creative variants. The output is source files (PNG/JPEG), not a low-resolution preview. Free-tier downloads carry a small Curify badge; any top-up removes it.",
-      "point4": "Demo-only today; sign up for early access to run your own product catalog through the templates when the pipeline opens."
+      "point1": "Start with an existing product photo and describe the scene you want. The default workflow produces one promotional still image.",
+      "point2": "Templates provide a visual starting point. Product details and style can drift, so inspect every output instead of assuming exact preservation.",
+      "point3": "Use separate workflows for packaging mockups, nine-scene grids and product videos. Choose the format before generating.",
+      "point4": "For a catalog batch, discuss samples, quantity, product details that must remain unchanged and a review process with our service team."
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "q1": "Is the AI product photo generator available today?",
-      "a1": "Not yet — this page shows a working demo on a sample template. The production pipeline (upload your own product photos / variants / catalog) is in private testing. Join early access and we will reach out when it opens for your use case.",
-      "q2": "How does this differ from Midjourney or generic AI image generation?",
-      "a2": "Generic AI generation produces inconsistent visuals at scale — 1,000 product pages get 1,000 different interpretations. Curify's template-first approach locks the visual style upfront so every variant looks like it came from the same shoot. That's the moat for DTC product catalogs and programmatic SEO landing pages where consistency matters more than variety."
+      "title": "Frequently asked questions",
+      "q1": "Can I generate a product image here today?",
+      "a1": "Yes. Sign in, upload a product reference and use the workbench below. Review its displayed credit cost before generating. This page starts with a product-poster template; it is not a CSV catalog uploader.",
+      "q2": "Will my product stay exactly the same?",
+      "a2": "A reference guides the result but does not guarantee exact geometry, logos, colours or accessories. Compare the output with the original before publication. For precise edits or a reviewed batch, discuss the product photo retouching service.",
+      "q3": "Does this generate nine separate images?",
+      "a3": "The nine-scene example above is one composite from a separate lifestyle-grid template. The default workbench here produces a product poster, not nine separate files."
     },
     "deep": {
       "what": {
         "title": "What is AI product photo generation?",
-        "p1": "AI product photo generation produces catalog-grade visuals — lifestyle shots, packaging mockups, outfit try-ons, promotional posters — without a photoshoot. The prompt encodes the visual style (lighting, composition, color register, prop placement) and the product specification (the SKU or variant).",
-        "p2": "The 2026 generation of generative image models (Nano Banana Pro, GPT Image 2, Midjourney v7) ship the underlying capability. What's missing is the templating layer: a way to lock the style once and produce hundreds or thousands of variants with deterministic on-brand quality. Curify's template-first generation fills that gap.",
-        "p3": "Output formats: vertical 3:4 product portraits, 9-image lifestyle grids (same subject across nine scenes), 1:1 square Instagram-ready shots, packaging-mockup composites, before/after outfit annotation cards, and full promotional posters with headline text."
+        "p1": "AI product photo generation uses a reference image and a scene brief to create a new promotional image. It is useful for exploring lighting, backgrounds and visual styles.",
+        "p2": "A template provides a starting composition, not a guarantee of identical product details or consistent results across every SKU. Check shape, material, colour, branding and included accessories.",
+        "p3": "This page starts with one product-poster workflow. Lifestyle grids, packaging mockups and videos are different outputs with their own workflows."
       },
       "how": {
-        "title": "How Curify generates product photos at scale",
-        "p1": "The pipeline runs in three stages. First, a template is selected from the gallery — lifestyle-photo-grid for 9-image sets, product-poster for hero shots, ai-outfit-try-on-poster for fashion variants, food-product-packaging-design for packaging mockups, etc. Each template encodes the locked visual style.",
-        "p2": "Second, the variant parameters are supplied — product name, category, color, scene preset (Met Gala, Paris Fashion Week, Beach Summer, Autumn Park). The template prompt is filled in with these parameters; the locked style passes through unchanged.",
-        "p3": "Third, generation runs on Nano Banana Pro. The output is one image per variant, deterministic in style and on-brand for that product line. For 9-image grids, the generator produces a single composite showing nine scene variations in one image.",
-        "p4": "For programmatic SEO use cases, the pipeline is batched: pass a CSV of product variants, get back a folder of consistent visuals keyed to each SKU. Each landing page gets its own unique on-brand image while every page in the catalog inherits the same visual register.",
-        "p5": "The demo on this page shows a single lifestyle-photo-grid output. Early-access uploads will run the same pipeline at whatever volume your catalog requires."
+        "title": "How to generate from a product photo",
+        "p1": "Upload a clear photo that shows the product details you need to preserve.",
+        "p2": "Review the product-poster brief and describe the setting, lighting and any important product constraints.",
+        "p3": "Check the displayed cost, then generate a still image.",
+        "p4": "Compare the result with your source. Inspect text, logos, geometry, colours and extra or missing components before downloading and publishing.",
+        "p5": "For multiple SKUs, agree a sample, delivery format and review scope through the service inquiry. There is no catalog CSV upload on this page."
       },
       "usecases": {
         "title": "Where AI product photos matter",
         "creatorsTitle": "For DTC and e-commerce brands",
-        "creatorsBody": "Catalogs with thousands of SKUs cannot afford per-SKU photoshoots. AI product photo generation provides per-SKU visuals at programmatic scale, with on-brand style preserved across the entire catalog. Pair with programmatic SEO landing pages (see /blog/best-programmatic-seo-tools) for compounding effect.",
+        "creatorsBody": "Explore scene and lighting ideas for product launches, then review the results against your actual product.",
         "educationTitle": "For programmatic SEO and content automation",
-        "educationBody": "Programmatic SEO pages need unique visuals per variant. Generic AI generation produces inconsistent quality at scale; Curify's template-first approach gives every page a unique on-brand image. See /use-cases/for-programmatic-seo for the integration shape.",
+        "educationBody": "Create useful visuals for product pages without treating each generated variant as approved catalog photography.",
         "businessTitle": "For marketing teams running A/B creative tests",
-        "businessBody": "Test 20 visual variants of the same product across paid channels without a 20-shoot budget. The template locks the baseline style; the variants differ only on the tested axis (background, model, scene). Cleaner experimental design than the inconsistency you get from generic AI generation."
+        "businessBody": "Discuss a coordinated batch when you need sample approval, consistent specifications and documented revisions."
       }
     }
   },
   "ecommercePhoto": {
     "metadata": {
       "title": "Upload Product Photo → E-Commerce Listing Image | AI Tool",
-      "description": "Upload any product photo — get a ready-to-list e-commerce image in 30 seconds. Cozy warm hero shots + 9:16 detail-shot layouts. Free demo; join early access for batch upload."
+      "description": "Create a promotional scene from your product photo. Check product details and marketplace requirements before using the image in a listing."
     },
     "title": "Upload Your Product → E-Commerce Listing Image",
-    "description": "Turn any product photo into a listing-ready promotional image without a photoshoot — sized and styled for marketplace listings (Etsy / DTC hero, or Shopee / TikTok Shop / Xiaohongshu vertical). Upload once; the template locks composition, lighting, and framing. This is the focused single-flow version; for multiple promotional poster styles, use the AI Product Poster Generator. Free demo below.",
-    "example": "Example: a product photo rendered as a listing-ready promotional image — the format Shopee, TikTok Shop, and RedNote listings actually convert on.",
-    "cta": "Try It Now",
+    "description": "Upload a product photo to create a promotional scene image with the product-poster template. Review product details and your marketplace’s image requirements before publishing. A video or a coordinated catalog batch uses a separate workflow.",
+    "example": "Workflow demonstration: a product photo developed into a broader marketing kit through several steps. The workbench below generates a still image; it does not create the entire kit or a video in one request.",
+    "cta": "Start creating",
     "why": {
       "title": "Why turn product photos into listings through Curify?",
-      "point1": "Two shipped templates cover the two dominant e-commerce visual grammars — warm cozy hero shots for Etsy / DTC brand pages, and 9:16 vertical detail-shot layouts for Shopee, TikTok Shop, and RedNote. Pick the one that matches where you list.",
-      "point2": "Upload the product photo you already have. The template preserves the exact product identity — shape, proportions, colors, materials, branding — while replacing the scene with cozy interior lighting or a clean brand-catalog layout.",
-      "point3": "Output is a listing-ready still — not a mood board, not a 'concept'. It drops straight into your listing with no cropping, color-correcting, or scene cleanup.",
-      "point4": "Demo runs on real templates. Early-access opens the batch pipeline — upload a folder of SKUs, get back a coordinated set of listing images with locked visual style across the catalog."
+      "point1": "The workbench starts with a product-poster template for a promotional scene. Describe the scene and composition you need.",
+      "point2": "Your uploaded photo guides the product appearance. Check shape, proportions, materials, labels and accessories in the result.",
+      "point3": "Review dimensions, crop, background and marketplace rules before using the image in a listing. A generated promotional scene is not automatically a compliant main listing image.",
+      "point4": "A coordinated SKU batch needs sample approval and review. Use the service inquiry to agree scope rather than expecting a folder upload here."
     },
     "faq": {
-      "title": "Frequently Asked Questions",
+      "title": "Frequently asked questions",
       "q1": "Do I upload my own product photo?",
-      "a1": "Yes. Both underlying templates (template-product-poster and template-fashion-ecommerce) take a reference photo of your actual product. The AI preserves the product identity and replaces the scene / composition / lighting. Your listing image ends up showing your product, not a generic 'similar' product.",
-      "q2": "How is this different from ChatGPT or Midjourney for product photos?",
-      "a2": "Generic AI generators produce inconsistent output across SKUs — each product ends up in a different visual style, which reads amateur on a listing page. Curify's templated approach locks composition, lighting, and framing across every generation, so 20 products in your catalog all look like they came from the same shoot. That consistency is what buyers register as 'a real brand'."
+      "a1": "Yes. Sign in and upload a clear product reference. This page defaults to the product-poster template and generates a still image.",
+      "q2": "Is the marketing-kit video the output of this tool?",
+      "a2": "No. The video illustrates a multi-step workflow. This workbench generates an image; use the product video tool for a short clip or discuss a custom production project.",
+      "q3": "Is the result ready for every marketplace?",
+      "a3": "No. Check product accuracy and the destination’s current image requirements, including background, crop and text. Generated scenes can alter details and may need another edit."
     },
     "deep": {
       "what": {
         "title": "What is an AI e-commerce listing image?",
-        "p1": "An e-commerce listing image is the main product photo that appears on a marketplace or DTC storefront — the image that shows up in search grids, on product cards, and at the top of the listing page. It's the highest-impact visual asset in the conversion funnel. Traditional catalog photography requires a physical studio, lighting kit, and photographer per SKU.",
-        "p2": "AI e-commerce listing generation replaces that entire workflow. A phone shot on your kitchen counter is enough — the model re-renders the product inside a properly-composed listing scene while keeping its exact identity intact, so there's no studio, no lighting kit, and no per-SKU photographer.",
-        "p3": "The 2026 generation of image-to-image models (Nano Banana Pro, Gemini 3 Pro Image, GPT Image 2) ship the underlying capability. What was missing until now is the templating layer — a way to guarantee that every generation lands in the same visual register, so a catalog of 50 products reads as one brand instead of 50 disparate AI outputs."
+        "p1": "An e-commerce promotional image presents a product in a scene for a storefront, campaign or social post. Requirements for a marketplace’s main image may be different.",
+        "p2": "A product reference guides generation, but details can change. Inspect logos, geometry, colour and small components against the source.",
+        "p3": "The template helps specify a composition and style. It does not guarantee identical output across products or replace a final listing review."
       },
       "how": {
         "title": "How Curify turns your product photo into an e-commerce image",
-        "p1": "Step one: pick the visual grammar that matches where you list. Warm cozy hero shots are the Etsy / DTC brand-page aesthetic — soft interior lighting, natural props, wooden-surface staging. Vertical 9:16 detail-shot layouts are the Shopee / TikTok Shop / RedNote aesthetic — clean background, feature callouts, larger product-in-frame ratio for mobile grids.",
-        "p2": "Step two: upload your product photo. Any angle works, but a well-lit hero shot (kitchen counter, natural window light) yields the sharpest reference for the AI to preserve identity from.",
-        "p3": "Step three: the template runs. `template-product-poster` (rank 90) generates the cozy hero variant. `template-fashion-ecommerce` (rank 80) generates the 9:16 detail-shot variant. Both encode composition + lighting + framing so you don't have to prompt-engineer.",
-        "p4": "Step four: the output ships. Download the still image, drop it into your listing. No cropping, no color-correcting, no scene-cleaning. The template has already locked those decisions.",
-        "p5": "For catalog scale — 20+ SKUs or a full DTC line — the batch pipeline (early access) accepts a folder of product photos and returns a coordinated set of listing images that all look like they came from the same shoot. This is how programmatic-SEO landing pages get built without a per-SKU photoshoot budget."
+        "p1": "Start with the product-poster workbench on this page.",
+        "p2": "Upload a sharp, well-lit photo with the important parts of your product visible.",
+        "p3": "Describe the promotional scene you need and check the cost shown before generating.",
+        "p4": "Compare the generated still with your source. Check text, product parts and the crop before downloading.",
+        "p5": "For a video, follow the separate product video link. For a batch requiring consistent specifications, send sample details, quantity and deadline to the service team."
       },
       "usecases": {
         "title": "Where AI e-commerce listing images matter",
         "creatorsTitle": "For Etsy / Shopify / RedNote sellers",
-        "creatorsBody": "Independent sellers can't afford a per-SKU studio shoot. AI e-commerce generation covers the gap — upload the product photo you already have, get back a listing-ready image that reads as a real brand. See /use-cases/for-designers for the broader designer workflow and /blog/ai-product-photo-to-ecommerce-listing for the template-by-template survey.",
+        "creatorsBody": "Create promotional scene concepts for your store and check each one before using it.",
         "educationTitle": "For DTC catalogs and programmatic SEO",
-        "educationBody": "DTC catalogs with 50+ SKUs need visual consistency across every product page — otherwise the catalog reads as a marketplace, not a brand. Curify's templated approach guarantees consistency. Pair with /blog/programmatic-seo-dtc-visual-first for the compounding-SEO play.",
+        "educationBody": "For a catalog, agree product-preservation rules and a sample before committing to a full batch.",
         "businessTitle": "For POD / merch operators shipping print-ready designs",
-        "businessBody": "POD operators (t-shirt, sticker, poster, mug) need mockup + listing imagery on top of the print-ready design file. This tool covers the listing-image half; see /use-cases/for-merch-operators for the merch-grade pipeline and /blog/merchandise-design-hub for the SKU-velocity playbook."
+        "businessBody": "Pair promotional images with the relevant design and export workflows; this tool alone does not create print-ready manufacturing files."
       }
     }
   },
@@ -2179,8 +2185,8 @@
       "a3": "Generation uses {credits} credits per completed image. The workbench shows your generation cost; removing a watermark is a separate optional purchase shown with the result.",
       "q4": "Can I choose a different style?",
       "a4": "Choose a style in the workbench and describe the setting or details in your brief. Each new generation is a separate image.",
-      "q5": "Are these examples from this tool?",
-      "a5": "Yes. The input is a synthetic ImageGen reference, not a customer photo. The output was generated through this tool on October 25, 2026. It is one test, not a benchmark or a guarantee of identity, detail or style preservation. Read the caption for observed limitations.",
+      "q5": "Which examples came from this tool?",
+      "a5": "The input/output pair labelled October 25, 2026 came from this tool using a synthetic reference. The Tang-inspired, Song-inspired and modern collection examples came from a separate custom workflow with manual selection and revisions. Neither is a guarantee of likeness or detail preservation in a new generation.",
       "q6": "Does this make a video?",
       "a6": "No. This page generates a still portrait. Video animation is a different workflow.",
       "q7": "Can I make a couple or pre-wedding portrait from one photo?",
