@@ -10,8 +10,8 @@ interface NanoTemplateContentProps {
 
 export default function NanoTemplateContent({ slug, t, locale }: NanoTemplateContentProps) {
   return (
-    <div className="space-y-6">
-      <MermaidInit />
+    <div id={`nano-content-${slug}`} className="space-y-6">
+      <MermaidInit key={slug} scopeId={`nano-content-${slug}`} />
       <p className="text-lg font-semibold text-green-600 mb-4 leading-relaxed">
         {t("intro")}
       </p>
