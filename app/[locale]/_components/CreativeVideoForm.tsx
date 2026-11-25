@@ -46,7 +46,7 @@ export default function CreativeVideoForm({mode}: {mode: 'motion' | 'souvenir'})
     finally{lock.current=false;setBusy(false);}
   }
   const control='rounded-lg border p-3 bg-white w-full';
-  return <div id="reproduce" className="mx-auto max-w-3xl space-y-6 rounded-2xl border bg-white p-6">
+  return <div id="reproduce" className={`mx-auto w-full ${mode === "souvenir" ? "max-w-none" : "max-w-3xl"} space-y-6 rounded-2xl border bg-white p-4 sm:p-6`}>
     <TaskEntryContext slug={mode==='motion'?'photo-motion':'travel-souvenir-video'} locale={locale}/>
     {!available && <p role="status" className="rounded-lg bg-amber-50 p-4">{t('Preview: generation is not available on this server yet.','功能预览：当前服务器尚未开放生成。')}</p>}
     <p>{mode==='motion'?t('Upload 1–4 photos. AI considers all photos together, plans a camera move for each and selects music. Each photo contributes six seconds, in upload order.','上传 1–4 张照片，AI 综合分析多图，为每张规划运镜并选择配乐。每张约 6 秒，按上传顺序组合。'):t('Upload one adult portrait and choose a destination. Each destination uses its own story, scenes and costume references, with your likeness throughout.','上传一张成年人肖像，选择目的地。五个目的地分别使用自己的故事脚本、场景与服装参考，由你的肖像贯穿全片。')}</p>

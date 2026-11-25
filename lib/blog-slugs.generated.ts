@@ -40,6 +40,7 @@ export const BLOG_SLUGS: ReadonlySet<string> = new Set([
   "ai-youtube-video-translator",
   "aiPlatform",
   "argentina-france-2022-world-cup-final",
+  "asl-resources",
   "asl-video-translator",
   "asl-visual-study-guide",
   "batch-product-image-quality-control",
