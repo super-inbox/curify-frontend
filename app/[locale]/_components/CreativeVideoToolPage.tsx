@@ -44,7 +44,7 @@ export default function CreativeVideoToolPage({mode,locale}:{mode:'motion'|'souv
     [t('Can I use my own music?','可以使用自己的音乐吗？'),t('Choose automatic music, calm, piano or no music. Uploading your own audio is not currently supported. Demo soundtracks may differ from the self-serve library.','目前可选自动配乐、舒缓、钢琴或无配乐，暂不支持上传音频。示例配乐可能与自助工具曲库不同。')],
     [t('When are credits charged?','什么时候扣积分？'),t('You need enough credits to start. Credits are deducted when the completed result is delivered. If rendering is still pending, resume the saved project instead of creating a duplicate.','开始前需要有足够积分，完成交付时扣除。若生成仍在等待，请继续已有项目，避免重复创建。')],
   ];
-  return <main className="mx-auto max-w-5xl px-6 pb-12 pt-20 text-[var(--c2)]">
+  return <main className={`mx-auto ${isTravel ? "max-w-[1600px]" : "max-w-5xl"} px-4 sm:px-6 pb-12 pt-20 text-[var(--c2)]`}>
     <Link href="/tools" className="text-sm text-purple-700">← {t('All tools','全部工具')}</Link>
     <h1 className="mb-4 mt-5 text-4xl font-bold text-[var(--c1)]">{isTravel?t('AI travel souvenir video','AI 文旅纪念视频'):t('Photo camera-motion video','摄影运镜视频')}</h1>
     <p className="mb-6 text-lg">{isTravel?t('Make your portrait the main character of a destination story. Choose from five journeys and create a personal travel keepsake.','让你的肖像成为目的地故事的主角，从五段旅行中选择一段，制作个人纪念短片。'):t('Turn your photos into a short film with image-aware camera planning and music.','用你的照片制作短片，由 AI 根据画面内容规划运镜并搭配音乐。')}</p>

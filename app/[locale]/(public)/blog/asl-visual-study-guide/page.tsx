@@ -22,6 +22,7 @@ export default function AslVisualStudyGuide() {
   return <><BlogInlineClickTracker blogSlug="asl-visual-study-guide"><article lang="en" className="mx-auto max-w-3xl py-10 text-neutral-800 [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-semibold [&_p]:my-4 [&_p]:leading-8 [&_a]:text-indigo-700 [&_a]:underline [&_li]:my-2">
     <p className="text-sm">Curify editorial team · October 27, 2026 · 7 min read</p>
     <h1 className="text-3xl font-bold leading-tight md:text-5xl">{title}</h1>
+      <p>Looking for courses, dictionaries or teaching material? Use our <a href="/blog/asl-resources">ASL resources guide</a> to choose a resource for your next study session.</p>
       <RecentBlogHero slug="asl-visual-study-guide" locale={"en"} />
     <p>In ASL, where a hand is placed can distinguish two signs. Repeating a movement can change a word, and the eyebrows can help mark a question. These seven visual comparisons draw attention to differences that are easy to miss when looking only at an English translation.</p>
     <p>The pictures are original AI-generated illustrations, not recordings of a teacher or independently certified sign demonstrations. Use them beside the linked video lessons to compare the full motion. They illustrate selected common forms; signing varies with context and community.</p>
