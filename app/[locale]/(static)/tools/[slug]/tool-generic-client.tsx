@@ -6,6 +6,7 @@ import { preload } from "react-dom";
 
 import { WeddingRetouchEvidence, WeddingGenerationEvidence } from "@/app/[locale]/_components/WeddingEvidence";
 import ProductWorkflowLinks from "@/app/[locale]/_components/ProductWorkflowLinks";
+import ProductRetouchingBrief from "@/app/[locale]/_components/ProductRetouchingBrief";
 import BatchProductCaseLink from "@/app/[locale]/_components/BatchProductCaseLink";
 import { IMAGE_GENERATION_CREDITS, IMAGE_TO_PSD_CREDITS, USD_PER_CREDIT } from "@/lib/pricing";
 import TaskEntryContext from "@/app/[locale]/_components/TaskEntryContext";
@@ -358,6 +359,7 @@ export default function ToolGenericClient({
 
       {slug === "wedding-photo-editing" && <WeddingRetouchEvidence locale={locale} source={`tool/${slug}`} />}
       {slug === "ai-wedding-photo-generator" && <WeddingGenerationEvidence locale={locale} source={`tool/${slug}`} />}
+      {slug === "product-photo-retouching-service" && (locale === "en" || locale === "zh") && <ProductRetouchingBrief />}
       <ProductWorkflowLinks slug={slug} locale={locale} />
 
       {t.has("batch.title") && (
