@@ -164,3 +164,26 @@ it('does not substitute other languages for Amharic',async()=>{
 it('recognizes credit help before content retrieval',async()=>{
  const r=await page('check my credits');expect(r.props.kind).toBe('credits');
 });
+
+import threeViewAudit from '@/scripts/configs/search_quality_audit_20261126.json';
+import { matchesSubject, subjectGroups } from '@/lib/searchQuality';
+for (const c of threeViewAudit.cases) {
+ it(`three-view demand survives unrelated rewrites: ${c.query}`, async()=>{
+  const r=await page(c.query);
+  // Current catalog has no concrete matching example for these subjects.
+  expect(r.props.inspirations).toHaveLength(0);
+  expect(r.props.matchedTemplates).toHaveLength(0);
+  expect(r.props.galleryPrompts).toHaveLength(0);
+ });
+}
+it('requires both the requested object and orthographic format',()=>{
+ expect(matchesSubject('手链 三视图','bracelet orthographic front side top drawing')).toBe(true);
+ expect(matchesSubject('手链 三视图','bracelet perspective drawing')).toBe(false);
+ expect(matchesSubject('手链 三视图','chair orthographic drawing')).toBe(false);
+ expect(matchesSubject('椅子 三视图','chair three-view drawing')).toBe(true);
+ expect(matchesSubject('戒指 三视图','ring 三视图')).toBe(true);
+ expect(matchesSubject('鞋子 三视图','shoes orthographic drawing')).toBe(true);
+});
+it.each(['手链','bracelet design','bracelet perspective drawing','bracelet 3D view'])('does not impose three-view format on %s',q=>{
+ expect(subjectGroups(q)).toEqual([]);
+});

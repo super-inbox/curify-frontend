@@ -878,3 +878,15 @@ Added `template-asl-short-phrase-sequence` with I love you, Thank you and Please
 ### November 19 search demand and design-quality review
 
 [Fresh review](content-drops/search-gap-2026-11-19.md): November 12–18 versus November 5–11; 33 public zero-card contexts plus three clicked controls inspected (237 primary cards), 11 privacy exceptions. Delivered bounded city/language/bag/Seoul retrieval fixes, credit-help routing, two differentiated paper-bag concepts and one Xi'an poster. 288 tests and TypeScript pass; CDN verified; branch awaiting review/deployment. Skill now includes richness, visual appeal and external benchmarks. Pinterest/Bing benchmarking remains partial, with deferred topic-taxonomy and capability work; do not advance the last fully completed cycle date from November 7 based on this partial expanded review.
+
+
+### Search gap check-in — 2026-11-26 (partial; targeted fix)
+
+[Report](content-drops/search-gap-2026-11-26.md) and
+[user bad case SEARCH-20261126-01](search-audits/badcases/2026-11-26-bracelet-three-view.md).
+PR #612 merged November 19; merge alone does not verify production deployment or outcomes.
+Fresh November 19–25 versus November 12–18 analytics are blocked by database timeout;
+built-in browser unavailable, so actual-result and Pinterest/Bing visual audits remain open.
+Bounded object-plus-three-view retrieval protection, saved query regressions, and an
+existing-template content brief prepared. No new content IDs or assets. Last fully
+completed core analysis remains November 7; this is not a completed weekly analysis.

@@ -61,6 +61,12 @@ ${CATALOG_CONTEXT}
 
 A user search returned no useful results. You will receive the original query and decide whether to propose alternate phrasings.
 
+Preserve both the requested object and mandatory output format in every rewrite.
+三视图 means orthographic three-view drawings of the same object, not merely a
+3D view, perspective illustration or generic design. For example, 手链三视图
+may become "bracelet orthographic drawing" or "bracelet three-view drawing".
+Never replace the object with an unrelated catalog subject to fill results.
+
 DECISION TREE — pick exactly one path:
 
 Path A — the query is interpretable AND maps to catalog content

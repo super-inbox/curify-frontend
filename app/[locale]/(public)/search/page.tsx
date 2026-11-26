@@ -1,6 +1,6 @@
 import SearchTaskHelp from './SearchTaskHelp';
 import { searchHelpIntent } from '@/lib/searchTaskHelp';
-import { retrievalQuery, needsConcreteSubject, concreteSubjectText, createSubjectMatcher, subjectGroups, sourceVideoUrl, matchesCuratedGallery } from "@/lib/searchQuality";
+import { productThreeViewGroups, retrievalQuery, needsConcreteSubject, concreteSubjectText, createSubjectMatcher, subjectGroups, sourceVideoUrl, matchesCuratedGallery } from "@/lib/searchQuality";
 import VideoSourceChooser from "./VideoSourceChooser";
 import curatedGallery from "@/lib/generated/search-curated-gallery.json";
 import { withSearchAttribution } from "@/lib/search-attribution";
@@ -1055,7 +1055,10 @@ export default async function SearchPage({ params, searchParams }: Props) {
     !isGarbage
   ) {
     const multi = await getMultiQueryPaths(query);
-    const extraPaths = flattenPaths(query, multi);
+    // Three-view output is mandatory, not a loose style hint. Discard
+    // decomposed subject-only and perspective rewrites for this audited family.
+    const preserveThreeView = productThreeViewGroups(query).length > 0;
+    const extraPaths = flattenPaths(query, multi).filter(path => !preserveThreeView || acceptsSubject(path));
     if (extraPaths.length > 0) {
       const rewriteSet = new Set(multi.rewrites.map((r) => r.trim().toLowerCase()));
       for (const path of extraPaths) {
@@ -1104,7 +1107,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
           sourcePathsById.set(s.rec.id, existing);
         }
       }
-      usedRewrites = multi.rewrites;
+      usedRewrites = multi.rewrites.filter(path => !preserveThreeView || acceptsSubject(path));
       usedPathsCount = 1 + extraPaths.length;
     }
   }
