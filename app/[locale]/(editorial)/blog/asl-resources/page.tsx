@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { getCanonicalUrl, getLanguagesMap } from '@/lib/canonical';
-import { RecentBlogHero, RecentBlogFooter } from '@/app/[locale]/_components/RecentBlogEngagement';
-import BlogInlineClickTracker from '../[slug]/components/BlogInlineClickTracker';
+import { EditorialHero, EditorialFooter } from '@/app/[locale]/_components/EditorialBlogEngagement';
 
 const slug = 'asl-resources';
 const title = 'ASL Resources: Free Lessons, Dictionaries and Practice';
@@ -21,12 +20,12 @@ const resources = [
  {id:'atomic',name:'Atomic Hands',href:'https://atomichands.com/',use:'Exploring STEM content through ASL',access:'Public website resources; workshops and other services have separate arrangements.',body:'Atomic Hands develops ASL-centered STEM resources and encourages community participation in science. Choose a topic your learners already care about, then use its material as a starting point for discussion. Follow the original resource links and check permission before redistributing any content.'},
 ];
 export default function AslResources() {
- return <><BlogInlineClickTracker blogSlug={slug}><article lang="en" className="mx-auto max-w-7xl px-4 py-10 text-neutral-800 [&>*]:mx-auto [&>*]:max-w-3xl [&_h2]:mb-4 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-semibold [&_p]:my-4 [&_p]:leading-8 [&_a]:text-indigo-700 [&_a]:underline [&_li]:my-2">
+ return <><article lang="en" className="mx-auto max-w-7xl px-4 py-10 text-neutral-800 [&>*]:mx-auto [&>*]:max-w-3xl [&_h2]:mb-4 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-semibold [&_p]:my-4 [&_p]:leading-8 [&_a]:text-indigo-700 [&_a]:underline [&_li]:my-2">
  <p className="text-sm">Jay Wang / Curify · Resources checked November 25, 2026</p>
  <h1 className="text-3xl font-bold leading-tight md:text-5xl">{title}</h1>
  <p>Start with the task you want to accomplish: follow a course, understand a sign in context, practice with someone, or prepare a lesson. This guide groups ASL resources by those jobs so you can choose a next step without opening a dozen unrelated lists.</p>
  <p>Prioritize learning from Deaf instructors and fluent signers. Dictionaries and self-study exercises can support that learning, but a list of signs does not supply feedback on your own signing. This page is an editorial selection, not an expert certification or an affiliation with the organizations listed.</p>
- <RecentBlogHero slug={slug} locale="en"/>
+ <EditorialHero slug={slug} locale="en"/>
  <nav aria-label="On this page" className="rounded-xl border bg-slate-50 p-5"><ul className="list-disc pl-5"><li><a href="#choose">Choose by your goal</a></li><li><a href="#resources">Courses, dictionaries and practice</a></li><li><a href="#teachers">For teachers and families</a></li><li><a href="#research">Research reading</a></li><li><a href="#video-review">When you need to review an ASL video</a></li></ul></nav>
  <h2 id="choose">Choose by your goal</h2>
  <ul className="list-disc pl-5"><li><strong>Starting from the beginning:</strong> choose a course sequence such as Lifeprint or an available OSD class.</li><li><strong>Checking a sign:</strong> use HandSpeak or Lifeprint; examine the video and its context.</li><li><strong>Understanding sentence use:</strong> consider the NTID dictionary and inflection examples.</li><li><strong>Reviewing between lessons:</strong> explore SignSchool and bring uncertain items to a teacher.</li><li><strong>Preparing subject material:</strong> consult ASLCORE and Atomic Hands, then have a qualified person review the lesson.</li></ul>
@@ -51,5 +50,5 @@ export default function AslResources() {
  <div><a data-blog-cta="inline" href="/tools/asl-video-translator" className="inline-flex rounded-xl bg-purple-700 px-5 py-3 font-semibold !text-white !no-underline">Review the ASL video translation workflow →</a></div>
  <h2>Sources and maintenance</h2>
  <p>This selection began with a community resource document and <a href="https://www.reddit.com/r/asl/comments/5xrtiu/the_free_asl_resources_and_faq_thread/">the r/asl free-resources thread</a>. We checked the linked official pages for the descriptions above and wrote new summaries; the source list’s longer teaching advice and statistics are not reproduced here. Original materials belong to their respective owners. Access, pricing and course dates can change; check the provider before enrolling or purchasing. No endorsement of Curify by these providers is implied.</p>
- </article></BlogInlineClickTracker><div className="mx-auto max-w-5xl px-4"><RecentBlogFooter slug={slug} locale="en"/></div></>;
+ </article><div className="mx-auto max-w-5xl px-4"><EditorialFooter slug={slug} locale="en"/></div></>;
 }
