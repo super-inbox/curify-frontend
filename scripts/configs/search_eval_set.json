@@ -1025,6 +1025,18 @@
       "expected": "empty",
       "expected_templates": "",
       "notes": "Use search_quality_page integration tests for exact subject preservation and top-five ranking; legacy richness is not quality."
+    },
+    {
+      "query": "Jensen Huang expression sheet",
+      "source": "user-example-metadata-2026-11-26",
+      "expected": "thin",
+      "expected_templates": "thin"
+    },
+    {
+      "query": "黄仁勋表情包",
+      "source": "user-example-metadata-2026-11-26",
+      "expected": "thin",
+      "expected_templates": "thin"
     }
   ]
 }

@@ -187,3 +187,15 @@ it('requires both the requested object and orthographic format',()=>{
 it.each(['手链','bracelet design','bracelet perspective drawing','bracelet 3D view'])('does not impose three-view format on %s',q=>{
  expect(subjectGroups(q)).toEqual([]);
 });
+
+it.each(['Jensen Huang expression sheet', '黄仁勋表情包'])('finds the existing Jensen expression sheet: %s', async q => {
+ const r = await page(q);
+ const example = r.props.inspirations.find((x:any) => x.id === 'd7683254-4e11-4f65-98a4-12a6b6508aac');
+ expect(example).toBeDefined();
+ const catalog=JSON.parse(fs.readFileSync('public/data/nano_inspiration.json','utf8'));
+ expect(catalog.find((x:any)=>x.id===example.id).params.character_name).toBe('Jensen Huang (黄仁勋)');
+ const template=JSON.parse(fs.readFileSync('public/data/nano_templates.json','utf8')).find((x:any)=>x.id==='template-ip-character-expression-sheet');
+ expect(template.image_input).toBe('required');
+ expect(template.locales.en.base_prompt).toContain('{character_name}');
+ expect(template.locales.en.parameters[0].placeholder).not.toContain('Jensen');
+});
