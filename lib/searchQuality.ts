@@ -19,13 +19,29 @@ const aliases: Record<string, string> = {
   'reading about kite': 'kite',
   '风筝': 'kite 风筝',
 };
+/** Evidence-bounded product three-view intent. Never treat perspective/3D as
+ * orthographic. Keep original subject AND format through every retrieval path.
+ * Unknown product names are intentionally left to the existing search flow. */
+export function productThreeViewGroups(query: string): string[][] {
+  const q = query.toLowerCase().replace(/三\s*视\s*图/g, '三视图');
+  if (!/三视图|\borthographic\b|\bthree[ -]views?\b/.test(q)) return [];
+  const subjects: [RegExp, string[]][] = [
+    [/手链|手镯|\b(?:bracelets?|bangles?)\b/, ['bracelet', 'bangle', '手链', '手镯']],
+    [/戒指|\brings?\b/, ['ring', '戒指']],
+    [/椅子|\bchairs?\b/, ['chair', '椅子']],
+    [/鞋子|\bshoes?\b/, ['shoe', '鞋子']],
+  ];
+  const subject = subjects.find(([pattern]) => pattern.test(q));
+  return subject ? [subject[1], ['orthographic', 'three-view', 'three view', '三视图']] : [];
+}
 export function retrievalQuery(query: string): string {
   const key = query.toLowerCase().trim().replace(/\s+/g, ' ');
-  return aliases[key] ?? query;
+  const threeView = productThreeViewGroups(key);
+  return aliases[key] ?? (threeView.length ? `${threeView[0][0]} orthographic three view` : query);
 }
 export function subjectGroups(query: string): string[][] {
   const q = query.toLowerCase();
-  const groups: string[][] = [];
+  const groups: string[][] = productThreeViewGroups(query);
   // Full-name searches only: “Dali” alone can legitimately mean the city.
   const exact = q.trim().replace(/\s+/g, ' ');
   // Evidence-bounded constraints from the full zero-click audit.
@@ -107,7 +123,7 @@ export function matchesCuratedGallery(query: string, entry: { aliases?: string[]
 /** For the audited subjects, generic alias/tag words are not proof that the
  * depicted example matches. Check its identity, title and chosen parameters. */
 export function needsConcreteSubject(query: string): boolean {
-  return new Set(['pizza box', 'chinese costume', 'leggings', '徽章', '纸袋', "xi'an travel poster", 'xi`an', '回民街', 'amharic language']).has(query.trim().toLowerCase());
+  return productThreeViewGroups(query).length > 0 || new Set(['pizza box', 'chinese costume', 'leggings', '徽章', '纸袋', "xi'an travel poster", 'xi`an', '回民街', 'amharic language']).has(query.trim().toLowerCase());
 }
 export function concreteSubjectText(record: { id?: string; params?: unknown; locales?: unknown }): string {
   const locales = record.locales && typeof record.locales === 'object' ? Object.values(record.locales) : [];
