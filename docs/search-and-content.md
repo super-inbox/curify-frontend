@@ -890,3 +890,7 @@ built-in browser unavailable, so actual-result and Pinterest/Bing visual audits 
 Bounded object-plus-three-view retrieval protection, saved query regressions, and an
 existing-template content brief prepared. No new content IDs or assets. Last fully
 completed core analysis remains November 7; this is not a completed weekly analysis.
+
+### November 26 follow-up: public sample audit + serpentine content drop
+
+[Updated report](content-drops/search-gap-2026-11-26.md) now separates morning deployment, recovered rolling public sample, content drop and remaining analytics blockers. All 33 safe queries / 211 cards in the available sample were reviewed, including 23 legacy-zero-card-click queries; 170 destinations returned 200. [Intent and per-card evidence](search-audits/2026-11-26/public-query-ledger.json) and [competitor/brief ledger](search-audits/2026-11-26/content-opportunities.md) persist the decisions. P1 entity+format/typo fixes and one serpentine template with three differentiated examples are prepared for review on `codex/search-gap-20261126`, together with Jensen expression metadata. Six timeline assets are on CDN; website deployment and downstream outcomes pending merge. Full Nov 19–25 vs Nov 12–18 analytics remains blocked by verified TLS timeout; legacy rolling API is incomplete. Last full review date is not advanced. Next run must finish the missing evidence and verify this deployment before another batch.

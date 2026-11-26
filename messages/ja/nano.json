@@ -8565,5 +8565,26 @@
         ]
       }
     }
+  },
+  "template-serpentine-timeline-infographic": {
+    "category": "蛇行タイムライン図",
+    "title": "蛇行タイムライン図 | Curify AI",
+    "description": "日付付きの6つの出来事を、ニュース・歴史・計画の見やすいタイムラインに。",
+    "content": {
+      "sections": {
+        "what": "日付、説明、連続した読順を持つ6点のS字型タイムラインを作成します。",
+        "who": "教育、ニュース解説、チームの計画発表に。",
+        "how": [
+          "タイトルと時系列順の6つの出来事を入力します。",
+          "スタイルと出典、または架空の計画である旨を指定します。",
+          "生成後に日付、文章、番号順を確認します。"
+        ],
+        "prompts": [
+          "Jensen Huang / NVIDIA — November 2026",
+          "Apollo 11 — dates in UTC",
+          "Fictional six-week product launch"
+        ]
+      }
+    }
   }
 }

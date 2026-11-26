@@ -8569,5 +8569,26 @@
     "category": "中东风格生活礼盒包装",
     "description": "用伊斯兰几何纹样或阿拉伯植物卷纹，为外盒、杯具、织物、香氛和贺卡设计统一的套装视觉。",
     "title": "中东风格生活礼盒包装设计 | Curify AI"
+  },
+  "template-serpentine-timeline-infographic": {
+    "category": "蛇形时间线信息图",
+    "title": "蛇形时间线信息图 | Curify AI",
+    "description": "将六个带日期的节点制作成清晰的蛇形时间轴，适用于新闻、历史和项目计划。",
+    "content": {
+      "sections": {
+        "what": "生成六节点蛇形时间线，包含日期、说明和连续的阅读路径。",
+        "who": "适合教学、新闻解读和团队路线图展示。",
+        "how": [
+          "输入标题及按时间排序的六个节点。",
+          "选择视觉风格，注明资料来源或虚构计划。",
+          "生成后核对日期、文字和编号阅读顺序。"
+        ],
+        "prompts": [
+          "Jensen Huang / NVIDIA — November 2026",
+          "Apollo 11 — dates in UTC",
+          "Fictional six-week product launch"
+        ]
+      }
+    }
   }
 }

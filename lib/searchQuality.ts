@@ -18,6 +18,11 @@ const aliases: Record<string, string> = {
   '纸袋': 'paper bag',
   'reading about kite': 'kite',
   '风筝': 'kite 风筝',
+  'moutain bike': 'mountain bike',
+  'moutain bike 3d drawing': 'mountain bike 3d drawing',
+  'south east asia map': 'southeast asia map',
+  'china旅游地图': 'china travel map',
+  'mode im alten rom': 'ancient roman clothing',
 };
 /** Evidence-bounded product three-view intent. Never treat perspective/3D as
  * orthographic. Keep original subject AND format through every retrieval path.
@@ -67,6 +72,36 @@ export function subjectGroups(query: string): string[][] {
     '徽章': [['badge', 'emblem', 'pin badge', '徽章']],
     'weaather and seasons': [['season', '季节', '四季'], ['weather', '天气']],
   };
+  // November 26 live audit: keep compound entities intact through relaxed
+  // and rewritten paths. These are observed public intents, not a frequency gate.
+  const followup: Record<string, string[][]> = {
+    'mountain bike': [['mountain bike', 'mountain biking', '山地自行车', '山地车']],
+    'moutain bike': [['mountain bike', 'mountain biking', '山地自行车', '山地车']],
+    'moutain bike 3d drawing': [['mountain bike', '山地自行车', '山地车'], ['3d drawing', 'technical drawing', '三维', '技术图']],
+    'mountain bike 3d drawing': [['mountain bike', '山地自行车', '山地车'], ['3d drawing', 'technical drawing', '三维', '技术图']],
+    'ice cream': [['ice cream', 'ice-cream', 'gelato', '冰淇淋', '冰激凌']],
+    'ice cream packaging': [['ice cream', 'ice-cream', 'gelato', '冰淇淋', '冰激凌'], ['packaging', 'package', 'brand identity', '包装']],
+    'angus young': [['angus young']],
+    'mode im alten rom': [['ancient rome', 'ancient roman', '古罗马'], ['clothing', 'fashion', 'costume', 'toga', '服饰', '服装']],
+    'costume australia': [['australia', 'australian', '澳大利亚', '澳洲'], ['costume', 'clothing', '服饰', '服装']],
+    'serpentine timeline': [['serpentine', '蛇形']],
+    'serpentine timeline infographic': [['serpentine', '蛇形']],
+    '蛇形时间线': [['serpentine', '蛇形']],
+    '蛇形时间轴': [['serpentine', '蛇形']],
+  };
+  if (followup[exact]) groups.push(...followup[exact]);
+  // Country/region + map is a conjunction, never an OR of generic map words.
+  const mapSubjects: [RegExp, string[]][] = [
+    [/\bbelgium\b|比利时/, ['belgium', 'belgian', '比利时']],
+    [/\bchina\b|中国/, ['china', '中国']],
+    [/\bjapan\b|日本/, ['japan', '日本']],
+    [/\bspain\b|西班牙/, ['spain', '西班牙']],
+    [/\bsouth ?east asia\b|东南亚/, ['southeast asia', 'south east asia', '东南亚']],
+  ];
+  if (/\bmaps?\b|地图/.test(exact)) {
+    const subject = mapSubjects.find(([pattern]) => pattern.test(exact));
+    if (subject) groups.push(subject[1], ['map', '地图']);
+  }
   if (audited[exact]) groups.push(...audited[exact]);
   if (/^salvador dal[ií]$/.test(exact)) groups.push(['salvador dalí', 'salvador dali']);
   if (exact === 'damien hirst' || exact === 'flanderization') groups.push([exact]);
@@ -123,7 +158,7 @@ export function matchesCuratedGallery(query: string, entry: { aliases?: string[]
 /** For the audited subjects, generic alias/tag words are not proof that the
  * depicted example matches. Check its identity, title and chosen parameters. */
 export function needsConcreteSubject(query: string): boolean {
-  return productThreeViewGroups(query).length > 0 || new Set(['pizza box', 'chinese costume', 'leggings', '徽章', '纸袋', "xi'an travel poster", 'xi`an', '回民街', 'amharic language']).has(query.trim().toLowerCase());
+  return productThreeViewGroups(query).length > 0 || /\bmaps?\b|地图/.test(query.toLowerCase()) && subjectGroups(query).length > 0 || new Set(['mountain bike', 'moutain bike', 'mountain bike 3d drawing', 'moutain bike 3d drawing', 'ice cream', 'ice cream packaging', 'angus young', 'mode im alten rom', 'costume australia', 'pizza box', 'chinese costume', 'leggings', '徽章', '纸袋', "xi'an travel poster", 'xi`an', '回民街', 'amharic language']).has(query.trim().toLowerCase());
 }
 export function concreteSubjectText(record: { id?: string; params?: unknown; locales?: unknown }): string {
   const locales = record.locales && typeof record.locales === 'object' ? Object.values(record.locales) : [];

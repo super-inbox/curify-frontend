@@ -1,0 +1,263 @@
+{
+  "limit": "Rolling partial sample only; distinct users are not additive and no rising/new-trend claims made.",
+  "clusters": {
+    "ambiguous / friends (Spanish)": {
+      "queries": [
+        "amigos"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "defer"
+      ]
+    },
+    "musician reference / Angus Young": {
+      "queries": [
+        "angus young"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "P1 retrieval; P2 missing subject deferred"
+      ]
+    },
+    "tool / ASL video translation": {
+      "queries": [
+        "asl video translator"
+      ],
+      "legacy_searches": 2,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "verified route"
+      ]
+    },
+    "ambiguous ASL / American Sign Language": {
+      "queries": [
+        "asl · american sign language"
+      ],
+      "legacy_searches": 2,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "P2 routing review deferred"
+      ]
+    },
+    "browse / learn / australia": {
+      "queries": [
+        "australia"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 1,
+      "actions": [
+        "no generic generation"
+      ]
+    },
+    "browse / learn / basketball": {
+      "queries": [
+        "basketball"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 1,
+      "actions": [
+        "no generic generation"
+      ]
+    },
+    "map design by region": {
+      "queries": [
+        "belgium map",
+        "china旅游地图",
+        "japan map",
+        "south east asia map",
+        "spain map",
+        "travel posters & maps"
+      ],
+      "legacy_searches": 10,
+      "legacy_card_clicks": 4,
+      "actions": [
+        "P1 retrieval fixed; P2 content brief",
+        "P1 retrieval fixed",
+        "P1 retrieval fixed",
+        "P1 alias/retrieval fixed",
+        "P1 retrieval fixed",
+        "no generic generation"
+      ]
+    },
+    "browse / learn / christmas": {
+      "queries": [
+        "christmas"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "no generic generation"
+      ]
+    },
+    "clothing reference / Australian costume": {
+      "queries": [
+        "costume australia"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 1,
+      "actions": [
+        "P1 retrieval fixed; content needs cultural scope"
+      ]
+    },
+    "browse / learn / geschichte": {
+      "queries": [
+        "geschichte"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "no generic generation"
+      ]
+    },
+    "ice cream / packaging": {
+      "queries": [
+        "ice cream",
+        "ice cream packaging"
+      ],
+      "legacy_searches": 2,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "P1 retrieval fixed",
+        "P1 retrieval fixed; P2 variety brief"
+      ]
+    },
+    "ambiguous / man / hotel": {
+      "queries": [
+        "man hotel"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "defer"
+      ]
+    },
+    "historical clothing reference / ancient Roman clothing": {
+      "queries": [
+        "mode im alten rom"
+      ],
+      "legacy_searches": 2,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "P1 retrieval fixed; P2 missing subject brief"
+      ]
+    },
+    "MTB reference and 3D format": {
+      "queries": [
+        "mountain bike",
+        "moutain bike",
+        "moutain bike 3d drawing"
+      ],
+      "legacy_searches": 4,
+      "legacy_card_clicks": 1,
+      "actions": [
+        "P1 retrieval fixed",
+        "P1 typo/ranking fixed",
+        "P1 retrieval fixed; P2 format brief"
+      ]
+    },
+    "browse / learn / posters & flyers": {
+      "queries": [
+        "posters & flyers"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "no generic generation"
+      ]
+    },
+    "ambiguous / single letter": {
+      "queries": [
+        "s"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "defer"
+      ]
+    },
+    "timeline design / serpentine timeline": {
+      "queries": [
+        "serpentine timeline"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "P1 retrieval fixed; P2 template + three examples"
+      ]
+    },
+    "regional inspiration / Southeast Asia": {
+      "queries": [
+        "southeast asia"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 1,
+      "actions": [
+        "P2 broad regional retrieval deferred"
+      ]
+    },
+    "tool / subtitles": {
+      "queries": [
+        "subtitles"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "verified route"
+      ]
+    },
+    "VTOL concepts": {
+      "queries": [
+        "vtol racing bike",
+        "vtol uav racing bike"
+      ],
+      "legacy_searches": 2,
+      "legacy_card_clicks": 2,
+      "actions": [
+        "P2 alias/retrieval deferred",
+        "no generation"
+      ]
+    },
+    "browse / learn / workplace": {
+      "queries": [
+        "workplace"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "no generic generation"
+      ]
+    },
+    "browse / learn / 历史": {
+      "queries": [
+        "历史"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "no generic generation"
+      ]
+    },
+    "packaging structure / snap-lock bottom / tuck-top box": {
+      "queries": [
+        "扣底摇盖盒"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "P2 capability/content brief"
+      ]
+    },
+    "ambiguous language phrase / it is over there (Korean)": {
+      "queries": [
+        "저쪽이에요"
+      ],
+      "legacy_searches": 1,
+      "legacy_card_clicks": 0,
+      "actions": [
+        "defer"
+      ]
+    }
+  }
+}

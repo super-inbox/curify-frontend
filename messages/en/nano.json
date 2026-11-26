@@ -8613,5 +8613,26 @@
     "category": "Middle Eastern Lifestyle Gift-Box Packaging",
     "description": "Create a coordinated gift-box concept for tumblers, textiles, fragrance and cards with Islamic geometric patterns or botanical arabesques.",
     "title": "Middle Eastern Lifestyle Gift-Box Packaging | Curify AI"
+  },
+  "template-serpentine-timeline-infographic": {
+    "category": "Serpentine Timeline Infographic",
+    "title": "Serpentine Timeline Infographic | Curify AI",
+    "description": "Turn six dated milestones into a clear winding timeline for news, history or project plans.",
+    "content": {
+      "sections": {
+        "what": "Create a six-node S-shaped timeline with dates, captions and a continuous reading path.",
+        "who": "For educators, editorial explainers and teams presenting a roadmap.",
+        "how": [
+          "Enter a title and six milestones in chronological order.",
+          "Choose a visual style and include sources or a fictional-plan label.",
+          "Generate, then verify dates, text and the numbered reading order."
+        ],
+        "prompts": [
+          "Jensen Huang / NVIDIA — November 2026",
+          "Apollo 11 — dates in UTC",
+          "Fictional six-week product launch"
+        ]
+      }
+    }
   }
 }

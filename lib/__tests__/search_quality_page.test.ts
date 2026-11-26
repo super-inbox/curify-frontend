@@ -187,3 +187,42 @@ it('requires both the requested object and orthographic format',()=>{
 it.each(['手链','bracelet design','bracelet perspective drawing','bracelet 3D view'])('does not impose three-view format on %s',q=>{
  expect(subjectGroups(q)).toEqual([]);
 });
+
+it.each(['mountain bike','moutain bike'])('retains the actual mountain bike for %s',async q=>{
+ const r=await page(q);expect(r.props.inspirations[0]?.id).toBe('template-bilingual-object-structure-labeling-mountain-bike');
+ expect(r.props.inspirations.some((x:any)=>/mountain-walk|mountain-flora|mountain-lake/.test(x.id))).toBe(false);
+});
+it.each(['belgium map','angus young','mode im alten rom','costume australia','moutain bike 3d drawing'])('does not substitute another entity for %s',async q=>{
+ const r=await page(q);expect(r.props.inspirations).toHaveLength(0);
+});
+it.each([
+ ['south east asia map','template-watercolor-world-map-illustration-southeast-asia'],
+ ['japan map','template-watercolor-world-map-illustration-japan'],
+ ['spain map','template-whimsical-travel-map-spain'],
+])('finds the requested map without unrelated countries: %s',async(q,id)=>{
+ const r=await page(q);expect(r.props.inspirations.some((x:any)=>x.id===id)).toBe(true);
+ expect(r.props.inspirations.some((x:any)=>/south-america|thailand|brazil/.test(x.id))).toBe(false);
+});
+it('uses the existing gelato branding mockup for ice-cream packaging',async()=>{
+ const r=await page('ice cream packaging');
+ expect(r.props.inspirations.map((x:any)=>x.id)).toEqual(['template-brand-identity-moodboard-visual-system-poster-crema-gelato']);
+});
+it.each(['serpentine timeline','蛇形时间线'])('retrieves the new serpentine examples: %s',async q=>{
+ const r=await page(q);expect(r.props.inspirations).toHaveLength(5);
+ const template=JSON.parse(fs.readFileSync('public/data/nano_templates.json','utf8')).find((x:any)=>x.id==='template-serpentine-timeline-infographic');
+ expect(template.locales.en.parameters.find((x:any)=>x.name==='milestones').type).toBe('textarea');
+ expect(r.props.inspirations.filter((x:any)=>x.id.startsWith('template-serpentine-timeline-infographic-'))).toHaveLength(3);
+ expect(r.props.inspirations.some((x:any)=>x.id.endsWith('timeline-infographic-architecture-history'))).toBe(true);
+});
+
+it.each(['Jensen Huang', '黄仁勋', 'Jensen Huang expression sheet', '黄仁勋表情包'])('finds the existing Jensen expression sheet: %s', async q => {
+ const r = await page(q);
+ const example = r.props.inspirations.find((x:any) => x.id === 'd7683254-4e11-4f65-98a4-12a6b6508aac');
+ expect(example).toBeDefined();
+ const catalog=JSON.parse(fs.readFileSync('public/data/nano_inspiration.json','utf8'));
+ expect(catalog.find((x:any)=>x.id===example.id).params.character_name).toBe('Jensen Huang (黄仁勋)');
+ const template=JSON.parse(fs.readFileSync('public/data/nano_templates.json','utf8')).find((x:any)=>x.id==='template-ip-character-expression-sheet');
+ expect(template.image_input).toBe('required');
+ expect(template.locales.en.base_prompt).toContain('{character_name}');
+ expect(template.locales.en.parameters[0].placeholder).not.toContain('Jensen');
+});

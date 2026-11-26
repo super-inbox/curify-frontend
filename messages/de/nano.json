@@ -8565,5 +8565,26 @@
         ]
       }
     }
+  },
+  "template-serpentine-timeline-infographic": {
+    "category": "Infografik mit schlangenförmiger Zeitleiste",
+    "title": "Infografik mit schlangenförmiger Zeitleiste | Curify AI",
+    "description": "Sechs datierte Meilensteine als übersichtliche Zeitleiste für Nachrichten, Geschichte oder Projekte.",
+    "content": {
+      "sections": {
+        "what": "Erstellen Sie eine S-förmige Zeitleiste mit sechs Stationen, Daten und Erläuterungen.",
+        "who": "Für Unterricht, redaktionelle Erklärungen und Projektpläne.",
+        "how": [
+          "Geben Sie einen Titel und sechs chronologisch geordnete Meilensteine ein.",
+          "Wählen Sie einen Stil und nennen Sie Quellen oder kennzeichnen Sie den Plan als fiktiv.",
+          "Prüfen Sie nach der Erstellung Daten, Texte und Nummernfolge."
+        ],
+        "prompts": [
+          "Jensen Huang / NVIDIA — November 2026",
+          "Apollo 11 — dates in UTC",
+          "Fictional six-week product launch"
+        ]
+      }
+    }
   }
 }

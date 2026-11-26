@@ -1025,6 +1025,53 @@
       "expected": "empty",
       "expected_templates": "",
       "notes": "Use search_quality_page integration tests for exact subject preservation and top-five ranking; legacy richness is not quality."
+    },
+    {
+      "query": "serpentine timeline",
+      "source": "user-search-gap-2026-11-26",
+      "expected": "moderate",
+      "expected_templates": "thin",
+      "notes": "Serpentine format drop; exact IDs and negative controls are also checked by actual server-page tests. Legacy count-only evaluator is not a relevance audit."
+    },
+    {
+      "query": "蛇形时间线",
+      "source": "user-search-gap-2026-11-26",
+      "expected": "moderate",
+      "expected_templates": "thin",
+      "notes": "Serpentine format drop; exact IDs and negative controls are also checked by actual server-page tests. Legacy count-only evaluator is not a relevance audit."
+    },
+    {
+      "query": "jensen huang nvidia timeline",
+      "source": "user-search-gap-2026-11-26",
+      "expected": "thin",
+      "expected_templates": "thin",
+      "notes": "Serpentine format drop; exact IDs and negative controls are also checked by actual server-page tests. Legacy count-only evaluator is not a relevance audit."
+    },
+    {
+      "query": "apollo 11 timeline",
+      "source": "user-search-gap-2026-11-26",
+      "expected": "thin",
+      "expected_templates": "thin",
+      "notes": "Serpentine format drop; exact IDs and negative controls are also checked by actual server-page tests. Legacy count-only evaluator is not a relevance audit."
+    },
+    {
+      "query": "six week product launch roadmap",
+      "source": "user-search-gap-2026-11-26",
+      "expected": "thin",
+      "expected_templates": "thin",
+      "notes": "Serpentine format drop; exact IDs and negative controls are also checked by actual server-page tests. Legacy count-only evaluator is not a relevance audit."
+    },
+    {
+      "query": "Jensen Huang expression sheet",
+      "source": "user-example-metadata-2026-11-26",
+      "expected": "thin",
+      "expected_templates": "thin"
+    },
+    {
+      "query": "黄仁勋表情包",
+      "source": "user-example-metadata-2026-11-26",
+      "expected": "thin",
+      "expected_templates": "thin"
     }
   ]
 }

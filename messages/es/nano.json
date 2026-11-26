@@ -8565,5 +8565,26 @@
         ]
       }
     }
+  },
+  "template-serpentine-timeline-infographic": {
+    "category": "Infografía cronológica serpenteante",
+    "title": "Infografía cronológica serpenteante | Curify AI",
+    "description": "Convierte seis hitos fechados en una cronología clara de noticias, historia o proyectos.",
+    "content": {
+      "sections": {
+        "what": "Crea una cronología en S de seis pasos con fechas, textos y un recorrido continuo.",
+        "who": "Para educación, explicaciones editoriales y hojas de ruta.",
+        "how": [
+          "Introduce un título y seis hitos en orden cronológico.",
+          "Elige un estilo e indica las fuentes o que el plan es ficticio.",
+          "Verifica las fechas, los textos y el orden de los números."
+        ],
+        "prompts": [
+          "Jensen Huang / NVIDIA — November 2026",
+          "Apollo 11 — dates in UTC",
+          "Fictional six-week product launch"
+        ]
+      }
+    }
   }
 }

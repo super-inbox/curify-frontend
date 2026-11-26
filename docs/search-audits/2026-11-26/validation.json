@@ -1,0 +1,581 @@
+{
+  "review_date": "2026-11-26 Asia/Shanghai",
+  "server_page_tool_tests": {
+    "passed": 319,
+    "failed": 0
+  },
+  "post_multiline_change_focused_tests": {
+    "passed": 2,
+    "failed": 0
+  },
+  "typescript": "passed after final parameter change",
+  "content_eval": {
+    "passed": 108,
+    "warnings": 43,
+    "failed": 0,
+    "total": 151,
+    "limit": "richness-only evaluator; server-page tests validate subject constraints"
+  },
+  "static_config_validation": "3 records / 4 parameters each / 6 assets / no duplicate IDs",
+  "cdn_verification": "serpentine-cdn-verification.json",
+  "local_pages": [
+    {
+      "path": "/search?q=Jensen%20Huang",
+      "observedAt": "2026-11-26T03:56:06.169Z",
+      "status": 200,
+      "url": "http://localhost:3126/zh/search?q=Jensen%20Huang",
+      "title": "\"Jensen Huang\" — Curify Search | Curify Studio",
+      "inputs": [
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "邮箱"
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "Refine your search…"
+        },
+        {
+          "name": "",
+          "value": "jensen huang",
+          "placeholder": ""
+        }
+      ],
+      "examples": [
+        "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-nvidia-november-2026",
+        "http://localhost:3126/zh/nano-template/ip-character-expression-sheet/example/d7683254-4e11-4f65-98a4-12a6b6508aac",
+        "http://localhost:3126/zh/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang"
+      ],
+      "images": [
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-nvidia-november-2026-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-nvidia-november-2026-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp/d7683254-4e11-4f65-98a4-12a6b6508aac.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp/d7683254-4e11-4f65-98a4-12a6b6508aac.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-nvidia-november-2026-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp/d7683254-4e11-4f65-98a4-12a6b6508aac.jpg",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/search?q=serpentine%20timeline",
+      "observedAt": "2026-11-26T03:56:46.255Z",
+      "status": 200,
+      "url": "http://localhost:3126/zh/search?q=serpentine%20timeline",
+      "title": "\"serpentine timeline\" — Curify Search | Curify Studio",
+      "inputs": [
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "邮箱"
+        },
+        {
+          "name": "",
+          "value": "serpentine timeline",
+          "placeholder": "Refine your search…"
+        },
+        {
+          "name": "",
+          "value": "serpentine timeline",
+          "placeholder": ""
+        }
+      ],
+      "examples": [
+        "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-product-launch-roadmap",
+        "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-nvidia-november-2026",
+        "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-apollo-11",
+        "http://localhost:3126/zh/nano-template/yellow-themed-illustrated-timeline-infographic/example/template-yellow-themed-illustrated-timeline-infographic-architecture-history",
+        "http://localhost:3126/zh/nano-template/yellow-themed-illustrated-timeline-infographic/example/template-yellow-themed-illustrated-timeline-infographic-fashion-history"
+      ],
+      "images": [
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-product-launch-roadmap-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-product-launch-roadmap-prev.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-nvidia-november-2026-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-nvidia-november-2026-prev.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-apollo-11-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-apollo-11-prev.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-product-launch-roadmap-prev.jpg",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/nano-template/serpentine-timeline-infographic",
+      "observedAt": "2026-11-26T03:56:49.850Z",
+      "status": 200,
+      "url": "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic",
+      "title": "蛇形时间线信息图 | Curify Studio",
+      "inputs": [
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "邮箱"
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "✨ brazil world cup squad poster"
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "Apollo 11 — To the Moon and Home"
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "01 | 16 JUL 1969 | LIFT-OFF | Saturn V launches from Kennedy Space Center.\n02 | 19 JUL 1969 | LUNAR ORBIT | Apollo 11 enters orbit around the Moon.\n03 | 20 JUL 1969 | EAGLE LANDS | Armstrong and Aldrin reach the lunar surface.\n04 | 21 JUL 1969 | FIRST STEPS | Armstrong steps onto the Moon at 02:56 UTC.\n05 | 21 JUL 1969 | ASCENT | Eagle lifts off to rejoin Michael Collins.\n06 | 24 JUL 1969 | HOME AGAIN | The crew splashes down in the Pacific."
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "Cream, navy and burnt orange; illustrated educational poster"
+        },
+        {
+          "name": "company_website",
+          "value": "",
+          "placeholder": ""
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "告诉我们大致数量和用途，我们回一版打样和报价。"
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "你的邮箱地址"
+        }
+      ],
+      "examples": [
+        "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-nvidia-november-2026",
+        "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-apollo-11"
+      ],
+      "images": [
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-nvidia-november-2026-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-nvidia-november-2026-prev.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-apollo-11-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-apollo-11-prev.jpg",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-nvidia-november-2026",
+      "observedAt": "2026-11-26T03:57:11.402Z",
+      "status": 200,
+      "url": "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-nvidia-november-2026",
+      "title": "蛇形时间线信息图 | Curify AI — Nano Banana Prompt Generator | Curify Studio",
+      "inputs": [
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "邮箱"
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "✨ east asian culture comparison"
+        },
+        {
+          "name": "",
+          "value": "Jensen Huang / NVIDIA — November 2026",
+          "placeholder": "Apollo 11 — To the Moon and Home"
+        },
+        {
+          "name": "",
+          "value": "01 | NOV 08 | INDEPENDENT REVIEW | Board announces an investigation.\n02 | NOV 10 | OUTSIDE COUNSEL | Independent directors retain counsel.\n03 | NOV 12 | LEADERSHIP CHANGE | Huang resigns; Colette Kress becomes interim CEO.\n04 | NOV 17 | NEW OVERSIGHT | Board establishes a national-security and export-control committee.\n05 | NOV 23 | HUANG RETURNS | Board reinstates Huang as president, CEO and director.\n06 | NOV 23 | COMPLIANCE NEXT STEPS | Chief Compliance Officer search announced; investigation continues.",
+          "placeholder": "01 | 16 JUL 1969 | LIFT-OFF | Saturn V launches from Kennedy Space Center.\n02 | 19 JUL 1969 | LUNAR ORBIT | Apollo 11 enters orbit around the Moon.\n03 | 20 JUL 1969 | EAGLE LANDS | Armstrong and Aldrin reach the lunar surface.\n04 | 21 JUL 1969 | FIRST STEPS | Armstrong steps onto the Moon at 02:56 UTC.\n05 | 21 JUL 1969 | ASCENT | Eagle lifts off to rejoin Michael Collins.\n06 | 24 JUL 1969 | HOME AGAIN | The crew splashes down in the Pacific."
+        },
+        {
+          "name": "",
+          "value": "Ivory editorial newsprint, charcoal serif type, electric lime route, neutral illustrated portraits and governance icons.",
+          "placeholder": "Cream, navy and burnt orange; illustrated educational poster"
+        },
+        {
+          "name": "",
+          "value": "NVIDIA Newsroom company announcements, 8–23 November 2026; independent editorial summary reviewed 26 November 2026. Investigation continues; no claim of exoneration.",
+          "placeholder": "NASA Apollo 11 mission records; dates in UTC"
+        },
+        {
+          "name": "company_website",
+          "value": "",
+          "placeholder": ""
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "告诉我们大致数量和用途，我们回一版打样和报价。"
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "你的邮箱地址"
+        }
+      ],
+      "examples": [
+        "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-product-launch-roadmap",
+        "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-apollo-11",
+        "http://localhost:3126/zh/nano-template/evolution/example/template-evolution-currency-forms",
+        "http://localhost:3126/zh/nano-template/evolution/example/template-evolution-transportation",
+        "http://localhost:3126/zh/nano-template/cultural-relic-retro-infographic/example/template-cultural-relic-retro-infographic-four-sheep-square-zun",
+        "http://localhost:3126/zh/nano-template/figure-principles-infographic/example/template-figure-principles-infographic-steve-jobs",
+        "http://localhost:3126/zh/nano-template/figure-principles-infographic/example/template-figure-principles-infographic-freud",
+        "http://localhost:3126/zh/nano-template/history-timeline-infographic/example/template-history-timeline-infographic-apple-inc",
+        "http://localhost:3126/zh/nano-template/history-timeline-infographic/example/template-history-timeline-infographic-coffee-history",
+        "http://localhost:3126/zh/nano-template/artist-biography-infographic/example/template-artist-biography-infographic-pablo-picasso",
+        "http://localhost:3126/zh/nano-template/historical-figure-educational/example/template-historical-figure-educational-artists",
+        "http://localhost:3126/zh/nano-template/historical-figure-educational/example/template-historical-figure-educational-composers"
+      ],
+      "images": [
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-nvidia-november-2026-prev.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-apollo-11-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-apollo-11-prev.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-product-launch-roadmap-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-product-launch-roadmap-prev.jpg",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-apollo-11",
+      "observedAt": "2026-11-26T03:57:54.630Z",
+      "status": 200,
+      "url": "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-apollo-11",
+      "title": "蛇形时间线信息图 | Curify AI — Nano Banana Prompt Generator | Curify Studio",
+      "inputs": [
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "邮箱"
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "✨ lifestyle guide infographic poster"
+        },
+        {
+          "name": "",
+          "value": "Apollo 11 — To the Moon and Home",
+          "placeholder": "Apollo 11 — To the Moon and Home"
+        },
+        {
+          "name": "",
+          "value": "01 | 16 JUL 1969 | LIFT-OFF | Saturn V launches from Kennedy Space Center.\n02 | 19 JUL 1969 | LUNAR ORBIT | Apollo 11 enters orbit around the Moon.\n03 | 20 JUL 1969 | EAGLE LANDS | Armstrong and Aldrin reach the lunar surface.\n04 | 21 JUL 1969 | FIRST STEPS | Armstrong steps onto the Moon at 02:56 UTC.\n05 | 21 JUL 1969 | ASCENT | Eagle lifts off to rejoin Michael Collins.\n06 | 24 JUL 1969 | HOME AGAIN | The crew splashes down in the Pacific.",
+          "placeholder": "01 | 16 JUL 1969 | LIFT-OFF | Saturn V launches from Kennedy Space Center.\n02 | 19 JUL 1969 | LUNAR ORBIT | Apollo 11 enters orbit around the Moon.\n03 | 20 JUL 1969 | EAGLE LANDS | Armstrong and Aldrin reach the lunar surface.\n04 | 21 JUL 1969 | FIRST STEPS | Armstrong steps onto the Moon at 02:56 UTC.\n05 | 21 JUL 1969 | ASCENT | Eagle lifts off to rejoin Michael Collins.\n06 | 24 JUL 1969 | HOME AGAIN | The crew splashes down in the Pacific."
+        },
+        {
+          "name": "",
+          "value": "Cream museum poster, navy and burnt orange route, precise small spacecraft illustrations, large readable dates.",
+          "placeholder": "Cream, navy and burnt orange; illustrated educational poster"
+        },
+        {
+          "name": "",
+          "value": "NASA Apollo 11 mission records; all dates shown in UTC.",
+          "placeholder": "NASA Apollo 11 mission records; dates in UTC"
+        },
+        {
+          "name": "company_website",
+          "value": "",
+          "placeholder": ""
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "告诉我们大致数量和用途，我们回一版打样和报价。"
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "你的邮箱地址"
+        }
+      ],
+      "examples": [
+        "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-nvidia-november-2026",
+        "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-product-launch-roadmap",
+        "http://localhost:3126/zh/nano-template/evolution/example/template-evolution-currency-forms",
+        "http://localhost:3126/zh/nano-template/evolution/example/template-evolution-transportation",
+        "http://localhost:3126/zh/nano-template/cultural-relic-retro-infographic/example/template-cultural-relic-retro-infographic-four-sheep-square-zun",
+        "http://localhost:3126/zh/nano-template/figure-principles-infographic/example/template-figure-principles-infographic-steve-jobs",
+        "http://localhost:3126/zh/nano-template/figure-principles-infographic/example/template-figure-principles-infographic-freud",
+        "http://localhost:3126/zh/nano-template/history-timeline-infographic/example/template-history-timeline-infographic-apple-inc",
+        "http://localhost:3126/zh/nano-template/history-timeline-infographic/example/template-history-timeline-infographic-coffee-history",
+        "http://localhost:3126/zh/nano-template/artist-biography-infographic/example/template-artist-biography-infographic-pablo-picasso",
+        "http://localhost:3126/zh/nano-template/historical-figure-educational/example/template-historical-figure-educational-artists",
+        "http://localhost:3126/zh/nano-template/historical-figure-educational/example/template-historical-figure-educational-composers"
+      ],
+      "images": [
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-apollo-11-prev.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-nvidia-november-2026-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-nvidia-november-2026-prev.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-product-launch-roadmap-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-product-launch-roadmap-prev.jpg",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-product-launch-roadmap",
+      "observedAt": "2026-11-26T03:58:01.969Z",
+      "status": 200,
+      "url": "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-product-launch-roadmap",
+      "title": "蛇形时间线信息图 | Curify AI — Nano Banana Prompt Generator | Curify Studio",
+      "inputs": [
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "邮箱"
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "✨ lifestyle guide infographic poster"
+        },
+        {
+          "name": "",
+          "value": "From Brief to Launch — A Six-Week Product Roadmap",
+          "placeholder": "Apollo 11 — To the Moon and Home"
+        },
+        {
+          "name": "",
+          "value": "01 | WEEK 1 | DISCOVER | Interview users and frame the problem.\n02 | WEEK 2 | DEFINE | Agree on scope and success measures.\n03 | WEEK 3 | PROTOTYPE | Build a small, testable experience.\n04 | WEEK 4 | VALIDATE | Test with users and revise.\n05 | WEEK 5 | PREPARE | Check quality, support and launch assets.\n06 | WEEK 6 | LAUNCH & LEARN | Release, measure and plan the next iteration.",
+          "placeholder": "01 | 16 JUL 1969 | LIFT-OFF | Saturn V launches from Kennedy Space Center.\n02 | 19 JUL 1969 | LUNAR ORBIT | Apollo 11 enters orbit around the Moon.\n03 | 20 JUL 1969 | EAGLE LANDS | Armstrong and Aldrin reach the lunar surface.\n04 | 21 JUL 1969 | FIRST STEPS | Armstrong steps onto the Moon at 02:56 UTC.\n05 | 21 JUL 1969 | ASCENT | Eagle lifts off to rejoin Michael Collins.\n06 | 24 JUL 1969 | HOME AGAIN | The crew splashes down in the Pacific."
+        },
+        {
+          "name": "",
+          "value": "Warm white, cobalt, coral and mint; modern sans typography and small isometric product illustrations.",
+          "placeholder": "Cream, navy and burnt orange; illustrated educational poster"
+        },
+        {
+          "name": "",
+          "value": "Fictional example plan. Illustrative schedule, not a delivery guarantee; adapt to your team.",
+          "placeholder": "NASA Apollo 11 mission records; dates in UTC"
+        },
+        {
+          "name": "company_website",
+          "value": "",
+          "placeholder": ""
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "告诉我们大致数量和用途，我们回一版打样和报价。"
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "你的邮箱地址"
+        }
+      ],
+      "examples": [
+        "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-apollo-11",
+        "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-nvidia-november-2026",
+        "http://localhost:3126/zh/nano-template/evolution/example/template-evolution-currency-forms",
+        "http://localhost:3126/zh/nano-template/evolution/example/template-evolution-transportation",
+        "http://localhost:3126/zh/nano-template/cultural-relic-retro-infographic/example/template-cultural-relic-retro-infographic-four-sheep-square-zun",
+        "http://localhost:3126/zh/nano-template/figure-principles-infographic/example/template-figure-principles-infographic-steve-jobs",
+        "http://localhost:3126/zh/nano-template/figure-principles-infographic/example/template-figure-principles-infographic-freud",
+        "http://localhost:3126/zh/nano-template/history-timeline-infographic/example/template-history-timeline-infographic-apple-inc",
+        "http://localhost:3126/zh/nano-template/history-timeline-infographic/example/template-history-timeline-infographic-coffee-history",
+        "http://localhost:3126/zh/nano-template/artist-biography-infographic/example/template-artist-biography-infographic-pablo-picasso",
+        "http://localhost:3126/zh/nano-template/historical-figure-educational/example/template-historical-figure-educational-artists",
+        "http://localhost:3126/zh/nano-template/historical-figure-educational/example/template-historical-figure-educational-composers"
+      ],
+      "images": [
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp/template-serpentine-timeline-infographic-product-launch-roadmap.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-nvidia-november-2026-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-nvidia-november-2026-prev.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-apollo-11-prev.jpg",
+          "loaded": false
+        },
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp_preview/template-serpentine-timeline-infographic-apollo-11-prev.jpg",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/nano-template/ip-character-expression-sheet/example/d7683254-4e11-4f65-98a4-12a6b6508aac",
+      "observedAt": "2026-11-26T03:58:07.062Z",
+      "status": 200,
+      "url": "http://localhost:3126/zh/nano-template/ip-character-expression-sheet/example/d7683254-4e11-4f65-98a4-12a6b6508aac",
+      "title": "角色表情差分生成器 — Nano Banana Prompt Generator | Curify Studio",
+      "inputs": [
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "邮箱"
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "✨ lifestyle guide infographic poster"
+        },
+        {
+          "name": "",
+          "value": "Jensen Huang (黄仁勋)",
+          "placeholder": "Character in the uploaded reference"
+        },
+        {
+          "name": "company_website",
+          "value": "",
+          "placeholder": ""
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "告诉我们大致数量和用途，我们回一版打样和报价。"
+        },
+        {
+          "name": "",
+          "value": "",
+          "placeholder": "你的邮箱地址"
+        }
+      ],
+      "examples": [
+        "http://localhost:3126/zh/nano-template/ip-character-expression-sheet/example/template-ip-character-expression-sheet-shiba-inu",
+        "http://localhost:3126/zh/nano-template/ip-character-expression-sheet/example/template-ip-character-expression-sheet-messi",
+        "http://localhost:3126/zh/nano-template/ip-character-expression-sheet/example/template-ip-character-expression-sheet-capybara",
+        "http://localhost:3126/zh/nano-template/ip-gift-box-stationery-set-mockup/example/template-ip-gift-box-stationery-set-mockup-busan-boogi-duck",
+        "http://localhost:3126/zh/nano-template/ip-gift-box-stationery-set-mockup/example/template-ip-gift-box-stationery-set-mockup-boogi-alpaca",
+        "http://localhost:3126/zh/nano-template/world-cup-team-sticker-poster/example/template-world-cup-team-sticker-poster-canada",
+        "http://localhost:3126/zh/nano-template/ip-creative-cultural-goods-mockup-set/example/template-ip-creative-cultural-goods-mockup-set-rabbit-ding-feng",
+        "http://localhost:3126/zh/nano-template/ip-emoji-sticker-sheet-poster/example/template-ip-emoji-sticker-sheet-poster-vietnamese-orange-cat",
+        "http://localhost:3126/zh/nano-template/ip-character-design-specification-sheet/example/template-ip-character-design-specification-sheet-bear",
+        "http://localhost:3126/zh/nano-template/ip-character-design-specification-sheet/example/template-ip-character-design-specification-sheet-cat-orange",
+        "http://localhost:3126/zh/nano-template/ip-creative-cultural-goods-mockup-set/example/template-ip-creative-cultural-goods-mockup-set-curi-ai-robot-full-merch-collection",
+        "http://localhost:3126/zh/nano-template/ip-emoji-sticker-sheet-poster/example/template-ip-emoji-sticker-sheet-poster-student-alpaca",
+        "http://localhost:3126/zh/nano-template/original-character-sticker-pack/example/template-original-character-sticker-pack-office-plant-succulent-buddy"
+      ],
+      "images": [
+        {
+          "src": "https://cdn.curify-ai.com/images/nano_insp/d7683254-4e11-4f65-98a4-12a6b6508aac.jpg",
+          "loaded": false
+        }
+      ]
+    }
+  ],
+  "final_source_image_checks": [
+    {
+      "id": "template-serpentine-timeline-infographic-nvidia-november-2026",
+      "url": "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-nvidia-november-2026",
+      "imageLoaded": true,
+      "screenshot": "qa-template-serpentine-timeline-infographic-nvidia-november-2026.jpg"
+    },
+    {
+      "id": "template-serpentine-timeline-infographic-apollo-11",
+      "url": "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-apollo-11",
+      "imageLoaded": true,
+      "screenshot": "qa-template-serpentine-timeline-infographic-apollo-11.jpg"
+    },
+    {
+      "id": "template-serpentine-timeline-infographic-product-launch-roadmap",
+      "url": "http://localhost:3126/zh/nano-template/serpentine-timeline-infographic/example/template-serpentine-timeline-infographic-product-launch-roadmap",
+      "imageLoaded": true,
+      "screenshot": "qa-template-serpentine-timeline-infographic-product-launch-roadmap.jpg"
+    },
+    {
+      "id": "d7683254-4e11-4f65-98a4-12a6b6508aac",
+      "url": "http://localhost:3126/zh/nano-template/ip-character-expression-sheet/example/d7683254-4e11-4f65-98a4-12a6b6508aac",
+      "imageLoaded": true,
+      "screenshot": "qa-d7683254-4e11-4f65-98a4-12a6b6508aac.jpg"
+    }
+  ],
+  "local_preview_limits": [
+    "English default-locale redirect loop; rendered pages checked via explicit /zh routes. English search behavior covered by server-page tests.",
+    "Local rewriter disabled (no OPENAI_API_KEY); tests inject unrelated rewrites.",
+    "No authenticated paid generation/download executed."
+  ],
+  "live_jensen_search": {
+    "observedAt": "2026-11-26T03:58:20.856Z",
+    "url": "https://www.curify-ai.com/search?q=Jensen%20Huang",
+    "examples": [
+      "https://www.curify-ai.com/en/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+      "https://www.curify-ai.com/en/nano-template/chinese-character-learning-poster/example/template-chinese-character-learning-poster-huang"
+    ]
+  },
+  "production_status": "Follow-up not yet merged/deployed; live Jensen search still lacks new expression example.",
+  "weekly_analytics_status": "Incomplete: verified TLS extraction timed out; prior-period comparison unavailable"
+}
