@@ -21714,5 +21714,63 @@
     "use_cases": [
       "for-designers"
     ]
+  },
+  {
+    "id": "template-serpentine-timeline-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "Create an original, polished portrait serpentine timeline infographic titled '{timeline_title}'. Render exactly the supplied milestones: {milestones}. Visual direction: {visual_style}. Source / scope note: {source_note}. One continuous rounded S-shaped route connects SIX numbered milestones in THREE rows of TWO. Reading order is 01 upper-left → 02 upper-right, a right-edge U-turn down to 03 middle-right → 04 middle-left, a left-edge U-turn down to 05 bottom-left → 06 bottom-right. Each node appears exactly once; use clear directional arrows. Put dates, titles and concise captions beside the route, always horizontal and readable, with generous safe margins and a distinct relevant illustration per node. Preserve supplied dates, names, qualifiers, status and chronological order verbatim. Repeat same-date nodes only when explicitly supplied. If the supplied content is not six milestones, ask the user to supply six; never invent historical events, quotes, dates, statistical claims or legal conclusions. Keep source/scope note legible in the footer. News summaries must distinguish announcements, allegations and ongoing investigations; never imply official endorsement. For fictional plans, retain the fictional label. No generic vertical list, tangled connectors, literal snake, copied template design or unsupported delivery/output promises. Output a finished raster infographic; do not imply editable slides or vector files.",
+        "parameters": [
+          {
+            "name": "timeline_title",
+            "label": "Title",
+            "type": "text",
+            "placeholder": [
+              "Apollo 11 — To the Moon and Home"
+            ]
+          },
+          {
+            "name": "milestones",
+            "label": "Six dated milestones (one per line)",
+            "type": "textarea",
+            "placeholder": [
+              "01 | 16 JUL 1969 | LIFT-OFF | Saturn V launches from Kennedy Space Center.\n02 | 19 JUL 1969 | LUNAR ORBIT | Apollo 11 enters orbit around the Moon.\n03 | 20 JUL 1969 | EAGLE LANDS | Armstrong and Aldrin reach the lunar surface.\n04 | 21 JUL 1969 | FIRST STEPS | Armstrong steps onto the Moon at 02:56 UTC.\n05 | 21 JUL 1969 | ASCENT | Eagle lifts off to rejoin Michael Collins.\n06 | 24 JUL 1969 | HOME AGAIN | The crew splashes down in the Pacific."
+            ]
+          },
+          {
+            "name": "visual_style",
+            "label": "Visual style",
+            "type": "text",
+            "placeholder": [
+              "Cream, navy and burnt orange; illustrated educational poster"
+            ]
+          },
+          {
+            "name": "source_note",
+            "label": "Source and scope note",
+            "type": "text",
+            "placeholder": [
+              "NASA Apollo 11 mission records; dates in UTC"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-serpentine-timeline-infographic-nvidia-november-2026-prev.jpg",
+    "topics": [
+      "learning",
+      "history",
+      "design",
+      "posters",
+      "infographic",
+      "modern",
+      "minimalist",
+      "illustration"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 94,
+    "creation_date": "2026-11-26",
+    "allow_generation": true,
+    "image_input": "none"
   }
 ]

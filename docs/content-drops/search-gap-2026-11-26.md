@@ -49,3 +49,37 @@ Brief: initially one linked-chain bracelet sheet and one rigid open-cuff bangle 
 - Open: fresh window extraction; full public query intent/zero-card-click review including clicked-but-weak needs; actual top5–10 per-card and destination audit; competitor evidence; content visual QA/drop; production deployment and subsequent user outcomes.
 - Continue prior November 19 deferred taxonomy, flashcard-format and typo/capability findings only with current evidence; no duplicate generation.
 - Next run must first verify deployment and outcomes, then finish blocked evidence collection; this report does not advance the full-analysis completion date.
+
+## November 26 follow-up — supersedes the morning access/deployment status above
+
+This section records subsequent work, not a new complete weekly review. Last complete core analysis remains November 7. Full-calendar analytics remains **blocked**; public-sample quality review and content drop are separate completed layers.
+
+- Morning PR #619 merged November 26 03:02:37 UTC; production deployment succeeded at 03:05:49 UTC, SHA `38ad5fd38611cd9170558ca06b3fa05852582403`. Live bracelet search now shows an honest empty state instead of unrelated filler (saved screenshot).
+- User authorized database reads and anonymous headless browser use. Certificate-verified TLS retry still timed out. Previous automatic approval review rejected disabling TLS for analytics extraction and privileged Azure management access; neither was used to complete this analysis. Database authorization itself is **not** the blocker.
+- Existing HTTPS admin read endpoint recovered a fresh rolling-seven-day **partial** sample: 34 query rows, one private URL excluded without replay, all 33 public queries inspected. 23 have zero card clicks under the legacy endpoint's definition; 10 have clicks. 211 actual cards were visually inspected; all 170 unique destination URLs returned HTTP 200. Clicked-but-weak demand, including Belgium maps, is included.
+- This endpoint is NOT the required complete inventory: LIMIT 50; SEARCH-only HAVING; old test-account/click filters; exact `/search` route; misses locale routes, gallery events and marker-only queries. No valid week-over-week comparison, 30-day trend, corrected CTR or instrumentation-root-cause conclusion is claimed. Current target remains Nov 19–25, prior Nov 12–18, supplement Oct 27–Nov 25 (Asia/Shanghai).
+- [Full public sample ledger](../search-audits/2026-11-26/public-query-ledger.json), [query intent table](../search-audits/2026-11-26/query-intents.md), [competitor matrix and briefs](../search-audits/2026-11-26/content-opportunities.md). Ratings preserve ambiguity and separate relevance, variety, execution and capability. Public card screenshots and contact sheets accompany the ledger; raw sessions/private queries are not committed.
+- Competitor review: Bing serpentine ten visible results and three detail visits (one usable layout detail, one mismatched destination, one blocked Pinterest detail). Pinterest login overlays prevent a complete comparison. Bing ice-cream and MTB searches returned wrong-intent images, so those benchmarks are explicitly unusable. Do not treat external rank as user preference.
+
+### Search repairs and content drop
+
+P1 compound-query constraints protect MTB, ice cream/packaging, known country/region maps, named musician and ancient Roman/Australian clothing against unrelated relaxed/rewrite matches. Typo `moutain bike`, mixed-language China map and split Southeast Asia aliases are normalized. Existing useful results remain; missing exact subjects return no examples instead of filler. This is bounded coverage of observed families, not a general semantic parser.
+
+Before/after expectations are executed by the real server-page regression with deliberately irrelevant mocked rewrites: ice cream packaging 1 exact of 3 observed → existing Crema Gelato only; MTB typo exact at rank 3 → exact retained first; unrelated map countries excluded; Belgium/Angus/Roman fashion/MTB 3D currently honest empty results. Serpentine 2 exact of 10 observed (plus adjacent evolution and mismatched preview) → 5 matching examples, comprising 2 existing yellow histories and 3 new directions. These are offline expectations, not production outcome measurements.
+
+New template `template-serpentine-timeline-infographic`, localized metadata in ten languages, four parameters: title, six dated milestones, visual style, source note. New example IDs:
+- `template-serpentine-timeline-infographic-nvidia-november-2026`
+- `template-serpentine-timeline-infographic-apollo-11`
+- `template-serpentine-timeline-infographic-product-launch-roadmap`
+
+Built-in image generation produced three distinct directions: source-backed company-news editorial, NASA historical mission and explicitly fictional product roadmap. Full images and final previews reviewed for route order, dates, legibility, source qualifiers and logo placement. Six CDN assets verified HTTP 200 with image/jpeg content. See [CDN verification](../search-audits/2026-11-26/serpentine-cdn-verification.json), saved prompts and source/QA notes in the opportunity document. No new social publication or SMM scheduling. Existing Jensen expression-sheet metadata correction `bec97542` is included in this review branch; it is not an additional generated asset.
+
+Canonical `nano_inspiration`, `nano_templates`, template intents and persistent content eval updated. Curated gallery builder selects a fixed unrelated gallery-ID set; these new records are canonical nano inspirations and require no addition to that separate gallery index.
+
+### Validation, completion and next steps
+
+Focused server/tool regressions, TypeScript, content eval and local rendered-page QA are recorded in `docs/search-audits/2026-11-26/validation.json`. Content evaluator's richness warnings are not visual relevance failures; it does not implement all original-subject guards, so server-page tests are the behavioral regression source. Batch generator dry-run requires GEMINI_API_KEY even for dry-run; no credential was added just to bypass it. Static config/catalog/parameter/asset validation was run instead; assets were generated with the built-in image tool, not that Gemini runner.
+
+Remote review branch: `codex/search-gap-20261126`; follow-up commits are not merged/deployed when this report is written. CDN asset availability alone is not website deployment. No production CTR improvement claimed. After merge: verify deployed SHA, replay the fixed queries and template/example routes, then collect corrected exposure, deliberate clicks, generation and download outcomes before generating more.
+
+Remaining: secure fixed-calendar extraction and comparison; corrected click attribution/root cause; inaccessible competitor layers; canonical music-preview mismatch; broad Southeast Asia tail, VTOL alias and packaging capability review; evidence-backed deferred content briefs. This report does not advance the full weekly-analysis completion timestamp or mark all gaps solved.

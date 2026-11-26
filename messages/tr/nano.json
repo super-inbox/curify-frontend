@@ -8565,5 +8565,26 @@
         ]
       }
     }
+  },
+  "template-serpentine-timeline-infographic": {
+    "category": "Kıvrımlı Zaman Çizelgesi İnfografiği",
+    "title": "Kıvrımlı Zaman Çizelgesi İnfografiği | Curify AI",
+    "description": "Haber, tarih veya proje planları için altı tarihli dönüm noktasını anlaşılır bir çizelgeye dönüştürün.",
+    "content": {
+      "sections": {
+        "what": "Tarihler, açıklamalar ve kesintisiz okuma yolu içeren altı adımlı S biçimli çizelge oluşturun.",
+        "who": "Eğitim, haber açıklamaları ve ekip yol haritaları için.",
+        "how": [
+          "Başlığı ve kronolojik sırayla altı dönüm noktasını girin.",
+          "Görsel stil seçin; kaynakları veya planın kurgusal olduğunu belirtin.",
+          "Üretimden sonra tarihleri, metni ve numara sırasını kontrol edin."
+        ],
+        "prompts": [
+          "Jensen Huang / NVIDIA — November 2026",
+          "Apollo 11 — dates in UTC",
+          "Fictional six-week product launch"
+        ]
+      }
+    }
   }
 }

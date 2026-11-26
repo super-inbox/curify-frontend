@@ -8565,5 +8565,26 @@
         ]
       }
     }
+  },
+  "template-serpentine-timeline-infographic": {
+    "category": "구불구불한 타임라인 인포그래픽",
+    "title": "구불구불한 타임라인 인포그래픽 | Curify AI",
+    "description": "날짜가 있는 여섯 이정표로 뉴스, 역사, 프로젝트 계획을 정리하세요.",
+    "content": {
+      "sections": {
+        "what": "날짜와 설명, 연속된 읽기 경로가 있는 6단계 S자 타임라인을 만듭니다.",
+        "who": "교육, 뉴스 해설, 팀 로드맵 발표에 적합합니다.",
+        "how": [
+          "제목과 시간순으로 정리한 여섯 이정표를 입력하세요.",
+          "스타일과 출처 또는 가상 계획 표시를 입력하세요.",
+          "생성 후 날짜, 문구, 번호 순서를 확인하세요."
+        ],
+        "prompts": [
+          "Jensen Huang / NVIDIA — November 2026",
+          "Apollo 11 — dates in UTC",
+          "Fictional six-week product launch"
+        ]
+      }
+    }
   }
 }
