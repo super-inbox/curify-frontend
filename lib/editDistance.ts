@@ -1,4 +1,16 @@
 import { buildExampleId } from "@/lib/nano_pure";
+import { CDN_BASE } from "@/lib/constants";
+
+// Catalog assets are CDN-relative. Reused results are rendered by plain <img>
+// and download links, so they do not pass through CdnImage's URL resolver.
+// Resolve before returning the match so display, download and reuse as input
+// all receive the same usable URL. Leave signed/blob/data URLs untouched.
+function duplicateImageUrl(url?: string): string | undefined {
+  if (!url) return url;
+  const path = url.startsWith("/") ? url : `/${url}`;
+  if (path.startsWith("/images/")) return `${CDN_BASE.replace(/\/$/, "")}${path}`;
+  return url;
+}
 
 export const SIMILARITY_THRESHOLD = 0.92;
 
@@ -35,7 +47,7 @@ export function findDuplicate(
   const currentExampleId = buildExampleId(templateId, currentForm as Record<string, string>);
   const exactMatch = existingExamples.find((ex) => ex.id === currentExampleId);
   if (exactMatch) {
-    return { exampleId: exactMatch.id, score: 1, imageUrl: exactMatch.imageUrl };
+    return { exampleId: exactMatch.id, score: 1, imageUrl: duplicateImageUrl(exactMatch.imageUrl) };
   }
 
   const currentKey = paramsToKey(currentForm);
@@ -45,7 +57,7 @@ export function findDuplicate(
   for (const ex of existingExamples) {
     const score = similarity(currentKey, paramsToKey(ex.params));
     if (score >= threshold && (!best || score > best.score)) {
-      best = { exampleId: ex.id, score, imageUrl: ex.imageUrl };
+      best = { exampleId: ex.id, score, imageUrl: duplicateImageUrl(ex.imageUrl) };
     }
   }
   return best;
